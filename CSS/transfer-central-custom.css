@@ -390,15 +390,20 @@ div.column.with-right-margin {
   margin-right: 2rem;
 }
 div.column dl.faq dt {
+  position: relative;
   width: 100%;
-  padding: 5px 10px;
+  padding: 5px 20px 5px 10px;
   margin: 5px -10px;
   background-color: #d7dadb;
   font-weight: bold;
+  transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
 }
 @media all {
   div.column dl.faq dt {
-    line-height: 1.35em;
+    line-height: 1.375em;
   }
 }
 @media all and (min-width: 481px) {
@@ -412,17 +417,52 @@ div.column dl.faq dt {
     text-align: left;
   }
 }
-div.column dl.faq dt.activated {
-  background-color: #d3b0b8;
-  color: #464e54;
+div.column dl.faq dt:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border-top: 8px solid #5e6a71;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 div.column dl.faq dt:hover {
   background-color: #5e6a71;
   color: #ffffff;
 }
+div.column dl.faq dt:hover:after {
+  border-top: 8px solid #ffffff;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+}
+div.column dl.faq dt.activated {
+  background-color: #d3b0b8;
+  color: #464e54;
+}
+div.column dl.faq dt.activated:after {
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #5e6a71;
+  border-left: 8px solid transparent;
+}
 div.column dl.faq dt.activated:hover {
   background-color: #725764;
   color: #ffffff;
+}
+div.column dl.faq dt.activated:hover:after {
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #ffffff;
+  border-left: 8px solid transparent;
 }
 div.column dl.toggled dd {
   display: none;
@@ -622,27 +662,27 @@ div.column a {
   text-decoration: none;
   transition-property: color, background, border-color;
   -webkit-transition-property: color, background, border-color;
-  transition-duration: .4s, .4s, .4s;
-  -webkit-transition-duration: .4s, .4s, .4s;
-  transition-timing-function: linear, ease-in, linear;
-  -webkit-transition-timing-function: linear, ease-in, linear;
+  transition-duration: .3s, .3s, .3s;
+  -webkit-transition-duration: .3s, .3s, .3s;
+  transition-timing-function: ease, ease, ease;
+  -webkit-transition-timing-function: ease, ease, ease;
 }
 div.column a:hover {
-  background-color: rgba(239, 120, 121, 0.1);
-  border-color: rgba(152, 30, 50, 0.5);
+  background-color: rgba(239, 120, 121, 0.2);
+  border-color: rgba(152, 30, 50, 0.67);
   color: #c60c30;
 }
 div.column a.subtle-link {
   border-bottom: 1px dotted rgba(152, 30, 50, 0);
   transition-property: border-color;
   -webkit-transition-property: border-color;
-  transition-duration: .4s;
-  -webkit-transition-duration: .4s;
-  transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
+  transition-duration: .3s;
+  -webkit-transition-duration: .3s;
+  transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
 }
 div.column a.subtle-link:not(.quiet):hover {
-  border-bottom: 1px dotted rgba(152, 30, 50, 0.5);
+  border-bottom: 1px dotted rgba(152, 30, 50, 0.67);
 }
 div.column a.pop-out-link {
   border-bottom: 1px dotted rgba(152, 30, 50, 0.3);
@@ -831,7 +871,7 @@ div.column ul + p {
 }
 @media all {
   div.column ul {
-    line-height: 1.35em;
+    line-height: 1.375em;
   }
 }
 @media all and (min-width: 481px) {
@@ -852,7 +892,7 @@ div.column p + ul {
 }
 @media all {
   div.column ol {
-    line-height: 1.35em;
+    line-height: 1.375em;
   }
 }
 @media all and (min-width: 481px) {
@@ -925,7 +965,7 @@ div.column p.align-left {
 }
 @media all {
   div.column p {
-    line-height: 1.35em;
+    line-height: 1.375em;
   }
 }
 @media all and (min-width: 481px) {
@@ -1015,7 +1055,7 @@ div.column p.vpue-jump-back {
 div.column p.article-media-contacts {
   padding-left: 2em;
   font-size: .8em;
-  line-height: 1.35em;
+  line-height: 1.375em;
 }
 div.column p.award-quote {
   margin-left: 2rem;
@@ -1057,7 +1097,7 @@ div.column p.banner-text {
   margin-bottom: 2rem;
   background-color: rgba(94, 106, 113, 0.5);
   border: 1px solid #2a3033;
-  line-height: 1.35em;
+  line-height: 1.375em;
   color: #2a3033;
 }
 @media all and (min-width: 1050px) {
@@ -1219,18 +1259,30 @@ div.column table.navigational-map a {
 }
 div.column table.navigational-map th {
   border-bottom: 1px solid #b5babe;
-  font-size: inherit;
+  font-size: 1.1em;
+  line-height: 1.375em;
   font-weight: bold;
+  text-transform: uppercase;
   vertical-align: bottom;
+  /*&:nth-child(2):hover {
+                    background-color: #d3e1e3;
+                }*/
 }
 div.column table.navigational-map th.table-spacer {
   width: 15px;
 }
-div.column table.navigational-map th:nth-child(4n+3) {
-  color: #c60c30;
+div.column table.navigational-map th:nth-child(4n+1) {
+  color: #4e2a32;
 }
-div.column table.navigational-map th:nth-child(2):hover {
-  background-color: #d3e1e3;
+div.column table.navigational-map th:nth-child(4n+1) a:hover {
+  background-color: rgba(239, 120, 121, 0.2);
+}
+div.column table.navigational-map th:nth-child(4n+3) {
+  color: #781d31;
+}
+div.column table.navigational-map th:nth-child(4n+3) a:hover {
+  background-color: rgba(239, 120, 121, 0.3);
+  color: #d13c59;
 }
 div.column table.navigational-map td p {
   padding-bottom: 0px;
@@ -2579,6 +2631,44 @@ div.column article + article {
  *  ║ Advanced CSS3 styling of classes that effect animations and transitions.                     ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
+.drop-down-toggle {
+  position: relative;
+}
+.drop-down-toggle:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border-top: 8px solid #981e32;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.drop-down-toggle:hover:after {
+  border-top: 8px solid #c60c30;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+}
+.drop-down-toggle.activated:after {
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #981e32;
+  border-left: 8px solid transparent;
+}
+.drop-down-toggle.activated:hover:after {
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #c60c30;
+  border-left: 8px solid transparent;
+}
 /*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
  *  │ ++++++++ Subtle Panels +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *  ├----------------------------------------------------------------------------------------------┤
@@ -3438,13 +3528,22 @@ x:-o-prefocus {
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 body {
-  background: url(/wp-content/uploads/sites/917/2015/11/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed.jpg) left top fixed repeat;
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+}
+@media screen and (max-width: 1439px) {
+  body {
+    background-color: #981e32;
+  }
+}
+@media screen and (min-width: 1440px) {
+  body {
+    background: #981e32 url(/wp-content/uploads/sites/917/2015/11/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed.jpg) left top fixed repeat;
+  }
 }
 main {
   background: #ffffff;
 }
-@media screen {
+@media screen and (min-width: 1440px) {
   #binder {
     border-right: 1px solid rgba(0, 0, 0, 0.9);
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.5);
@@ -3461,65 +3560,10 @@ header.main-header {
   color: #fff !important;
   text-shadow: .5px .5px 1px #000;
 }
-/*@media all and (min-width: 906px) and (max-width: 1279px) {
-    header.main-header {
-        background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-    }
-}
-
-@media all and (min-width: 792px) and (max-width: 905px) {
-    header.main-header {
-        background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-    }
-}
-
-@media all and (min-width: 710px) and (max-width: 791px) {
-    header.main-header {
-        background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-    }
-}
-
-@media all and (max-width: 709px) {
-    header.main-header {
-        background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
-}*/
 .main-header sub:not(.unset),
 .main-header sup:not(.unset) {
   color: #fff !important;
 }
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### NAV.SPINE ############################################################################# ║
- *  ╠==============================================================================================╣
- *  ║ The code below was removed for being considered against standard by WSU UComm. I am still    ║
- *  ║ awaiting an answer on whether utilizing <hX>...</hX> elements within the spine is considered ║
- *  ║ against standard. From a design perspective, an default-styled h6 element could be used to   ║
- *  ║ achieve level-1 categorization of content—might be considered OK.                            ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
-/*#spine.lighter #glue:before {
-    background: #b5babe url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_500x300_opacity-0.20.png) left top repeat scroll;
-}
-nav.spine-sitenav ul li {
-    a[href="#disabled"] {
-        pointer-events: none;
-    }
-    h4 {
-        color: #981E32;
-        font-size: .85rem;
-        margin-top: .85rem;
-        padding-top: 0;
-        padding-bottom: 0;
-        text-transform: uppercase;
-        &.normal {
-            margin-top: 0;
-        }
-    }
-    &:nth-child(1) h4 {
-        margin-top: 0;
-        padding-top: 0;
-    }
-}*/
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### SECTION HEADERS ####################################################################### ║
  *  ╠==============================================================================================╣
