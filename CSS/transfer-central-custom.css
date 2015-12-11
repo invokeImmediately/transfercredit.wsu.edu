@@ -2210,19 +2210,30 @@ img.autoScaledTo10 {
 }
 img.shiftToCenter {
   display: block;
-  margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
+  margin-left: auto;
+}
+img.shiftToCenter.no-margins {
+  margin-bottom: 0;
 }
 img.shiftToLeft {
   float: left;
   margin-right: 2rem;
   margin-bottom: 1rem;
 }
+img.shiftToLeft.no-margins {
+  margin-right: 0;
+  margin-bottom: 0;
+}
 img.shiftToRight {
   float: right;
-  margin-left: 2rem;
   margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+img.shiftToRight.no-margins {
+  margin-bottom: 0;
+  margin-left: 0;
 }
 img.fancy {
   border: 1px solid rgba(94, 106, 113, 0.5);
