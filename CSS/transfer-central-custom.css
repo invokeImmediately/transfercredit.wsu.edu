@@ -17,6 +17,21 @@ the page, it's all good.
 .breaks-words {
   word-wrap: break-word;
 }
+.vrtcl-spcng-full {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.vrtcl-spcng-less {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.vrtcl-spcng-half {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.soft-gray-border {
+  border: 1px solid rgba(42, 48, 51, 0.5);
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
  *  ║ #### GENERIC CLASSES & SELECTORS ########################################################### ║
  *  ╠==============================================================================================╣
@@ -866,6 +881,9 @@ div.column ul {
 div.column ul:last-child:not(.no-bottom-pad) {
   padding-bottom: 1rem;
 }
+div.column ul.centered {
+  text-align: center;
+}
 div.column ul + p {
   margin-top: 1rem;
 }
@@ -913,6 +931,9 @@ div.column ol ol ol {
 }
 div.column section {
   position: relative;
+}
+div.column section + section {
+  margin-top: 2rem;
 }
 div.column .crimson-text {
   color: #981e32;
@@ -2489,6 +2510,21 @@ section.article-header div.header-content {
 }
 section.halves div.column p {
   text-align: left;
+}
+@media (min-width: 1050px) {
+  section.single.large-format-friendly div.column.one,
+  section.row.single.large-format-friendly div.column.one {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 700px;
+  }
+}
+@media (min-width: 891px) and (max-width: 1049px) {
+  section.single.large-format-friendly div.column.one,
+  section.row.single.large-format-friendly div.column.one {
+    max-width: 700px;
+  }
 }
 @media all and (min-width: 1051px) {
   section.side-right.large-format-friendly,
