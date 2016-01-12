@@ -2551,6 +2551,10 @@ section.halves div.column p {
                  rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
                  rgba(@rval, @gval, @bval, 1.0) 676px); */
   }
+  section.side-right.large-format-friendly:first-child,
+  section.row.side-right.large-format-friendly:first-child {
+    padding-top: 2rem;
+  }
   section.side-right.large-format-friendly div.column.one,
   section.row.side-right.large-format-friendly div.column.one {
     width: 660px;
