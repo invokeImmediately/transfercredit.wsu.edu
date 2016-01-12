@@ -2553,7 +2553,7 @@ section.halves div.column p {
   }
   section.side-right.large-format-friendly:first-child,
   section.row.side-right.large-format-friendly:first-child {
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
   section.side-right.large-format-friendly div.column.one,
   section.row.side-right.large-format-friendly div.column.one {
