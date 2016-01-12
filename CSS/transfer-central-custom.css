@@ -1081,6 +1081,9 @@ div.column p.article-media-contacts {
   font-size: .8em;
   line-height: 1.375em;
 }
+div.column p.fine-print {
+  font-size: 0.9em;
+}
 div.column p.award-quote {
   margin-left: 2rem;
   margin-bottom: 0.5rem;
