@@ -1,0 +1,273 @@
+@import "..\WSU-UE---CSS\wp-master-style-sheet.less";
+
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### SURCA CUSTOM THEME --- BACKGROUNDS #################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Custom styling, unique to the SURCA website, of elements associated with the WordPress WSU   ║
+ *  ║ Spine Theme.                                                                                 ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+body {
+    @media screen {
+        @media (max-width: (@v-wdscrn-bckgrnd - 1)) {
+            background-color: @hex-crimson;
+        }
+        @media (min-width: (@v-wdscrn-bckgrnd)) {
+            background: @hex-crimson url(/wp-content/uploads/sites/917/2015/11/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed.jpg) left top fixed repeat;
+        }
+    }
+    font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+}
+
+main {
+     background: @hex-white;
+}
+
+#binder {
+    @media screen and (min-width: (@v-wdscrn-bckgrnd)) {
+        .rgb-black(); border-right: 1px solid rgba(@rval, @rval, @bval,0.9);
+        box-shadow: 5px 0px 5px rgba(@rval, @rval, @bval, 0.5);
+    }
+}
+
+#jacket {
+    background-position: right bottom;
+     background-attachment: fixed;
+     background-repeat: no-repeat;
+}
+
+
+header.main-header {
+    background: @hex-darker-gray url(/wp-content/uploads/sites/917/2015/11/header-background.png) left center no-repeat;
+    font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+    color: #fff !important;
+    text-shadow: .5px .5px 1px #000;
+}
+
+.main-header sub:not(.unset), .main-header sup:not(.unset) {
+    color: #fff !important;
+}
+
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### SECTION HEADERS ####################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Style definitions of unique banner headers that serve to visually distinguish each grouping  ║
+ *  ║ of pages on the SURCA website.                                                               ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+div.column {
+	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+	section {
+        &.header-newsEvents {
+            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top,
+                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+                url(/wp-content/uploads/sites/706/2015/11/wpbg-news.png) no-repeat center;
+        }
+        &.header-attending {
+            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top,
+                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+                url(/wp-content/uploads/sites/706/2015/11/wpbg-attending.png) no-repeat center;
+        }
+        &.header-participants {
+            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top,
+                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+                url(/wp-content/uploads/sites/706/2015/11/wpbg-participants.png) no-repeat center;
+        }
+        &.header-judges {
+            background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top,
+                url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top,
+                url(/wp-content/uploads/sites/706/2015/11/wpbg-judges.png) no-repeat center;
+        }
+    }
+}
+
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### DIV.SIDEBAR ########################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+// TODO: Rename these classes to follow the pattern: .sidebar.green-marble ■
+// TODO: Pull these classes into an imported *.LESS file ■
+div.green-marble-sidebar {
+	padding-top: 2rem;
+	 padding-right: 2rem;
+	 padding-bottom: 2em;
+	 padding-left: 1rem;
+	margin-right: 10px;
+	background: #e3dfcd url(/wp-content/uploads/sites/51/2015/04/seamless-marble-texture_528x528.png) left top repeat;
+	border: 1px solid #afa370;
+	box-shadow: 3px 3px 3px rgba(57,50,21,0.3333);
+	font-size: .9em;
+	color: #2a3033;
+}
+div.bluish-gray-acrylic-sidebar {
+	background: #edf3f4 url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
+	background-size: 100% auto;
+	border: 1px solid #464e54;
+	box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
+	color: #2a3033;
+	font-size: .9em;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding-left: 1rem;
+	padding-top: 1rem;
+	padding-right: 1rem;
+	padding-bottom: 1rem;
+}
+div.gray-acrylic-sidebar {
+	padding-top: 1rem;
+	 padding-right: 1rem;
+	 padding-bottom: 1em;
+	 padding-left: 1rem;
+	margin-right: 10px;
+	 margin-bottom: 10px;
+	background: #fff url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
+	 background-size: 100% auto;
+	border: 1px solid #464e54;
+	box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
+	font-size: .9em;
+	color: #2a3033;
+}
+div.bluish-gray-acrylic-sidebar, div.green-marble-sidebar, div.gray-acrylic-sidebar {
+	p {
+		font-size: .75rem;
+	}
+    h2 {
+        margin-bottom: 0;
+    }
+	h2 + hr {
+		margin-top: 0;
+		background-color: rgba(70,78,84,0.75);
+	}
+	h3 {
+		font-size: 1.275rem;
+	}
+	h4 {
+		font-size: 1.05rem;
+	}
+	/*div.bluish-gray-acrylic-sidebar p~hr {
+		margin-top: 0;
+	}*/
+}
+
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
+ *  ╠==============================================================================================╣
+ *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+div.column {
+	aside.article-sidebar {
+		float: right;
+		width: 33%;
+		padding: .8rem;
+		margin-bottom: 1rem;
+		 margin-left: 1rem;
+		background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
+		border: 1px solid #6d441f;
+		box-shadow: 1px 1px 2px rgba(109,68,31,0.5);
+		font-size: .8rem;
+		color: #464e54;
+		p {
+			font-size: inherit;
+		}
+	}
+}
+
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### LIST STYLES ########################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+div.column ul li { list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png); }
+div.column.two.transfer-links {
+    @media screen and (max-width: @v-rghtclmn-thrshld) {
+        background-color: @hex-bright-gray;
+        h4 { text-align: center; }
+        h3 { text-align: center; }
+        p { text-align: center; }
+        ul {
+            text-align: center;
+            li {
+                list-style: none;
+            }
+        }
+    }
+}
+
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### ACCORDION ############################################################################# ║
+ *  ╠==============================================================================================╣
+ *  ║ Inherited from the original custom CSS file present before VPUE development began.           ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+/* ----------- ACCORDION ------------ */
+.ui-accordion-header-icon {
+	display: inline-block;
+}
+
+.accordion div h4 {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0;
+	outline-style: none;
+	max-width: 100%;
+	display: block;
+}
+
+.accordion div h4:nth-of-type(odd) {
+	padding: 1rem 6rem 1rem 1rem;
+}
+
+.accordion div h4:nth-of-type(even) {
+	padding-left: 1rem;
+	padding-right: 6rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.accordion div div:nth-of-type(even) {
+	padding-top: 1rem;
+	padding-bottom: -1rem;
+}
+
+.accordion div h4:nth-of-type(odd), .accordion div div:nth-of-type(odd) {
+	background-color: #EFF0F1;
+	background-color: #e4e4e5;
+}
+
+.accordion div h4:hover {
+	cursor: pointer;
+	color: #981e32;
+}
+
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+	position: absolute;
+	left: auto;
+	right: 10%;
+	margin-top: -.25rem;
+}
+
+.iconClosed {
+	background-image: url('https://hub.wsu.edu/marsha/wp-content/uploads/sites/452/2015/05/CrossHair.gif') !important;
+	width: 32px;
+	height: 32px;
+	background-repeat: no-repeat;
+}
+
+.iconOpen {
+	background-image: url('https://hws.wsu.edu/wp-content/uploads/sites/454/2015/08/Minus.gif') !important;
+	width: 32px;
+	height: 32px;
+	background-repeat: no-repeat;
+}
+
+.accordion div div {
+	padding: .2rem 6rem 1rem 1rem;
+	margin-top: -.25rem;
+}
