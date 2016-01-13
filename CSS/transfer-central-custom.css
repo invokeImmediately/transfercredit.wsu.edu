@@ -547,6 +547,9 @@ div.column h2.fancy {
   margin-right: -0.5rem;
   background-color: rgba(215, 218, 219, 0.075);
 }
+div.column h2.fancy.with-top-border:not(:first-child) {
+  margin-top: 2rem;
+}
 div.column h2.fancy.with-top-border::before {
   content: "";
   position: absolute;
@@ -615,7 +618,7 @@ div.column h3.fancy {
   margin-right: -0.5rem;
   background-color: rgba(198, 12, 48, 0.075);
 }
-div.column h3.fancy.with-top-border {
+div.column h3.fancy.with-top-border:not(:first-child) {
   margin-top: 2rem;
 }
 div.column h3.fancy.with-top-border::before {
