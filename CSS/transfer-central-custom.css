@@ -485,193 +485,6 @@ div.column dl.faq dt.activated:hover:after {
 div.column dl.toggled dd {
   display: none;
 }
-div.column h1 {
-  padding-bottom: 0;
-  margin-top: 1.5rem;
-  margin-bottom: .75rem;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #464e54;
-}
-@media all and (min-width: 481px) and (max-width: 890px) {
-  div.column h1 {
-    font-size: 2.625rem;
-  }
-}
-@media all and (max-width: 480px) {
-  div.column h1 {
-    font-size: 2.296875rem;
-  }
-}
-div.column h1:first-child {
-  margin-top: 0;
-}
-div.column h1 + h2 {
-  font-style: italic;
-}
-div.column h1.centered {
-  text-align: center;
-}
-div.column header:first-child + h1 {
-  margin-top: 0;
-}
-div.column h2 {
-  padding: 0 0 0 .1em;
-  margin-top: 1.5rem;
-  margin-bottom: .75rem;
-  margin-left: -0.1em;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 2.2rem;
-  line-height: 1.375em;
-  font-weight: 800;
-  color: #464e54;
-  text-transform: uppercase;
-}
-@media all and (min-width: 481px) and (max-width: 890px) {
-  div.column h2 {
-    font-size: 1.925rem;
-  }
-}
-@media all and (max-width: 480px) {
-  div.column h2 {
-    font-size: 1.684375rem;
-  }
-}
-div.column h2.fancy {
-  position: relative;
-  padding: 0.3333rem 0.5rem;
-  margin-left: -0.5rem;
-  margin-bottom: 1rem;
-  margin-right: -0.5rem;
-  background-color: rgba(94, 106, 113, 0.2);
-}
-div.column h2.fancy.with-top-border {
-  padding-top: 0.5rem;
-}
-div.column h2.fancy.with-top-border:not(:first-child) {
-  margin-top: 2rem;
-}
-div.column h2.fancy.with-top-border::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  border-top: 1px solid rgba(70, 78, 84, 0.6667);
-  border-bottom: 1px solid rgba(70, 78, 84, 0.3333);
-  border-top-width: 2px;
-}
-div.column h2.centered {
-  text-align: center;
-}
-div.column h2.narrower-top-margin {
-  margin-top: 1.25rem;
-}
-div.column h2.no-top-margin {
-  margin-top: 0;
-}
-@media all and (max-width: 480px) {
-  div.column h2.article-title {
-    font-size: 1.3125rem;
-  }
-}
-@media all and (max-width: 1208px) and (min-width: 481px) {
-  div.column h2.article-title {
-    font-size: 1.5rem;
-  }
-}
-div.column h2:first-child {
-  margin-top: 0;
-}
-div.column hr:not(.subSection) + h2 {
-  margin-top: 0;
-}
-div.column h3 {
-  padding: 0 0 0 .1em;
-  margin-top: 1.5rem;
-  margin-bottom: .75rem;
-  margin-left: -0.1em;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #981e32;
-}
-@media all and (min-width: 481px) and (max-width: 890px) {
-  div.column h3 {
-    font-size: 1.4875rem;
-  }
-}
-@media all and (max-width: 480px) {
-  div.column h3 {
-    font-size: 1.3015625rem;
-  }
-}
-div.column h3.no-top-margin {
-  margin-top: 0;
-}
-div.column h3.fancy {
-  position: relative;
-  padding: 0.3333rem 0.5rem;
-  margin-left: -0.5rem;
-  margin-bottom: 1rem;
-  margin-right: -0.5rem;
-  background-color: rgba(198, 12, 48, 0.075);
-}
-div.column h3.fancy.with-top-border {
-  padding-top: 0.4375rem;
-}
-div.column h3.fancy.with-top-border:not(:first-child) {
-  margin-top: 2rem;
-}
-div.column h3.fancy.with-top-border::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  border-top: 1px solid rgba(152, 30, 50, 0.67);
-  border-bottom: 1px solid rgba(152, 30, 50, 0.375);
-}
-div.column h3.centered {
-  text-align: center;
-}
-div.column h3:first-child {
-  margin-top: 0;
-}
-div.column hr:not(.subSection) + h3 {
-  margin-top: 0;
-}
-div.column h4 {
-  padding: 0;
-  margin-top: 1rem;
-  margin-bottom: .5rem;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.2em;
-  font-weight: 600;
-  color: #981e32;
-}
-@media all and (min-width: 481px) and (max-width: 890px) {
-  div.column h4 {
-    font-size: 1.225rem;
-  }
-}
-@media all and (max-width: 480px) {
-  div.column h4 {
-    font-size: 1.071875rem;
-  }
-}
-div.column h4:first-child {
-  margin-top: 0;
-}
-div.column h4.centered {
-  text-align: center;
-}
 div.column hr {
   height: 0;
   margin-top: 2rem;
@@ -1026,6 +839,211 @@ div.column .larger-text {
 }
 /*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  │ ++++++++ HEADERS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Styling for header elements intended as children of div.column elements as defined in the    │
+ *  │ WSU Spine theme for WordPress.                                                               │
+ *  │  ╘═» This file assumes [//github.com/invokeImmediately/WSU-UE---CSS/color-palette.less] has  │
+ *  │       already been imported.                                                                 │
+ *  ├----------------------------------------------------------------------------------------------┤
+ */
+div.column h1 {
+  padding-bottom: 0;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #464e54;
+}
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h1 {
+    font-size: 2.625rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h1 {
+    font-size: 2.296875rem;
+  }
+}
+div.column h1:first-child {
+  margin-top: 0;
+}
+div.column h1 + h2 {
+  font-style: italic;
+}
+div.column h1.centered {
+  text-align: center;
+}
+div.column header:first-child + h1 {
+  margin-top: 0;
+}
+div.column h2 {
+  padding: 0 0 0 .1em;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
+  margin-left: -0.1em;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 2.2rem;
+  line-height: 1.375em;
+  font-weight: 800;
+  color: #464e54;
+  text-transform: uppercase;
+}
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h2 {
+    font-size: 1.925rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h2 {
+    font-size: 1.684375rem;
+  }
+}
+div.column h2.fancy {
+  position: relative;
+  padding: 0.3333rem 0.5rem;
+  margin-left: -0.5rem;
+  margin-bottom: 1rem;
+  margin-right: -0.5rem;
+  background-color: rgba(94, 106, 113, 0.2);
+}
+div.column h2.fancy.with-top-border {
+  padding-top: 0.5rem;
+}
+div.column h2.fancy.with-top-border:not(:first-child) {
+  margin-top: 2rem;
+}
+div.column h2.fancy.with-top-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 1px solid rgba(70, 78, 84, 0.6667);
+  border-bottom: 1px solid rgba(70, 78, 84, 0.3333);
+  border-top-width: 2px;
+}
+div.column h2.centered {
+  text-align: center;
+}
+div.column h2.narrower-top-margin {
+  margin-top: 1.25rem;
+}
+div.column h2.no-top-margin {
+  margin-top: 0;
+}
+@media all and (max-width: 480px) {
+  div.column h2.article-title {
+    font-size: 1.3125rem;
+  }
+}
+@media all and (max-width: 1208px) and (min-width: 481px) {
+  div.column h2.article-title {
+    font-size: 1.5rem;
+  }
+}
+div.column h2:first-child {
+  margin-top: 0;
+}
+div.column hr:not(.subSection) + h2 {
+  margin-top: 0;
+}
+div.column h3 {
+  padding: 0 0 0 .1em;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
+  margin-left: -0.1em;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #981e32;
+}
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h3 {
+    font-size: 1.4875rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h3 {
+    font-size: 1.3015625rem;
+  }
+}
+div.column h3.no-top-margin {
+  margin-top: 0;
+}
+div.column h3.fancy {
+  position: relative;
+  padding: 0.3333rem 0.5rem;
+  margin-left: -0.5rem;
+  margin-bottom: 1rem;
+  margin-right: -0.5rem;
+  background-color: rgba(198, 12, 48, 0.075);
+}
+div.column h3.fancy.with-top-border {
+  padding-top: 0.4375rem;
+}
+div.column h3.fancy.with-top-border:not(:first-child) {
+  margin-top: 2rem;
+}
+div.column h3.fancy.with-top-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 1px solid rgba(152, 30, 50, 0.67);
+  border-bottom: 1px solid rgba(152, 30, 50, 0.375);
+}
+div.column h3.centered {
+  text-align: center;
+}
+div.column h3:first-child {
+  margin-top: 0;
+}
+div.column hr:not(.subSection) + h3 {
+  margin-top: 0;
+}
+div.column h4 {
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.2em;
+  font-weight: 600;
+  color: #981e32;
+}
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h4 {
+    font-size: 1.225rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h4 {
+    font-size: 1.071875rem;
+  }
+}
+div.column h4:first-child {
+  margin-top: 0;
+}
+div.column h4.centered {
+  text-align: center;
+}
+div.column h3.gray,
+div.column h4.gray {
+  color: #5e6a71;
+}
+div.column h1.crimson,
+div.column h2.crimson {
+  color: #981e32;
+}
 /*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
  *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *  │ ++++++++ PARAGRAPHS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
