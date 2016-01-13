@@ -539,9 +539,6 @@ div.column h2 {
     font-size: 1.684375rem;
   }
 }
-div.column h2:first-child {
-  margin-top: 0;
-}
 div.column h2.fancy {
   position: relative;
   padding: 0.3333rem 0.5rem;
@@ -580,6 +577,9 @@ div.column h2.no-top-margin {
     font-size: 1.5rem;
   }
 }
+div.column h2:first-child {
+  margin-top: 0;
+}
 div.column hr:not(.subSection) + h2 {
   margin-top: 0;
 }
@@ -603,9 +603,6 @@ div.column h3 {
   div.column h3 {
     font-size: 1.3015625rem;
   }
-}
-div.column h3:first-child {
-  margin-top: 0;
 }
 div.column h3.no-top-margin {
   margin-top: 0;
@@ -633,6 +630,9 @@ div.column h3.fancy.with-top-border::before {
 }
 div.column h3.centered {
   text-align: center;
+}
+div.column h3:first-child {
+  margin-top: 0;
 }
 div.column hr:not(.subSection) + h3 {
   margin-top: 0;
