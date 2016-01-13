@@ -545,7 +545,10 @@ div.column h2.fancy {
   margin-left: -0.5rem;
   margin-bottom: 1rem;
   margin-right: -0.5rem;
-  background-color: rgba(215, 218, 219, 0.075);
+  background-color: rgba(94, 106, 113, 0.2);
+}
+div.column h2.fancy.with-top-border {
+  padding-top: 0.5rem;
 }
 div.column h2.fancy.with-top-border:not(:first-child) {
   margin-top: 2rem;
@@ -553,7 +556,7 @@ div.column h2.fancy.with-top-border:not(:first-child) {
 div.column h2.fancy.with-top-border::before {
   content: "";
   position: absolute;
-  top: -3;
+  top: 0;
   left: 0;
   width: 100%;
   height: 0;
@@ -618,13 +621,16 @@ div.column h3.fancy {
   margin-right: -0.5rem;
   background-color: rgba(198, 12, 48, 0.075);
 }
+div.column h3.fancy.with-top-border {
+  padding-top: 0.4375rem;
+}
 div.column h3.fancy.with-top-border:not(:first-child) {
   margin-top: 2rem;
 }
 div.column h3.fancy.with-top-border::before {
   content: "";
   position: absolute;
-  top: -2;
+  top: 0;
   left: 0;
   width: 100%;
   height: 0;
