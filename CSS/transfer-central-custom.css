@@ -543,10 +543,22 @@ div.column h2:first-child {
   margin-top: 0;
 }
 div.column h2.fancy {
+  position: relative;
   padding: 0.3333rem 0.5rem;
   margin-left: -0.5rem;
   margin-right: -0.5rem;
   background-color: rgba(215, 218, 219, 0.075);
+}
+div.column h2.fancy.with-top-border::before {
+  content: "";
+  position: absolute;
+  top: -3;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 1px solid rgba(70, 78, 84, 0.6667);
+  border-bottom: 1px solid rgba(70, 78, 84, 0.3333);
+  border-top-width: 2px;
 }
 div.column h2.centered {
   text-align: center;
@@ -598,10 +610,21 @@ div.column h3.no-top-margin {
   margin-top: 0;
 }
 div.column h3.fancy {
+  position: relative;
   padding: 0.3333rem 0.5rem;
   margin-left: -0.5rem;
   margin-right: -0.5rem;
   background-color: rgba(198, 12, 48, 0.075);
+}
+div.column h3.fancy.with-top-border::before {
+  content: "";
+  position: absolute;
+  top: -2;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 1px solid rgba(152, 30, 50, 0.67);
+  border-bottom: 1px solid rgba(152, 30, 50, 0.375);
 }
 div.column h3.centered {
   text-align: center;
