@@ -783,6 +783,9 @@ div.column ul li.no-bottom-pad {
 div.column p + ul {
   margin-top: 1rem;
 }
+div.column section:not(:last-child) ul:last-child {
+  padding-bottom: 0;
+}
 @media all {
   div.column ol {
     line-height: 1.375em;
@@ -1231,14 +1234,14 @@ div.column p.banner-text.green {
   border: 1px solid #393215;
 }
 div.column p.banner-text-orange-with-towers {
+  margin-bottom: 15px;
+  padding: 7px;
   color: #492e14;
   background-color: rgba(182, 114, 51, 0.5);
   border: 32px solid transparent;
   -webkit-border-image: url(/wp-content/uploads/sites/50/2015/09/Orange-Clock-Tower-Border-Template-v3.png) 32 32 round;
   -o-border-image: url(/wp-content/uploads/sites/50/2015/09/Orange-Clock-Tower-Border-Template-v3.png) 32 32 round;
   border-image: url(/wp-content/uploads/sites/50/2015/09/Orange-Clock-Tower-Border-Template-v3.png) 32 32 round;
-  margin-bottom: 15px;
-  padding: 7px;
 }
 @media all and (min-width: 1050px) {
   div.column p.banner-text-orange-with-towers {
@@ -1249,6 +1252,9 @@ div.column p.banner-text-orange-with-towers {
   div.column p.banner-text-orange-with-towers {
     font-size: 1.09375rem;
   }
+}
+div.column section:not(:last-child) p:last-child {
+  padding-bottom: 0;
 }
 /*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
