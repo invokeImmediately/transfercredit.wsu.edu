@@ -2650,10 +2650,10 @@ section.halves div.column p {
   }
   section.side-right.large-format-friendly div.column.two,
   section.row.side-right.large-format-friendly div.column.two {
-    display: none;
     width: calc(100% -  660px );
     height: 0;
     position: relative;
+    opacity: 0;
   }
   section.side-right.large-format-friendly div.column.two:before,
   section.row.side-right.large-format-friendly div.column.two:before {
