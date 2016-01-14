@@ -2673,19 +2673,7 @@ section.halves div.column p {
   }
   section.side-right.large-format-friendly div.column.two,
   section.row.side-right.large-format-friendly div.column.two {
-    width: calc(100% -  660px );
-    height: 0;
-    position: relative;
-  }
-  section.side-right.large-format-friendly div.column.two:before,
-  section.row.side-right.large-format-friendly div.column.two:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 1rem;
-    right: 0;
-    bottom: 0;
-    background: none;
+    display: none;
   }
 }
 @media all and (max-width: 890px) {
