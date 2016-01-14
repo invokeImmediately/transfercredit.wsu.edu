@@ -36,7 +36,8 @@
             $(window).load(function () {
                 $('.large-format-friendly > div.column.two').each(function () {
                         var $this = $(this);
-                        $this.height($this.prev('div.column.one').height());
+                        // $this.height($this.prev('div.column.one').height());
+                        $this.animate({height: $this.prev('div.column.one').height() + "px"}, 250);
                 });
             });
             $(window).resize(function () {
