@@ -347,6 +347,9 @@ span.accentuated-text.brighter {
 span.accentuated-text.gray {
   color: #5e6a71;
 }
+span.accentuated-text.gray.brighter {
+  color: #6a7880;
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CITES ################################################################################# ║
  *  ╠==============================================================================================╣
@@ -2989,7 +2992,7 @@ div.column div.builder-banner-inner-content a {
 }
 div.column div.builder-banner-inner-content a:hover {
   color: #949b9d;
-  border-color: rgba(141, 149, 154, 0.4);
+  border-color: rgba(106, 120, 128, 0.4);
 }
 div.column div.builder-banner-overlay {
   height: calc(2.7rem + 20px);
@@ -3603,7 +3606,7 @@ x:-o-prefocus {
 }
 .cycle2-overlay strong:hover {
   color: #949b9d;
-  border-color: rgba(141, 149, 154, 0.4);
+  border-color: rgba(106, 120, 128, 0.4);
 }
 /* prev / next links */
 .cycle2-prev,
