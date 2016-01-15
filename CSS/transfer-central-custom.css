@@ -2563,6 +2563,9 @@ div.column .gform_wrapper .gform_body > ul > li:not(.gsection):not(.gfield_html)
                  border-bottom: 1px dashed rgba(160,160,160,0.25);*/
   content: "";
 }
+div.column .gform_wrapper #extensions_message {
+  padding-left: 1rem;
+}
 /*, li + li:not(.gsection)::before*/
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### LISTS ################################################################################# ║
