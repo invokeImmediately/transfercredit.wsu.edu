@@ -3,8 +3,45 @@
  *********************************************************************************************************************/
 (function ($) {
 	$(document).ready(function () {
-        // Add code here
+        traverseInputs('.ugrf-general-reqd');        
 	});
+    
+    function traverseInputs (selector) {
+        if ($.type(selector) === "string") {
+            $(selector).each(function () {
+                var $this = $(this);
+                var $inputs = $this.find('input');
+                $inputs.each(function () {
+                    var $thisChild = $(this);
+                    $thisChild.blur(function () {
+                        var $thisParent, $parentsInputs;
+                        var inputReady = true;
+                        
+                        if ($thisChild.val() == "") {
+                            $thisChild.removeClass('value-entered');
+                        }
+                        else {
+                            $thisChild.addClass('value-entered');
+                        }
+                        
+                        $thisParent = $thisChild.parents(selector);
+                        $parentsInputs = $thisParent.find('input');
+                        $parentsInputs.each(function () {
+                            if ($(this).val() == "") {
+                                inputReady = false;
+                            }
+                        });
+                        if (inputReady) {
+                            $thisParent.addClass('inputs-ready');
+                        }
+                        else {
+                            $thisParent.removeClass('inputs-ready');
+                        }
+                    });
+                });
+            });
+        }
+    }
 })(jQuery);
 /**********************************************************************************************************************
  CUSTOM JQUERY-BASED DYNAMIC CONTENT
@@ -33,6 +70,7 @@
 			/**********************************************************************************************
 			 * Set column heights on fluid-width containters                                              *
 			 **********************************************************************************************/
+            // TODO: Move the code below to document.ready + replace it with a check to ensure image loading hasn't changed the heights we are working with
             $(window).load(function () {
                 if($(window).width() >= 1051) {
                     $('.large-format-friendly > div.column.two').each(function () {
@@ -114,12 +152,14 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 (function ($) {
     $(document).ready(function () {
         var qTipContentSource;
+        var qTipStyle;
         var $this;
         $('.has-tool-tip').each(function () {
             $this = $(this);
+            $this.hasClass('blue') ? qTipStyle = 'qtip-blue' : qTipStyle = 'qtip-dark';
             if ($this.hasClass('parental-neighbor-is-source')) {
                 $this.qtip({
-                    style: 'qtip-dark',
+                    style: qTipStyle,
                     content: { text: $this.parent().next('div')},
                     position: {
                         target: 'mouse', // Track the mouse as the positioning target
@@ -139,7 +179,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
             } else {
                 $this.hasClass('span-is-source') ? qTipContentSource = 'span' : qTipContentSource = 'div';
                 $this.qtip({
-                    style: 'qtip-dark',
+                    style: qTipStyle,
                     content: { text: $this.next(qTipContentSource)},
                     position: {
                         target: 'mouse', // Track the mouse as the positioning target
