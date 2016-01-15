@@ -350,6 +350,22 @@ span.accentuated-text.gray {
 span.accentuated-text.gray.brighter {
   color: #6a7880;
 }
+span.has-tool-tip {
+  margin-bottom: -3px;
+  border-bottom: 1px dotted rgba(0, 165, 189, 0.25);
+  color: #00a5bd;
+  transition-property: color, background, border-color;
+  -webkit-transition-property: color, background, border-color;
+  transition-duration: .3s, .3s, .3s;
+  -webkit-transition-duration: .3s, .3s, .3s;
+  transition-timing-function: ease, ease, ease;
+  -webkit-transition-timing-function: ease, ease, ease;
+}
+span.has-tool-tip:hover {
+  background-color: rgba(0, 165, 189, 0.2);
+  border-color: rgba(0, 165, 189, 0.67);
+  color: #2f5055;
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CITES ################################################################################# ║
  *  ╠==============================================================================================╣
@@ -2513,16 +2529,22 @@ div.column .gform_wrapper .gfield_checkbox li label,
 div.column .gform_wrapper .gfield_radio li label {
   font-weight: normal;
 }
+div.column .gform_wrapper .ginput_complex {
+  /*span.address_line_1 label {
+                margin-bottom: 0.75em;
+            }
+            span.address_city, span.address_state, span.address_zip {
+                margin-top: 0.75em;
+            }*/
+}
 div.column .gform_wrapper .ginput_complex label {
+  margin-top: 0;
   margin-bottom: 0;
 }
-div.column .gform_wrapper .ginput_complex span.address_line_1 label {
-  margin-bottom: 0.75em;
-}
-div.column .gform_wrapper .ginput_complex span.address_city,
-div.column .gform_wrapper .ginput_complex span.address_state,
-div.column .gform_wrapper .ginput_complex span.address_zip {
-  margin-top: 0.75em;
+div.column .gform_wrapper .ginput_complex span.ginput_full:not(:first-of-type) label,
+div.column .gform_wrapper .ginput_complex span.ginput_left:not(:first-of-type) label,
+div.column .gform_wrapper .ginput_complex span.ginput_right:not(:nth-of-type(2)) label {
+  margin-top: 0.4em;
 }
 div.column .gform_wrapper label.gfield_label {
   margin-top: 0;
@@ -2536,9 +2558,9 @@ div.column .gform_wrapper .gform_body > ul > li:not(.gsection):not(.gfield_html)
   display: block;
   width: 95%;
   height: 0;
-  margin: 1.5em auto;
-  border-top: 1px dashed rgba(94, 106, 113, 0.3333);
-  border-bottom: 1px dashed rgba(160, 160, 160, 0.25);
+  margin: 2rem auto 0;
+  /*.rgb-dark-gray(); border-top: 1px dashed rgba(@rval,@gval,@bval,0.3333);
+                 border-bottom: 1px dashed rgba(160,160,160,0.25);*/
   content: "";
 }
 /*, li + li:not(.gsection)::before*/
@@ -3055,8 +3077,8 @@ div.column div.builder-banner-overlay {
   display: none;
   max-width: 280px;
   min-width: 50px;
-  font-size: 10.5px;
-  line-height: 12px;
+  font-size: 12px;
+  line-height: 15px;
   direction: ltr;
   box-shadow: none;
   padding: 0;
@@ -3200,12 +3222,13 @@ div.column div.builder-banner-overlay {
   background-position: -42px 0;
 }
 .qtip-blue {
-  background-color: #E5F6FE;
-  border-color: #ADD9ED;
-  color: #5E99BD;
+  background-color: #d3e1e3;
+  border-color: #203639;
+  color: #2f5055;
 }
 .qtip-blue .qtip-titlebar {
-  background-color: #D0E9F5;
+  background-color: #82a9af;
+  color: #2f5055;
 }
 .qtip-blue .qtip-close .qtip-icon {
   background-position: -2px 0;
@@ -3848,6 +3871,30 @@ div.column ul li {
   div.column.two.transfer-links ul li {
     list-style: none;
   }
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### GRAVITY FORM FIELDS ################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Classes for styling elements associated with gravity forms.                                  ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+.ugrf-general {
+  transition: background 0.5s ease;
+  -webkit-transition: background 0.5s ease;
+  -moz-transition: background 0.5s ease;
+  -o-transition: background 0.5s ease;
+}
+.ugrf-general.gfield_contains_required input {
+  transition: background 0.3s ease;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+}
+.ugrf-general.gfield_contains_required input:not(.value-entered) {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.ugrf-general.gfield_contains_required input:focus {
+  background-color: #ffffff;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ACCORDION ############################################################################# ║
