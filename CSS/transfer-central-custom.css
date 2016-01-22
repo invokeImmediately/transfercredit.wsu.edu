@@ -859,7 +859,7 @@ div.column .larger-text {
 }
 @media (min-width: 891px) and (max-width: 1049px) {
   div.column .large-format-friendly {
-    max-width: 700px;
+    max-width: 792px;
   }
 }
 /*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -2241,7 +2241,7 @@ header.main-header span.sup-header-default {
   margin-bottom: .5rem;
   font-size: .9rem;
 }
-@media all and (max-width: 561px) {
+@media all and (max-width: 480px) {
   header.main-header span.sup-header-default {
     font-size: .75rem;
   }
@@ -2252,15 +2252,9 @@ header.main-header span.sup-header-default {
     line-height: 0.8em;
   }
 }
-@media all and (max-width: 493px) {
+@media all and (max-width: 480px) {
   header.main-header span.sub-header-default {
     font-size: 2.08333rem;
-    line-height: 1em;
-  }
-}
-@media all and (min-width: 494px) and (max-width: 561px) {
-  header.main-header span.sub-header-default {
-    font-size: 1.3rem;
     line-height: 1em;
   }
 }
@@ -2270,15 +2264,9 @@ header.main-header span.sup-header-default {
     line-height: 0.8em;
   }
 }
-@media all and (max-width: 493px) {
+@media all and (max-width: 480px) {
   header.main-header sub.sub-header {
     font-size: 2.08333rem;
-    line-height: 1em;
-  }
-}
-@media all and (min-width: 494px) and (max-width: 561px) {
-  header.main-header sub.sub-header {
-    font-size: 1.3rem;
     line-height: 1em;
   }
 }
