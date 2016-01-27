@@ -217,9 +217,12 @@ table.military-credit {
     width: 100%;
     min-width: 700px;
     overflow-x: scroll;
+    border-collapse: collapse;
+    border: 1px solid @hex-darkest-green;
     & > thead > tr > th {
         padding: 5px;
-        background-color: @hex-bright-green;
+        background-color: @hex-darkest-green;
+        color: @hex-white;
         font-size: 1.1em;
         font-weight: bold;
         text-align: center;
@@ -244,7 +247,9 @@ table.military-credit {
     }
     & > tbody > tr {
         &.content-category > td {
-            background-color: @hex-bright-orange;
+            padding: 5px;
+            background-color: @hex-green;
+            color: @hex-darkest-gray;
             font-weight: bold;
             text-align: center;
         }
