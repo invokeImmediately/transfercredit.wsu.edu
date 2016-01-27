@@ -220,23 +220,25 @@ table.military-credit {
     & > thead > tr > th {
         padding: 5px;
         background-color: @hex-bright-green;
+        font-size: 1.1em;
+        font-weight: bold;
         text-align: center;
-        &:nth-child(6n) {
+        &:nth-child(6n + 1) {
             width: 12%;
         }        
-        &:nth-child(6n + 1) {
-            width: 40%;
-        }        
         &:nth-child(6n + 2) {
-            width: 16%;
+            width: 40%;
         }        
         &:nth-child(6n + 3) {
             width: 16%;
         }        
         &:nth-child(6n + 4) {
-            width: 8%;
+            width: 16%;
         }        
         &:nth-child(6n + 5) {
+            width: 8%;
+        }        
+        &:nth-child(6n + 6) {
             width: 8%;
         }        
     }
