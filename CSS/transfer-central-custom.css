@@ -3991,6 +3991,53 @@ div.column ul li {
   }
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### TABLES ################################################################################ ║
+ *  ╠==============================================================================================╣
+ *  ║ Classes for styling tables specific to transfer credit clearinghouse.                        ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+div.wrapper.military-credit {
+  width: 100%;
+}
+@media all and (max-width: 979px) {
+  div.wrapper.military-credit {
+    overflow-x: scroll;
+  }
+}
+table.military-credit {
+  width: 100%;
+  min-width: 700px;
+  overflow-x: scroll;
+}
+table.military-credit > thead > tr > th {
+  padding: 5px;
+  background-color: #f4f2eb;
+  text-align: center;
+}
+table.military-credit > thead > tr > th:nth-child(6n) {
+  width: 12%;
+}
+table.military-credit > thead > tr > th:nth-child(6n + 1) {
+  width: 40%;
+}
+table.military-credit > thead > tr > th:nth-child(6n + 2) {
+  width: 16%;
+}
+table.military-credit > thead > tr > th:nth-child(6n + 3) {
+  width: 16%;
+}
+table.military-credit > thead > tr > th:nth-child(6n + 4) {
+  width: 8%;
+}
+table.military-credit > thead > tr > th:nth-child(6n + 5) {
+  width: 8%;
+}
+table.military-credit > tbody > tr.content-category > td {
+  background-color: #f8f1eb;
+  font-weight: bold;
+  text-align: center;
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### GRAVITY FORM FIELDS ################################################################### ║
  *  ╠==============================================================================================╣
  *  ║ Classes for styling elements associated with gravity forms.                                  ║
