@@ -217,12 +217,28 @@ table.military-credit {
     width: 100%;
     min-width: 700px;
     overflow-x: scroll;
-    border-collapse: collapse;
-    border: 1px solid @hex-darkest-green;
+    border-collapse: separate;
+    border-spacing: 0;
+    & > thead:first-child > tr:first-child > th {
+        &:nth-child(6n + 1) {
+            border-top-left-radius: 10px;
+        }
+        &:nth-child(6n + 6) {
+            border-top-right-radius: 10px;
+        }
+    }
+    & > tbody:last-child > tr:last-child > td {
+        &:nth-child(6n + 1) {
+            border-bottom-left-radius: 8px;
+        }
+        &:nth-child(6n + 6) {
+            border-bottom-right-radius: 8px;
+        }
+    }    
     & > thead > tr > th {
         padding: 5px;
         background-color: @hex-darkest-green;
-        color: @hex-white;
+        color: @hex-lighter-green;
         font-size: 1.1em;
         font-weight: bold;
         text-align: center;
@@ -251,10 +267,11 @@ table.military-credit {
         }        
     }
     & > tbody > tr {
-        & > td {
+        &:not(.content-category) > td {
             padding: 5px;
             &:nth-child(6n + 1) {
                 border-right: 1px solid @hex-lighter-green;
+                text-align: center;
             }        
             &:nth-child(6n + 2) {
                 border-right: 1px solid @hex-lighter-green;
@@ -267,6 +284,10 @@ table.military-credit {
             }        
             &:nth-child(6n + 5) {
                 border-right: 1px solid @hex-lighter-green;
+                text-align: center;
+            }        
+            &:nth-child(6n + 6) {
+                text-align: center;
             }        
         }
         &.content-category > td {
@@ -277,6 +298,18 @@ table.military-credit {
         }
         &:not(.content-category) + tr:not(.content-category) > td {
             border-top: 1px solid @hex-lighter-green;
+        }
+        &.musc > td, &.psyc > td, &.chem-no-lab > td, &.phys > td {
+            background-color: @hex-bright-orange;
+            &:nth-child(6n + 4) {
+                background-color: @hex-lighest-orange;
+            }        
+        }
+        &.hist > td, &.pols > td, &.chem-with-lab > td, &.geol > td {
+            background-color: @hex-bright-gray;
+            &:nth-child(6n + 4) {
+                background-color: @hex-lighter-gray;
+            }        
         }
     }
 }
