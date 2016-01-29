@@ -22,7 +22,13 @@ table.military-credit > thead > tr > th,
 table.military-credit > tbody > tr:not(.content-category) > td:nth-child(6n + 1),
 table.military-credit > tbody > tr:not(.content-category) > td:nth-child(6n + 5),
 table.military-credit > tbody > tr:not(.content-category) > td:nth-child(6n + 6),
-table.wa45-equivalencies > thead > tr > th {
+table.military-credit > tbody > tr.content-category > td,
+table.wa45-equivalencies > thead > tr > th,
+table.wa45-equivalencies > thead > tr.content-category > th,
+table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 1),
+table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 2),
+table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 3),
+table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 4) {
   text-align: center;
 }
 .vrtcl-spcng-full {
@@ -4021,18 +4027,6 @@ div.column ul li {
   div.column.two.transfer-links {
     background-color: #eff0f1;
   }
-  div.column.two.transfer-links h4 {
-    text-align: center;
-  }
-  div.column.two.transfer-links h3 {
-    text-align: center;
-  }
-  div.column.two.transfer-links p {
-    text-align: center;
-  }
-  div.column.two.transfer-links ul {
-    text-align: center;
-  }
   div.column.two.transfer-links ul li {
     list-style: none;
   }
@@ -4113,7 +4107,6 @@ table.military-credit > tbody > tr.content-category > td {
   background-color: #8f7e35;
   color: #2a3033;
   font-weight: bold;
-  text-align: center;
 }
 table.military-credit > tbody > tr:not(.content-category) + tr:not(.content-category) > td {
   border-top: 1px solid #cbc4a2;
@@ -4187,7 +4180,6 @@ table.wa45-equivalencies > thead > tr.content-category > th {
   background-color: #203639;
   color: #aec7cb;
   font-weight: bold;
-  text-align: center;
 }
 table.wa45-equivalencies > tbody > tr > td {
   padding: 5px;
@@ -4196,10 +4188,6 @@ table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 1),
 table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 2),
 table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 3) {
   border-right: 1px solid #aec7cb;
-  text-align: center;
-}
-table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 4) {
-  text-align: center;
 }
 table.wa45-equivalencies > tbody > tr > td[colspan] {
   border-right: none;
