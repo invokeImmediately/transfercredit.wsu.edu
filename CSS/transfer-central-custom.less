@@ -188,14 +188,9 @@ div.column ul li { list-style-image: url(/wp-content/uploads/sites/906/2015/08/i
 div.column.two.transfer-links {
     @media screen and (max-width: @v-rghtclmn-thrshld) {
         background-color: @hex-bright-gray;
-        h4 { text-align: center; }
-        h3 { text-align: center; }
-        p { text-align: center; }
-        ul {
-            text-align: center;
-            li {
-                list-style: none;
-            }
+        h4, h3, p, ul { &:extend(.centered); }
+        ul li{
+            list-style: none;
         }
     }
 }
@@ -271,10 +266,10 @@ table.military-credit {
             }        
         }
         &.content-category > td {
+            &:extend(.centered);
             background-color: @hex-green;
             color: @hex-darkest-gray;
             font-weight: bold;
-            text-align: center;
         }
         &:not(.content-category) + tr:not(.content-category) > td {
             border-top: 1px solid @hex-lighter-green;
@@ -339,21 +334,21 @@ table.wa45-equivalencies {
             }
         }
         &.content-category > th {
+            &:extend(.centered);
             background-color: @hex-darkest-blue;
             color: @hex-lighter-blue;
             font-weight: bold;
-            text-align: center;
         }
     }
     & > tbody > tr {
         & > td {
             padding: 5px;
             &:nth-child(6n + 1), &:nth-child(6n + 2), &:nth-child(6n + 3) {
+                &:extend(.centered);
                 border-right: 1px solid @hex-lighter-blue;
-                text-align: center;
             }        
             &:nth-child(6n + 4) {
-                text-align: center;
+                &:extend(.centered);
             }
             &[colspan] {
                 border-right: none;
