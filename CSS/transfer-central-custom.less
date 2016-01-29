@@ -229,10 +229,10 @@ table.military-credit {
     }
     & > tbody:last-child > tr:last-child > td {
         &:nth-child(6n + 1) {
-            border-bottom-left-radius: 8px;
+            border-bottom-left-radius: 10px;
         }
         &:nth-child(6n + 6) {
-            border-bottom-right-radius: 8px;
+            border-bottom-right-radius: 10px;
         }
     }    
     & > thead > tr > th {
@@ -313,7 +313,102 @@ table.military-credit {
         }
     }
 }
- 
+
+table.wa45-equivalencies {
+    width: 100%;
+    min-width: 480px;
+    overflow-x: scroll;
+    border-collapse: separate;
+    border-spacing: 0;
+    &:last-child {
+        padding-bottom: @v-dflt-spcng;
+    }
+    & > thead:first-child > tr:first-child > th {
+        &:nth-child(6n + 1) {
+            border-top-left-radius: 10px;
+            &[colspan="4"] {
+                border-top-right-radius: 10px;
+            }
+        }
+        &:nth-child(6n + 4) {
+            border-top-right-radius: 10px;
+        }
+    }
+    & > tbody:last-child > tr:last-child > td {
+        &:nth-child(6n + 1) {
+            border-bottom-left-radius: 10px;
+        }
+        &:nth-child(6n + 4) {
+            border-bottom-right-radius: 10px;
+        }
+    }    
+    & > thead > tr {
+        & > th {
+            padding: 5px;
+            background-color: @hex-blue;
+            color: @hex-darkest-blue;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            &:nth-child(6n + 1) {
+                width: 25%;
+                border-right: 1px solid @hex-lighter-blue;
+            }        
+            &:nth-child(6n + 2) {
+                width: 25%;
+                border-right: 1px solid @hex-lighter-blue;
+            }        
+            &:nth-child(6n + 3) {
+                width: 25%;
+                border-right: 1px solid @hex-lighter-blue;
+            }        
+            &:nth-child(6n + 4) {
+                width: 25%;
+                border-right: 1px solid @hex-lighter-blue;
+            }
+        }
+        &.content-category > th {
+            background-color: @hex-darkest-blue;
+            color: @hex-lighter-blue;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+    & > tbody > tr {
+        & > td {
+            padding: 5px;
+            &:nth-child(6n + 1), &:nth-child(6n + 2), &:nth-child(6n + 3) {
+                border-right: 1px solid @hex-lighter-blue;
+                text-align: center;
+            }        
+            &:nth-child(6n + 4) {
+                text-align: center;
+            }
+            &[colspan] {
+                border-right: none;
+                background-color: @hex-light-blue;
+                color: @hex-darker-gray;
+            }
+        }
+        &:nth-child(2n + 1) > td:not([colspan]) {
+            background-color: @hex-lightest-gray;
+        }
+        &:nth-child(2n + 2) > td:not([colspan]) {
+            background-color: @hex-lightest-blue;
+        }
+        & + tr > td {
+            border-top: 1px solid @hex-lighter-blue;
+        }
+//        &.musc > td, &.engl2 > td, &.soc > td, &.astr > td, &.envs > td, &.geol > td {
+//            background-color: @hex-lightest-blue;
+//        }
+//        &.engl > td, &.math > td, &.phil > td, &.drma > td, &.phil > td, &.hum > td, &.hist > td,
+//         &.psyc > td, &.pols > td, &.biol > td, &.chem > td, &.phys > td {
+//            background-color: @hex-bright-gray;
+//        }
+    }
+}
+
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### GRAVITY FORM FIELDS ################################################################### ║
  *  ╠==============================================================================================╣
