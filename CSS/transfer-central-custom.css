@@ -1242,7 +1242,6 @@ div.column p.no-bottom-pad {
   padding-bottom: 0;
 }
 div.column p.vpue-jump-bar {
-  width: 100%;
   padding: 0 1rem 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1253,7 +1252,7 @@ div.column p.vpue-jump-bar {
   text-align: center;
 }
 div.column p.vpue-jump-bar span.title {
-  font-size: 1em;
+  font-size: 1.08695652em;
   line-height: 2em;
   font-weight: bold;
   font-variant: small-caps;
