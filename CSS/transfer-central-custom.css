@@ -1154,10 +1154,10 @@ div.column h2.crimson {
   color: #981e32;
 }
 @media all and (min-width: 694px) {
-  section.side-right.large-format-friendly div.column.one h2.fancy,
-  section.row.side-right.large-format-friendly div.column.one h2.fancy,
-  section.side-right.large-format-friendly div.column.one h3.fancy,
-  section.row.side-right.large-format-friendly div.column.one h3.fancy {
+  section.side-right div.column.one h2.fancy,
+  section.row.side-right div.column.one h2.fancy,
+  section.side-right div.column.one h3.fancy,
+  section.row.side-right div.column.one h3.fancy {
     margin-right: 0;
   }
 }
