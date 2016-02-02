@@ -3904,7 +3904,8 @@ div.banner.campus-contacts {
     width: 100%;
     height: 0;
     padding-bottom: 65.3266%;
-    background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-narrow.jpg) 0px 0px 100% no-repeat;
+    background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-narrow.jpg) 0 0 no-repeat;
+    background-size: 100% 100%;
   }
 }
 @media all and (max-width: 791px) {
@@ -3912,7 +3913,8 @@ div.banner.campus-contacts {
     width: 100%;
     height: 0;
     padding-bottom: 26%;
-    background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-wide.jpg) 0px 0px 100% no-repeat;
+    background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-wide.jpg) 0 0 no-repeat;
+    background-size: 100% 100%;
   }
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
