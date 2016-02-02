@@ -10,7 +10,8 @@ As a general rule of thumb, if your styles target aspects of the spine
 (#spine), that's against standard, whereas if you're styling elsewhere on
 the page, it's all good.
 */
-.margin-centered {
+.margin-centered,
+img.shiftToCenter {
   margin-right: auto;
   margin-left: auto;
 }
@@ -31,23 +32,56 @@ table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 3),
 table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 4) {
   text-align: center;
 }
-.vrtcl-spcng-full {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.vrtcl-spcng-less {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.vrtcl-spcng-half {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
 .soft-gray-border {
   border: 1px solid rgba(42, 48, 51, 0.5);
 }
-.has-smllr-txt {
-  font-size: 0.9em;
+.pads-top-nrml {
+  padding-top: 2rem;
+}
+.pads-top-half {
+  padding-top: 1rem;
+}
+.pads-rght-nrml {
+  padding-right: 2rem;
+}
+.pads-rght-half {
+  padding-right: 1rem;
+}
+.pads-bttm-nrml {
+  padding-bottom: 2rem;
+}
+.pads-bttm-half {
+  padding-bottom: 1rem;
+}
+.pads-lft-nrml {
+  padding-right: 2rem;
+}
+.pads-lft-half {
+  padding-right: 1rem;
+}
+.spaces-top-nrml {
+  margin-top: 2rem;
+}
+.spaces-top-half {
+  margin-top: 1rem;
+}
+.spaces-rght-nrml {
+  margin-right: 2rem;
+}
+.spaces-rght-half {
+  margin-right: 1rem;
+}
+.spaces-bttm-nrml {
+  margin-bottom: 2rem;
+}
+.spaces-bttm-half {
+  margin-bottom: 1rem;
+}
+.spaces-lft-nrml {
+  margin-right: 2rem;
+}
+.spaces-lft-half {
+  margin-right: 1rem;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
  *  ║ #### GENERIC CLASSES & SELECTORS ########################################################### ║
@@ -2436,21 +2470,9 @@ img.autoScaledTo10 {
 }
 img.shiftToCenter {
   display: block;
-  margin-right: auto;
-  margin-bottom: 2rem;
-  margin-left: auto;
-}
-img.shiftToCenter.no-margins {
-  margin-bottom: 0;
 }
 img.shiftToLeft {
   float: left;
-  margin-right: 2rem;
-  margin-bottom: 1rem;
-}
-img.shiftToLeft.no-margins {
-  margin-right: 0;
-  margin-bottom: 0;
 }
 img.shiftToRight {
   float: right;
@@ -2823,24 +2845,6 @@ section.halves div.column p {
   }
 }
 @media all and (min-width: 1051px) {
-  section.side-right.large-format-friendly,
-  section.row.side-right.large-format-friendly {
-    /* .rgb-bright-gray(); background: -webkit-linear-gradient(left,
-                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
-                 rgba(@rval, @gval, @bval, 1.0) 676px);
-                background: -moz-linear-gradient(left,
-                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
-                 rgba(@rval, @gval, @bval, 1.0) 676px);
-                background: -ms-linear-gradient(left,
-                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
-                 rgba(@rval, @gval, @bval, 1.0) 676px);
-                background: -o-linear-gradient(left,
-                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
-                 rgba(@rval, @gval, @bval, 1.0) 676px);
-                background: linear-gradient(to right,
-                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
-                 rgba(@rval, @gval, @bval, 1.0) 676px); */
-  }
   section.side-right.large-format-friendly:first-child,
   section.row.side-right.large-format-friendly:first-child {
     padding-top: 1rem;
@@ -2920,43 +2924,6 @@ div.column article + article {
  *  │ Specification of the faded white backing superclass.                                         │
  *  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
-.fadedwhitebacking p {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 1em 3em;
-}
-.fadedwhitebacking h1,
-.fadedwhitebacking h2 {
-  padding: .25em .5em;
-  margin-bottom: 10px;
-  background-color: rgba(89, 106, 113, 0.95);
-  border: 1px solid white;
-  text-transform: uppercase;
-  color: white;
-  text-shadow: 0 1px 0 #aaaaaa, 0 2px 0 #888888, 0 3px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 1px #000000, 0 3px 2px #000000;
-}
-.fadedwhitebacking hgroup h2 a {
-  /*      text-shadow: 0 1px 0 #a00, 0 2px 0 #800, 0 3px 1px rgba(64,0,0,.1), 0 0 5px rgba(64,0,0,.1)
-         0 1px 3px rgba(64,0,0,.3), 0 2px 5px rgba(64,0,0,.2), 0 0 1px #300, 0 3px 2px #300; */
-  text-shadow: none;
-}
-.fadedwhitebacking h3 {
-  padding: .25em .5em;
-  margin-top: 10px;
-  background-color: rgba(152, 30, 50, 0.95);
-  border: 1px solid white;
-  color: white;
-  text-shadow: 0 0.5px 0 #aaaaaa, 0 1px 0 #888888, 0 1.5px 0.5px rgba(152, 30, 50, 0.1), 0 0 2.5px rgba(152, 30, 50, 0.1), 0 0.5px 1.5px rgba(152, 30, 50, 0.3), 0 1px 2.5px rgba(152, 30, 50, 0.2), 0 0 0.5px #000000, 0 1.5px 1px #000000;
-}
-.fadedwhitebacking h4 {
-  padding: .25em .5em;
-  background-color: rgba(255, 255, 255, 0.95);
-}
-.fadedwhitebacking hr {
-  padding: 5px;
-  margin: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #E4E6E7;
-}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### INTERACTIVE EFFECTS & ANIMATIONS ###################################################### ║
  *  ╠==============================================================================================╣
@@ -3007,42 +2974,6 @@ div.column article + article {
  *  │ Content panels with highly faded appearence until mousehover.                                │
  *  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
-div .subtlePanel {
-  opacity: .3333;
-  transition: opacity .3333s;
-  -webkit-transition: opacity .3333s;
-  -moz-transition: opacity .3333s;
-  -o-transition: opacity .3333s;
-  animation: subtlePanel-FadeOut 1.5s linear 0 1;
-  -webkit-animation: subtlePanel-FadeOut 1.5s linear 0 1;
-  -moz-animation: subtlePanel-FadeOut 1.5s linear 0 1;
-  -o-animation: subtlePanel-FadeOut 1.5s linear 0 1;
-}
-@-webkit-keyframes subtlePanel-FadeOut {
-  0% {
-    opacity: 1;
-  }
-  33% {
-    opacity: 1;
-  }
-  100% {
-    opacity: .3333;
-  }
-}
-@keyframes subtlePanel-FadeOut {
-  0% {
-    opacity: 1;
-  }
-  33% {
-    opacity: 1;
-  }
-  100% {
-    opacity: .3333;
-  }
-}
-div .subtlePanel:hover {
-  opacity: 1;
-}
 /*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
  *  │ ++++++++ CSS3 Driven Tooltips ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *  ├----------------------------------------------------------------------------------------------┤
