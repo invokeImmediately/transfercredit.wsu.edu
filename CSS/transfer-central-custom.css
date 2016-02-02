@@ -3846,10 +3846,10 @@ x:-o-prefocus {
   }
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### SURCA CUSTOM THEME --- BACKGROUNDS #################################################### ║
+ *  ║ #### TRANSFER CREDIT CUSTOM THEME --- BACKGROUNDS ########################################## ║
  *  ╠==============================================================================================╣
- *  ║ Custom styling, unique to the SURCA website, of elements associated with the WordPress WSU   ║
- *  ║ Spine Theme.                                                                                 ║
+ *  ║ Custom styling, unique to the Transfer Credit website, of elements associated with the       ║
+ *  ║ WordPress WSU Spine Theme.                                                                   ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 body {
@@ -3890,32 +3890,36 @@ header.main-header {
   color: #fff !important;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### SECTION HEADERS ####################################################################### ║
+ *  ║ #### BANNER IMAGES ######################################################################### ║
  *  ╠==============================================================================================╣
- *  ║ Style definitions of unique banner headers that serve to visually distinguish each grouping  ║
- *  ║ of pages on the SURCA website.                                                               ║
+ *  ║ Style definitions of distinctive banner images that serve to artfully and responsively       ║
+ *  ║ distinguish each page on the transfer credit website.                                        ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-div.column {
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+div.banner.campus-contacts {
+  margin-bottom: 1rem;
 }
-div.column section.header-newsEvents {
-  background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-news.png) no-repeat center;
+@media all and (min-width: 792px) {
+  div.banner.campus-contacts {
+    width: 100%;
+    height: 0;
+    padding-bottom: 65.3266%;
+    background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-narrow.jpg) 0px 0px 100% no-repeat;
+  }
 }
-div.column section.header-attending {
-  background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-attending.png) no-repeat center;
-}
-div.column section.header-participants {
-  background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-participants.png) no-repeat center;
-}
-div.column section.header-judges {
-  background: url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat left top, url(/wp-content/uploads/sites/706/2015/11/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/706/2015/11/wpbg-judges.png) no-repeat center;
+@media all and (max-width: 791px) {
+  div.banner.campus-contacts {
+    width: 100%;
+    height: 0;
+    padding-bottom: 26%;
+    background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-wide.jpg) 0px 0px 100% no-repeat;
+  }
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### DIV.SIDEBAR ########################################################################### ║
  *  ╠==============================================================================================╣
  *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
- *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
+ *  ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 div.green-marble-sidebar {
@@ -3995,7 +3999,7 @@ div.gray-acrylic-sidebar h4 {
  *  ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
  *  ╠==============================================================================================╣
  *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
- *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
+ *  ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 div.column aside.article-sidebar {
@@ -4017,7 +4021,7 @@ div.column aside.article-sidebar p {
  *  ║ #### LIST STYLES ########################################################################### ║
  *  ╠==============================================================================================╣
  *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
- *  ║  ╘═» Customized here for use on the SURCA website.                                           ║
+ *  ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 div.column ul li {
