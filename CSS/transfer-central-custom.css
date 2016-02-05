@@ -93,10 +93,10 @@ table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 4) {
   display: none;
 }
 .fade-in-from-left {
-  -webkit-animation: anim-fade-in-from-left 1s linear infinite;
-  -moz-animation: anim-fade-in-from-left 1s linear infinite;
-  -o-animation: anim-fade-in-from-left 1s linear infinite;
-  animation: anim-fade-in-from-left 1s linear infinite;
+  -webkit-animation: anim-fade-in-from-left 1s linear 1;
+  -moz-animation: anim-fade-in-from-left 1s linear 1;
+  -o-animation: anim-fade-in-from-left 1s linear 1;
+  animation: anim-fade-in-from-left 1s linear 1;
 }
 @-webkit-keyframes anim-fade-in-from-left {
   0% {
@@ -163,10 +163,10 @@ table.wa45-equivalencies > tbody > tr > td:nth-child(6n + 4) {
   }
 }
 .fade-in-from-right {
-  -webkit-animation: anim-fade-in-from-right 1s linear infinite;
-  -moz-animation: anim-fade-in-from-right 1s linear infinite;
-  -o-animation: anim-fade-in-from-right 1s linear infinite;
-  animation: anim-fade-in-from-right 1s linear infinite;
+  -webkit-animation: anim-fade-in-from-right 1s linear 1;
+  -moz-animation: anim-fade-in-from-right 1s linear 1;
+  -o-animation: anim-fade-in-from-right 1s linear 1;
+  animation: anim-fade-in-from-right 1s linear 1;
 }
 @-webkit-keyframes anim-fade-in-from-right {
   0% {
