@@ -76,7 +76,7 @@ div.banner {
 }
 
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### DIV.SIDEBAR ########################################################################### ║
+ *  ║ #### DIV.SIDEBAR ELEMENTS ################################################################## ║
  *  ╠==============================================================================================╣
  *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
  *  ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
@@ -394,6 +394,28 @@ table.wa45-equivalencies {
             background-color: @hex-white;
         }
     }
+}
+
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### ANIMATIONS ############################################################################ ║
+ *  ╠==============================================================================================╣
+ *  ║ Custom animations for the transfer credit website.                                           ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+.attracts-attention {
+    .rgb-accent-yellow(); background-color: rgba(@rval,@gval,@bval,0.25);
+    padding: .5rem;
+    border: 1px solid @hex-darkest-gray;
+    border-radius: .25rem;
+    .animation(orange-glow; 5s);
+    .keyframes(orange-glow; @rules-orange-glow);
+}
+
+.attracts-attention:hover {
+    .rgb-accent-yellow(); background-color: rgba(@rval,@gval,@bval,1.0);
+    box-shadow: 0 0 18px rgba(@rval,@gval,@bval,0.6667);
+    color: @hex-darkest-gray;
+    .animation(none);
 }
 
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
