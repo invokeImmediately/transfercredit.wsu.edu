@@ -2716,6 +2716,15 @@ div.column .gform_wrapper #extensions_message {
 .oue-gf-actvtr-checkbox.gf-activated {
   display: none !important;
 }
+.oue-gf-actvtr-chain {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.oue-gf-actvtr-chain.gf-hidden {
+  display: none !important;
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### LISTS ################################################################################# ║
  *  ╠==============================================================================================╣
