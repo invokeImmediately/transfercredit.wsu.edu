@@ -960,7 +960,7 @@ div.column .larger-text {
   div.column .large-format-friendly {
     margin-right: auto;
     margin-left: auto;
-    max-width: 700px;
+    max-width: 800px;
   }
 }
 @media (min-width: 891px) and (max-width: 1049px) {
@@ -1254,18 +1254,18 @@ div.column p.article-deck strong {
 }
 div.column p.article-tagline {
   font-family: "Palatino";
-  font-size: 1.6rem;
-  line-height: normal;
-  font-weight: 550;
+  font-size: 1.45rem;
+  line-height: 1.275rem;
+  font-weight: 500;
 }
 @media all and (min-width: 481px) and (max-width: 1049px) {
   div.column p.article-tagline {
-    font-size: 1.4rem;
+    font-size: 1.26875rem;
   }
 }
 @media all and (max-width: 480px) {
   div.column p.article-tagline {
-    font-size: 1.225rem;
+    font-size: 1.11015625rem;
   }
 }
 div.column p.no-bottom-pad {
@@ -1333,7 +1333,7 @@ div.column p.banner-text-gray-with-towers {
   }
 }
 div.column p.banner-text {
-  max-width: 700px;
+  max-width: 800px;
   padding: 7px;
   margin-right: auto;
   margin-left: auto;
@@ -2673,38 +2673,48 @@ div.column .gform_wrapper #extensions_message {
   padding-left: 1rem;
 }
 .oue-gf-rqrd-input input,
-.oue-gf-rqrd-input select {
+.oue-gf-hghlghts-rqrd input,
+.oue-gf-rqrd-input select,
+.oue-gf-hghlghts-rqrd select {
   transition: background 0.3s ease;
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
 }
 .oue-gf-rqrd-input input:focus,
-.oue-gf-rqrd-input select:focus {
+.oue-gf-hghlghts-rqrd input:focus,
+.oue-gf-rqrd-input select:focus,
+.oue-gf-hghlghts-rqrd select:focus {
   background-color: #edf3f4;
 }
-.oue-gf-rqrd-input.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
+.oue-gf-rqrd-input.gfield_contains_required input:not(.gf-value-entered):not(:focus),
+.oue-gf-hghlghts-rqrd.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
   background-color: rgba(255, 0, 0, 0.1);
 }
-.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox {
+.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox,
+.oue-gf-hghlghts-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox {
   transition: background 0.3s ease;
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
 }
-.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox:not(.gf-value-entered) {
+.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox:not(.gf-value-entered),
+.oue-gf-hghlghts-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox:not(.gf-value-entered) {
   background-color: rgba(255, 0, 0, 0.1);
 }
-.oue-gf-rqrd-txtarea textarea {
+.oue-gf-rqrd-txtarea textarea,
+.oue-gf-hghlghts-rqrd-txtarea textarea {
   transition: background 0.3s ease;
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
 }
-.oue-gf-rqrd-txtarea textarea:focus {
+.oue-gf-rqrd-txtarea textarea:focus,
+.oue-gf-hghlghts-rqrd-txtarea textarea:focus {
   background-color: #edf3f4;
 }
-.oue-gf-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered):not(:focus) {
+.oue-gf-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered):not(:focus),
+.oue-gf-hghlghts-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered):not(:focus) {
   background-color: rgba(255, 0, 0, 0.1);
 }
 .oue-gf-actvtr-checkbox {
@@ -2724,6 +2734,44 @@ div.column .gform_wrapper #extensions_message {
 }
 .oue-gf-actvtr-chain.gf-hidden {
   display: none !important;
+}
+.oue-gf-revealed {
+  -webkit-animation: gf-fades-in 0.5s linear 1;
+  -moz-animation: gf-fades-in 0.5s linear 1;
+  -o-animation: gf-fades-in 0.5s linear 1;
+  animation: gf-fades-in 0.5s linear 1;
+}
+@-webkit-keyframes gf-fades-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes gf-fades-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes gf-fades-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes gf-fades-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### LISTS ################################################################################# ║
@@ -2834,13 +2882,13 @@ section.halves div.column p {
     float: none;
     margin-right: auto;
     margin-left: auto;
-    max-width: 700px;
+    max-width: 800px;
   }
 }
 @media (min-width: 891px) and (max-width: 1049px) {
   section.single.large-format-friendly div.column.one,
   section.row.single.large-format-friendly div.column.one {
-    max-width: 700px;
+    max-width: 800px;
   }
 }
 @media all and (min-width: 1051px) {
