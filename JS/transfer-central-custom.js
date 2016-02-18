@@ -66,7 +66,8 @@
                     }
                     if(valuePassed) {                      
                         var $parentNextExtra = $parentOfInput.nextAll(selectorExtra).first();
-                        $thisInput.addClass("gf-value-entered gf_left_half");
+                        $thisInput.addClass("gf-value-entered");
+                        $parentOfInput.addClass("gf_left_half");
                         $parentNextSblngs.first().removeClass("gf-hidden");
                         $parentNextExtra.removeClass("gf-hidden");
                     }
