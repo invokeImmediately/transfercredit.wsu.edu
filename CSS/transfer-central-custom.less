@@ -396,6 +396,27 @@ table.wa45-equivalencies {
     }
 }
 
+.oue-gf-upload-chain-enhncd, .oue-gf-upload-chain-extra {
+    input {
+        .transition(background 0.3s ease);
+        &:focus {
+            background-color: @hex-bright-blue;
+        }
+    }
+    &.gfield_contains_required {
+        input:not(.gf-value-entered):not(:focus) {
+            background-color: rgba(255,0,0,0.1);
+        }
+    }
+    &.gf-hidden {
+        display: none !important;
+    }
+}
+
+.oue-gf-upload-chain-extra.gf_right_half {
+    display: inline-block;
+}
+
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ANIMATIONS ############################################################################ ║
  *  ╠==============================================================================================╣
