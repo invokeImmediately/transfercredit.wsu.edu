@@ -4257,7 +4257,7 @@ table.wa45-equivalencies > tbody > tr + tr > td {
   display: none !important;
 }
 .oue-gf-upload-chain-extra.gf_right_half {
-  display: inline-block;
+  display: inline-block !important;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ANIMATIONS ############################################################################ ║
