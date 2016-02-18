@@ -67,8 +67,8 @@
                     if(valuePassed) {                      
                         var $parentNextExtra = $parentOfInput.nextAll(selectorExtra).first();
                         $thisInput.addClass("gf-value-entered");
-                        $parentOfInput.addClass("gf_left_half");
                         $parentNextSblngs.first().removeClass("gf-hidden");
+                        $parentOfInput.addClass("gf_left_half");
                         $parentNextExtra.removeClass("gf-hidden");
                     }
                     else
