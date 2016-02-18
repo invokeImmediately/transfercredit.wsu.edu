@@ -2738,19 +2738,27 @@ div.column .gform_wrapper #extensions_message {
 .oue-gf-actvtr-chain.gf-hidden {
   display: none !important;
 }
-.oue-gf-upload-chain input {
+.oue-gf-upload-chain input,
+.oue-gf-upload-chain-enhncd input,
+.oue-gf-upload-chain-extra input {
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }
-.oue-gf-upload-chain input:focus {
+.oue-gf-upload-chain input:focus,
+.oue-gf-upload-chain-enhncd input:focus,
+.oue-gf-upload-chain-extra input:focus {
   background-color: #edf3f4;
 }
-.oue-gf-upload-chain.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
+.oue-gf-upload-chain.gfield_contains_required input:not(.gf-value-entered):not(:focus),
+.oue-gf-upload-chain-enhncd.gfield_contains_required input:not(.gf-value-entered):not(:focus),
+.oue-gf-upload-chain-extra.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
   background-color: rgba(255, 0, 0, 0.1);
 }
-.oue-gf-upload-chain.gf-hidden {
+.oue-gf-upload-chain.gf-hidden,
+.oue-gf-upload-chain-enhncd.gf-hidden,
+.oue-gf-upload-chain-extra.gf-hidden {
   display: none !important;
 }
 .oue-gf-revealed {
