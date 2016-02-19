@@ -29,8 +29,10 @@
                 if($nextDiv.length > 0) {
                     $thisInput.addClass("gf-value-entered");
                     var $parentOfInput = $thisInput.parents(selector).first();
-                    $parentOfInput.removeClass("gf-hidden");
+                    var $parentNextExtra = $parentOfInput.nextAll(selectorExtra).first();
                     var $parentNextSblngs = $parentOfInput.nextAll(selector).first();
+                    $parentOfInput.removeClass("gf-hidden");
+                    $parentNextExtra.removeClass("gf-hidden");
                     $parentNextSblngs.removeClass("gf-hidden");
                 }
             });
