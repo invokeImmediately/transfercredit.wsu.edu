@@ -32,6 +32,7 @@
                     var $parentNextExtra = $parentOfInput.nextAll(selectorExtra).first();
                     var $parentNextSblngs = $parentOfInput.nextAll(selector).first();
                     $parentOfInput.removeClass("gf-hidden");
+                    $parentOfInput.addClass("gf_left_half");
                     $parentNextExtra.removeClass("gf-hidden");
                     $parentNextSblngs.removeClass("gf-hidden");
                 }
