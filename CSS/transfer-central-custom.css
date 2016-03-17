@@ -4256,8 +4256,13 @@ table.wa45-equivalencies > tbody > tr + tr > td {
 .oue-gf-upload-chain-extra.gf-hidden {
   display: none !important;
 }
-.oue-gf-upload-chain-extra.gf_right_half {
+.oue-gf-upload-chain-extra.gf_right_half,
+.oue-gf-upload-chain-enhncd.gf_left_half {
   display: inline-block !important;
+}
+.oue-gf-upload-chain-extra.gf_right_half.gf-hidden,
+.oue-gf-upload-chain-enhncd.gf_left_half.gf-hidden {
+  display: none !important;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ANIMATIONS ############################################################################ ║
