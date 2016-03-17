@@ -78,7 +78,7 @@ div.column {
 // ║ Containers designed to be used as custom sidebars within a div.column element.               ║
 // ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
 // ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
-div.column ul li { list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png); }
+div.column ul:not(.checklist-flowchart) li { list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png); }
 
 div.column.two.transfer-links {
     @media screen and (max-width: @v-rghtclmn-thrshld) {
@@ -96,6 +96,7 @@ div.column ul.checklist-flowchart {
 
 div.column ul.checklist-flowchart {
     & > li {
+        min-height: 150px;
         color: @hex-white;
         .rgb-black(); text-shadow: 0 1px 0 rgba(@rval, @gval, @bval, 0.2);
         & > h3:first-child {
@@ -108,8 +109,7 @@ div.column ul.checklist-flowchart {
             .rgb-black(); text-shadow: 0 2px 0 rgba(@rval, @gval, @bval, 0.2);
         }
         & > p {
-            padding-right: 0.5rem;
-             padding-left: 0.5rem;
+            padding: 0.5rem;
             color: inherit;
         }
         &:nth-child(7n + 1) {
@@ -148,7 +148,7 @@ div.column ul.checklist-flowchart {
                 background-color: #da425b;
             }
         }
-        &:nth-child(7n + 7) {
+        &:nth-child(7n) {
             background-color: @hex-crimson-scale-lightest;
             & > h3:first-child {
                 background-color: #de586e;
