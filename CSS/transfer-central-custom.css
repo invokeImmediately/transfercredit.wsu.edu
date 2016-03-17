@@ -2288,11 +2288,13 @@ div.recent-updates p.recent-update-3 {
 ul.external-links li {
   list-style-image: url(/wp-content/uploads/sites/906/2015/08/external-link-bullet.png);
 }
-ul.content-boxes {
+ul.content-boxes,
+ul.checklist-flowchart {
   padding-right: 0;
   padding-left: 0;
 }
-ul.content-boxes > li {
+ul.content-boxes > li,
+ul.checklist-flowchart > li {
   position: relative;
   min-height: 320px;
   border-radius: 4px;
@@ -2303,28 +2305,33 @@ ul.content-boxes > li {
   list-style-type: none;
 }
 @media all and (max-width: 1205px) {
-  ul.content-boxes > li {
+  ul.content-boxes > li,
+  ul.checklist-flowchart > li {
     overflow-x: scroll;
   }
 }
-ul.content-boxes > li p.email {
+ul.content-boxes > li p.email,
+ul.checklist-flowchart > li p.email {
   font-size: 0.9em;
   font-weight: bold;
 }
-ul.content-boxes > li > img {
+ul.content-boxes > li > img,
+ul.checklist-flowchart > li > img {
   position: absolute;
   top: 10px;
   left: 10px;
   width: 106px;
 }
-ul.content-boxes > li > div.content {
+ul.content-boxes > li > div.content,
+ul.checklist-flowchart > li > div.content {
   position: relative;
   left: 121px;
   width: calc(100% - 136px);
   min-width: 189px;
   padding: 10px 10px 10px 5px;
 }
-ul.content-boxes > li + li {
+ul.content-boxes > li + li,
+ul.checklist-flowchart > li + li {
   margin-top: 2rem;
 }
 a.vpue-tooltip {
@@ -3849,6 +3856,68 @@ div.column ul li {
   div.column.two.transfer-links ul li {
     list-style: none;
   }
+}
+ul.checklist-flowchart > li {
+  color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+ul.checklist-flowchart > li > h3:first-child {
+  padding: 0.5rem;
+  margin: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  color: #ffffff;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+ul.checklist-flowchart > li > p {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: inherit;
+}
+ul.checklist-flowchart > li:nth-child(7n + 1) {
+  background-color: #58111d;
+}
+ul.checklist-flowchart > li:nth-child(7n + 1) > h3:first-child {
+  background-color: #83192b;
+}
+ul.checklist-flowchart > li:nth-child(7n + 2) {
+  background-color: #6d1624;
+}
+ul.checklist-flowchart > li:nth-child(7n + 2) > h3:first-child {
+  background-color: #971f32;
+}
+ul.checklist-flowchart > li:nth-child(7n + 3) {
+  background-color: #831a2b;
+}
+ul.checklist-flowchart > li:nth-child(7n + 3) > h3:first-child {
+  background-color: #ae2239;
+}
+ul.checklist-flowchart > li:nth-child(7n + 4) {
+  background-color: #981e32;
+}
+ul.checklist-flowchart > li:nth-child(7n + 4) > h3:first-child {
+  background-color: #c32640;
+}
+ul.checklist-flowchart > li:nth-child(7n + 5) {
+  background-color: #ad2239;
+}
+ul.checklist-flowchart > li:nth-child(7n + 5) > h3:first-child {
+  background-color: #d62c48;
+}
+ul.checklist-flowchart > li:nth-child(7n + 6) {
+  background-color: #c32640;
+}
+ul.checklist-flowchart > li:nth-child(7n + 6) > h3:first-child {
+  background-color: #da425b;
+}
+ul.checklist-flowchart > li:nth-child(7n + 7) {
+  background-color: #d62d49;
+}
+ul.checklist-flowchart > li:nth-child(7n + 7) > h3:first-child {
+  background-color: #de586e;
+  color: #000000;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.2);
 }
 div.banner.campus-contacts {
   margin-bottom: 1rem;
