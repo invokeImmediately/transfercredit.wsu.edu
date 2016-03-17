@@ -3846,7 +3846,7 @@ div.column aside.article-sidebar {
 div.column aside.article-sidebar p {
   font-size: inherit;
 }
-div.column ul li {
+div.column ul:not(.checklist-flowchart) li {
   list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png);
 }
 @media screen and (max-width: 693px) {
@@ -3858,6 +3858,7 @@ div.column ul li {
   }
 }
 div.column ul.checklist-flowchart > li {
+  min-height: 150px;
   color: #ffffff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
@@ -3871,8 +3872,7 @@ div.column ul.checklist-flowchart > li > h3:first-child {
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 div.column ul.checklist-flowchart > li > p {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding: 0.5rem;
   color: inherit;
 }
 div.column ul.checklist-flowchart > li:nth-child(7n + 1) {
@@ -3911,10 +3911,10 @@ div.column ul.checklist-flowchart > li:nth-child(7n + 6) {
 div.column ul.checklist-flowchart > li:nth-child(7n + 6) > h3:first-child {
   background-color: #da425b;
 }
-div.column ul.checklist-flowchart > li:nth-child(7n + 7) {
+div.column ul.checklist-flowchart > li:nth-child(7n) {
   background-color: #d62d49;
 }
-div.column ul.checklist-flowchart > li:nth-child(7n + 7) > h3:first-child {
+div.column ul.checklist-flowchart > li:nth-child(7n) > h3:first-child {
   background-color: #de586e;
   color: #000000;
   text-shadow: 0 2px 0 rgba(255, 255, 255, 0.2);
