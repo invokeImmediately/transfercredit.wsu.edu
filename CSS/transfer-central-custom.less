@@ -1,12 +1,13 @@
 @import "..\WSU-UE---CSS\wp-master-style-sheet.less";
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### TRANSFER CREDIT CUSTOM THEME --- BACKGROUNDS ########################################## ║
- *  ╠==============================================================================================╣
- *  ║ Custom styling, unique to the Transfer Credit website, of elements associated with the       ║
- *  ║ WordPress WSU Spine Theme.                                                                   ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+// ║ #### TRANSFER CREDIT CUSTOM THEME ########################################################## ║
+// ╠==============================================================================================╣
+// ║ Custom styling, unique to the Transfer Credit website, of elements associated with the       ║
+// ║ WordPress WSU Spine Theme.                                                                   ║
+// ╠══════════════════════════════════════════════════════════════════════════════════════════════╣
+// ║ #### BACKGROUNDS ########################################################################### ║
+// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
 body {
     @media screen {
         @media (max-width: (@v-wdscrn-bckgrnd - 1)) {
@@ -16,7 +17,6 @@ body {
             background: @hex-crimson url(/wp-content/uploads/sites/917/2015/11/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed.jpg) left top fixed repeat;
         }
     }
-    font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 }
 
 main {
@@ -38,8 +38,8 @@ main {
 
 
 header.main-header {
+    &:extend(.has-dflt-font);
     background: @hex-darker-gray url(/wp-content/uploads/sites/917/2015/11/header-background.png) left center no-repeat;
-    font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
     color: #fff !important;
     text-shadow: .5px .5px 1px #000;
 }
@@ -48,13 +48,54 @@ header.main-header {
     color: #fff !important;
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### BANNER IMAGES ######################################################################### ║
- *  ╠==============================================================================================╣
- *  ║ Style definitions of distinctive banner images that serve to artfully and responsively       ║
- *  ║ distinguish each page on the transfer credit website.                                        ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+// ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
+// ╠==============================================================================================╣
+// ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+// ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
+// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+div.column {
+	aside.article-sidebar {
+		float: right;
+		width: 33%;
+		padding: .8rem;
+		margin-bottom: 1rem;
+		 margin-left: 1rem;
+		background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
+		border: 1px solid #6d441f;
+		box-shadow: 1px 1px 2px rgba(109,68,31,0.5);
+		font-size: .8rem;
+		color: #464e54;
+		p {
+			font-size: inherit;
+		}
+	}
+}
+
+// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+// ║ #### LIST STYLES ########################################################################### ║
+// ╠==============================================================================================╣
+// ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+// ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
+// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+div.column ul li { list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png); }
+
+div.column.two.transfer-links {
+    @media screen and (max-width: @v-rghtclmn-thrshld) {
+        background-color: @hex-bright-gray;
+        h4, h3, p, ul { &:extend(.centered); }
+        ul li{
+            list-style: none;
+        }
+    }
+}
+
+// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+// ║ #### DIV.BANNER IMAGES ##################################################################### ║
+// ╠==============================================================================================╣
+// ║ Style definitions of distinctive banner images that serve to artfully and responsively       ║
+// ║ distinguish each page on the transfer credit website.                                        ║
+// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
 div.banner {
     &.campus-contacts {
         margin-bottom: (@v-dflt-spcng / 2);
@@ -75,13 +116,12 @@ div.banner {
     }
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### DIV.SIDEBAR ELEMENTS ################################################################## ║
- *  ╠==============================================================================================╣
- *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
- *  ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+// ║ #### DIV.SIDEBAR ELEMENTS ################################################################## ║
+// ╠==============================================================================================╣
+// ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+// ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
+// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
 // TODO: Rename these classes to follow the pattern: .sidebar.green-marble ■
 // TODO: Pull these classes into an imported *.LESS file ■
 div.green-marble-sidebar {
@@ -96,6 +136,7 @@ div.green-marble-sidebar {
 	font-size: .9em;
 	color: #2a3033;
 }
+
 div.bluish-gray-acrylic-sidebar {
 	background: #edf3f4 url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
 	background-size: 100% auto;
@@ -110,6 +151,7 @@ div.bluish-gray-acrylic-sidebar {
 	padding-right: 1rem;
 	padding-bottom: 1rem;
 }
+
 div.gray-acrylic-sidebar {
 	padding-top: 1rem;
 	 padding-right: 1rem;
@@ -124,6 +166,7 @@ div.gray-acrylic-sidebar {
 	font-size: .9em;
 	color: #2a3033;
 }
+
 div.bluish-gray-acrylic-sidebar, div.green-marble-sidebar, div.gray-acrylic-sidebar {
 	p {
 		font-size: .75rem;
@@ -146,55 +189,11 @@ div.bluish-gray-acrylic-sidebar, div.green-marble-sidebar, div.gray-acrylic-side
 	}*/
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
- *  ╠==============================================================================================╣
- *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
- *  ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
-div.column {
-	aside.article-sidebar {
-		float: right;
-		width: 33%;
-		padding: .8rem;
-		margin-bottom: 1rem;
-		 margin-left: 1rem;
-		background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
-		border: 1px solid #6d441f;
-		box-shadow: 1px 1px 2px rgba(109,68,31,0.5);
-		font-size: .8rem;
-		color: #464e54;
-		p {
-			font-size: inherit;
-		}
-	}
-}
-
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### LIST STYLES ########################################################################### ║
- *  ╠==============================================================================================╣
- *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
- *  ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
-div.column ul li { list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png); }
-div.column.two.transfer-links {
-    @media screen and (max-width: @v-rghtclmn-thrshld) {
-        background-color: @hex-bright-gray;
-        h4, h3, p, ul { &:extend(.centered); }
-        ul li{
-            list-style: none;
-        }
-    }
-}
-
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### TABLES ################################################################################ ║
- *  ╠==============================================================================================╣
- *  ║ Classes for styling tables specific to transfer credit clearinghouse.                        ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+// ║ #### TABLES ################################################################################ ║
+// ╠==============================================================================================╣
+// ║ Classes for styling tables specific to transfer credit clearinghouse.                        ║
+// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
 div.wrapper.military-credit {
     width: 100%;
     @media all and (max-width: 979px) {
@@ -369,12 +368,11 @@ table.wa45-equivalencies {
     }
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### GRAVITY FORM FIELDS ################################################################### ║
- *  ╠==============================================================================================╣
- *  ║ Classes for styling elements associated with gravity forms.                                  ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+// ║ #### GRAVITY FORM FIELDS ################################################################### ║
+// ╠==============================================================================================╣
+// ║ Classes for styling elements associated with gravity forms.                                  ║
+// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
 .ugrf-general-reqd {
     transition: background 0.5s ease;
      -webkit-transition: background 0.5s ease;
@@ -413,16 +411,18 @@ table.wa45-equivalencies {
     }
 }
 
-.oue-gf-upload-chain-extra.gf_right_half {
+.oue-gf-upload-chain-extra.gf_right_half, .oue-gf-upload-chain-enhncd.gf_left_half {
     display: inline-block !important;
+    &.gf-hidden {
+        display: none !important;
+    }
 }
 
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### ANIMATIONS ############################################################################ ║
- *  ╠==============================================================================================╣
- *  ║ Custom animations for the transfer credit website.                                           ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
+// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+// ║ #### ANIMATIONS ############################################################################ ║
+// ╠==============================================================================================╣
+// ║ Custom animations for the transfer credit website.                                           ║
+// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
 div.column .attracts-attention {
     .rgb-accent-yellow(); background-color: rgba(@rval,@gval,@bval,0.25);
     padding: .5rem;
@@ -438,14 +438,12 @@ div.column .attracts-attention {
     }
 }
 
-
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### ACCORDION ############################################################################# ║
- *  ╠==============================================================================================╣
- *  ║ Inherited from the original custom CSS file present before VPUE development began.           ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
-/* ----------- ACCORDION ------------ */
+// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+// ║ #### ACCORDION ############################################################################# ║
+// ╠==============================================================================================╣
+// ║ Inherited from the original custom CSS file present before VPUE development began.           ║
+// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+// ----------- ACCORDION ------------
 .ui-accordion-header-icon {
 	display: inline-block;
 }
