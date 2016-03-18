@@ -78,7 +78,9 @@ div.column {
 // ║ Containers designed to be used as custom sidebars within a div.column element.               ║
 // ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
 // ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
-div.column ul:not(.checklist-flowchart) li { list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png); }
+div.column ul:not(.checklist-flowchart):not(ul.campus-links) li {
+    list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png);
+}
 
 div.column.two.transfer-links {
     @media screen and (max-width: @v-rghtclmn-thrshld) {
@@ -100,7 +102,7 @@ div.column ul.checklist-flowchart {
         color: @hex-white;
         .rgb-black(); text-shadow: 0 1px 0 rgba(@rval, @gval, @bval, 0.2);
         @media all and (max-width: @v-bckgrnd-thrshld) {
-            overflow-x: none;
+            overflow-x: visible;
         }
         & > h3:first-child {
             padding: 0.5rem;
@@ -200,8 +202,69 @@ div.column ul.checklist-flowchart {
                 background-color: #de586e;
             }
         }
-//        & > ul.campus-links {
-//        }
+        & > ul.campus-links {
+            margin-top: (@v-dflt-spcng / 2);
+            text-align: center;
+            &:last-child { padding-bottom: 0; }
+            & > li {
+                display: inline-block;
+                position: relative;
+                height: 80px;
+                width: 80px;
+                margin-bottom: (@v-dflt-spcng / 2);
+                margin-right: (@v-dflt-spcng / 2);
+                .rgb-white(); border: 1px solid rgba(@rval, @gval, @bval, 0);
+                border-radius: 4px;
+                background-size: 100% 100%;
+                font-family: 'Open Sans Condensed';
+                & > a {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                .transition(all 0.3s ease);
+                &.pullman {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_dormant.jpg);
+                    &:hover {
+                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_active.jpg);
+                    }
+                }
+                &.spokane {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_dormant.jpg);
+                    &:hover {
+                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_active.jpg);
+                    }
+                }
+                &.tri-cities {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_dormant.jpg);
+                    &:hover {
+                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_active.jpg);
+                    }
+                }
+                &.vancouver {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_dormant.jpg);
+                    &:hover {
+                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_active.jpg);
+                    }
+                }
+                &.global {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_dormant.jpg);
+                    &:hover {
+                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_active.jpg);
+                    }
+                }
+                &.everett {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_dormant.jpg);
+                    &:hover {
+                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_active.jpg);
+                    }
+                }
+            }
+            & > li:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.everett) {
+                display: none;
+            }
+        }
     }
 }
 
