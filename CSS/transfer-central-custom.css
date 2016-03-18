@@ -4010,19 +4010,39 @@ div.column ul.checklist-flowchart > li > ul.campus-links > li {
   width: 80px;
   margin-bottom: 1rem;
   margin-right: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0);
+  padding-bottom: 0;
   border-radius: 4px;
   background-size: 100% 100%;
   font-family: 'Open Sans Condensed';
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li > a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li > a:hover {
+  background: none;
+  border: none;
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li > a:hover:after {
+  color: #c60c30;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 1px 0 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.5), -1px 0 0 rgba(0, 0, 0, 0.5);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li > a:after {
+  content: "Pullman";
   position: absolute;
+  color: #ffffff;
   left: 50%;
   top: 50%;
+  line-height: 1.1em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 1px 0 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.5), -1px 0 0 rgba(0, 0, 0, 0.5);
   transform: translate(-50%, -50%);
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li.pullman {
@@ -4034,11 +4054,17 @@ div.column ul.checklist-flowchart > li > ul.campus-links > li.pullman:hover {
 div.column ul.checklist-flowchart > li > ul.campus-links > li.spokane {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_dormant.jpg);
 }
+div.column ul.checklist-flowchart > li > ul.campus-links > li.spokane > a:after {
+  content: "Spokane";
+}
 div.column ul.checklist-flowchart > li > ul.campus-links > li.spokane:hover {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_active.jpg);
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li.tri-cities {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.tri-cities > a:after {
+  content: "Tri-Cities";
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li.tri-cities:hover {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_active.jpg);
@@ -4046,17 +4072,26 @@ div.column ul.checklist-flowchart > li > ul.campus-links > li.tri-cities:hover {
 div.column ul.checklist-flowchart > li > ul.campus-links > li.vancouver {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_dormant.jpg);
 }
+div.column ul.checklist-flowchart > li > ul.campus-links > li.vancouver > a:after {
+  content: "Vancouver";
+}
 div.column ul.checklist-flowchart > li > ul.campus-links > li.vancouver:hover {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_active.jpg);
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li.global {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_dormant.jpg);
 }
+div.column ul.checklist-flowchart > li > ul.campus-links > li.global > a:after {
+  content: "Global Campus";
+}
 div.column ul.checklist-flowchart > li > ul.campus-links > li.global:hover {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_active.jpg);
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li.everett {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.everett > a:after {
+  content: "North Pudget Sound (Everett)";
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li.everett:hover {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_active.jpg);
