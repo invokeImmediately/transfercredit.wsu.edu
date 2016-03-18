@@ -2307,7 +2307,7 @@ div.column ul.checklist-flowchart > li {
 @media all and (max-width: 1205px) {
   ul.content-boxes > li,
   div.column ul.checklist-flowchart > li {
-    overflow-x: visible;
+    overflow-x: scroll;
   }
 }
 ul.content-boxes > li p.email,
@@ -3846,7 +3846,7 @@ div.column aside.article-sidebar {
 div.column aside.article-sidebar p {
   font-size: inherit;
 }
-div.column ul:not(.checklist-flowchart) li {
+div.column ul:not(.checklist-flowchart):not(ul.campus-links) li {
   list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png);
 }
 @media screen and (max-width: 693px) {
@@ -3864,7 +3864,7 @@ div.column ul.checklist-flowchart > li {
 }
 @media all and (max-width: 1205px) {
   div.column ul.checklist-flowchart > li {
-    overflow-x: none;
+    overflow-x: visible;
   }
 }
 div.column ul.checklist-flowchart > li > h3:first-child {
@@ -3995,6 +3995,74 @@ div.column ul.checklist-flowchart > li:nth-child(7n) {
 }
 div.column ul.checklist-flowchart > li:nth-child(7n) > h3:first-child {
   background-color: #de586e;
+}
+div.column ul.checklist-flowchart > li > ul.campus-links {
+  margin-top: 1rem;
+  text-align: center;
+}
+div.column ul.checklist-flowchart > li > ul.campus-links:last-child {
+  padding-bottom: 0;
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li {
+  display: inline-block;
+  position: relative;
+  height: 80px;
+  width: 80px;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 4px;
+  background-size: 100% 100%;
+  font-family: 'Open Sans Condensed';
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li > a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.pullman {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.pullman:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.spokane {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.spokane:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.tri-cities {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.tri-cities:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.vancouver {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.vancouver:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.global {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.global:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.everett {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li.everett:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.campus-links > li:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.everett) {
+  display: none;
 }
 div.banner.campus-contacts {
   margin-bottom: 1rem;
