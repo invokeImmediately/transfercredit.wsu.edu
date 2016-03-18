@@ -99,6 +99,9 @@ div.column ul.checklist-flowchart {
         min-height: 150px;
         color: @hex-white;
         .rgb-black(); text-shadow: 0 1px 0 rgba(@rval, @gval, @bval, 0.2);
+        @media all and (max-width: @v-bckgrnd-thrshld) {
+            overflow-x: none;
+        }
         & > h3:first-child {
             padding: 0.5rem;
             margin: 0;
@@ -106,56 +109,99 @@ div.column ul.checklist-flowchart {
             border-top-left-radius: 4px;
              border-top-right-radius: 4px;
             color: @hex-white;
-            .rgb-black(); text-shadow: 0 2px 0 rgba(@rval, @gval, @bval, 0.2);
+            .rgb-black(); text-shadow:
+             0 1px 0 rgba(0,0,0,.5), 1px 0 0 rgba(0,0,0,.5), 0 -1px 0 rgba(0,0,0,.5), -1px 0 0 rgba(0,0,0,.5);
+            letter-spacing: 0.5px;
+            line-height: 1.2em;
+            text-transform: none;
         }
         & > p {
             padding: 0.5rem;
             color: inherit;
+            &:last-child { padding-bottom: 0.5rem; }
+        }
+        & + li {
+            margin-top: 96px;
+        }
+        &:not(:nth-child(7n)):after {
+            content: "";
+            height:32px;
+            width:32px;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            .transform(translate3d(-16px,16px,0));
+        }
+        &:not(:nth-child(7n)):before {
+            content: " ";
+            height:0px;
+            width:0px;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            .transform(translate3d(0,48px,0));
+            border: solid transparent;
+            .rgb-dark-gray(); border-color: rgba(@rval, @gval, @bval, 0);
+            border-width: 32px;
+            margin-left: -32px;
+            pointer-events: none;
         }
         &:nth-child(7n + 1) {
             background-color: @hex-crimson-scale-darkest;
             & > h3:first-child {
                 background-color: #83192b;
             }
+            &:before { border-top-color: #3b4347; }
+            &:after { background-color: #3b4347; }
         }
         &:nth-child(7n + 2) {
             background-color: @hex-crimson-scale-darker;
             & > h3:first-child {
                 background-color: #971f32;
             }
+            &:before { border-top-color: #475055; }
+            &:after { background-color: #475055; }
         }
         &:nth-child(7n + 3) {
             background-color: @hex-crimson-scale-dark;
             & > h3:first-child {
                 background-color: #ae2239;
             }
+            &:before { border-top-color: #525d63; }
+            &:after { background-color: #525d63; }
         }
         &:nth-child(7n + 4) {
             background-color: @hex-crimson;
             & > h3:first-child {
                 background-color: #c32640;
             }
+            &:before { border-top-color: @hex-dark-gray; }
+            &:after { background-color: @hex-dark-gray; }
         }
         &:nth-child(7n + 5) {
             background-color: @hex-crimson-scale-light;
             & > h3:first-child {
                 background-color: #d62c48;
             }
+            &:before { border-top-color: #6a777f; }
+            &:after { background-color: #6a777f; }
         }
         &:nth-child(7n + 6) {
             background-color: @hex-crimson-scale-lighter;
             & > h3:first-child {
                 background-color: #da425b;
             }
+            &:before { border-top-color: #75848d; }
+            &:after { background-color: #75848d; }
         }
         &:nth-child(7n) {
             background-color: @hex-crimson-scale-lightest;
             & > h3:first-child {
                 background-color: #de586e;
-                color: @hex-black;
-                .rgb-white(); text-shadow: 0 2px 0 rgba(@rval, @gval, @bval, 0.2);
             }
         }
+//        & > ul.campus-links {
+//        }
     }
 }
 
