@@ -25,8 +25,8 @@ main {
 
 #binder {
     @media screen and (min-width: (@v-wdscrn-bckgrnd)) {
-        .rgb-black(); border-right: 1px solid rgba(@rval, @rval, @bval,0.9);
-        box-shadow: 5px 0px 5px rgba(@rval, @rval, @bval, 0.5);
+        .rgb-black(); border-right: 1px solid rgba(@rval, @rval, @bval,0.7);
+        box-shadow: 5px 0px 8px rgba(@rval, @rval, @bval, 0.5);
     }
 }
 
@@ -202,7 +202,7 @@ div.column ul.checklist-flowchart {
                 background-color: #de586e;
             }
         }
-        & > ul.campus-links {
+        & > ul.campus-links, & > ul.admissions-links {
             margin-top: (@v-dflt-spcng / 2);
             text-align: center;
             &:last-child { padding-bottom: 0; }
@@ -246,49 +246,106 @@ div.column ul.checklist-flowchart {
                         transform: translate(-50%, -50%);
                     }
                 }
-                &.pullman {
-                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_dormant.jpg);
-                    &:hover {
-                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_active.jpg);
-                    }
-                }
-                &.spokane {
-                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_dormant.jpg);
-                    & > a:after { content: "Spokane"; }
-                    &:hover {
-                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_active.jpg);
-                    }
-                }
-                &.tri-cities {
-                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_dormant.jpg);
-                    & > a:after { content: "Tri-Cities"; }
-                    &:hover {
-                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_active.jpg);
-                    }
-                }
-                &.vancouver {
-                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_dormant.jpg);
-                    & > a:after { content: "Vancouver"; }
-                    &:hover {
-                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_active.jpg);
-                    }
-                }
-                &.global {
-                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_dormant.jpg);
-                    & > a:after { content: "Global Campus"; }
-                    &:hover {
-                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_active.jpg);
-                    }
-                }
-                &.everett {
-                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_dormant.jpg);
-                    & > a:after { content: "North Pudget Sound (Everett)"; }
-                    &:hover {
-                        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_active.jpg);
-                    }
+            }
+        }
+        & > ul.campus-links > li {
+            &.pullman {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_dormant.jpg);
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_active.jpg);
                 }
             }
-            & > li:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.everett) {
+            &.spokane {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_dormant.jpg);
+                & > a:after { content: "Spokane"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_active.jpg);
+                }
+            }
+            &.tri-cities {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_dormant.jpg);
+                & > a:after { content: "Tri-Cities"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_active.jpg);
+                }
+            }
+            &.vancouver {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_dormant.jpg);
+                & > a:after { content: "Vancouver"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_active.jpg);
+                }
+            }
+            &.global {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_dormant.jpg);
+                & > a:after { content: "Global Campus"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_active.jpg);
+                }
+            }
+            &.everett {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_dormant.jpg);
+                & > a:after { content: "North Pudget Sound (Everett)"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_active.jpg);
+                }
+            }
+            &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.everett) {
+                display: none;
+            }
+        }
+        & > ul.admissions-links > li {
+            height: 100px;
+            width: 100px;
+            &.pullman {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_pullman_dormant.jpg);
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_pullman_active.jpg);
+                }
+            }
+            &.spokane {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_spokane_dormant.jpg);
+                & > a:after { content: "Spokane"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_spokane_active.jpg);
+                }
+            }
+            &.tri-cities {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_tri-cities_dormant.jpg);
+                & > a:after { content: "Tri-Cities"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_tri-cities_active.jpg);
+                }
+            }
+            &.vancouver {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_vancouver_dormant.jpg);
+                & > a:after { content: "Vancouver"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_vancouver_active.jpg);
+                }
+            }
+            &.global {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_global_dormant.jpg);
+                & > a:after { content: "Global Campus"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_global_active.jpg);
+                }
+            }
+            &.international {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_international_dormant.jpg);
+                & > a:after { content: "International"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_international_active.jpg);
+                }
+            }
+            &.everett {
+                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_everett_dormant.jpg);
+                & > a:after { content: "North Pudget Sound (Everett)"; }
+                &:hover {
+                    background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_everett_active.jpg);
+                }
+            }
+            &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
                 display: none;
             }
         }
