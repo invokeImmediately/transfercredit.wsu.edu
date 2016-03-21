@@ -203,7 +203,7 @@ div.column ul.checklist-flowchart {
             }
         }
         & > ul.campus-links, & > ul.admissions-links, & > ul.apply-links, & > ul.online-tools-links,
-         & > ul.next-steps-links {
+         & > ul.next-steps-links, ul.campus-resource-links {
             margin-top: (@v-dflt-spcng / 2);
             text-align: center;
             &:last-child { padding-bottom: 0; }
@@ -216,9 +216,13 @@ div.column ul.checklist-flowchart {
                 margin-right: (@v-dflt-spcng / 2);
                 padding-bottom: 0;
                 border-radius: 4px;
+                background-color: @hex-darker-gray;
                 background-size: 100% 100%;
                 font-family: 'Open Sans Condensed';
                 .transition(all 0.4s ease);
+                &:hover {
+                    background-color: @hex-bright-gray;
+                }
                 & > a {
                     display: inline-block;
                     position: relative;
