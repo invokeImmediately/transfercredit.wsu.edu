@@ -4000,7 +4000,8 @@ div.column ul.checklist-flowchart > li > ul.campus-links,
 div.column ul.checklist-flowchart > li > ul.admissions-links,
 div.column ul.checklist-flowchart > li > ul.apply-links,
 div.column ul.checklist-flowchart > li > ul.online-tools-links,
-div.column ul.checklist-flowchart > li > ul.next-steps-links {
+div.column ul.checklist-flowchart > li > ul.next-steps-links,
+div.column ul.checklist-flowchart > li ul.campus-resource-links {
   margin-top: 1rem;
   text-align: center;
 }
@@ -4008,14 +4009,16 @@ div.column ul.checklist-flowchart > li > ul.campus-links:last-child,
 div.column ul.checklist-flowchart > li > ul.admissions-links:last-child,
 div.column ul.checklist-flowchart > li > ul.apply-links:last-child,
 div.column ul.checklist-flowchart > li > ul.online-tools-links:last-child,
-div.column ul.checklist-flowchart > li > ul.next-steps-links:last-child {
+div.column ul.checklist-flowchart > li > ul.next-steps-links:last-child,
+div.column ul.checklist-flowchart > li ul.campus-resource-links:last-child {
   padding-bottom: 0;
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li,
 div.column ul.checklist-flowchart > li > ul.apply-links > li,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li,
-div.column ul.checklist-flowchart > li > ul.next-steps-links > li {
+div.column ul.checklist-flowchart > li > ul.next-steps-links > li,
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li {
   display: inline-block;
   position: relative;
   height: 80px;
@@ -4024,6 +4027,7 @@ div.column ul.checklist-flowchart > li > ul.next-steps-links > li {
   margin-right: 1rem;
   padding-bottom: 0;
   border-radius: 4px;
+  background-color: #464e54;
   background-size: 100% 100%;
   font-family: 'Open Sans Condensed';
   -webkit-transition: all 0.4s ease;
@@ -4031,11 +4035,20 @@ div.column ul.checklist-flowchart > li > ul.next-steps-links > li {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+div.column ul.checklist-flowchart > li > ul.campus-links > li:hover,
+div.column ul.checklist-flowchart > li > ul.admissions-links > li:hover,
+div.column ul.checklist-flowchart > li > ul.apply-links > li:hover,
+div.column ul.checklist-flowchart > li > ul.online-tools-links > li:hover,
+div.column ul.checklist-flowchart > li > ul.next-steps-links > li:hover,
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li:hover {
+  background-color: #eff0f1;
+}
 div.column ul.checklist-flowchart > li > ul.campus-links > li > a,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li > a,
 div.column ul.checklist-flowchart > li > ul.apply-links > li > a,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li > a,
-div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a {
+div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a,
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a {
   display: inline-block;
   position: relative;
   width: 100%;
@@ -4047,7 +4060,8 @@ div.column ul.checklist-flowchart > li > ul.campus-links > li > a:hover,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li > a:hover,
 div.column ul.checklist-flowchart > li > ul.apply-links > li > a:hover,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li > a:hover,
-div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a:hover {
+div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a:hover,
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a:hover {
   background: none;
   border: none;
 }
@@ -4055,7 +4069,8 @@ div.column ul.checklist-flowchart > li > ul.campus-links > li > a:hover:after,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li > a:hover:after,
 div.column ul.checklist-flowchart > li > ul.apply-links > li > a:hover:after,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li > a:hover:after,
-div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a:hover:after {
+div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a:hover:after,
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a:hover:after {
   color: #c60c30;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 1px 0 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.5), -1px 0 0 rgba(0, 0, 0, 0.5);
 }
@@ -4063,7 +4078,8 @@ div.column ul.checklist-flowchart > li > ul.campus-links > li > a:after,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li > a:after,
 div.column ul.checklist-flowchart > li > ul.apply-links > li > a:after,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li > a:after,
-div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a:after {
+div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a:after,
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a:after {
   content: "Pullman";
   position: absolute;
   color: #ffffff;
