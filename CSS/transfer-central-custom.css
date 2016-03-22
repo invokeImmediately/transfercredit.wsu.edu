@@ -4001,7 +4001,8 @@ div.column ul.checklist-flowchart > li > ul.admissions-links,
 div.column ul.checklist-flowchart > li > ul.apply-links,
 div.column ul.checklist-flowchart > li > ul.online-tools-links,
 div.column ul.checklist-flowchart > li > ul.next-steps-links,
-div.column ul.checklist-flowchart > li ul.campus-resource-links {
+div.column ul.checklist-flowchart > li ul.campus-resource-links,
+div.column ul.checklist-flowchart > li ul.complete-requirements-links {
   margin-top: 1rem;
   text-align: center;
 }
@@ -4010,7 +4011,8 @@ div.column ul.checklist-flowchart > li > ul.admissions-links:last-child,
 div.column ul.checklist-flowchart > li > ul.apply-links:last-child,
 div.column ul.checklist-flowchart > li > ul.online-tools-links:last-child,
 div.column ul.checklist-flowchart > li > ul.next-steps-links:last-child,
-div.column ul.checklist-flowchart > li ul.campus-resource-links:last-child {
+div.column ul.checklist-flowchart > li ul.campus-resource-links:last-child,
+div.column ul.checklist-flowchart > li ul.complete-requirements-links:last-child {
   padding-bottom: 0;
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li,
@@ -4018,7 +4020,8 @@ div.column ul.checklist-flowchart > li > ul.admissions-links > li,
 div.column ul.checklist-flowchart > li > ul.apply-links > li,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li,
 div.column ul.checklist-flowchart > li > ul.next-steps-links > li,
-div.column ul.checklist-flowchart > li ul.campus-resource-links > li {
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li,
+div.column ul.checklist-flowchart > li ul.complete-requirements-links > li {
   display: inline-block;
   position: relative;
   height: 80px;
@@ -4040,7 +4043,8 @@ div.column ul.checklist-flowchart > li > ul.admissions-links > li:hover,
 div.column ul.checklist-flowchart > li > ul.apply-links > li:hover,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li:hover,
 div.column ul.checklist-flowchart > li > ul.next-steps-links > li:hover,
-div.column ul.checklist-flowchart > li ul.campus-resource-links > li:hover {
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li:hover,
+div.column ul.checklist-flowchart > li ul.complete-requirements-links > li:hover {
   background-color: #eff0f1;
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li > a,
@@ -4048,7 +4052,8 @@ div.column ul.checklist-flowchart > li > ul.admissions-links > li > a,
 div.column ul.checklist-flowchart > li > ul.apply-links > li > a,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li > a,
 div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a,
-div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a {
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a,
+div.column ul.checklist-flowchart > li ul.complete-requirements-links > li > a {
   display: inline-block;
   position: relative;
   width: 100%;
@@ -4061,7 +4066,8 @@ div.column ul.checklist-flowchart > li > ul.admissions-links > li > a:hover,
 div.column ul.checklist-flowchart > li > ul.apply-links > li > a:hover,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li > a:hover,
 div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a:hover,
-div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a:hover {
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a:hover,
+div.column ul.checklist-flowchart > li ul.complete-requirements-links > li > a:hover {
   background: none;
   border: none;
 }
@@ -4070,7 +4076,8 @@ div.column ul.checklist-flowchart > li > ul.admissions-links > li > a:hover:afte
 div.column ul.checklist-flowchart > li > ul.apply-links > li > a:hover:after,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li > a:hover:after,
 div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a:hover:after,
-div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a:hover:after {
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a:hover:after,
+div.column ul.checklist-flowchart > li ul.complete-requirements-links > li > a:hover:after {
   color: #c60c30;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 1px 0 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.5), -1px 0 0 rgba(0, 0, 0, 0.5);
 }
@@ -4079,7 +4086,8 @@ div.column ul.checklist-flowchart > li > ul.admissions-links > li > a:after,
 div.column ul.checklist-flowchart > li > ul.apply-links > li > a:after,
 div.column ul.checklist-flowchart > li > ul.online-tools-links > li > a:after,
 div.column ul.checklist-flowchart > li > ul.next-steps-links > li > a:after,
-div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a:after {
+div.column ul.checklist-flowchart > li ul.campus-resource-links > li > a:after,
+div.column ul.checklist-flowchart > li ul.complete-requirements-links > li > a:after {
   content: "Pullman";
   position: absolute;
   color: #ffffff;
@@ -4434,6 +4442,60 @@ div.column ul.checklist-flowchart > li > ul.campus-resource-links > li.everett:h
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_everett_active.jpg);
 }
 div.column ul.checklist-flowchart > li > ul.campus-resource-links > li:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
+  display: none;
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.pullman {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_pullman_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.pullman:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_pullman_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.spokane {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_spokane_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.spokane > a:after {
+  content: "Spokane";
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.spokane:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_spokane_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.tri-cities {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_tri-cities_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.tri-cities > a:after {
+  content: "Tri-Cities";
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.tri-cities:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_tri-cities_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.vancouver {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_vancouver_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.vancouver > a:after {
+  content: "Vancouver";
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.vancouver:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_vancouver_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.global {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_global_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.global > a:after {
+  content: "Global Campus";
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.global:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_global_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.everett {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_everett_dormant.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.everett > a:after {
+  content: "North Pudget Sound (Everett)";
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li.everett:hover {
+  background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_everett_active.jpg);
+}
+div.column ul.checklist-flowchart > li > ul.complete-requirements-links > li:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.everett) {
   display: none;
 }
 div.banner.campus-contacts {
