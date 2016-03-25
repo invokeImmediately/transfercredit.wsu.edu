@@ -125,7 +125,7 @@ div.column ul.checklist-flowchart {
         & + li {
             margin-top: 96px;
         }
-        &:not(:nth-child(7n)):after {
+        &:not(:nth-child(8n)):after {
             content: "";
             height:32px;
             width:32px;
@@ -134,7 +134,7 @@ div.column ul.checklist-flowchart {
             left: 50%;
             .transform(translate3d(-16px,16px,0));
         }
-        &:not(:nth-child(7n)):before {
+        &:not(:nth-child(8n)):before {
             content: " ";
             height:0px;
             width:0px;
@@ -148,7 +148,7 @@ div.column ul.checklist-flowchart {
             margin-left: -32px;
             pointer-events: none;
         }
-        &:nth-child(7n + 1) {
+        &:nth-child(8n + 1) {
             background-color: @hex-crimson-scale-darkest;
             & > h3:first-child {
                 background-color: #83192b;
@@ -156,7 +156,7 @@ div.column ul.checklist-flowchart {
             &:before { border-top-color: #3b4347; }
             &:after { background-color: #3b4347; }
         }
-        &:nth-child(7n + 2) {
+        &:nth-child(8n + 2) {
             background-color: @hex-crimson-scale-darker;
             & > h3:first-child {
                 background-color: #971f32;
@@ -164,7 +164,7 @@ div.column ul.checklist-flowchart {
             &:before { border-top-color: #475055; }
             &:after { background-color: #475055; }
         }
-        &:nth-child(7n + 3) {
+        &:nth-child(8n + 3) {
             background-color: @hex-crimson-scale-dark;
             & > h3:first-child {
                 background-color: #ae2239;
@@ -172,7 +172,7 @@ div.column ul.checklist-flowchart {
             &:before { border-top-color: #525d63; }
             &:after { background-color: #525d63; }
         }
-        &:nth-child(7n + 4) {
+        &:nth-child(8n + 4) {
             background-color: @hex-crimson;
             & > h3:first-child {
                 background-color: #c32640;
@@ -180,7 +180,7 @@ div.column ul.checklist-flowchart {
             &:before { border-top-color: @hex-dark-gray; }
             &:after { background-color: @hex-dark-gray; }
         }
-        &:nth-child(7n + 5) {
+        &:nth-child(8n + 5) {
             background-color: @hex-crimson-scale-light;
             & > h3:first-child {
                 background-color: #d62c48;
@@ -188,7 +188,7 @@ div.column ul.checklist-flowchart {
             &:before { border-top-color: #6a777f; }
             &:after { background-color: #6a777f; }
         }
-        &:nth-child(7n + 6) {
+        &:nth-child(8n + 6) {
             background-color: @hex-crimson-scale-lighter;
             & > h3:first-child {
                 background-color: #da425b;
@@ -196,12 +196,20 @@ div.column ul.checklist-flowchart {
             &:before { border-top-color: #75848d; }
             &:after { background-color: #75848d; }
         }
-        &:nth-child(7n) {
+        &:nth-child(8n + 7) {
             background-color: @hex-crimson-scale-lightest;
             & > h3:first-child {
                 background-color: #de586e;
             }
+            &:before { border-top-color: #647c2e; }
+            &:after { background-color: #647c2e; }
         }
+        &:nth-child(8n) {
+            height: 224px;
+            background: @hex-white url(/wp-content/uploads/sites/917/2016/03/graphic_graduation-cap_green.jpg) no-repeat scroll center;
+            box-shadow: none;
+             -webkit-box-shadow: none;
+         }
         & > ul.campus-links, & > ul.admissions-links, & > ul.apply-links, & > ul.online-tools-links,
          & > ul.next-steps-links, ul.campus-resource-links, ul.complete-requirements-links {
             margin-top: (@v-dflt-spcng / 2);
