@@ -4000,9 +4000,9 @@ div.column ul.checklist-flowchart > li ul.complete-requirements-links > li {
   background-color: #464e54;
   background-size: 100% 100%;
   font-family: 'Open Sans Condensed';
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li:hover,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li:hover,
