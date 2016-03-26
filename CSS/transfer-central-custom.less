@@ -248,7 +248,6 @@ div.column ul.checklist-flowchart {
                 background-color: @hex-darker-gray;
                 background-size: 100% 100%;
                 font-family: 'Open Sans Condensed';
-                /*.transition(all 0.3s ease);*/
                 &:hover {
                     background-color: @hex-bright-gray;
                     & > a:after {
@@ -268,7 +267,6 @@ div.column ul.checklist-flowchart {
                     height: 100%;
                     background: none;
                     border: none;
-                    .transition(all 0.3s ease);
                     &:hover {
                         background: none;
                         border: none;
@@ -284,7 +282,7 @@ div.column ul.checklist-flowchart {
                          -1px 0 0 rgba(@rval,@gval,@bval,0.5), 0 -1px 0 rgba(@rval,@gval,@bval,0.5),
                          0 1px 0 rgba(@rval,@gval,@bval,0.5);
                         transform: translate(-50%, -50%);
-                        .transition(inherit);
+                        .transition("color 0.3s ease, text-shadow 0.3s ease");
                     }
                     &:before {
                         content: "";
@@ -295,7 +293,7 @@ div.column ul.checklist-flowchart {
                          left: 0;
                         border-radius: 4px;
                         .rgb-darkest-gray(); background-color: rgba(@rval, @gval, @bval, 0.8);
-                        .transition(background-color 0.3s ease);
+                        .transition(opacity 0.3s ease);
                     }
                 }
             }
