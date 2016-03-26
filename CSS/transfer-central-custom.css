@@ -3999,7 +3999,6 @@ div.column ul.checklist-flowchart > li ul.complete-requirements-links > li {
   background-color: #464e54;
   background-size: 100% 100%;
   font-family: 'Open Sans Condensed';
-  /*.transition(all 0.3s ease);*/
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li:hover,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li:hover,
@@ -4042,9 +4041,6 @@ div.column ul.checklist-flowchart > li ul.complete-requirements-links > li > a {
   height: 100%;
   background: none;
   border: none;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li > a:hover,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li > a:hover,
@@ -4071,9 +4067,9 @@ div.column ul.checklist-flowchart > li ul.complete-requirements-links > li > a:a
   line-height: 1.1em;
   text-shadow: 1px 0 0 rgba(0, 0, 0, 0.5), -1px 0 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.5), 0 1px 0 rgba(0, 0, 0, 0.5);
   transform: translate(-50%, -50%);
-  -webkit-transition: inherit;
-  -moz-transition: inherit;
-  transition: inherit;
+  -webkit-transition: "color 0.3s ease, text-shadow 0.3s ease";
+  -moz-transition: "color 0.3s ease, text-shadow 0.3s ease";
+  transition: "color 0.3s ease, text-shadow 0.3s ease";
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li > a:before,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li > a:before,
@@ -4090,9 +4086,9 @@ div.column ul.checklist-flowchart > li ul.complete-requirements-links > li > a:b
   left: 0;
   border-radius: 4px;
   background-color: rgba(42, 48, 51, 0.8);
-  -webkit-transition: background-color 0.3s ease;
-  -moz-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li.pullman {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_active.jpg);
