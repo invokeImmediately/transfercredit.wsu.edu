@@ -106,7 +106,7 @@ div.column ul.checklist-flowchart {
     & > li {
         min-height: 150px;
         color: @hex-white;
-        .rgb-black(); text-shadow: 0 1px 0 rgba(@rval, @gval, @bval, 0.2);
+        //.rgb-black(); text-shadow: 0 1px 0 rgba(@rval, @gval, @bval, 0.2);
         @media all and (max-width: @v-bckgrnd-thrshld) {
             overflow-x: visible;
         }
@@ -117,8 +117,8 @@ div.column ul.checklist-flowchart {
             border-top-left-radius: 4px;
              border-top-right-radius: 4px;
             color: @hex-white;
-            .rgb-black(); text-shadow:
-             0 1px 0 rgba(0,0,0,.5), 1px 0 0 rgba(0,0,0,.5), 0 -1px 0 rgba(0,0,0,.5), -1px 0 0 rgba(0,0,0,.5);
+            .rgb-black(); text-shadow: 0 1px 0 rgba(0,0,0,.5), 1px 0 0 rgba(0,0,0,.5),
+             0 -1px 0 rgba(0,0,0,.5), -1px 0 0 rgba(0,0,0,.5);
             letter-spacing: 0.5px;
             line-height: 1.2em;
             text-transform: none;
@@ -248,13 +248,14 @@ div.column ul.checklist-flowchart {
                 background-color: @hex-darker-gray;
                 background-size: 100% 100%;
                 font-family: 'Open Sans Condensed';
-                .transition(all 0.4s ease);
+                /*.transition(all 0.3s ease);*/
                 &:hover {
                     background-color: @hex-bright-gray;
                     & > a:after {
                         color: @hex-light-crimson;
-                        .rgb-white(); text-shadow: 0 1px 0 rgba(0,0,0,.5), 1px 0 0 rgba(0,0,0,.5),
-                         0 -1px 0 rgba(0,0,0,.5), -1px 0 0 rgba(0,0,0,.5);
+                        .rgb-white(); text-shadow: 1px 0 1px rgba(@rval,@gval,@bval,0.5),
+                         -1px 0 1px rgba(@rval,@gval,@bval,0.5), 0 -1px 1px rgba(@rval,@gval,@bval,0.5),
+                         0 1px 1px rgba(@rval,@gval,@bval,0.5);
                     }
                     & > a:before {
                         opacity: 0;
@@ -267,7 +268,7 @@ div.column ul.checklist-flowchart {
                     height: 100%;
                     background: none;
                     border: none;
-                    .transition(all 0.4s ease);
+                    .transition(all 0.3s ease);
                     &:hover {
                         background: none;
                         border: none;
@@ -279,8 +280,9 @@ div.column ul.checklist-flowchart {
                         left: 50%;
                         top: 50%;
                         line-height: 1.1em;
-                        .rgb-black(); text-shadow:
-                         0 1px 0 rgba(0,0,0,.5), 1px 0 0 rgba(0,0,0,.5), 0 -1px 0 rgba(0,0,0,.5), -1px 0 0 rgba(0,0,0,.5);
+                        .rgb-black(); text-shadow: 1px 0 0 rgba(@rval,@gval,@bval,0.5),
+                         -1px 0 0 rgba(@rval,@gval,@bval,0.5), 0 -1px 0 rgba(@rval,@gval,@bval,0.5),
+                         0 1px 0 rgba(@rval,@gval,@bval,0.5);
                         transform: translate(-50%, -50%);
                         .transition(inherit);
                     }
@@ -291,8 +293,9 @@ div.column ul.checklist-flowchart {
                          right: 0;
                          bottom: 0;
                          left: 0;
+                        border-radius: 4px;
                         .rgb-darkest-gray(); background-color: rgba(@rval, @gval, @bval, 0.8);
-                        .transition(inherit);
+                        .transition(background-color 0.3s ease);
                     }
                 }
             }
