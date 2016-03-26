@@ -3766,7 +3766,6 @@ div.column ul:not(.checklist-flowchart):not(ul.campus-links) li {
 div.column ul.checklist-flowchart > li {
   min-height: 150px;
   color: #ffffff;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 @media all and (max-width: 1205px) {
   div.column ul.checklist-flowchart > li {
@@ -4000,9 +3999,7 @@ div.column ul.checklist-flowchart > li ul.complete-requirements-links > li {
   background-color: #464e54;
   background-size: 100% 100%;
   font-family: 'Open Sans Condensed';
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  /*.transition(all 0.3s ease);*/
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li:hover,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li:hover,
@@ -4021,7 +4018,7 @@ div.column ul.checklist-flowchart > li > ul.next-steps-links > li:hover > a:afte
 div.column ul.checklist-flowchart > li ul.campus-resource-links > li:hover > a:after,
 div.column ul.checklist-flowchart > li ul.complete-requirements-links > li:hover > a:after {
   color: #c60c30;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 1px 0 0 rgba(255, 255, 255, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 0 1px rgba(255, 255, 255, 0.5), -1px 0 1px rgba(255, 255, 255, 0.5), 0 -1px 1px rgba(255, 255, 255, 0.5), 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li:hover > a:before,
 div.column ul.checklist-flowchart > li > ul.admissions-links > li:hover > a:before,
@@ -4072,7 +4069,7 @@ div.column ul.checklist-flowchart > li ul.complete-requirements-links > li > a:a
   left: 50%;
   top: 50%;
   line-height: 1.1em;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 1px 0 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.5), -1px 0 0 rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.5), -1px 0 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.5), 0 1px 0 rgba(0, 0, 0, 0.5);
   transform: translate(-50%, -50%);
   -webkit-transition: inherit;
   -moz-transition: inherit;
@@ -4091,10 +4088,11 @@ div.column ul.checklist-flowchart > li ul.complete-requirements-links > li > a:b
   right: 0;
   bottom: 0;
   left: 0;
+  border-radius: 4px;
   background-color: rgba(42, 48, 51, 0.8);
-  -webkit-transition: inherit;
-  -moz-transition: inherit;
-  transition: inherit;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 div.column ul.checklist-flowchart > li > ul.campus-links > li.pullman {
   background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_active.jpg);
