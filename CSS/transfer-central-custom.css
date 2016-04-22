@@ -1018,26 +1018,42 @@ div.award-banner {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+/*         ┌-----------------------------------------------------------------------------------------┐
+           │ ···· Builder Template Slideshows ······················································ │
+           ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+           │ Styling modifications of builder template slideshows added through the WordPress        │
+           │ interface.                                                                              │
+           └-----------------------------------------------------------------------------------------┘        
+*/
+@media screen and (max-width: 480px) {
+  div.column div.builder-section-content.cycle-slideshow {
+    margin-left: -2em;
+    margin-right: -2em;
+  }
+}
 div.column div.builder-banner-content {
   padding: 0 0 10px 0;
   font-size: 1rem;
   line-height: 1.35rem;
-  transition: font-size 0.15s linear, line-height 0.15s linear;
-  -webkit-transition: font-size 0.15s linear, line-height 0.15s linear;
-  -moz-transition: font-size 0.15s linear, line-height 0.15s linear;
-  -o-transition: font-size 0.15s linear, line-height 0.15s linear;
+  border: 0;
+  -webkit-transition: font-size .15s linear, line-height .15s linear;
+  -moz-transition: font-size .15s linear, line-height .15s linear;
+  transition: font-size .15s linear, line-height .15s linear;
 }
 div.column div.builder-banner-content:hover {
   font-size: 1.3333rem;
   line-height: 1.799955rem;
 }
-div.column div.builder-banner-content:hover ~ .builder-banner-overlay {
+div.column div.builder-banner-content:hover > div.builder-banner-inner-content {
   background-color: rgba(0, 0, 0, 0.9);
-  height: calc(3.59991rem + 20px);
-  top: calc(100% - 3.59991rem - 20px);
 }
 div.column div.builder-banner-inner-content {
-  vertical-align: bottom;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: inherit;
+  line-height: inherit;
 }
 div.column div.builder-banner-inner-content p {
   padding: 10px;
@@ -1064,15 +1080,7 @@ div.column div.builder-banner-inner-content a:hover {
   border-color: rgba(106, 120, 128, 0.4);
 }
 div.column div.builder-banner-overlay {
-  height: calc(2.7rem + 20px);
-  top: calc(100% - 2.7rem - 20px);
-  background-color: rgba(0, 0, 0, 0.6667);
-  border-color: rgba(0, 0, 0, 0.4);
-  color: #949b9d;
-  transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
-  -webkit-transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
-  -moz-transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
-  -o-transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
+  display: none;
 }
 @media screen and (max-width: 1204px) {
   div.column div.builder-banner-content {
@@ -1082,14 +1090,6 @@ div.column div.builder-banner-overlay {
   div.column div.builder-banner-content:hover {
     font-size: 1.7704vw;
     line-height: 2.39004vw;
-  }
-  div.column div.builder-banner-content:hover ~ div.builder-banner-overlay {
-    top: calc(100% - 4.78008vw - 1.66vw);
-    height: calc(4.78008vw + 1.66vw);
-  }
-  div.column div.builder-banner-overlay {
-    top: calc(100% - 3.58506vw - 1.66vw);
-    height: calc(3.58506vw + 1.66vw);
   }
   div.column div.builder-banner-inner-content p {
     padding: 1.0vw;
@@ -1107,14 +1107,9 @@ div.column div.builder-banner-overlay {
     font-size: 14px;
     line-height: 18.9px;
   }
-  div.column div.builder-banner-overlay {
-    height: auto;
-  }
 }
 @media screen and (min-width: 906px) {
   div.readability-controlled {
-    /*      margin-right: auto;
-        margin-left: auto; */
     width: 70%;
   }
 }
@@ -1122,21 +1117,51 @@ section.pad-top.half-pad,
 section.pad-top div.column.half-pad {
   padding-top: 1rem;
 }
-/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
- *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
- *  ├----------------------------------------------------------------------------------------------┤
- *  │ Highly specific styling applied to div.column container elements as specified in the WSU     │
- *  │ Spine WordPress Theme.                                                                       │
- *  ├----------------------------------------------------------------------------------------------┤
+/*         ┌-----------------------------------------------------------------------------------------┐
+ *         │ ···· div.column ······································································· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ Highly specific styling applied to div.column container elements as specified in the    │
+ *         │ WSU Spine WordPress Theme.                                                              │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
  */
 div.column {
   font-size: 1rem;
-  /*	header.article-header {
-        display: none;
-    }
-    header.article-header.show-header {
-        display: block;
-    }*/
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │············ GENERIC CLASSES for div.column content containers ························· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │············ DEFINITION LIST elements contained within div.column containers ··········· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │···· HORIZONTAL RULE children of div.column elements ··································· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· HYPERLINK elements contained within div.column elements ·························· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· ASIDE children of div.column elements ············································ │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· UNORDERED LIST elements contained within div.column elements ····················· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· ORDERED LIST elements contained within div.column elements ······················· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· SECTION children of div.column elements ·········································· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
+  /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ *         │ ···· ADDITIONAL CLASSES for elements contained within div.column elements ············· │
+ *         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
+ */
 }
 div.column:nth-child(1) {
   margin-top: 0;
@@ -1591,7 +1616,7 @@ div.column .has-smaller-text {
     max-width: 792px;
   }
 }
-/*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
+/*         └-----------------------------------------------------------------------------------------┘        
  */
 /*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
  *  │ ++++++++ div.interactively-flipped-panels ++++++++++++++++++++++++++++++++++++++++++++++++++ │
@@ -2360,6 +2385,10 @@ mark.highlight {
   font-style: normal;
   color: #AEC7CB;
 }
+/*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+ *     │ ++++ SPAN selectors +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
 span.accentuated-text {
   font-weight: 700;
   font-size: 1.3em;
@@ -2390,6 +2419,16 @@ span.has-tool-tip:hover {
   background-color: rgba(0, 165, 189, 0.2);
   border-color: rgba(0, 165, 189, 0.67);
   color: #2f5055;
+}
+@media all and (max-width: 791px) {
+  span.hides-with-spine {
+    display: none;
+  }
+}
+@media all and (min-width: 792px) {
+  span.hides-from-spine {
+    display: none;
+  }
 }
 cite.article-author {
   display: none;
@@ -3037,31 +3076,52 @@ div.column .gform_wrapper #extensions_message {
   width: 0;
   height: 0;
   transform: translateY(-50%);
-  border-top: 8px solid #981e32;
-  border-right: 8px solid transparent;
-  border-bottom: none;
-  border-left: 8px solid transparent;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-.drop-down-toggle:hover:after {
-  border-top: 8px solid #c60c30;
-  border-right: 8px solid transparent;
-  border-bottom: none;
-  border-left: 8px solid transparent;
-}
-.drop-down-toggle.activated:after {
   border-top: none;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #981e32;
   border-left: 8px solid transparent;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-.drop-down-toggle.activated:hover:after {
+.drop-down-toggle:before {
+  content: "Click to expand";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  color: #981e32;
+  font-size: 12px;
+  text-transform: none;
+  opacity: 0;
+  -webkit-transform: translate(-35px, -50%);
+  -moz-transform: translate(-35px, -50%);
+  transform: translate(-35px, -50%);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.drop-down-toggle:hover:after {
   border-top: none;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #c60c30;
+  border-left: 8px solid transparent;
+}
+.drop-down-toggle:hover:before {
+  opacity: 0.5;
+}
+.drop-down-toggle.activated:after {
+  border-top: 8px solid #981e32;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+}
+.drop-down-toggle.activated:before {
+  content: "Click to collapse";
+}
+.drop-down-toggle.activated:hover:after {
+  border-top: 8px solid #c60c30;
+  border-right: 8px solid transparent;
+  border-bottom: none;
   border-left: 8px solid transparent;
 }
 .flipped-content-back {
