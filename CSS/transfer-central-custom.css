@@ -787,6 +787,21 @@ header.main-header span.sup-header-default {
     text-align: center;
   }
 }
+@media (min-width: 990px) and (max-width: 1049px) {
+  header.main-header.centered {
+    text-align: left;
+  }
+}
+@media (min-width: 792px) and (max-width: 989px) {
+  header.main-header.centered {
+    text-align: center;
+  }
+}
+@media (max-width: 791px) {
+  header.main-header.centered {
+    text-align: left;
+  }
+}
 @media (min-width: 1050px) {
   header.main-header div.header-group.centered {
     width: 100%;
