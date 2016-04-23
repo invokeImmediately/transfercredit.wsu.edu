@@ -802,7 +802,19 @@ header.main-header span.sup-header-default {
     text-align: left;
   }
 }
+header.main-header div.header-group {
+  text-align: inherit;
+}
 @media (min-width: 1050px) {
+  header.main-header div.header-group.centered {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+  }
+}
+@media (min-width: 792px) and (max-width: 989px) {
   header.main-header div.header-group.centered {
     width: 100%;
     left: 50%;
