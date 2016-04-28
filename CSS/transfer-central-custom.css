@@ -1715,9 +1715,6 @@ div.interactively-flipped-panels div.container div.panel-wrapper {
   padding-bottom: 36.9762%;
   padding-bottom: calc(50% * 0.8 - 1.5em);
   margin: 1em;
-  -webkit-transition: width linear 0.25s, padding linear 0.25s;
-  -moz-transition: width linear 0.25s, padding linear 0.25s;
-  transition: width linear 0.25s, padding linear 0.25s;
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper {
@@ -1800,14 +1797,6 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel div.f
   z-index: 10;
   opacity: 1;
   text-transform: uppercase;
-  transition-property: opacity, height;
-  -webkit-transition-property: opacity, height;
-  transition-delay: 0.5s, 0s;
-  -webkit-transition-delay: 0.5s, 0s;
-  transition-duration: 0s, 0.25s;
-  -webkit-transition-duration: 0s, 0.25s;
-  transition-timing-function: linear, linear;
-  -webkit-transition-timing-function: linear, linear;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel div.front p {
   padding: 0.25em;
@@ -1838,14 +1827,6 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel div.r
   left: 0;
   width: 100%;
   z-index: 9;
-  transition-property: opacity, height;
-  -webkit-transition-property: opacity, height;
-  transition-delay: 0.5s, 0s;
-  -webkit-transition-delay: 0.5s, 0s;
-  transition-duration: 0s, 0.25s;
-  -webkit-transition-duration: 0s, 0.25s;
-  transition-timing-function: linear, linear;
-  -webkit-transition-timing-function: linear, linear;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel div.rear h2 {
   color: inherit;
@@ -1942,8 +1923,52 @@ div.interactively-flipped-panels div.container div.panel-wrapper:hover {
 div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.front {
   opacity: 0;
 }
+@media all and (min-width: 481px) {
+  div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.front {
+    transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+    transition-duration: 0.25s;
+    -webkit-transition-duration: 0.25s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+  }
+}
+@media all and (max-width: 480px) {
+  div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.front {
+    transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-duration: 0.25s;
+    -webkit-transition-duration: 0.25s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+  }
+}
 div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.rear {
   opacity: 1;
+}
+@media all and (min-width: 481px) {
+  div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.rear {
+    transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+    transition-duration: 0s;
+    -webkit-transition-duration: 0s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+  }
+}
+@media all and (max-width: 480px) {
+  div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.rear {
+    transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-duration: 0s;
+    -webkit-transition-duration: 0s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+  }
 }
 div.interactively-flipped-panels div.container div.panel-wrapper.top-left:hover,
 div.interactively-flipped-panels div.container div.panel-wrapper.top-right:hover,
@@ -1951,6 +1976,9 @@ div.interactively-flipped-panels div.container div.panel-wrapper.bottom-left:hov
 div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:hover {
   width: calc(100% - 2em);
   padding-bottom: calc((50% * 0.8 - 2em) * 2 + 2em);
+  -webkit-transition: width linear 0.25s, padding linear 0.25s;
+  -moz-transition: width linear 0.25s, padding linear 0.25s;
+  transition: width linear 0.25s, padding linear 0.25s;
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper.top-left:hover,
@@ -1959,7 +1987,6 @@ div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:ho
   div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:hover {
     position: relative;
     width: 100%;
-    padding-bottom: calc(100% * 0.8 * 4);
     padding-bottom: calc(100% * 0.8);
   }
 }
