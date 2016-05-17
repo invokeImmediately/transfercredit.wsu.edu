@@ -4350,9 +4350,17 @@
                 var $inputs = $this.find("select");
                 $inputs.each(function () {
                     var $thisInput = $(this);
+                    var $childSlctdOptn = $thisInput.find("option:selected");
+                    var optionVal = $childSlctdOptn.text();                        
+                    if (optionVal != "") {
+                        $thisInput.addClass("gf-value-entered");
+                    }
+                    else {
+                        $thisInput.removeClass("gf-value-entered");
+                    }
                     $thisInput.change(function () {
-                        var $childSlctdOptn = $thisInput.find("option:selected");
-                        var optionVal = $childSlctdOptn.text();                        
+                        $childSlctdOptn = $thisInput.find("option:selected");
+                        optionVal = $childSlctdOptn.text();                        
                         if (optionVal != "") {
                             $thisInput.addClass("gf-value-entered");
                         }
