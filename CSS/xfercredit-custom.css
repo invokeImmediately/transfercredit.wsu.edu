@@ -2756,6 +2756,9 @@ span.accentuated-text {
   line-height: normal;
   color: #0099b1;
 }
+span.accentuated-text.darker {
+  color: #3f6b72;
+}
 span.accentuated-text.brighter {
   color: #00c1dd;
 }
