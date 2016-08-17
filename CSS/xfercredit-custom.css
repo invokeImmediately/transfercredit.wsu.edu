@@ -751,6 +751,9 @@ aside {
         margin-top: 1rem;
     }*/
 }
+aside.widget + aside.widget {
+  margin-top: 2rem;
+}
 aside.widget header {
   font-weight: bold;
   font-size: 1rem;
