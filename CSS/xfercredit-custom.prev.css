@@ -469,8 +469,16 @@ section.halves div.column p {
 	}
 }
 
-@media (min-width:891px) and (max-width:1049px) {
+@media (min-width:990px) and (max-width:1049px) {
 	section.row.single.large-format-friendly div.column.one,section.single.large-format-friendly div.column.one {
+		max-width: 800px;
+	}
+}
+
+@media (min-width:792px) and (max-width:989px) {
+	section.row.single.large-format-friendly div.column.one,section.single.large-format-friendly div.column.one {
+		margin-right: auto;
+		margin-left: auto;
 		max-width: 800px;
 	}
 }
@@ -849,7 +857,39 @@ header.main-header span.sup-header-default {
 	}
 }
 
+@media (min-width:990px) and (max-width:1049px) {
+	header.main-header.centered {
+		text-align: left;
+	}
+}
+
+@media (min-width:792px) and (max-width:989px) {
+	header.main-header.centered {
+		text-align: center;
+	}
+}
+
+@media (max-width:791px) {
+	header.main-header.centered {
+		text-align: left;
+	}
+}
+
+header.main-header div.header-group {
+	text-align: inherit;
+}
+
 @media (min-width:1050px) {
+	header.main-header div.header-group.centered {
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+	}
+}
+
+@media (min-width:792px) and (max-width:989px) {
 	header.main-header div.header-group.centered {
 		width: 100%;
 		left: 50%;
@@ -1207,7 +1247,7 @@ div.column div.builder-banner-overlay {
 	}
 }
 
-@media screen and (max-width:791px) {
+@media screen and (max-width:989px) {
 	div.column div.builder-banner-content {
 		font-size: 12px;
 		line-height: 16.2px;
@@ -1594,7 +1634,7 @@ div.column aside.article-sidebar h4:first-child {
 	margin-top: 0;
 }
 
-@media screen and (min-width:792px) and (max-width:900px) {
+@media screen and (min-width:990px) and (max-width:1098px) {
 	div.column aside.article-sidebar {
 		position: absolute;
 		right: 0;
@@ -1756,7 +1796,7 @@ div.column .has-smaller-text {
 	}
 }
 
-@media (min-width:891px) and (max-width:1049px) {
+@media (min-width:792px) and (max-width:1049px) {
 	div.column .large-format-friendly {
 		max-width: 792px;
 	}
@@ -2643,14 +2683,26 @@ span.has-tool-tip:hover {
 	color: #2f5055;
 }
 
-@media all and (max-width:791px) {
+@media all and (max-width:989px) {
 	span.hides-with-spine {
 		display: none;
 	}
 }
 
-@media all and (min-width:792px) {
+@media all and (min-width:990px) {
 	span.hides-from-spine {
+		display: none;
+	}
+}
+
+@media all and (max-width:693px) {
+	span.hides-with-rghtclmn {
+		display: none;
+	}
+}
+
+@media all and (min-width:694px) {
+	span.hides-from-rghtclmn {
 		display: none;
 	}
 }
@@ -4907,7 +4959,7 @@ div.banner.campus-contacts {
 	margin-bottom: 1rem;
 }
 
-@media all and (min-width:792px) {
+@media all and (min-width:990px) {
 	div.banner.campus-contacts {
 		width: 100%;
 		height: 0;
@@ -4917,7 +4969,7 @@ div.banner.campus-contacts {
 	}
 }
 
-@media all and (max-width:791px) {
+@media all and (max-width:989px) {
 	div.banner.campus-contacts {
 		width: 100%;
 		height: 0;
