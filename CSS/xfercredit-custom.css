@@ -1322,6 +1322,7 @@ div.column p.article-media-contacts {
   padding-left: 2em;
   font-size: .8em;
   line-height: 1.375em;
+  text-align: left;
 }
 div.column p.fine-print {
   font-size: 0.9em;
@@ -1408,7 +1409,8 @@ div.column p.banner-text-orange-with-towers {
 div.article-summary aside.article-sidebar,
 div.article-summary img,
 div.article-summary object,
-div.article-summary p.article-media-contacts {
+div.article-summary p.article-media-contacts,
+div.article-summary > h3 {
   display: none;
 }
 div.article-summary img.attachment-spine-thumbnail_size {
