@@ -9,14 +9,18 @@
 // ║ #### BACKGROUNDS ########################################################################### ║
 // ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
 body {
-    @media screen {
-        @media (max-width: (@v-wdscrn-bckgrnd - 1)) {
-            background-color: @hex-crimson;
-        }
-        @media (min-width: (@v-wdscrn-bckgrnd)) {
-            background: @hex-crimson url(/wp-content/uploads/sites/917/2015/11/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed.jpg) left top fixed repeat;
-        }
-    }
+	@media all and (max-width: @v-wdscrn-bckgrnd) {
+		background: @hex-crimson;
+	}
+	@media all and (min-width: (@v-wdscrn-bckgrnd+1)) and (max-width: @v-wuxga-width) {
+		background: @hex-crimson  url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wuxga.jpg) repeat-y fixed right top;
+	}
+	@media all and (min-width: (@v-wuxga-width+1)) and (max-width: @v-wqxga-width) {
+		background: @hex-crimson url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wqxga.jpg) repeat-y fixed right top;
+	}
+	@media all and (min-width: (@v-wqxga-width+1)) {
+		background: @hex-crimson url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wqxga.jpg) repeat-y fixed 1800px top;
+	}
 }
 
 main {
@@ -704,7 +708,7 @@ table.military-credit {
         &.musc > td, &.psyc > td, &.chem-no-lab > td, &.phys > td {
             background-color: @hex-bright-orange;
             &:nth-child(6n + 4) {
-                background-color: @hex-lighest-orange;
+                background-color: @hex-lightest-orange;
             }        
         }
         &.hist > td, &.pols > td, &.chem-with-lab > td, &.geol > td {
