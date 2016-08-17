@@ -4193,14 +4193,24 @@ div.auto-scroller ul li {
   list-style-type: none;
   list-style-image: none;
 }
-@media screen and (max-width: 1439px) {
+@media all and (max-width: 1440px) {
   body {
-    background-color: #981e32;
+    background: #981e32;
   }
 }
-@media screen and (min-width: 1440px) {
+@media all and (min-width: 1441px) and (max-width: 1920px) {
   body {
-    background: #981e32 url(/wp-content/uploads/sites/917/2015/11/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed.jpg) left top fixed repeat;
+    background: #981e32 url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wuxga.jpg) repeat-y fixed right top;
+  }
+}
+@media all and (min-width: 1921px) and (max-width: 2560px) {
+  body {
+    background: #981e32 url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wqxga.jpg) repeat-y fixed right top;
+  }
+}
+@media all and (min-width: 2561px) {
+  body {
+    background: #981e32 url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wqxga.jpg) repeat-y fixed 1800px top;
   }
 }
 main {
