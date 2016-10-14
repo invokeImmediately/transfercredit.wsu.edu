@@ -4107,183 +4107,353 @@
 /**********************************************************************************************************************
  CUSTOM JQUERY-BASED DYNAMIC CONTENT
  *********************************************************************************************************************/
-(function ($) {
-    "use strict";
-    
-	$(document).ready(function () {
-			/**********************************************************************************************
-			 * As desired, tweak the CSS of the previous sibling of certain selected elements in the DOM  *
-			 **********************************************************************************************/
-            var $lrgFrmtSnglSctns = $('.single.large-format-friendly');
-            if ($lrgFrmtSnglSctns.length > 0) {
-                var $mainHeader = $('header.main-header');
-                $mainHeader.addClass('centered');
-                var $mnHdrChldDiv = $mainHeader.find('div.header-group');
-                $mnHdrChldDiv.addClass('centered');
-            }
-			$('.column > h2:not(.fancy), .column > section > h2:not(.fancy)').each(function () {
-					var $this = $(this);
-                    $this.addClass('no-top-margin');
-                    $this.prev('hr:not(.subSection)').addClass('narrow-bottom-margin dark-gray thicker', 250);
-			});
-			$('.column > h2.fancy, .column > section > h2.fancy').each(function () {
-					$(this).prev('hr:not(.subSection)').addClass('no-bottom-margin dark-gray thicker encroach-horizontal', 250);
-			});
-			$('.column > h3:not(.fancy), .column > section > h3:not(.fancy)').each(function () {
-					$(this).prev('hr:not(.subSection)').addClass('narrow-bottom-margin crimson', 250);
-			});
-			$('.column > h3.fancy, .column > section > h3.fancy').each(function () {
-					$(this).prev('hr:not(.subSection)').addClass('no-bottom-margin crimson encroach-horizontal', 250);
-			});
+"use strict";
 
-            /**********************************************************************************************
-             * Fix bug wherein the wrong items in the spine become dogeared                               *
-             **********************************************************************************************/
-            var $dogearedItems = $("#spine-sitenav").find("li.current.active.dogeared");
-            if ($dogearedItems.length > 1) {
-                var currentURL = window.location.href;
-                var currentPage = currentURL.substring(currentURL.substring(0, currentURL.length - 1).lastIndexOf("/") + 1, currentURL.length - 1);
-                $dogearedItems.each(function () {
-                    var $this = $(this);
-                    var $navLink = $this.children("a");
-                    if ($navLink.length == 1) {
-                        var navLinkURL = $navLink.attr("href");
-                        var navLinkPage = navLinkURL.substring(navLinkURL.substring(0, navLinkURL.length - 1).lastIndexOf("/") + 1, navLinkURL.length - 1);
-                        if (navLinkPage != currentPage) {
-                            $this.removeClass("current active dogeared");
-                        }
-                    }
-                });
-            }
-            
-			/**********************************************************************************************
-			 * Set column heights on fluid-width containters                                              *
-			 **********************************************************************************************/
-            // TODO: Move the code below to document.ready + replace it with a check to ensure image loading hasn't changed the heights we are working with
-            $(window).load(function () {
-                if($(window).width() >= 1051) {
-                    $('.large-format-friendly > div.column.two').each(function () {
-                            var $this = $(this);
-                            $this.height($this.prev('div.column.one').height());
-                            $this.animate({opacity: 1.0}, 100);
-                    });
-                }
-            });
-            $(window).resize(function () {
-                $('.large-format-friendly > div.column.two').each(function () {
-					var $this = $(this);
-                    var crrntOpacity = $this.css("opacity");
-                    if (crrntOpacity == 0 && $(window).width() >= 1051) {
-                        $this.animate({opacity: 1.0}, 100);
-                    }
-                    var $thisPrev = $this.prev('div.column.one');
-                    if($this.height() != $thisPrev.height() ) {
-                        $this.height($thisPrev.height());
-                    }
-                });
-            });
-            
-			/**********************************************************************************************
-			 * Implement dynamic behaviors of interactive elements                                        *
-			 **********************************************************************************************/
-			$('.drop-down-toggle').click(function () {
-                var $this = $(this);
-                $this.toggleClass('activated');
-                $this.next('.toggled-panel').toggle(500)
-			});
-			$('.read-more-toggle-in-ctrl').click(function () {
-                var $this = $(this);
-                $this.toggle(500);
-                $this.next('.read-more-panel').toggle(500);
-                $this.next('.read-more-panel').next('.read-more-toggle-out-ctrl').toggle(500);
-			});
-			$('.read-more-toggle-out-ctrl').click(function () {
-                var $this = $(this);
-                $this.toggle(500);
-                $this.next('.read-more-panel').toggle(500);
-                $this.next('.read-more-panel').next('.read-more-toggle-in-ctrl').toggle(500);
-			});
-			$('.content-flipper').click(function () {
-                var $this = $(this);
-                $this.next('.flipped-content-front').toggle(500);
-                $this.next('.flipped-content-front').next('.flipped-content-back').fadeToggle(500);
-			});
-			$('.flipped-content-front').click(function () {
-                var $this = $(this);
-                $this.toggle(500);
-                $this.next('.flipped-content-back').fadeToggle(500);
-			});
-            $('#welcome-message').delay(1000).fadeOut(500, function () {
-                $('#post-welcome-message').fadeIn(500);
-            });
-            $("dl.toggled dt").click(function() {
-                var $this = $(this);
-                $this.toggleClass('activated');
-                $this.next("dd").slideToggle(400, function () {
-                    var $parent = $this.parents('.large-format-friendly > div.column.one');
-                    var $prntNxt = $parent.next('div.column.two');
-                    $prntNxt.animate({height: $parent.css('height')}, 100);
-                });
-            });
-            $("dl.toggled dd").hide();           
-            
-	});
-})(jQuery);
-/**************************************************************************************************\
-| JQUERY-MEDIATED ENHANCED INTERACTIVITY OF GRAVITY FORM FIELDS                                    |
-\**************************************************************************************************/
+function isJQuery($obj) {
+	return ($obj && ($obj instanceof jQuery || $obj.constructor.prototype.jquery));
+}
+
 (function ($) {
-    "use strict";
-    
-	$(document).ready(function () {
-        if($("div.gform_body").length > 0) {
-            //TODO: streamline functions by querying all ul.gform_fields li.gfield, then determine 
-            //       how to handle object by finding div children with gfield_container_class.
-            hghlghtRqrdInpts(".oue-gf-rqrd-input, .oue-gf-hghlghts-rqrd-input");
-            hghlghtRqrdChckbxs(".oue-gf-rqrd-checkbox, .oue-gf-hghlghts-rqrd-checkbox");
-            hghlghtRqrdTxtAreas(".oue-gf-rqrd-txtarea, .oue-gf-hghlghts-rqrd-txtarea");
-            hghlghtRqrdSelects(".oue-gf-rqrd-select, .oue-gf-hghlghts-rqrd-select");
-            setupActvtrChckbxs(".oue-gf-actvtr-checkbox");
-            setupActvtrChain(".oue-gf-actvtr-chain");
-            setupUploadChain(".oue-gf-upload-chain");
-        }
+	"use strict";
+    $(document).ready(function () {
+        fixDogears("#spine-sitenav", "li.current.active.dogeared", "current active dogeared");
+        checkForLrgFrmtSingle(".single.large-format-friendly", "header.main-header", "div.header-group",
+         "centered");
+        initHrH2Motif(".column > h2:not(.fancy), .column > section > h2:not(.fancy)",
+         "hr:not(.subSection)", "no-top-margin", "narrow-bottom-margin dark-gray thicker", 250);
+        initFancyHrH2Motif(".column > h2.fancy, .column > section > h2.fancy", "hr:not(.subSection)",
+         "no-bottom-margin dark-gray thicker encroach-horizontal", 250);
+        initHrH3Motif(".column > h3:not(.fancy), .column > section > h3:not(.fancy)", "hr:not(.subSection)",
+         "narrow-bottom-margin crimson", 250);
+        initFancyHrH3Motif(".column > h3.fancy, .column > section > h3.fancy", "hr:not(.subSection)",
+         "no-bottom-margin crimson encroach-horizontal", 250);
+        initDropDownToggles(".drop-down-toggle", ".toggled-panel", "activated", 500);
+        initReadMoreToggles(".read-more-toggle-in-ctrl", '.read-more-toggle-out-ctrl',
+         ".read-more-panel", 500);
+        initContentFlippers(".content-flipper", ".flipped-content-front", ".flipped-content-back", 500);
+        initDefinitionLists("dl.toggled", ".large-format-friendly", "div.column.one", "div.column.two",
+         "activated", 400, 100);
+		initQuickTabs("section.row.single.quick-tabs");
+        initTriggeredByHover(".triggered-on-hover", ".content-revealed", ".content-hidden", 200);
+		// initScrollingSidebars("...");
+        initWelcomeMessage("#welcome-message", "post-welcome-message", 1000, 500, 500);
     });
     
-    /******************************************************************************************\
-    | Highlight required INPUTS until a value has been properly entered                        |
-    \******************************************************************************************/
-    function hghlghtRqrdInpts (selector) {
-        if ($.type(selector) === "string") {
-            $(selector).each(function () {
+    $(window).load(function () {
+        finalizeLrgFrmtSideRight(".side-right.large-format-friendly", "div.column.one", "div.column.two",
+         1051, 100);
+    });
+    
+    $(window).resize(function () {
+        resizeLrgFrmtSideRight(".side-right.large-format-friendly", "div.column.one", "div.column.two",
+         1051, 100);
+    });
+    
+    function checkForLrgFrmtSingle(slctrSingle, slctrMainHdr, slctrHdrGroup, centeringClass) {
+        var $lrgFrmtSnglSctns = $(slctrSingle);
+        if ($lrgFrmtSnglSctns.length > 0) {
+            var $mainHeader = $(slctrMainHdr);
+            $mainHeader.addClass(centeringClass);
+            var $mnHdrChldDiv = $mainHeader.find(slctrHdrGroup);
+            $mnHdrChldDiv.addClass(centeringClass);
+        }
+    }
+    
+    function finalizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration) {
+        if($(window).width() >= trggrWidth) {
+            $(slctrSideRight + ">" + slctrColTwo).each(function () {
                 var $this = $(this);
-                var $inputs = $this.find("input");
-                $inputs.each(function () {
-                    var $thisChild = $(this);
-                    if ($thisChild.val() == "") {
-                        $thisChild.removeClass("gf-value-entered");
+                var $thisPrev = $this.prev(slctrColOne);
+                if($this.height() != $thisPrev.height() ) {
+                    $this.height($thisPrev.height());
+                }
+                var crrntOpacity = $this.css("opacity");
+                if (crrntOpacity == 0) {
+                    $this.animate({opacity: 1.0}, animDuration);
+                }
+            });
+        }
+    }
+    
+    function fixDogears(slctrSiteNav, slctrDogeared, removedClasses) {
+        /**********************************************************************************************
+         * Fix bug wherein the wrong items in the spine become dogeared                               *
+         **********************************************************************************************/
+        var $dogearedItems = $(slctrSiteNav).find(slctrDogeared);
+        if ($dogearedItems.length > 1) {
+            var currentURL = window.location.href;
+            var currentPage = currentURL.substring(currentURL.substring(0, currentURL.length - 1).lastIndexOf("/") + 1, currentURL.length - 1);
+            $dogearedItems.each(function () {
+                var $this = $(this);
+                var $navLink = $this.children("a");
+                if ($navLink.length == 1) {
+                    var navLinkURL = $navLink.attr("href");
+                    var navLinkPage = navLinkURL.substring(navLinkURL.substring(0, navLinkURL.length - 1).lastIndexOf("/") + 1, navLinkURL.length - 1);
+                    if (navLinkPage != currentPage) {
+                        $this.removeClass(removedClasses);
                     }
-                    else {
-                        $thisChild.addClass("gf-value-entered");
-                    }
-                    $thisChild.blur(function () {
-                        if ($thisChild.val() == "") {
-                            $thisChild.removeClass("gf-value-entered");
-                        }
-                        else {
-                            $thisChild.addClass("gf-value-entered");
-                        }
-                    });
-                });
+                }
             });
         }
     }
 
-    /******************************************************************************************\
-    | Highlight required CHECKBOXES until at least one has been checked                        |
-    \******************************************************************************************/
-    function hghlghtRqrdChckbxs (selector) {
-        if ($.type(selector) === "string") {
-            $(selector).each(function () {
+    function initContentFlippers(slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, animDuration) {
+        $(slctrCntntFlppr).click(function () {
+            var $this = $(this);
+            $this.next(slctrFlppdFront).toggle(animDuration);
+            $this.next(slctrFlppdFront).next(slctrFlppdBack).fadeToggle(animDuration);
+        });
+        $(slctrFlppdFront).click(function () {
+            var $this = $(this);
+            $this.toggle(animDuration);
+            $this.next(slctrFlppdBack).fadeToggle(animDuration);
+        });
+    }
+    
+    function initTriggeredByHover(slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration) {
+        $(slctrTrggrdOnHvr).mouseenter(function () {
+            var $this = $(this);
+            var $rvldCntnt = $this.find(slctrCntntRvld);
+            var $hddnCntnt = $this.find(slctrCntntHddn);
+            $rvldCntnt.stop().show(animDuration);
+            $hddnCntnt.stop().hide(animDuration);
+        }).mouseleave(function () {
+            var $this = $(this);
+            var $rvldCntnt = $this.find(slctrCntntRvld);
+            var $hddnCntnt = $this.find(slctrCntntHddn);
+            $rvldCntnt.stop().hide(animDuration);
+            $hddnCntnt.stop().show(animDuration);
+        });
+    }
+    
+    function initDefinitionLists(slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo, activatingClass,
+     animSlideDrtn, animHghtDrtn) {
+        $(slctrDefList + " dt").click(function() {
+            var $this = $(this);
+            $this.toggleClass(activatingClass);
+            $this.next("dd").slideToggle(animSlideDrtn, function () {
+                var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
+                var $prntNxt = $parent.next(slctrColTwo);
+                $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
+            });
+        });
+        $(slctrDefList + " dd").hide(); // Definitions should be hidden by default.
+    }
+    
+    function initDropDownToggles(slctrToggle, slctrWhatsToggled, activatingClass, animDuration) {
+        $(slctrToggle).click(function () {
+            var $this = $(this);
+            $this.toggleClass(activatingClass);
+            $this.next(slctrWhatsToggled).toggle(animDuration)
+        });
+    }
+    
+    function initHrH2Motif(slctrStandardH2, slctrPrevHr, h2ClassesAdded, hrClassesAdded, animAddDrtn) {
+        $(slctrStandardH2).each(function () {
+                var $this = $(this);
+                $this.addClass(h2ClassesAdded);
+                $this.prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
+    function initFancyHrH2Motif(slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn) {
+        $(slctrFancyH2).each(function () {
+                $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
+    function initHrH3Motif(slctrStandardH3, slctrPrevHr, hrClassesAdded, animAddDrtn) {
+        $(slctrStandardH3).each(function () {
+            $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
+    function initFancyHrH3Motif(slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn) {
+        $(slctrFancyH3).each(function () {
+                $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
+	function initQuickTabs(slctrQtSctn) {
+		var $qtSctn = $(slctrQtSctn);
+		$qtSctn.each(function () {
+			var $thisSctn = $(this);
+			var $tabCntnr = $thisSctn.find("div.column > ul");
+			var $tabs = $tabCntnr.find("li");
+			var $panelCntnr = $thisSctn.find("table");
+			var $panels = $panelCntnr.find("tbody:first-child > tr");
+			if($tabs.length == $panels.length) {
+				var idx;
+				var jdx;
+				for (idx = 0; idx < $tabs.length; idx++) {
+					$tabs.eq(idx).click(function() {
+						var $thisTab = $(this);
+						var kdx = $tabs.index($thisTab);
+						if (kdx == 0) {
+							if ($thisTab.hasClass("deactivated")) {
+								$thisTab.removeClass("deactivated");
+								$panels.eq(kdx).removeClass("deactivated");
+								for (jdx = 1; jdx < $tabs.length; jdx++) {
+									if ($tabs.eq(jdx).hasClass("activated")) {
+										$tabs.eq(jdx).removeClass("activated");
+										$panels.eq(jdx).removeClass("activated");
+									}
+								}
+								$("html, body").animate({
+									scrollTop: $thisTab.offset().top
+								}, 500);								
+							}
+						} else {
+							if (!$thisTab.hasClass("activated")) {
+								if (!$tabs.eq(0).hasClass("deactivated")) {
+									$tabs.eq(0).addClass("deactivated");
+									$panels.eq(0).addClass("deactivated");
+								}
+								for (jdx = 1; jdx < kdx; jdx++) {
+									if ($tabs.eq(jdx).hasClass("activated")) {
+										$tabs.eq(jdx).removeClass("activated");
+										$panels.eq(jdx).removeClass("activated");
+									}
+								}
+								$thisTab.addClass("activated");
+								$panels.eq(kdx).addClass("activated");
+								for (jdx = kdx + 1; jdx < $tabs.length; jdx++) {
+									if ($tabs.eq(jdx).hasClass("activated")) {
+										$tabs.eq(jdx).removeClass("activated");
+										$panels.eq(jdx).removeClass("activated");
+									}
+								}
+								$("html, body").animate({
+									scrollTop: $thisTab.offset().top
+								}, 500);								
+							}
+						}
+					});
+				}
+			}
+		});
+	}
+
+    function initReadMoreToggles(slctrToggleIn, slctrToggleOut, slctrPanel, animDuration) {
+        $(slctrToggleIn).click(function () {
+            var $this = $(this);
+            var $next = $this.next(slctrPanel);
+            $this.toggle(animDuration);
+            $this.$next.toggle(animDuration);
+            $this.$next.next(slctrToggleOut).toggle(animDuration);
+        });
+        $(slctrToggleOut).click(function () {
+            var $this = $(this);
+            var $next = $this.next(slctrPanel);
+            $this.toggle(animDuration);
+            $this.$next.toggle(animDuration);
+            $this.$next.next(slctrToggleIn).toggle(animDuration);
+        });
+    }
+    
+    function initWelcomeMessage(slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDuration,
+     fadeInDuration) {
+        $(slctrWlcmMsg).delay(msgDelay).fadeOut(fadeOutDuration, function () {
+            $(slctrPostWlcmMsg).fadeIn(fadeInDuration);
+        });
+    }
+
+    function resizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration) {
+        finalizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration);
+    }
+})(jQuery);
+/************************************************************************************************************\
+| JQUERY-MEDIATED ENHANCED INTERACTIVITY OF GRAVITY FORM FIELDS                                              |
+\************************************************************************************************************/
+(function ($) {
+    "use strict";
+    
+	$(document).bind("gform_post_render", function () {
+		var $rqrdFlds =  $("li.gfield_contains_required");
+		checkRqrdInpts($rqrdFlds.find("input"));
+		checkRqrdChckbxs($rqrdFlds.find("ul.gfield_checkbox, ul.gfield_radio"));
+		checkRqrdTxtAreas($rqrdFlds.find("textarea"));
+	});
+	$(document).ready(function () {
+        if($("div.gform_body").length > 0) {
+			initWsuIdInputs(".gf-is-wsu-id");
+            setupActvtrChckbxs(".oue-gf-actvtr-checkbox");
+            setupActvtrChain(".oue-gf-actvtr-chain");
+            setupUploadChain(".oue-gf-upload-chain");
+			
+            // TODO: streamline functions by querying all ul.gform_fields li.gfield, then determine 
+            //   how to handle object by finding div children with gfield_container_class.
+			var $rqrdFlds =  $("li.gfield_contains_required");
+			hghlghtRqrdInpts($rqrdFlds.find("input"));
+			hghlghtRqrdChckbxs($rqrdFlds.find("ul.gfield_checkbox, ul.gfield_radio"));
+			hghlghtRqrdTxtAreas($rqrdFlds.find("textarea"));
+			hghlghtRqrdSelects($rqrdFlds.find("select"));
+        }
+    });
+	$(window).load(function () {
+		hghlghtRqrdRchTxtEdtrs($("li.gfield_contains_required.uses-rich-editor"));
+	});
+    
+    /****************************************************************************************************\
+    | Highlight required INPUTS until a value has been properly entered                                  |
+    \****************************************************************************************************/
+    function checkRqrdInpts ($fields) {
+        if (isJQuery($fields)) {
+            $fields.each(function () {
+                var $thisInput = $(this);
+				if ($thisInput.val() == "") {
+					$thisInput.removeClass("gf-value-entered");
+				}
+				else {
+					$thisInput.addClass("gf-value-entered");
+				}
+            });
+        }
+    }
+	
+    function hghlghtRqrdInpts ($fields) {
+        if (isJQuery($fields)) {
+            $fields.each(function () {
+                var $thisInput = $(this);
+				$thisInput.blur(function () {
+					if ($thisInput.val() == "") {
+						$thisInput.removeClass("gf-value-entered");
+					}
+					else {
+						$thisInput.addClass("gf-value-entered");
+					}
+				});
+            });
+        }
+    }
+
+    /****************************************************************************************************\
+    | Highlight required CHECKBOXES until at least one has been checked                                  |
+    \****************************************************************************************************/
+    function checkRqrdChckbxs ($fields) {
+        if (isJQuery($fields)) {
+            $fields.each(function () {
+                var $this = $(this);
+                var $inputs = $this.find("input");
+				var inputReady = false;
+                $inputs.each(function () {
+					if ($(this).prop("checked") == true && !inputReady) {
+						inputReady = true;
+					}
+				});
+				if (inputReady) {
+					$this.addClass("gf-value-entered");
+				}
+				else {
+					$this.removeClass("gf-value-entered");
+				}
+			});
+		}
+	}
+
+    function hghlghtRqrdChckbxs ($fields) {
+        if (isJQuery($fields)) {
+            $fields.each(function () {
                 var $this = $(this);
                 var $inputs = $this.find("input");
                 $inputs.each(function () {
@@ -4311,71 +4481,129 @@
         }
     }
 
-    /******************************************************************************************\
-    | Highlight required TEXT AREA inputs until a value has been properly entered              |
-    \******************************************************************************************/
-    function hghlghtRqrdTxtAreas (selector) {
-        if ($.type(selector) === "string") {
-            $(selector).each(function () {
-                var $this = $(this);
-                var $inputs = $this.find("textarea");
-                $inputs.each(function () {
-                    var $thisChild = $(this);
-                    if ($thisChild.val() == "") {
-                        $thisChild.removeClass("gf-value-entered");
-                    }
-                    else {
-                        $thisChild.addClass("gf-value-entered");
-                    }
-                    $thisChild.change(function () {
-                        if ($thisChild.val() == "") {
-                            $thisChild.removeClass("gf-value-entered");
-                        }
-                        else {
-                            $thisChild.addClass("gf-value-entered");
-                        }
-                    });
-                });
+    /****************************************************************************************************\
+    | Highlight required TEXT AREA inputs until a value has been properly entered                        |
+    \****************************************************************************************************/
+    function checkRqrdTxtAreas ($fields) {
+		checkRqrdInpts($fields);
+    }
+
+    function hghlghtRqrdTxtAreas ($fields) {
+		hghlghtRqrdInpts($fields);
+    }
+
+    /****************************************************************************************************\
+    | Highlight required RICH TEXT EDITOR containters until a value has been properly entered            |
+    \****************************************************************************************************/
+	function hghlghtRqrdRchTxtEdtrs($fields) {
+        if (isJQuery($fields) && $fields.length > 0) {
+            $fields.each(function () {
+				var $edtrFrm = $(this).find("iframe");
+				$edtrFrm.each(function () {
+					var $edtrBdy = $(this).contents().find("#tinymce");
+					$edtrBdy.css("background-color", "rgba(255,0,0,0.1)");
+					$edtrBdy.focus(function () {
+						$(this).css("background-color", "rgba(255,255,255,1)");
+					});
+					$edtrBdy.blur(function () {
+						var $this = $(this);
+						if($this.text().replace(/\n|\uFEFF/g, "") == "") {
+							$this.css("background-color","rgba(255,0,0,0.1)");
+						}
+					});
+				});
+			});
+		}
+	}
+
+    /****************************************************************************************************\
+    | Highlight required SELECTS until at least one has been checked                                     |
+    \****************************************************************************************************/
+    function hghlghtRqrdSelects ($fields) {
+        if (isJQuery($fields)) {
+            $fields.each(function () {
+                var $thisInput = $(this);
+				var $childSlctdOptn = $thisInput.find("option:selected");
+				var optionVal = $childSlctdOptn.text();                        
+				if (optionVal != "") {
+					$thisInput.addClass("gf-value-entered");
+				}
+				else {
+					$thisInput.removeClass("gf-value-entered");
+				}
+				$thisInput.change(function () {
+					$childSlctdOptn = $thisInput.find("option:selected");
+					optionVal = $childSlctdOptn.text();                        
+					if (optionVal != "") {
+						$thisInput.addClass("gf-value-entered");
+					}
+					else {
+						$thisInput.removeClass("gf-value-entered");
+					}
+				});
             });
         }
     }
 
-    /******************************************************************************************\
-    | Highlight required SELECTS until at least one has been checked                           |
-    \******************************************************************************************/
-    function hghlghtRqrdSelects (selector) {
-        if ($.type(selector) === "string") {
-            $(selector).each(function () {
-                var $this = $(this);
-                var $inputs = $this.find("select");
-                $inputs.each(function () {
-                    var $thisInput = $(this);
-                    var $childSlctdOptn = $thisInput.find("option:selected");
-                    var optionVal = $childSlctdOptn.text();                        
-                    if (optionVal != "") {
-                        $thisInput.addClass("gf-value-entered");
-                    }
-                    else {
-                        $thisInput.removeClass("gf-value-entered");
-                    }
-                    $thisInput.change(function () {
-                        $childSlctdOptn = $thisInput.find("option:selected");
-                        optionVal = $childSlctdOptn.text();                        
-                        if (optionVal != "") {
-                            $thisInput.addClass("gf-value-entered");
-                        }
-                        else {
-                            $thisInput.removeClass("gf-value-entered");
-                        }
-                    });
-                });
-            });
-        }
+    /****************************************************************************************************\
+    | Initialize RegEx filtration of inputs that accept WSU ID numbers                                   |
+    \****************************************************************************************************/
+    function initWsuIdInputs(slctrInputs) {
+        var $wsuIdInputs = $(slctrInputs).find("input[type='text']");
+		$wsuIdInputs.keydown(function(e) {
+            var $this = $(this);
+            var inputText = $this.val();
+			if((e.keyCode < 48 || (e.keyCode > 57 && e.keyCode < 96) || e.keyCode > 105) &&
+			 !~[8, 9, 20, 35, 36, 37, 39, 46, 110, 144].indexOf(e.keyCode) &&
+			 !(e.keyCode == 86 && e.ctrlKey)) {
+				e.preventDefault();
+			}
+			else if (!~[8, 9, 20, 35, 36, 37, 39, 46, 110, 144].indexOf(e.keyCode) && inputText.length >= 9) {
+				e.preventDefault();
+				alert("WSU ID numbers are no greater than nine (9) digits in length.");
+			}
+		});
+        $wsuIdInputs.on("paste", function (e) {
+            var $this = $(this);
+			var clipboardData = e.originalEvent.clipboardData || window.clipboardData;
+			var inputText = clipboardData.getData('Text');
+            var regExMask = /[^0-9]+/g;
+            if (regExMask.exec(inputText) != null) {
+				var errorMsg = "WSU ID numbers can only contain digits.";
+				e.stopPropagation();
+				e.preventDefault();
+                $this.val(inputText.replace(regExMask, ""));
+                inputText = $this.val();
+				if (inputText.length > 9) {
+					$this.val(inputText.slice(0,9));
+					errorMsg += " Also, they must be no greater than nine (9) digits in length.");
+				}
+				errorMsg += " What you pasted will automatically be corrected."
+				alert(errorMsg);
+            }
+            else if (inputText.length > 9) {
+				e.stopPropagation();
+				e.preventDefault();
+                $this.val(inputText.slice(0,9));
+				alert("WSU ID numbers are no greater than nine (9) digits in length. What you pasted will automatically be corrected.");
+            }
+        });
+        $wsuIdInputs.blur(function () {
+            var $this = $(this);
+            var regExFinalPttrn = /(?:^[0-9]{8}$)|(?:^0[0-9]{8}$)/;
+            var inputText = $this.val();
+			if (inputText != "") {
+				if (regExFinalPttrn.exec(inputText) == null) {					
+					$this.val("");
+					alert("Please try again: when the leading zero is included, WSU ID numbers are nine (9) digits long. (You can also drop the leading zero and enter in eight (8) digits.");
+				}
+			}
+        });
     }
-
-    /******************************************************************************************\
-    | Setup activator checkboxes that disappear once one is selected                           |
-    \******************************************************************************************/
+	
+    /****************************************************************************************************\
+    | Setup activator checkboxes that disappear once one is selected                                     |
+    \****************************************************************************************************/
     function setupActvtrChckbxs (selector) {
         if ($.type(selector) === "string") {
             $(".gform_body").on("change", selector + " input", function () {
@@ -4386,10 +4614,10 @@
         }
     }
     
-    /******************************************************************************************\
-    | Setup a chain of activator checkboxes, wherein once a checkbox is activated/deactivated, |
-    | only its closest previous sibling is hidden/shown.                                       |
-    \******************************************************************************************/
+    /****************************************************************************************************\
+    | Setup a chain of activator checkboxes, wherein once a checkbox is activated/deactivated,           |
+    | only its closest previous sibling is hidden/shown.                                                 |
+    \****************************************************************************************************/
     function setupActvtrChain (selector) {
         if ($.type(selector) === "string") {
             $(".gform_body").on("change", selector + " input", function () {
@@ -4406,10 +4634,10 @@
         }
     }
 
-    /******************************************************************************************\
-    | Setup a chain of file uploading inputs, wherein only the left-most input in the tree is  |
-    | visible. As the user uploads files in sequence, the next nearest neighbor is unveiled.   |
-    \******************************************************************************************/
+    /****************************************************************************************************\
+    | Setup a chain of file uploading inputs, wherein only the left-most input in the tree is            |
+    | visible. As the user uploads files in sequence, the next nearest neighbor is unveiled.             |
+    \****************************************************************************************************/
     function setupUploadChain (selector) {
         if ($.type(selector) === "string") {
             /* CHECK IF UPLOADS ALREADY EXIST:
@@ -4488,52 +4716,126 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 
 (function ($) {
     $(document).ready(function () {
-        var qTipContentSource;
-        var qTipStyle;
         var $this;
+        var qTipContentSource; // Currently, either a span or a div tag will be accepted.
+        var qTipStyle; // Currently, blue and dark qTips are implemented.
+        var qTipCntnt; // Object needed for enabling the optional use of titles within qTips.
         $('.has-tool-tip').each(function () {
             $this = $(this);
             $this.hasClass('blue') ? qTipStyle = 'qtip-blue' : qTipStyle = 'qtip-dark';
             if ($this.hasClass('parental-neighbor-is-source')) {
-                $this.qtip({
-                    style: qTipStyle,
-                    content: { text: $this.parent().next('div')},
-                    position: {
-                        target: 'mouse', // Track the mouse as the positioning target
-                        adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
-                    },
-                    show: {
-                        effect: function () {
-                            $(this).slideDown(200);
+                qTipCntnt = new QTipContent($this.parent().next('div'));
+                if (qTipCntnt.qTipTitle == null) {
+                    $this.qtip({
+                        style: qTipStyle,
+                        content: {
+                            text: qTipCntnt.qTipInnerHTML
+                        },
+                        position: {
+                            target: 'mouse', // Track the mouse as the positioning target
+                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+                        },
+                        show: {
+                            effect: function () {
+                                $(this).slideDown(200);
+                            }
+                        },
+                        hide: {
+                            effect: function () {
+                                $(this).slideUp(200);
+                            }
                         }
-                    },
-                    hide: {
-                        effect: function () {
-                            $(this).slideUp(200);
+                    });
+                }
+                else {
+                    $this.qtip({
+                        style: qTipStyle,
+                        content: {
+                            title: qTipCntnt.qTipTitle,
+                            text: qTipCntnt.qTipInnerHTML
+                        },
+                        position: {
+                            target: 'mouse', // Track the mouse as the positioning target
+                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+                        },
+                        show: {
+                            effect: function () {
+                                $(this).slideDown(200);
+                            }
+                        },
+                        hide: {
+                            effect: function () {
+                                $(this).slideUp(200);
+                            }
                         }
-                    }
-                });                
+                    });
+                }
             } else {
                 $this.hasClass('span-is-source') ? qTipContentSource = 'span' : qTipContentSource = 'div';
-                $this.qtip({
-                    style: qTipStyle,
-                    content: { text: $this.next(qTipContentSource)},
-                    position: {
-                        target: 'mouse', // Track the mouse as the positioning target
-                        adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
-                    },
-                    show: {
-                        effect: function () {
-                            $(this).slideDown(200);
+                qTipCntnt = new QTipContent($this.next(qTipContentSource));
+                if (qTipCntnt.qTipTitle == null) {
+                    $this.qtip({
+                        style: qTipStyle,
+                        content: {
+                            text: qTipCntnt.qTipInnerHTML
+                        },
+                        position: {
+                            target: 'mouse', // Track the mouse as the positioning target
+                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+                        },
+                        show: {
+                            effect: function () {
+                                $(this).slideDown(200);
+                            }
+                        },
+                        hide: {
+                            effect: function () {
+                                $(this).slideUp(200);
+                            }
                         }
-                    },
-                    hide: {
-                        effect: function () {
-                            $(this).slideUp(200);
+                    });
+                }
+                else {
+                    $this.qtip({
+                        style: qTipStyle,
+                        content: {
+                            title: qTipCntnt.qTipTitle,
+                            text: qTipCntnt.qTipInnerHTML
+                        },
+                        position: {
+                            target: 'mouse', // Track the mouse as the positioning target
+                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+                        },
+                        show: {
+                            effect: function () {
+                                $(this).slideDown(200);
+                            }
+                        },
+                        hide: {
+                            effect: function () {
+                                $(this).slideUp(200);
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });       
     });
+    
+    function QTipContent($qTipSlctr) {
+        this.qTipTitle = null;
+        this.qTipText = null;
+        this.qTipInnerHTML = null;
+        var regExPttrn = /^(.+)\|(.+)$/;
+        var regExResult = regExPttrn.exec($qTipSlctr.text());
+        if (regExResult != null && regExResult.length == 3) {
+            this.qTipTitle = regExResult[1];
+            this.qTipText = regExResult[2];
+            regExPttrn = /^(.+)\|/;
+            this.qTipInnerHTML = $qTipSlctr.html().replace(regExPttrn, "");
+        } else {
+            this.qTipText = $qTipSlctr.text();
+            this.qTipInnerHTML = $qTipSlctr.html();
+        }
+    }
 })(jQuery);
