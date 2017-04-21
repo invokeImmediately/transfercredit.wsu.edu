@@ -4105,15 +4105,15 @@
     }
 })(jQuery);
 /***************************************************************************************************************************
- * CUSTOM JQUERY-BASED DYNAMIC CONTENT                                                                                     *
+ * jQuery.oue-custom.js: custom JavaScript code common to all WSU Undergraduate Education websites                         *
  ***************************************************************************************************************************/
 "use strict";
 
 (function ($) {
 	var thisFileName = "jQuery.oue-custom.js";
 
-	/********************************************************************************************************************
-	 * ADDITION OF FUNCTIONS TO JQUERY                                                                                  *
+	/*******************************************************************************************************************
+	 * ADDITION OF FUNCTIONS to jQuery                                                                                 *
 	 *******************************************************************************************************************/
 	 
 	/**
@@ -4165,7 +4165,7 @@
 			newErrorMsg += "\t\tfileName = " + fileName + "\n";
 			if (!(bitMask & 1)) {
 				newErrorMsg = "\t\ttypeof filename = " + (typeof fileName) + "\n";
-			}			
+			}
 			newErrorMsg += "\t\tfnctnName = " + fnctnName + "\n";
 			if(!((bitMask & 2) >> 1)) {
 				newErrorMsg = "\t\ttypeof fnctnName = " + (typeof fnctnName) + "\n";
@@ -4189,14 +4189,14 @@
 		}
 	}
 
-	/****************************************************************************************************
-	 * DOCUMENT READY BINDINGS                                                                          *
-	 ****************************************************************************************************/
-    $(document).ready(function () {
+	/*******************************************************************************************************************
+	 * Function calls made once the DOM IS READY                                                                       *
+	 *******************************************************************************************************************/
+    $(function () {
 		var params = new Object();
 		var theseParams;
 		
-		// Setup parameters for document initialization function calls
+		// Set up parameters for functions called during document initialization function calls
 		params.fixDogears = {
 			slctrSiteNav: "#spine-sitenav",
 			slctrDogeared: "li.current.active.dogeared",
@@ -4301,7 +4301,6 @@
 			theseParams.slctrSpine,
 			theseParams.slctrExternalLinks
 		);
-		
 		theseParams = params.checkForLrgFrmtSingle;
         checkForLrgFrmtSingle(
 			theseParams.slctrSingle,
@@ -4309,7 +4308,6 @@
 			theseParams.slctrHdrGroup,
 			theseParams.centeringClass
 		);
-		
 		theseParams = params.initHrH2Motif;
         initHrH2Motif(
 			theseParams.slctrStandardH2,
@@ -4318,7 +4316,6 @@
 			theseParams.hrClassesAdded,
 			theseParams.animAddDrtn
 		);
-		
 		theseParams = params.initFancyHrH2Motif;
         initFancyHrH2Motif(
 			theseParams.slctrFancyH2,
@@ -4326,7 +4323,6 @@
 			theseParams.hrClassesAdded,
 			theseParams.animAddDrtn
 		);
-		
 		theseParams = params.initHrH3Motif;
         initHrH3Motif(
 			theseParams.slctrStandardH3,
@@ -4334,7 +4330,6 @@
 			theseParams.hrClassesAdded,
 			theseParams.animAddDrtn
 		);
-		
 		theseParams = params.initFancyHrH3Motif;
         initFancyHrH3Motif(
 			theseParams.slctrFancyH3,
@@ -4342,7 +4337,6 @@
 			theseParams.hrClassesAdded,
 			theseParams.animAddDrtn
 		);
-		
 		theseParams = params.initDropDownToggles;
         initDropDownToggles(
 			theseParams.slctrToggle,
@@ -4350,8 +4344,6 @@
 			theseParams.activatingClass,
 			theseParams.animDuration
 		);
-
-	
 		theseParams = params.initReadMoreToggles;
         initReadMoreToggles(
 			theseParams.slctrToggleIn,
@@ -4359,7 +4351,6 @@
 			theseParams.slctrPanel,
 			theseParams.animDuration
 		);
-		
 		theseParams = params.initContentFlippers;
         initContentFlippers(
 			theseParams.slctrCntntFlppr,
@@ -4367,7 +4358,6 @@
 			theseParams.slctrFlppdBack,
 			theseParams.animDuration
 		);
-		
 		theseParams = params.initDefinitionLists;
         initDefinitionLists(
 			theseParams.slctrDefList,
@@ -4379,7 +4369,6 @@
 			theseParams.animSldDrtn,
 			theseParams.animHghtDrtn
 		);
-
 		theseParams = params.addDefinitionListButtons;
         addDefinitionListButtons(
 			theseParams.slctrDefList,
@@ -4390,18 +4379,15 @@
 			theseParams.ddRevealingClass,
 			theseParams.animSldDrtn
 		);
-		
 		theseParams = params.initQuickTabs;
 		initQuickTabs(
 			theseParams.slctrQtSctn
-		);
-		
+		);	
 		theseParams = params.initTocFloating;
 		initTocFloating(
 			theseParams.slctrToc,
 			theseParams.slctrBackToToc
 		);
-		
 		theseParams = params.initTriggeredByHover;
         initTriggeredByHover(
 			theseParams.slctrTrggrdOnHvr,
@@ -4414,14 +4400,14 @@
         
     });
     
-	/****************************************************************************************************
-	 * WINDOW LOAD EVENT BINDINGS                                                                       *
-	 ****************************************************************************************************/
+	/*******************************************************************************************************************
+	 * WINDOW LOAD event bindings                                                                                      *
+	 *******************************************************************************************************************/
     $(window).on("load", function () {
 		var params = new Object();
 		var theseParams;
 		
-		// Setup parameters for loaded window function calls
+		// Set up parameters for functions called during the window load event
 		params.finalizeLrgFrmtSideRight = {
 			slctrSideRight: ".side-right.large-format-friendly",
 			slctrColOne: ".column.one",
@@ -4443,7 +4429,7 @@
 			fadeInDuration: 500
 		};
 		
-		// Call loaded window functions
+		// Make calls to functions
 		theseParams = params.finalizeLrgFrmtSideRight;
         finalizeLrgFrmtSideRight(
 			theseParams.slctrSideRight,
@@ -4452,7 +4438,6 @@
 			theseParams.trggrWidth,
 			theseParams.animDuration
 		);
-		
 		theseParams = params.showDefinitionListButtons;
 		showDefinitionListButtons(
 			theseParams.slctrDefList,
@@ -4460,7 +4445,6 @@
 			theseParams.collapseAllClass,
 			theseParams.animFadeInDrtn
 		);
-		
 		theseParams = params.initWelcomeMessage;
 		initWelcomeMessage(
 			theseParams.slctrWlcmMsg,
@@ -4471,15 +4455,28 @@
 		);
     });
     
+	/*******************************************************************************************************************
+	 * WINDOW RESIZE event bindings                                                                                    *
+	 *******************************************************************************************************************/
     $(window).resize(function () {
         resizeLrgFrmtSideRight(".side-right.large-format-friendly", "div.column.one", "div.column.two",
          1051, 100);
     });
     
-	/****************************************************************************************************
-	 * DOCUMENT INITIALIZATION FUNCTIONS                                                                *
-	 ****************************************************************************************************/
+	/*******************************************************************************************************************
+	 * DOCUMENT INITIALIZATION function definitions (designed to be called after DOM is ready)                         *
+	 *******************************************************************************************************************/
+	
+	/**
+	 * addBlankTargetAttributes
+	 * DESCRIPTION: Adds missing blank target attributes to links within the WSU Spine as needed.
+	 * PARAMETERS:
+	 *   - slctrSpine: selector string for locating the spine object within the DOM
+	 *   - slctrExternalLinks: selector string for locating links within the spine that lead to destination external to the domain
+	 */
 	function addBlankTargetAttributes(slctrSpine, slctrExternalLinks) {
+		var thisFnctnName = "addBlankTargetAttributes";
+		var thisFnctnDesc = "Adds missing blank target attributes to links within the WSU Spine as needed.";
 		if (typeof slctrSpine === "string" && typeof slctrExternalLinks === "string") {
 			var $spine = $(slctrSpine);
 			if ($spine.length === 1) {
@@ -4492,14 +4489,14 @@
 				});
 			} else {
 				$.logError(
-					"jQuery.oue-custom.js", "addBlankTargetAttributes", "Adds missing blank target attributes to links within the WSU Spine as needed.",
-					"A WSU Spine element was not found within the DOM."
+					thisFileName, thisFnctnName, thisFnctnDesc,
+					"I could not locate the WSU Spine element within the DOM."
 				);
 			}
 		} else {
 			$.logError(
-				"jQuery.oue-custom.js", "addBlankTargetAttributes", "Adds missing blank target attributes to links within the WSU Spine as needed.",
-				"Incorrectly typed parameters were passed to this function:\n\ttypeof slctrSpine = " + (typeof slctrSpine) + "\n\ttypeof slctrExternalLinks = " (typeof slctrExternalLinks)
+				thisFileName, thisFnctnName, thisFnctnDesc,
+				"I was passed one or more incorrectly typed parameters. Here's what I was passed:\n\ttypeof slctrSpine = " + (typeof slctrSpine) + "\n\ttypeof slctrExternalLinks = " + (typeof slctrExternalLinks)
 			);
 		}
 	}
@@ -4508,12 +4505,12 @@
 	 * addDefinitionListButtons
 	 * DESCRIPTION: Automatically creates and binds events to expand/collapse all buttons designed for improving UX of OUE site definition lists.
 	 * PARAMETERS:
-	 *   += slctrDefList: selector string for locating definition list elements within the DOM that contain collapsible definitions
-	 *   += expandAllClass: CSS class for controlling the layout of expand all buttons
-	 *   += collapseAllClass: CSS class for controlling the layout of collapse all buttons
-	 *   += btnDisablingClass: CSS class applied to disable expand/collapse all buttons
-	 *   += dtActivatingClass: CSS class used to indicate an active/expanded state for definition terms
-	 *   += ddRevealingClass: CSS class used to realize a revealed, visible state on definitions
+	 *   - slctrDefList: selector string for locating definition list elements within the DOM that contain collapsible definitions
+	 *   - expandAllClass: CSS class for controlling the layout of expand all buttons
+	 *   - collapseAllClass: CSS class for controlling the layout of collapse all buttons
+	 *   - btnDisablingClass: CSS class applied to disable expand/collapse all buttons
+	 *   - dtActivatingClass: CSS class used to indicate an active/expanded state for definition terms
+	 *   - ddRevealingClass: CSS class used to realize a revealed, visible state on definitions
 	 */
     function addDefinitionListButtons(slctrDefList, expandAllClass, collapseAllClass, btnDisablingClass,
 	 dtActivatingClass, ddRevealingClass, animSldDrtn) {
@@ -4699,9 +4696,11 @@
     function initDropDownToggles(slctrToggle, slctrWhatsToggled, activatingClass, animDuration) {
 		var $toggles =  $(slctrToggle);
 		$toggles.attr("tabindex", 0);
+		$toggles.addClass("no-anchor-highlighting");
 		effectDropDownTogglePermanence($toggles, slctrWhatsToggled, activatingClass, animDuration);
         $toggles.click(function () {
             var $this = $(this);
+			$this.blur();
             $this.toggleClass(activatingClass);
             $this.next(slctrWhatsToggled).toggle(animDuration);
 			setupDropDownTogglePermanence($this, activatingClass);
@@ -4962,9 +4961,9 @@
         });
     }
 
-	/****************************************************************************************************
-	 * LOADED WINDOW FUNCTIONS                                                                          *
-	 ****************************************************************************************************/
+	/*******************************************************************************************************************
+	 * LOADED WINDOW FUNCTIONS                                                                                         * 
+	 *******************************************************************************************************************/
     function finalizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration) {
         if($(window).width() >= trggrWidth) {
             $(slctrSideRight + ">" + slctrColTwo).each(function () {
@@ -5006,16 +5005,13 @@
 		});
 	}
 		
-	/****************************************************************************************************
-	 * WINDOW-RESIZE TRIGGERED FUNCTIONS                                                                *
-	 ****************************************************************************************************/
+	/*******************************************************************************************************************
+	 * WINDOW-RESIZE TRIGGERED FUNCTIONS                                                                               *
+	 *******************************************************************************************************************/
     function resizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration) {
         finalizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration);
     }
 	
-	/****************************************************************************************************
-	 * EFFECTS FUNCTIONS                                                                                *
-	 ****************************************************************************************************/
 })(jQuery);
 /************************************************************************************************************\
 | JQUERY-MEDIATED ENHANCED INTERACTIVITY OF GRAVITY FORM FIELDS                                              |
