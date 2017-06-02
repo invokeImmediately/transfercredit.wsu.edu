@@ -7344,7 +7344,7 @@ div.column ul.checklist-flowchart > li:nth-child(8n) > p {
   position: absolute;
   left: 0;
   top: 50%;
-  font-size: 4em;
+  font-size: 4em !important;
   text-align: center;
   -webkit-transform: translateY(-70%);
   -moz-transform: translateY(-70%);
