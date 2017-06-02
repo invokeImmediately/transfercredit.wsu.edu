@@ -7190,7 +7190,7 @@ div.column ul:not(.checklist-flowchart):not(ul.campus-links) li {
   }
 }
 .column ul.checklist-flowchart {
-  margin-top: 2rem;
+  margin-top: 2rem !important;
 }
 .column ul.checklist-flowchart > li {
   min-height: 150px;
