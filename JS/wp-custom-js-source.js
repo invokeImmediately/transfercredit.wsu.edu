@@ -4193,69 +4193,69 @@
 	 * Function calls made once the DOM IS READY                                                                       *
 	 *******************************************************************************************************************/
     $(function () {
-		var params = new Object();
-		var theseParams;
+		var argsList = new Object(); // List of arguments that will be passed to functions
+		var args;
 		
-		// Set up parameters for functions called during document initialization function calls
-		params.fixDogears = {
+		// Set up organized list of arguments to be passed to functions called during document initialization
+		argsList.fixDogears = {
 			slctrSiteNav: "#spine-sitenav",
 			slctrDogeared: "li.current.active.dogeared",
 			removedClasses: "current active dogeared"
 		};
-		params.addBlankTargetAttributes = {
+		argsList.addBlankTargetAttributes = {
 			slctrSpine: "#spine",
 			slctrExternalLinks: "a.external"
 		};
-		params.checkForLrgFrmtSingle = {
+		argsList.checkForLrgFrmtSingle = {
 			slctrSingle: ".single.large-format-friendly",
 			slctrMainHdr: "header.main-header",
 			slctrHdrGroup: ".header-group",
 			centeringClass: "centered"
 		};
-		params.initHrH2Motif = {
+		argsList.initHrH2Motif = {
 			slctrStandardH2: ".column > h2:not(.fancy), .column > section > h2:not(.fancy)",
 			slctrPrevHr: "hr:not(.subSection)",
 			h2ClassesAdded: "no-top-margin",
 			hrClassesAdded: "narrow-bottom-margin dark-gray thicker",
 			animAddDrtn: 250
 		};
-		params.initFancyHrH2Motif = {
+		argsList.initFancyHrH2Motif = {
 			slctrFancyH2: ".column > h2.fancy, .column > section > h2.fancy",
 			slctrPrevHr: "hr:not(.subSection)",
 			hrClassesAdded: "no-bottom-margin dark-gray thicker encroach-horizontal",
 			animAddDrtn: 250
 		};
-		params.initHrH3Motif = {
+		argsList.initHrH3Motif = {
 			slctrStandardH3: ".column > h3:not(.fancy), .column > section > h3:not(.fancy)",
 			slctrPrevHr: "hr:not(.subSection)",
 			hrClassesAdded: "narrow-bottom-margin crimson",
 			animAddDrtn: 250
 		};
-		params.initFancyHrH3Motif = {
+		argsList.initFancyHrH3Motif = {
 			slctrFancyH3: ".column > h3.fancy, .column > section > h3.fancy",
 			slctrPrevHr: "hr:not(.subSection)",
 			hrClassesAdded: "no-bottom-margin crimson encroach-horizontal",
 			animAddDrtn: 250
 		};
-		params.initDropDownToggles = {
+		argsList.initDropDownToggles = {
 			slctrToggle: ".drop-down-toggle",
 			slctrWhatsToggled: ".toggled-panel",
 			activatingClass: "activated",
 			animDuration: 500
 		};
-		params.initReadMoreToggles = {
+		argsList.initReadMoreToggles = {
 			slctrToggleIn: ".read-more-toggle-in-ctrl",
 			slctrToggleOut: ".read-more-toggle-out-ctrl",
 			slctrPanel: ".read-more-panel",
 			animDuration: 500
 		};
-		params.initContentFlippers = {
+		argsList.initContentFlippers = {
 			slctrCntntFlppr: ".content-flipper",
 			slctrFlppdFront: ".flipped-content-front",
 			slctrFlppdBack: ".flipped-content-back",
 			animDuration: 500
 		};
-		params.initDefinitionLists = {
+		argsList.initDefinitionLists = {
 			slctrDefList: "dl.toggled",
 			slctrLrgFrmtSection: ".large-format-friendly",
 			slctrColOne: ".column.one",
@@ -4265,23 +4265,23 @@
 			animSldDrtn: 400,
 			animHghtDrtn: 100
 		};
-		params.addDefinitionListButtons = {
-			slctrDefList: params.initDefinitionLists.slctrDefList,
+		argsList.addDefinitionListButtons = {
+			slctrDefList: argsList.initDefinitionLists.slctrDefList,
 			expandAllClass: "expand-all-button",
 			collapseAllClass: "collapse-all-button",
 			btnDisablingClass: "disabled",
-			dtActivatingClass: params.initDefinitionLists.dtActivatingClass,
-			ddRevealingClass: params.initDefinitionLists.ddRevealingClass,
-			animSldDrtn: params.initDefinitionLists.animSldDrtn
+			dtActivatingClass: argsList.initDefinitionLists.dtActivatingClass,
+			ddRevealingClass: argsList.initDefinitionLists.ddRevealingClass,
+			animSldDrtn: argsList.initDefinitionLists.animSldDrtn
 		};
-		params.initQuickTabs = {
+		argsList.initQuickTabs = {
 			slctrQtSctn: "section.row.single.quick-tabs"
 		};
-		params.initTocFloating = {
+		argsList.initTocFloating = {
 			slctrToc: "p.vpue-jump-bar",
 			slctrBackToToc: "p.vpue-jump-back"
 		};
-		params.initTriggeredByHover = {
+		argsList.initTriggeredByHover = {
 			slctrTrggrdOnHvr: ".triggered-on-hover",
 			slctrCntntRvld: ".content-revealed",
 			slctrCntntHddn: ".content-hidden",
@@ -4289,111 +4289,124 @@
 		};
 		
 		// Call document initialization functions
-		theseParams = params.fixDogears;
+		args = argsList.fixDogears;
         fixDogears(
-			theseParams.slctrSiteNav,
-			theseParams.slctrDogeared,
-			theseParams.removedClasses
+			args.slctrSiteNav,
+			args.slctrDogeared,
+			args.removedClasses
 		);
 		
-		theseParams = params.addBlankTargetAttributes;
+		args = argsList.addBlankTargetAttributes;
 		addBlankTargetAttributes(
-			theseParams.slctrSpine,
-			theseParams.slctrExternalLinks
+			args.slctrSpine,
+			args.slctrExternalLinks
 		);
-		theseParams = params.checkForLrgFrmtSingle;
+		
+		args = argsList.checkForLrgFrmtSingle;
         checkForLrgFrmtSingle(
-			theseParams.slctrSingle,
-			theseParams.slctrMainHdr,
-			theseParams.slctrHdrGroup,
-			theseParams.centeringClass
+			args.slctrSingle,
+			args.slctrMainHdr,
+			args.slctrHdrGroup,
+			args.centeringClass
 		);
-		theseParams = params.initHrH2Motif;
+		
+		args = argsList.initHrH2Motif;
         initHrH2Motif(
-			theseParams.slctrStandardH2,
-			theseParams.slctrPrevHr,
-			theseParams.h2ClassesAdded,
-			theseParams.hrClassesAdded,
-			theseParams.animAddDrtn
+			args.slctrStandardH2,
+			args.slctrPrevHr,
+			args.h2ClassesAdded,
+			args.hrClassesAdded,
+			args.animAddDrtn
 		);
-		theseParams = params.initFancyHrH2Motif;
+		
+		args = argsList.initFancyHrH2Motif;
         initFancyHrH2Motif(
-			theseParams.slctrFancyH2,
-			theseParams.slctrPrevHr,
-			theseParams.hrClassesAdded,
-			theseParams.animAddDrtn
+			args.slctrFancyH2,
+			args.slctrPrevHr,
+			args.hrClassesAdded,
+			args.animAddDrtn
 		);
-		theseParams = params.initHrH3Motif;
+		
+		args = argsList.initHrH3Motif;
         initHrH3Motif(
-			theseParams.slctrStandardH3,
-			theseParams.slctrPrevHr,
-			theseParams.hrClassesAdded,
-			theseParams.animAddDrtn
+			args.slctrStandardH3,
+			args.slctrPrevHr,
+			args.hrClassesAdded,
+			args.animAddDrtn
 		);
-		theseParams = params.initFancyHrH3Motif;
+		
+		args = argsList.initFancyHrH3Motif;
         initFancyHrH3Motif(
-			theseParams.slctrFancyH3,
-			theseParams.slctrPrevHr,
-			theseParams.hrClassesAdded,
-			theseParams.animAddDrtn
+			args.slctrFancyH3,
+			args.slctrPrevHr,
+			args.hrClassesAdded,
+			args.animAddDrtn
 		);
-		theseParams = params.initDropDownToggles;
+		
+		args = argsList.initDropDownToggles;
         initDropDownToggles(
-			theseParams.slctrToggle,
-			theseParams.slctrWhatsToggled,
-			theseParams.activatingClass,
-			theseParams.animDuration
+			args.slctrToggle,
+			args.slctrWhatsToggled,
+			args.activatingClass,
+			args.animDuration
 		);
-		theseParams = params.initReadMoreToggles;
+		
+		args = argsList.initReadMoreToggles;
         initReadMoreToggles(
-			theseParams.slctrToggleIn,
-			theseParams.slctrToggleOut,
-			theseParams.slctrPanel,
-			theseParams.animDuration
+			args.slctrToggleIn,
+			args.slctrToggleOut,
+			args.slctrPanel,
+			args.animDuration
 		);
-		theseParams = params.initContentFlippers;
+		
+		args = argsList.initContentFlippers;
         initContentFlippers(
-			theseParams.slctrCntntFlppr,
-			theseParams.slctrFlppdFront,
-			theseParams.slctrFlppdBack,
-			theseParams.animDuration
+			args.slctrCntntFlppr,
+			args.slctrFlppdFront,
+			args.slctrFlppdBack,
+			args.animDuration
 		);
-		theseParams = params.initDefinitionLists;
+		
+		args = argsList.initDefinitionLists;
         initDefinitionLists(
-			theseParams.slctrDefList,
-			theseParams.slctrLrgFrmtSection,
-			theseParams.slctrColOne,
-			theseParams.slctrColTwo,
-			theseParams.dtActivatingClass,
-			theseParams.ddRevealingClass,
-			theseParams.animSldDrtn,
-			theseParams.animHghtDrtn
+			args.slctrDefList,
+			args.slctrLrgFrmtSection,
+			args.slctrColOne,
+			args.slctrColTwo,
+			args.dtActivatingClass,
+			args.ddRevealingClass,
+			args.animSldDrtn,
+			args.animHghtDrtn
 		);
-		theseParams = params.addDefinitionListButtons;
+		
+		args = argsList.addDefinitionListButtons;
         addDefinitionListButtons(
-			theseParams.slctrDefList,
-			theseParams.expandAllClass,
-			theseParams.collapseAllClass,
-			theseParams.btnDeactivatingClass,
-			theseParams.dtActivatingClass,
-			theseParams.ddRevealingClass,
-			theseParams.animSldDrtn
+			args.slctrDefList,
+			args.expandAllClass,
+			args.collapseAllClass,
+			args.btnDeactivatingClass,
+			args.dtActivatingClass,
+			args.ddRevealingClass,
+			args.animSldDrtn
 		);
-		theseParams = params.initQuickTabs;
+		
+		args = argsList.initQuickTabs;
 		initQuickTabs(
-			theseParams.slctrQtSctn
-		);	
-		theseParams = params.initTocFloating;
-		initTocFloating(
-			theseParams.slctrToc,
-			theseParams.slctrBackToToc
+			args.slctrQtSctn
 		);
-		theseParams = params.initTriggeredByHover;
+		
+		args = argsList.initTocFloating;
+		initTocFloating(
+			args.slctrToc,
+			args.slctrBackToToc
+		);
+
+		args = argsList.initTriggeredByHover;
         initTriggeredByHover(
-			theseParams.slctrTrggrdOnHvr,
-			theseParams.slctrCntntRvld,
-			theseParams.slctrCntntHddn,
-			theseParams.animDuration
+			args.slctrTrggrdOnHvr,
+			args.slctrCntntRvld,
+			args.slctrCntntHddn,
+			args.animDuration
 		);
 		
 		// TODO: initScrollingSidebars("...");
@@ -4485,6 +4498,18 @@
 					var $thisLink = $(this);
 					if ($thisLink.attr("target") != "_blank") {
 						$thisLink.attr("target", "_blank");
+						var relStr = $thisLink.attr("rel");
+						if (relStr == undefined) {
+							$thisLink.attr("rel", "noopener noreferrer");
+						} else {
+							if (relStr.search(/noopener/i) < 0) {
+								relStr += " noopener";
+							}
+							if (relStr.search(/noreferrer/i) < 0) {
+								relStr += " noreferrer";
+							}
+							$thisLink.attr("rel", relStr);
+						}
 					}
 				});
 			} else {
@@ -5366,127 +5391,134 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 /* # sourceMappingURL=jquery.qtip.min.js.map */
 
 (function ($) {
-    $(document).ready(function () {
-        var $this;
-        var qTipContentSource; // Currently, either a span or a div tag will be accepted.
-        var qTipStyle; // Currently, blue and dark qTips are implemented.
-        var qTipCntnt; // Object needed for enabling the optional use of titles within qTips.
-        $('.has-tool-tip').each(function () {
-            $this = $(this);
-            $this.hasClass('blue') ? qTipStyle = 'qtip-blue' : qTipStyle = 'qtip-dark';
-            if ($this.hasClass('parental-neighbor-is-source')) {
-                qTipCntnt = new QTipContent($this.parent().next('div'));
-                if (qTipCntnt.qTipTitle == null) {
-                    $this.qtip({
-                        style: qTipStyle,
-                        content: {
-                            text: qTipCntnt.qTipInnerHTML
-                        },
-                        position: {
-                            target: 'mouse', // Track the mouse as the positioning target
-                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
-                        },
-                        show: {
-                            effect: function () {
-                                $(this).slideDown(200);
-                            }
-                        },
-                        hide: {
-                            effect: function () {
-                                $(this).slideUp(200);
-                            }
-                        }
-                    });
-                }
-                else {
-                    $this.qtip({
-                        style: qTipStyle,
-                        content: {
-                            title: qTipCntnt.qTipTitle,
-                            text: qTipCntnt.qTipInnerHTML
-                        },
-                        position: {
-                            target: 'mouse', // Track the mouse as the positioning target
-                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
-                        },
-                        show: {
-                            effect: function () {
-                                $(this).slideDown(200);
-                            }
-                        },
-                        hide: {
-                            effect: function () {
-                                $(this).slideUp(200);
-                            }
-                        }
-                    });
-                }
-            } else {
-                $this.hasClass('span-is-source') ? qTipContentSource = 'span' : qTipContentSource = 'div';
-                qTipCntnt = new QTipContent($this.next(qTipContentSource));
-                if (qTipCntnt.qTipTitle == null) {
-                    $this.qtip({
-                        style: qTipStyle,
-                        content: {
-                            text: qTipCntnt.qTipInnerHTML
-                        },
-                        position: {
-                            target: 'mouse', // Track the mouse as the positioning target
-                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
-                        },
-                        show: {
-                            effect: function () {
-                                $(this).slideDown(200);
-                            }
-                        },
-                        hide: {
-                            effect: function () {
-                                $(this).slideUp(200);
-                            }
-                        }
-                    });
-                }
-                else {
-                    $this.qtip({
-                        style: qTipStyle,
-                        content: {
-                            title: qTipCntnt.qTipTitle,
-                            text: qTipCntnt.qTipInnerHTML
-                        },
-                        position: {
-                            target: 'mouse', // Track the mouse as the positioning target
-                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
-                        },
-                        show: {
-                            effect: function () {
-                                $(this).slideDown(200);
-                            }
-                        },
-                        hide: {
-                            effect: function () {
-                                $(this).slideUp(200);
-                            }
-                        }
-                    });
-                }
-            }
-        });       
-    });
-    
-    function QTipContent($qTipSlctr) {
-        this.qTipTitle = null;
-        this.qTipText = null;
-        this.qTipInnerHTML = null;
-        var regExPttrn = /^(.+)\|(.+)$/;
-        var regExResult = regExPttrn.exec($qTipSlctr.text());
-        if (regExResult != null && regExResult.length == 3) {
-            this.qTipTitle = regExResult[1];
-            this.qTipText = regExResult[2];
-            regExPttrn = /^(.+)\|/;
-            this.qTipInnerHTML = $qTipSlctr.html().replace(regExPttrn, "");
-        } else {
-            this.qTipText = $qTipSlctr.text();
-            this.qTipInnerHTML = $qTipSlctr.html();
-        }
-    }
+
+// Code executed once DOM is ready
+$(function () {
+	var $this;
+	var qTipContentSource; // Either a span or a div tag will be accepted.
+	var qTipStyle; // Blue and dark qTips are implemented.
+	var qTipCntnt; // Object enabling the optional use of titles within qTips.
+	$('.has-tool-tip').each(function () {
+		$this = $(this);
+		$this.hasClass('blue') ? qTipStyle = 'qtip-blue' : qTipStyle = 'qtip-dark';
+		if ($this.hasClass('parental-neighbor-is-source')) {
+			qTipCntnt = new QTipContent($this.parent().next('div'));
+			if (qTipCntnt.qTipTitle == null) {
+				$this.qtip({
+					style: qTipStyle,
+					content: {
+						text: qTipCntnt.qTipInnerHTML
+					},
+					position: {
+						target: 'mouse', // Track the mouse as the positioning target
+						adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+					},
+					show: {
+						effect: function () {
+							$(this).slideDown(200);
+						}
+					},
+					hide: {
+						effect: function () {
+							$(this).slideUp(200);
+						}
+					}
+				});
+			}
+			else {
+				$this.qtip({
+					style: qTipStyle,
+					content: {
+						title: qTipCntnt.qTipTitle,
+						text: qTipCntnt.qTipInnerHTML
+					},
+					position: {
+						target: 'mouse', // Track the mouse as the positioning target
+						adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+					},
+					show: {
+						effect: function () {
+							$(this).slideDown(200);
+						}
+					},
+					hide: {
+						effect: function () {
+							$(this).slideUp(200);
+						}
+					}
+				});
+			}
+		} else {
+			$this.hasClass('span-is-source') ?
+				qTipContentSource = 'span' :
+				qTipContentSource = 'div';
+			qTipCntnt = new QTipContent($this.next(qTipContentSource));
+			if ( qTipCntnt.qTipTitle == null ) {
+				$this.qtip({
+					style: qTipStyle,
+					content: {
+						text: qTipCntnt.qTipInnerHTML
+					},
+					position: {
+						target: 'mouse',
+						adjust: { x: 5, y: 15 }
+					},
+					show: {
+						effect: function () {
+							$(this).slideDown(200);
+						}
+					},
+					hide: {
+						effect: function () {
+							$(this).slideUp(200);
+						}
+					}
+				});
+			} else {
+				$this.qtip({
+					style: qTipStyle,
+					content: {
+						title: qTipCntnt.qTipTitle,
+						text: qTipCntnt.qTipInnerHTML
+					},
+					position: {
+						target: 'mouse',
+						adjust: { x: 5, y: 15 }
+					},
+					show: {
+						effect: function () {
+							$(this).slideDown(200);
+						}
+					},
+					hide: {
+						effect: function () {
+							$(this).slideUp(200);
+						}
+					}
+				});
+			}
+		}
+	});       
+});
+
+/*!
+ *  QTip content class
+ */
+function QTipContent($qTipSlctr) {
+	var regExPttrn = /^(.+)\|(.+)$/;
+	var regExResult;
+	this.qTipTitle = null;
+	this.qTipText = null;
+	this.qTipInnerHTML = null;
+	regExResult = regExPttrn.exec($qTipSlctr.text());
+	if (regExResult != null && regExResult.length == 3) {
+		this.qTipTitle = regExResult[1];
+		this.qTipText = regExResult[2];
+		regExPttrn = /^(.+)\|/;
+		this.qTipInnerHTML = $qTipSlctr.html().replace(regExPttrn, "");
+	} else {
+		this.qTipText = $qTipSlctr.text();
+		this.qTipInnerHTML = $qTipSlctr.html();
+	}
+}
 })(jQuery);
