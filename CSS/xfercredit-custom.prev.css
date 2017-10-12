@@ -1,6 +1,33 @@
-@import  'https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif';
+﻿@import  'https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif';
 
-/* Built with the LESS CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/transfercredit.wsu.edu] for a repository of source code. */
+/*! Built with the LESS CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/transfercredit.wsu.edu] for a repository of source code. */
+/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+*   ║ MASTER STYLE SHEET for WSU Office of Undergraduate Education Websites ############################################### ║
+*   ╠=======================================================================================================================╣
+*   ║ AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)                                    ║
+*   ║                                                                                                                       ║
+*   ║ DESCRIPTION: Intended for use with all elements regardless of semantics                                               ║
+*   ║                                                                                                                       ║
+*   ║ LAYOUT: This document is laid out according to the W3C HTML5 language specification (please see                       ║
+*   ║          https://www.w3.org/TR/html5/ for more information). Rulesets are generally declared in the same sequence as  ║
+*   ║          their matching elements appear in the HTML5 spec. Moreover, style declarations are made according to browser ║
+*   ║          rendering sequence; styles for controlling layout are followed by those related to painting and then by      ║
+*   ║          those associated with dynamic behaviors to the DOM tree.                                                     ║
+*   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*!   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+*     ║ #### Global LESS VARIABLES, LESS MIXINS, and CLASS SPECIFIC rulesets ############################################ ║
+*     ╠===================================================================================================================╣
+*     ║ LESS variables and mixins and low-specificity CSS3 rulesets designed for either styling nodes without             ║
+*     ║ regard to semantics or being included within LESS dependencies.                                                   ║
+*     ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ Additional FONTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       │   CSS classes and LESS variables and parametric mixins designed for inclusion in dependencies to facilitate   │
+*       │   typographical design of dependent layouts.                                                                  │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 .has-mono-font {
 	font-family: 'Roboto Mono', monospace, sans-serif;
 	font-weight: 300;
@@ -39,83 +66,167 @@
 	margin-top: 4rem;
 }
 
+.column .spaces-top-full.forces-spacing,.spaces-top-full.forces-spacing {
+	margin-top: 4rem !important;
+}
+
 .column .spaces-rgt-full,.spaces-rgt-full {
 	margin-right: 4rem;
+}
+
+.column .spaces-rgt-full.forces-spacing,.spaces-rgt-full.forces-spacing {
+	margin-right: 4rem !important;
 }
 
 .column .spaces-btm-full,.spaces-btm-full {
 	margin-bottom: 4rem;
 }
 
+.column .spaces-btm-full.forces-spacing,.spaces-btm-full.forces-spacing {
+	margin-bottom: 4rem !important;
+}
+
 .column .spaces-lft-full,.spaces-lft-full {
 	margin-left: 4rem;
+}
+
+.column .spaces-lft-full.forces-spacing,.spaces-lft-full.forces-spacing {
+	margin-left: 4rem !important;
 }
 
 .column .spaces-top-nrml,.spaces-top-nrml {
 	margin-top: 2rem;
 }
 
+.column .spaces-top-nrml.forces-spacing,.spaces-top-nrml.forces-spacing {
+	margin-top: 2rem !important;
+}
+
 .column .spaces-rgt-nrml,.spaces-rgt-nrml {
 	margin-right: 2rem;
+}
+
+.column .spaces-rgt-nrml.forces-spacing,.spaces-rgt-nrml.forces-spacing {
+	margin-right: 2rem !important;
 }
 
 .column .spaces-btm-nrml,.spaces-btm-nrml {
 	margin-bottom: 2rem;
 }
 
+.column .spaces-btm-nrml.forces-spacing,.spaces-btm-nrml.forces-spacing {
+	margin-bottom: 2rem !important;
+}
+
 .column .spaces-lft-nrml,.spaces-lft-nrml {
 	margin-left: 2rem;
+}
+
+.column .spaces-lft-nrml.forces-spacing,.spaces-lft-nrml.forces-spacing {
+	margin-left: 2rem !important;
 }
 
 .column .spaces-top-half,.spaces-top-half {
 	margin-top: 1rem;
 }
 
+.column .spaces-top-half.forces-spacing,.spaces-top-half.forces-spacing {
+	margin-top: 1rem !important;
+}
+
 .column .spaces-rgt-half,.spaces-rgt-half {
 	margin-right: 1rem;
+}
+
+.column .spaces-rgt-half.forces-spacing,.spaces-rgt-half.forces-spacing {
+	margin-right: 1rem !important;
 }
 
 .column .spaces-btm-half,.spaces-btm-half {
 	margin-bottom: 1rem;
 }
 
+.column .spaces-btm-half.forces-spacing,.spaces-btm-half.forces-spacing {
+	margin-bottom: 1rem !important;
+}
+
 .column .spaces-lft-half,.spaces-lft-half {
 	margin-left: 1rem;
+}
+
+.column .spaces-lft-half.forces-spacing,.spaces-lft-half.forces-spacing {
+	margin-left: 1rem !important;
 }
 
 .column .spaces-top-qrtr,.spaces-top-qrtr {
 	margin-top: .5rem;
 }
 
+.column .spaces-top-qrtr.forces-spacing,.spaces-top-qrtr.forces-spacing {
+	margin-top: .5rem !important;
+}
+
 .column .spaces-rgt-qrtr,.spaces-rgt-qrtr {
 	margin-right: .5rem;
+}
+
+.column .spaces-rgt-qrtr.forces-spacing,.spaces-rgt-qrtr.forces-spacing {
+	margin-right: .5rem !important;
 }
 
 .column .spaces-btm-qrtr,.spaces-btm-qrtr {
 	margin-bottom: .5rem;
 }
 
+.column .spaces-btm-qrtr.forces-spacing,.spaces-btm-qrtr.forces-spacing {
+	margin-bottom: .5rem !important;
+}
+
 .column .spaces-lft-qrtr,.spaces-lft-qrtr {
 	margin-left: .5rem;
+}
+
+.column .spaces-lft-qrtr.forces-spacing,.spaces-lft-qrtr.forces-spacing {
+	margin-left: .5rem !important;
 }
 
 .column .spaces-top-8th,.spaces-top-8th {
 	margin-top: .25rem;
 }
 
+.column .spaces-top-8th.forces-spacing,.spaces-top-8th.forces-spacing {
+	margin-top: .25rem !important;
+}
+
 .column .spaces-rgt-8th,.spaces-rgt-8th {
 	margin-right: .25rem;
+}
+
+.column .spaces-rgt-8th.forces-spacing,.spaces-rgt-8th.forces-spacing {
+	margin-right: .25rem !important;
 }
 
 .column .spaces-btm-8th,.spaces-btm-8th {
 	margin-bottom: .25rem;
 }
 
+.column .spaces-btm-8th.forces-spacing,.spaces-btm-8th.forces-spacing {
+	margin-bottom: .25rem !important;
+}
+
 .column .spaces-lft-8th,.spaces-lft-8th {
 	margin-left: .25rem;
 }
 
+.column .spaces-lft-8th.forces-spacing,.spaces-lft-8th.forces-spacing {
+	margin-left: .25rem !important;
+}
+
 .column .spaces-top-none,.spaces-top-none {
+	margin-top: 0 !important;
+}
+
+.column .spaces-top-none.forces-spacing,.spaces-top-none.forces-spacing {
 	margin-top: 0 !important;
 }
 
@@ -123,11 +234,23 @@
 	margin-right: 0 !important;
 }
 
+.column .spaces-rgt-none.forces-spacing,.spaces-rgt-none.forces-spacing {
+	margin-right: 0 !important;
+}
+
 .column .spaces-btm-none,.spaces-btm-none {
 	margin-bottom: 0 !important;
 }
 
+.column .spaces-btm-none.forces-spacing,.spaces-btm-none.forces-spacing {
+	margin-bottom: 0 !important;
+}
+
 .column .spaces-lft-none,.spaces-lft-none {
+	margin-left: 0 !important;
+}
+
+.column .spaces-lft-none.forces-spacing,.spaces-lft-none.forces-spacing {
 	margin-left: 0 !important;
 }
 
@@ -255,66 +378,10 @@
 	border: 1px solid rgba(42,48,51,.5);
 }
 
-.has-pull-quote-bordering:not(.alt) {
-	position: relative;
-	padding-top: .33333333rem !important;
-	padding-bottom: .33333333rem !important;
-}
-
-.has-pull-quote-bordering:not(.alt):not(:first-child) {
-	margin-top: 2rem;
-}
-
-.has-pull-quote-bordering:not(.alt):first-child,header:first-child+.has-pull-quote-bordering:not(.alt) {
-	margin-top: .33333333rem;
-}
-
-.has-pull-quote-bordering:not(.alt):after,.has-pull-quote-bordering:not(.alt):before {
-	content: "";
-	position: absolute;
-	left: 0;
-	width: 67%;
-}
-
-.has-pull-quote-bordering:not(.alt):before {
-	top: -.33333333rem;
-	height: 5px;
-	border-top: 5px solid #464e54;
-}
-
-.has-pull-quote-bordering:not(.alt):after {
-	bottom: -.33333333rem;
-	height: 1px;
-	width: 33%;
-	border-top: 1px solid rgba(70,78,84,.75757576);
-}
-
-.has-pull-quote-bordering.alt {
-	position: relative;
-	padding-left: .75rem !important;
-	padding-right: .75rem !important;
-	border-right: 1px solid rgba(70,78,84,.18939394);
-	border-left: 5px solid #464e54;
-}
-
-.has-pull-quote-bordering.alt:after,.has-pull-quote-bordering.alt:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	width: 1px;
-	height: 100%;
-}
-
-.has-pull-quote-bordering.alt:before {
-	right: 1px;
-	background-color: rgba(70,78,84,.37878788);
-}
-
-.has-pull-quote-bordering.alt:after {
-	right: 3px;
-	background-color: rgba(70,78,84,.75757576);
-}
-
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ ANIMATIONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 .fade-in-from-top {
 	opacity: 0;
 	-webkit-animation: anim-fade-in-from-top 1s linear 1;
@@ -576,6 +643,10 @@
 	}
 }
 
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ CLASS SPECIFIC rulesets ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 :target:not(.no-anchor-highlighting) {
 	position: relative;
 }
@@ -719,11 +790,29 @@
 	visibility: visible;
 }
 
+/*!   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*     ║ #### SEMANTICALLY SPECIFIC RULESETS: DOCUMENT SECTIONS ########################################################## ║
+*     ╠===================================================================================================================╣
+*     ║ Rulesets that target section-level nodes.                                                                         ║
+*     ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ HTML rulesets ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 html {
 	font-size: 17px;
 }
 
-div.column article.post {
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ BODY rulesets ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ARTICLES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
+.column article.post {
 	padding: 1em;
 	border: 1px solid rgba(0,0,0,.3333);
 	border-radius: 5px;
@@ -731,13 +820,24 @@ div.column article.post {
 	box-shadow: 1px 2px 3px rgba(0,0,0,.25);
 }
 
-div.column article.post+article.post {
+.column article.post+article.post {
 	margin-top: 1.5em;
 }
 
-/*!  +------------------------------------------------------------------------------------------------------------------+
-*    � SECTIONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ �
-*    +------------------------------------------------------------------------------------------------------------------+
+.row.new-article-section {
+	padding: 1rem;
+}
+
+.row.new-article-section h1,.row.new-article-section h2,.row.new-article-section h3,.row.new-article-section h4,.row.new-article-section h5,.row.new-article-section h6 {
+	padding: 0;
+	margin: 0;
+	color: inherit;
+	text-align: center;
+}
+
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 section.column-one-with-bottom-margin>.column.one {
 	margin-bottom: 2rem;
@@ -949,6 +1049,34 @@ section.side-right .column.two p {
 	padding-bottom: 0;
 }
 
+.row.has-charcoal-background {
+	background-color: #2f3438;
+}
+
+.row.has-charcoal-background .column {
+	color: #fff;
+}
+
+.row.has-gray-background {
+	background-color: #eff0f1;
+}
+
+.row.has-crimson-background {
+	background-color: #981e32;
+}
+
+.row.has-crimson-background .column {
+	color: #fff;
+}
+
+.row.has-blue-background {
+	background-color: #00a5bd;
+}
+
+.row.has-blue-background .column {
+	color: #fff;
+}
+
 main section.row>.column table>tbody>tr>td>.gform_confirmation_wrapper p:not(:last-child),main section.row>.column table>tbody>tr>td>.gform_wrapper .gfield_html>p:not(:last-child),main section.row>.column table>tbody>tr>td>div>ol:not(.no-btm-margin),main section.row>.column table>tbody>tr>td>div>p:not(.no-btm-margin),main section.row>.column table>tbody>tr>td>div>ul:not(.no-btm-margin),main section.row>.column table>tbody>tr>td>ol:not(.no-btm-margin),main section.row>.column table>tbody>tr>td>p:not(.no-btm-margin),main section.row>.column table>tbody>tr>td>section>ol:not(.no-btm-margin),main section.row>.column table>tbody>tr>td>section>p:not(.no-btm-margin),main section.row>.column table>tbody>tr>td>section>ul:not(.no-btm-margin),main section.row>.column table>tbody>tr>td>ul:not(.no-btm-margin),main section.row>.column>.gform_confirmation_wrapper p:not(:last-child),main section.row>.column>.gform_wrapper .gfield_html>p:not(:last-child),main section.row>.column>article>.article-body>.gform_confirmation_wrapper p:not(:last-child),main section.row>.column>article>.article-body>.gform_wrapper .gfield_html>p:not(:last-child),main section.row>.column>article>.article-body>div>ol:not(.no-btm-margin),main section.row>.column>article>.article-body>div>p:not(.no-btm-margin),main section.row>.column>article>.article-body>div>ul:not(.no-btm-margin),main section.row>.column>article>.article-body>ol:not(.no-btm-margin),main section.row>.column>article>.article-body>p:not(.no-btm-margin),main section.row>.column>article>.article-body>section>ol:not(.no-btm-margin),main section.row>.column>article>.article-body>section>p:not(.no-btm-margin),main section.row>.column>article>.article-body>section>ul:not(.no-btm-margin),main section.row>.column>article>.article-body>ul:not(.no-btm-margin),main section.row>.column>article>.article-summary>.gform_confirmation_wrapper p:not(:last-child),main section.row>.column>article>.article-summary>.gform_wrapper .gfield_html>p:not(:last-child),main section.row>.column>article>.article-summary>div>ol:not(.no-btm-margin),main section.row>.column>article>.article-summary>div>p:not(.no-btm-margin),main section.row>.column>article>.article-summary>div>ul:not(.no-btm-margin),main section.row>.column>article>.article-summary>ol:not(.no-btm-margin),main section.row>.column>article>.article-summary>p:not(.no-btm-margin),main section.row>.column>article>.article-summary>section>ol:not(.no-btm-margin),main section.row>.column>article>.article-summary>section>p:not(.no-btm-margin),main section.row>.column>article>.article-summary>section>ul:not(.no-btm-margin),main section.row>.column>article>.article-summary>ul:not(.no-btm-margin),main section.row>.column>div>ol:not(.no-btm-margin),main section.row>.column>div>p:not(.no-btm-margin),main section.row>.column>div>ul:not(.no-btm-margin),main section.row>.column>ol:not(.no-btm-margin),main section.row>.column>p:not(.no-btm-margin),main section.row>.column>section>.gform_confirmation_wrapper p:not(:last-child),main section.row>.column>section>.gform_wrapper .gfield_html>p:not(:last-child),main section.row>.column>section>div>ol:not(.no-btm-margin),main section.row>.column>section>div>p:not(.no-btm-margin),main section.row>.column>section>div>ul:not(.no-btm-margin),main section.row>.column>section>ol:not(.no-btm-margin),main section.row>.column>section>p:not(.no-btm-margin),main section.row>.column>section>section>ol:not(.no-btm-margin),main section.row>.column>section>section>p:not(.no-btm-margin),main section.row>.column>section>section>ul:not(.no-btm-margin),main section.row>.column>section>ul:not(.no-btm-margin),main section.row>.column>ul:not(.no-btm-margin) {
 	margin-bottom: 1rem;
 }
@@ -957,12 +1085,30 @@ main section.row>.column table>tbody>tr>td>div>p+ol:not(.spaces-top-full),main s
 	margin-top: -.66666667rem;
 }
 
-main section.row:last-child>.column>article>.article-body>div>ol:last-child,main section.row:last-child>.column>article>.article-body>div>p:last-child,main section.row:last-child>.column>article>.article-body>div>ul:last-child,main section.row:last-child>.column>article>.article-body>ol:last-child,main section.row:last-child>.column>article>.article-body>p:last-child,main section.row:last-child>.column>article>.article-body>section>ol:last-child,main section.row:last-child>.column>article>.article-body>section>p:last-child,main section.row:last-child>.column>article>.article-body>section>ul:last-child,main section.row:last-child>.column>article>.article-body>ul:last-child,main section.row:last-child>.column>article>.article-summary>div>ol:last-child,main section.row:last-child>.column>article>.article-summary>div>p:last-child,main section.row:last-child>.column>article>.article-summary>div>ul:last-child,main section.row:last-child>.column>article>.article-summary>ol:last-child,main section.row:last-child>.column>article>.article-summary>p:last-child,main section.row:last-child>.column>article>.article-summary>section>ol:last-child,main section.row:last-child>.column>article>.article-summary>section>p:last-child,main section.row:last-child>.column>article>.article-summary>section>ul:last-child,main section.row:last-child>.column>article>.article-summary>ul:last-child,main section.row:last-child>.column>div>ol:last-child,main section.row:last-child>.column>div>p:last-child,main section.row:last-child>.column>div>ul:last-child,main section.row:last-child>.column>ol:last-child,main section.row:last-child>.column>p:last-child,main section.row:last-child>.column>section>div>ol:last-child,main section.row:last-child>.column>section>div>p:last-child,main section.row:last-child>.column>section>div>ul:last-child,main section.row:last-child>.column>section>ol:last-child,main section.row:last-child>.column>section>p:last-child,main section.row:last-child>.column>section>section>ol:last-child,main section.row:last-child>.column>section>section>p:last-child,main section.row:last-child>.column>section>section>ul:last-child,main section.row:last-child>.column>section>ul:last-child,main section.row:last-child>.column>ul:last-child {
+main section.row:last-child>.column>.column>article>.article-body>div>ol:last-child,main section.row:last-child>.column>.column>article>.article-body>div>p:last-child,main section.row:last-child>.column>.column>article>.article-body>div>ul:last-child,main section.row:last-child>.column>.column>article>.article-body>ol:last-child,main section.row:last-child>.column>.column>article>.article-body>p:last-child,main section.row:last-child>.column>.column>article>.article-body>section>ol:last-child,main section.row:last-child>.column>.column>article>.article-body>section>p:last-child,main section.row:last-child>.column>.column>article>.article-body>section>ul:last-child,main section.row:last-child>.column>.column>article>.article-body>ul:last-child,main section.row:last-child>.column>.column>article>.article-summary>div>ol:last-child,main section.row:last-child>.column>.column>article>.article-summary>div>p:last-child,main section.row:last-child>.column>.column>article>.article-summary>div>ul:last-child,main section.row:last-child>.column>.column>article>.article-summary>ol:last-child,main section.row:last-child>.column>.column>article>.article-summary>p:last-child,main section.row:last-child>.column>.column>article>.article-summary>section>ol:last-child,main section.row:last-child>.column>.column>article>.article-summary>section>p:last-child,main section.row:last-child>.column>.column>article>.article-summary>section>ul:last-child,main section.row:last-child>.column>.column>article>.article-summary>ul:last-child,main section.row:last-child>.column>.column>section>div>ol:last-child,main section.row:last-child>.column>.column>section>div>p:last-child,main section.row:last-child>.column>.column>section>div>ul:last-child,main section.row:last-child>.column>.column>section>ol:last-child,main section.row:last-child>.column>.column>section>p:last-child,main section.row:last-child>.column>.column>section>section>ol:last-child,main section.row:last-child>.column>.column>section>section>p:last-child,main section.row:last-child>.column>.column>section>section>ul:last-child,main section.row:last-child>.column>.column>section>ul:last-child,main section.row:last-child>.column>div>ol:last-child,main section.row:last-child>.column>div>p:last-child,main section.row:last-child>.column>div>ul:last-child,main section.row:last-child>.column>ol:last-child,main section.row:last-child>.column>p:last-child,main section.row:last-child>.column>section>ol:last-child,main section.row:last-child>.column>section>p:last-child,main section.row:last-child>.column>section>ul:last-child,main section.row:last-child>.column>ul:last-child {
 	margin-bottom: 0;
+}
+
+@media all and (max-width:693px) {
+	main section.row:last-child.halves>.column:not(:last-child)>article>.article-body>div>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-body>div>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-body>div>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-body>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-body>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-body>section>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-body>section>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-body>section>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-body>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-summary>div>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-summary>div>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-summary>div>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-summary>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-summary>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-summary>section>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-summary>section>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-summary>section>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>article>.article-summary>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>div>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>div>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>div>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>section>div>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>section>div>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>section>div>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>section>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>section>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>section>section>ol:last-child,main section.row:last-child.halves>.column:not(:last-child)>section>section>p:last-child,main section.row:last-child.halves>.column:not(:last-child)>section>section>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>section>ul:last-child,main section.row:last-child.halves>.column:not(:last-child)>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-body>div>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-body>div>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-body>div>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-body>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-body>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-body>section>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-body>section>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-body>section>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-body>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-summary>div>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-summary>div>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-summary>div>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-summary>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-summary>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-summary>section>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-summary>section>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-summary>section>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>article>.article-summary>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>div>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>div>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>div>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>section>div>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>section>div>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>section>div>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>section>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>section>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>section>section>ol:last-child,main section.row:last-child.quarters>.column:not(:last-child)>section>section>p:last-child,main section.row:last-child.quarters>.column:not(:last-child)>section>section>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>section>ul:last-child,main section.row:last-child.quarters>.column:not(:last-child)>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-body>div>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-body>div>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-body>div>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-body>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-body>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-body>section>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-body>section>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-body>section>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-body>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-summary>div>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-summary>div>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-summary>div>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-summary>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-summary>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-summary>section>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-summary>section>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-summary>section>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>article>.article-summary>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>div>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>div>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>div>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>section>div>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>section>div>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>section>div>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>section>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>section>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>section>section>ol:last-child,main section.row:last-child.side-left>.column:not(:last-child)>section>section>p:last-child,main section.row:last-child.side-left>.column:not(:last-child)>section>section>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>section>ul:last-child,main section.row:last-child.side-left>.column:not(:last-child)>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-body>div>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-body>div>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-body>div>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-body>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-body>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-body>section>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-body>section>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-body>section>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-body>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-summary>div>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-summary>div>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-summary>div>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-summary>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-summary>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-summary>section>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-summary>section>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-summary>section>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>article>.article-summary>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>div>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>div>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>div>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>section>div>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>section>div>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>section>div>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>section>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>section>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>section>section>ol:last-child,main section.row:last-child.side-right>.column:not(:last-child)>section>section>p:last-child,main section.row:last-child.side-right>.column:not(:last-child)>section>section>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>section>ul:last-child,main section.row:last-child.side-right>.column:not(:last-child)>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-body>div>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-body>div>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-body>div>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-body>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-body>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-body>section>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-body>section>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-body>section>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-body>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-summary>div>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-summary>div>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-summary>div>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-summary>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-summary>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-summary>section>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-summary>section>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-summary>section>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>article>.article-summary>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>div>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>div>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>div>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>section>div>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>section>div>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>section>div>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>section>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>section>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>section>section>ol:last-child,main section.row:last-child.thirds>.column:not(:last-child)>section>section>p:last-child,main section.row:last-child.thirds>.column:not(:last-child)>section>section>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>section>ul:last-child,main section.row:last-child.thirds>.column:not(:last-child)>ul:last-child {
+		margin-bottom: 1rem;
+	}
 }
 
 main section.row>.column table>tbody>tr>td>div>ol:last-child,main section.row>.column table>tbody>tr>td>div>p:last-child,main section.row>.column table>tbody>tr>td>div>ul:last-child,main section.row>.column table>tbody>tr>td>ol:last-child,main section.row>.column table>tbody>tr>td>p:last-child,main section.row>.column table>tbody>tr>td>section>ol:last-child,main section.row>.column table>tbody>tr>td>section>p:last-child,main section.row>.column table>tbody>tr>td>section>ul:last-child,main section.row>.column table>tbody>tr>td>ul:last-child {
 	margin-bottom: 0;
+}
+
+.h1-header+section.pad-top .column {
+	padding-top: 2rem;
+}
+
+.h1-header+section.pad-top.short .column {
+	padding-top: 1rem;
+}
+
+.h1-header+section.pad-top.tall .column {
+	padding-top: 4rem;
 }
 
 @media only screen and (min-width:481px) and (max-width:693px) {
@@ -1118,12 +1264,47 @@ main section.row>.column table>tbody>tr>td>div>ol:last-child,main section.row>.c
 	}
 }
 
-/*!  +------------------------------------------------------------------------------------------------------------------+
+@media all and (max-width:693px) {
+	.row:not(.pad-top).halves .one~.column,.row:not(.pad-top).quarters .one~.column,.row:not(.pad-top).side-left .one~.column,.row:not(.pad-top).side-right .one~.column,.row:not(.pad-top).thirds .one~.column {
+		margin-top: 2rem;
+	}
+}
+
+/*!  ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*    │ ASIDE layouts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*    └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
-/*!   +-------------------------------------------------------------------------------------------------------------------+
-*     � ASIDES layouts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ �
-*     +-------------------------------------------------------------------------------------------------------------------+
-*/
+aside.shield-themed {
+	padding: .5rem;
+	border-left: 4px solid #8d959a;
+	background: #eff0f1;
+	color: #464e54;
+	font-size: .925rem;
+}
+
+aside.shield-themed>h1:first-child,aside.shield-themed>h2:first-child,aside.shield-themed>h3:first-child,aside.shield-themed>h4:first-child,aside.shield-themed>h5:first-child,aside.shield-themed>h6:first-child,aside.shield-themed>header:first-child>* {
+	box-sizing: content-box;
+	width: 100%;
+	padding: .5rem;
+	margin-top: -.5rem;
+	margin-left: -.5rem;
+	margin-bottom: .5rem;
+	background-color: #981e32;
+	color: #fff;
+}
+
+aside.shield-themed p+* {
+	margin-top: 1em;
+}
+
+aside.shield-themed p+.has-learn-more-link {
+	margin-top: .33333333em;
+}
+
+aside.shield-themed:not(:last-child) {
+	margin-bottom: 2rem;
+}
+
 aside.widget {
 	box-shadow: 0 0 0 1px rgba(255,255,255,.9), 0 0 0 2px rgba(0,0,0,.2), 3px 4px 4px rgba(0,0,0,.25) !important;
 }
@@ -1250,7 +1431,7 @@ aside.widget_archive label.screen-reader-text {
 	}
 }
 
-.row.side-right .column.two aside {
+.row.side-right .column.two aside:not(.shield-themed):not(.shield-themed) {
 	padding: 1rem;
 	background: rgba(215,218,219,.8);
 	border-radius: 4px;
@@ -1258,11 +1439,11 @@ aside.widget_archive label.screen-reader-text {
 	box-shadow: 0 0 0 1px rgba(255,255,255,.9), 0 0 0 2px rgba(0,0,0,.2);
 }
 
-.row.side-right .column.two aside p:not(.centered) {
+.row.side-right .column.two aside:not(.shield-themed):not(.shield-themed) p:not(.centered) {
 	text-align: left;
 }
 
-body.single-post #wsuwp-main .row .column.one aside {
+.column>aside.quote,body.single-post #wsuwp-main .row .column.one aside {
 	float: right;
 	clear: right;
 	width: 33%;
@@ -1271,12 +1452,12 @@ body.single-post #wsuwp-main .row .column.one aside {
 	margin-bottom: .5rem;
 	margin-left: .5rem;
 	border-left: 4px solid #d7dadb;
-	background: #eff0f1;
+	background: #b5babe;
 	font-size: .9rem;
 }
 
 @media all and (max-width:693px) {
-	body.single-post #wsuwp-main .row .column.one aside {
+	.column>aside.quote,body.single-post #wsuwp-main .row .column.one aside {
 		width: 94%;
 		width: calc(100% - .5rem * 2);
 		margin-top: 1rem;
@@ -1288,7 +1469,9 @@ body.blog .article-summary aside {
 	display: none;
 }
 
-/*!   +-------------------------------------------------------------------------------------------------------------------+
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ H1-H6 & HEADER rulesets ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 .column h1 {
 	padding-bottom: 0;
@@ -1303,7 +1486,6 @@ body.blog .article-summary aside {
 @media all {
 	.column h1 {
 		line-height: 1.1em;
-		font-size: 2.82352941em;
 	}
 }
 
@@ -1366,7 +1548,6 @@ body.blog .article-summary aside {
 @media all {
 	.column h2 {
 		line-height: 1.1em;
-		font-size: 2.07058824em;
 	}
 }
 
@@ -1409,7 +1590,6 @@ body.blog .article-summary aside {
 @media all {
 	.column h2.article-title {
 		line-height: 1.1em;
-		font-size: .82823529em;
 	}
 }
 
@@ -1453,24 +1633,34 @@ body.blog .article-summary aside {
 	text-align: center;
 }
 
-.column h2.fancy {
+.column h2.narrower-top-margin {
+	margin-top: 1.25rem;
+}
+
+.column h2.no-top-margin {
+	margin-top: 0;
+}
+
+.column h2.fancy,.column h2.solid,.column.show-header.has-fancy-header>header:first-child>h2 {
 	position: relative;
-	padding: .3333rem .5rem;
+	padding: .33333333rem .5rem .55rem;
 	margin-left: -.5rem;
 	margin-bottom: 1rem;
 	margin-right: -.5rem;
 	background-color: rgba(94,106,113,.2);
+	background: linear-gradient(to right,transparent,rgba(94,106,113,.075) 5%,rgba(94,106,113,.075) 50%,rgba(94,106,113,.225));
+	border-bottom: 2px solid rgba(94,106,113,.075);
 }
 
-.column h2.fancy.with-top-border {
+.column h2.fancy.with-top-border,.column h2.solid,.column.show-header.has-fancy-header>header:first-child>h2 {
 	padding-top: .5rem;
 }
 
-.column h2.fancy.with-top-border:not(:first-child) {
+.column h2.fancy.with-top-border:not(:first-child),.column h2.solid:not(:first-child),.column.show-header.has-fancy-header>header:first-child>h2:not(:first-child) {
 	margin-top: 2rem;
 }
 
-.column h2.fancy.with-top-border::before {
+.column h2.fancy.with-top-border::before,.column h2.solid::before,.column.show-header.has-fancy-header>header:first-child>h2::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -1480,14 +1670,6 @@ body.blog .article-summary aside {
 	border-top: 1px solid rgba(70,78,84,.6667);
 	border-bottom: 1px solid rgba(70,78,84,.3333);
 	border-top-width: 2px;
-}
-
-.column h2.narrower-top-margin {
-	margin-top: 1.25rem;
-}
-
-.column h2.no-top-margin {
-	margin-top: 0;
 }
 
 .column h2:first-child,.column header:first-child+h2,.column header:first-child+h2.fancy.with-top-border:not(:first-child) {
@@ -1520,7 +1702,6 @@ h2.article-title a {
 @media all {
 	.column h3,.gform_heading h3.gform_title {
 		line-height: 1.1em;
-		font-size: 1.6em;
 	}
 }
 
@@ -1572,24 +1753,30 @@ h2.article-title a {
 	margin-top: 0;
 }
 
-.column h3.fancy,.column h4.fancy,.gform_heading h3.gform_title,.gform_heading h3.gform_title.fancy {
+.column h3.lowercase,.column.show-header.has-lowercase-header>header:first-child>h3,.gform_heading h3.gform_title.lowercase {
+	text-transform: none;
+}
+
+.column h3.fancy,.column h3.solid,.column h4.fancy,.column.show-header.has-fancy-header>header:first-child>h3,.gform_heading h3.gform_title,.gform_heading h3.gform_title.fancy,.gform_heading h3.gform_title.solid {
 	position: relative;
-	padding: .3333rem .5rem;
+	padding: .33333333rem .5rem .45rem 0;
 	margin-left: 0;
 	margin-bottom: 1rem;
 	margin-right: 0;
-	background-color: rgba(219,120,121,.075);
+	background-color: rgba(198,12,48,.075);
+	background: linear-gradient(to right,transparent,rgba(219,120,121,.075) 5%,rgba(219,120,121,.075) 50%,rgba(219,120,121,.225));
+	border-bottom: 2px solid rgba(198,12,48,.075);
 }
 
-.column h3.fancy.with-top-border,.column h4.fancy.with-top-border,.gform_heading h3.gform_title,.gform_heading h3.gform_title.fancy.with-top-border,.gform_heading h3.gform_title.with-top-border {
+.column h3.fancy.with-top-border,.column h3.solid,.column h4.fancy.with-top-border,.column.show-header.has-fancy-header>header:first-child>h3,.gform_heading h3.gform_title,.gform_heading h3.gform_title.fancy.with-top-border,.gform_heading h3.gform_title.solid,.gform_heading h3.gform_title.with-top-border {
 	padding-top: .4375rem;
 }
 
-.column h3.fancy.with-top-border:not(:first-child),.column h4.fancy.with-top-border:not(:first-child),.gform_heading h3.gform_title.fancy.with-top-border:not(:first-child),.gform_heading h3.gform_title.with-top-border:not(:first-child),.gform_heading h3.gform_title:not(:first-child) {
+.column h3.fancy.with-top-border:not(:first-child),.column h3.solid:not(:first-child),.column h4.fancy.with-top-border:not(:first-child),.column.show-header.has-fancy-header>header:first-child>h3:not(:first-child),.gform_heading h3.gform_title.fancy.with-top-border:not(:first-child),.gform_heading h3.gform_title.solid:not(:first-child),.gform_heading h3.gform_title.with-top-border:not(:first-child),.gform_heading h3.gform_title:not(:first-child) {
 	margin-top: 2rem;
 }
 
-.column h3.fancy.with-top-border::before,.column h4.fancy.with-top-border::before,.gform_heading h3.gform_title.fancy.with-top-border::before,.gform_heading h3.gform_title.with-top-border::before,.gform_heading h3.gform_title::before {
+.column h3.fancy.with-top-border::before,.column h3.solid::before,.column h4.fancy.with-top-border::before,.column.show-header.has-fancy-header>header:first-child>h3::before,.gform_heading h3.gform_title.fancy.with-top-border::before,.gform_heading h3.gform_title.solid::before,.gform_heading h3.gform_title.with-top-border::before,.gform_heading h3.gform_title::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -1616,7 +1803,6 @@ h2.article-title a {
 @media all {
 	.column h4 {
 		line-height: 1.2em;
-		font-size: 1.31764706em;
 	}
 }
 
@@ -1686,7 +1872,6 @@ body.blog .column header.article-header+* {
 @media all {
 	.column header.article-header h1.article-title,.column header.article-header h2.article-title {
 		line-height: 1.1em;
-		font-size: 1.5em;
 	}
 }
 
@@ -1775,7 +1960,6 @@ header.main-header .sup-header-default {
 @media all {
 	header.main-header .sub-header,header.main-header .sub-header-default {
 		line-height: .9em;
-		font-size: 2.35294118rem;
 	}
 }
 
@@ -1875,14 +2059,19 @@ footer.article-footer div.author-info {
 	display: none;
 }
 
-/*!  +------------------------------------------------------------------------------------------------------------------+
-*    � PARAGRAPHS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ �
-*    +------------------------------------------------------------------------------------------------------------------+
+/*!   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*     ║ #### CONTENT GROUPING NODES ##################################################################################### ║
+*     ╠===================================================================================================================╣
+*     ║ Rulesets that target nodes for grouping content.                                                                  ║
+*     ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*!  ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*    │ PARAGRAPHS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*    └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 @media all {
 	.row.single:not(.mimic-multi-column-sections) .column p {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -1925,7 +2114,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.single.mimic-two-column-sections .column p {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -1968,7 +2156,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.halves .column p,.row.side-left .column p,.row.side-right .column p {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -2011,7 +2198,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.quarters .column p,.row.thirds .column p {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -2224,7 +2410,6 @@ footer.article-footer div.author-info {
 @media all {
 	.column p.banner-text {
 		line-height: 1.375em;
-		font-size: 1.25em;
 	}
 }
 
@@ -2298,7 +2483,6 @@ footer.article-footer div.author-info {
 @media all {
 	.column p.banner-text-orange-with-towers {
 		line-height: 1.375em;
-		font-size: 1.25em;
 	}
 }
 
@@ -2341,7 +2525,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.single:not(.mimic-multi-column-sections) .column p.article-deck {
 		line-height: 1.375em;
-		font-size: 1.2em;
 	}
 }
 
@@ -2384,7 +2567,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.single.mimic-two-column-sections .column p.article-deck {
 		line-height: 1.375em;
-		font-size: 1.2em;
 	}
 }
 
@@ -2427,7 +2609,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.halves .column p.article-deck,.row.side-left .column p.article-deck,.row.side-right .column p.article-deck {
 		line-height: 1.375em;
-		font-size: 1.2em;
 	}
 }
 
@@ -2470,7 +2651,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.quarters .column p.article-deck,.row.thirds .column p.article-deck {
 		line-height: 1.375em;
-		font-size: 1.2em;
 	}
 }
 
@@ -2521,7 +2701,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.single:not(.mimic-multi-column-sections) .column p.article-tagline {
 		line-height: 1.375em;
-		font-size: 1.305em;
 	}
 }
 
@@ -2564,7 +2743,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.single.mimic-two-column-sections .column p.article-tagline {
 		line-height: 1.375em;
-		font-size: 1.305em;
 	}
 }
 
@@ -2607,7 +2785,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.halves .column p.article-tagline,.row.side-left .column p.article-tagline,.row.side-right .column p.article-tagline {
 		line-height: 1.375em;
-		font-size: 1.305em;
 	}
 }
 
@@ -2650,7 +2827,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.quarters .column p.article-tagline,.row.thirds .column p.article-tagline {
 		line-height: 1.375em;
-		font-size: 1.305em;
 	}
 }
 
@@ -2693,7 +2869,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.single:not(.mimic-multi-column-sections) .column p.article-tagline.home {
 		line-height: 1.375em;
-		font-size: 1.71000023em;
 	}
 }
 
@@ -2736,7 +2911,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.single.mimic-two-column-sections .column p.article-tagline.home {
 		line-height: 1.375em;
-		font-size: 1.71000023em;
 	}
 }
 
@@ -2779,7 +2953,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.halves .column p.article-tagline.home,.row.side-left .column p.article-tagline.home,.row.side-right .column p.article-tagline.home {
 		line-height: 1.375em;
-		font-size: 1.71000023em;
 	}
 }
 
@@ -2822,7 +2995,6 @@ footer.article-footer div.author-info {
 @media all {
 	.row.quarters .column p.article-tagline.home,.row.thirds .column p.article-tagline.home {
 		line-height: 1.375em;
-		font-size: 1.71000023em;
 	}
 }
 
@@ -2937,17 +3109,88 @@ p.article-tagline:not(.has-no-bordering).alt:before {
 
 p.article-tagline:not(.has-no-bordering).alt:after {
 	right: 3px;
-	background-color: rgba(70,78,84,.75757576);
+	background-color: rgba(70,78,84,.37878788);
 }
 
 .column h1+p.article-tagline:not(.has-no-bordering):not(.alt),.column h2+p.article-tagline:not(.has-no-bordering):not(.alt),.column h3+p.article-tagline:not(.has-no-bordering):not(.alt),.column h4+p.article-tagline:not(.has-no-bordering):not(.alt),.column h5+p.article-tagline:not(.has-no-bordering):not(.alt),.column h6+p.article-tagline:not(.has-no-bordering):not(.alt),.gform_heading h3.gform_title+p.article-tagline:not(.has-no-bordering):not(.alt) {
 	margin-top: 1.33333333rem;
 }
 
+p.article-tagline:not(.has-no-bordering).crimson {
+	color: #981e32;
+}
+
+p.article-tagline:not(.has-no-bordering).crimson:not(.alt) {
+	position: relative;
+	padding-top: .33333333rem !important;
+	padding-bottom: .33333333rem !important;
+}
+
+p.article-tagline:not(.has-no-bordering).crimson:not(.alt):not(:first-child) {
+	margin-top: 2rem;
+}
+
+header:first-child+p.article-tagline:not(.has-no-bordering).crimson:not(.alt),p.article-tagline:not(.has-no-bordering).crimson:not(.alt):first-child {
+	margin-top: .33333333rem;
+}
+
+p.article-tagline:not(.has-no-bordering).crimson:not(.alt):after,p.article-tagline:not(.has-no-bordering).crimson:not(.alt):before {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 67%;
+}
+
+p.article-tagline:not(.has-no-bordering).crimson:not(.alt):before {
+	top: -.33333333rem;
+	height: 5px;
+	border-top: 5px solid #981e32;
+}
+
+p.article-tagline:not(.has-no-bordering).crimson:not(.alt):after {
+	bottom: -.33333333rem;
+	height: 1px;
+	width: 33%;
+	border-top: 1px solid rgba(152,30,50,.75757576);
+}
+
+p.article-tagline:not(.has-no-bordering).crimson.alt {
+	position: relative;
+	padding-left: .75rem !important;
+	padding-right: .75rem !important;
+	border-right: 1px solid rgba(152,30,50,.18939394);
+	border-left: 5px solid #981e32;
+}
+
+p.article-tagline:not(.has-no-bordering).crimson.alt:after,p.article-tagline:not(.has-no-bordering).crimson.alt:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 1px;
+	height: 100%;
+}
+
+p.article-tagline:not(.has-no-bordering).crimson.alt:before {
+	right: 1px;
+	background-color: rgba(152,30,50,.37878788);
+}
+
+p.article-tagline:not(.has-no-bordering).crimson.alt:after {
+	right: 3px;
+	background-color: rgba(152,30,50,.37878788);
+}
+
+p.article-tagline:not(.has-no-bordering).crimson .has-gray-text {
+	color: #464e54;
+}
+
+p.article-tagline .has-bold-text,p.article-tagline.bold {
+	font-weight: 700;
+}
+
 @media all {
 	.row.single:not(.mimic-multi-column-sections) .column p.vpue-jump-back {
 		line-height: 1.375em;
-		font-size: .6875em;
 	}
 }
 
@@ -2990,7 +3233,6 @@ p.article-tagline:not(.has-no-bordering).alt:after {
 @media all {
 	.row.single.mimic-two-column-sections .column p.vpue-jump-back {
 		line-height: 1.375em;
-		font-size: .6875em;
 	}
 }
 
@@ -3033,7 +3275,6 @@ p.article-tagline:not(.has-no-bordering).alt:after {
 @media all {
 	.row.halves .column p.vpue-jump-back,.row.side-left .column p.vpue-jump-back,.row.side-right .column p.vpue-jump-back {
 		line-height: 1.375em;
-		font-size: .6875em;
 	}
 }
 
@@ -3076,7 +3317,6 @@ p.article-tagline:not(.has-no-bordering).alt:after {
 @media all {
 	.row.quarters .column p.vpue-jump-back,.row.thirds .column p.vpue-jump-back {
 		line-height: 1.375em;
-		font-size: .6875em;
 	}
 }
 
@@ -3124,7 +3364,6 @@ p.article-tagline:not(.has-no-bordering).alt:after {
 @media all {
 	.row.single:not(.mimic-multi-column-sections) .column p.article-media-contacts {
 		line-height: 1.375em;
-		font-size: .8rem;
 	}
 }
 
@@ -3167,7 +3406,6 @@ p.article-tagline:not(.has-no-bordering).alt:after {
 @media all {
 	.row.single.mimic-two-column-sections .column p.article-media-contacts {
 		line-height: 1.375em;
-		font-size: .8rem;
 	}
 }
 
@@ -3210,7 +3448,6 @@ p.article-tagline:not(.has-no-bordering).alt:after {
 @media all {
 	.row.halves .column p.article-media-contacts,.row.side-left .column p.article-media-contacts,.row.side-right .column p.article-media-contacts {
 		line-height: 1.375em;
-		font-size: .8rem;
 	}
 }
 
@@ -3253,7 +3490,6 @@ p.article-tagline:not(.has-no-bordering).alt:after {
 @media all {
 	.row.quarters .column p.article-media-contacts,.row.thirds .column p.article-media-contacts {
 		line-height: 1.375em;
-		font-size: .8rem;
 	}
 }
 
@@ -3307,16 +3543,15 @@ body.single-post .column p.article-media-contacts+:not(.article-media-contacts) 
 	border-top: 1px solid rgba(127,127,127,.2);
 }
 
-/*!  +------------------------------------------------------------------------------------------------------------------+
+/*!  └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
-/*!   +-------------------------------------------------------------------------------------------------------------------+
-*     � LIST layouts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ �
-*     +-------------------------------------------------------------------------------------------------------------------+
+/*!   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*     │ LIST layouts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*     └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 @media all {
 	.row.single:not(.mimic-multi-column-sections) .column ul {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -3359,7 +3594,6 @@ body.single-post .column p.article-media-contacts+:not(.article-media-contacts) 
 @media all {
 	.row.single.mimic-two-column-sections .column ul {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -3402,7 +3636,6 @@ body.single-post .column p.article-media-contacts+:not(.article-media-contacts) 
 @media all {
 	.row.halves .column ul,.row.side-left .column ul,.row.side-right .column ul {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -3445,7 +3678,6 @@ body.single-post .column p.article-media-contacts+:not(.article-media-contacts) 
 @media all {
 	.row.quarters .column ul,.row.thirds .column ul {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -3538,7 +3770,6 @@ body.single-post .column p.article-media-contacts+:not(.article-media-contacts) 
 @media all {
 	.column ul.checklist-flowchart>li p,ul.content-boxes>li p {
 		line-height: 1.375em;
-		font-size: .938em;
 	}
 }
 
@@ -3677,7 +3908,6 @@ ul.cascaded-layout.blank>li.gutter-sizer {
 @media all {
 	.row.single:not(.mimic-multi-column-sections) .column ol {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -3720,7 +3950,6 @@ ul.cascaded-layout.blank>li.gutter-sizer {
 @media all {
 	.row.single.mimic-two-column-sections .column ol {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -3763,7 +3992,6 @@ ul.cascaded-layout.blank>li.gutter-sizer {
 @media all {
 	.row.halves .column ol,.row.side-left .column ol,.row.side-right .column ol {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -3806,7 +4034,6 @@ ul.cascaded-layout.blank>li.gutter-sizer {
 @media all {
 	.row.quarters .column ol,.row.thirds .column ol {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -3887,7 +4114,6 @@ ul.cascaded-layout.blank>li.gutter-sizer {
 @media all {
 	.column dl.faq dt {
 		line-height: 1.375em;
-		font-size: 1em;
 	}
 }
 
@@ -4049,7 +4275,6 @@ ul.cascaded-layout.blank>li.gutter-sizer {
 @media all {
 	.column dl.faq>.collapse-all-button,.column dl.faq>.expand-all-button {
 		line-height: 12px;
-		font-size: 12px;
 	}
 }
 
@@ -4111,7 +4336,7 @@ ul.cascaded-layout.blank>li.gutter-sizer {
 	right: 0;
 }
 
-/*!   +-------------------------------------------------------------------------------------------------------------------+
+/*!   └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 div.article-body {
 	position: relative;
@@ -4135,6 +4360,10 @@ div.award-banner {
 	margin-bottom: 1rem;
 }
 
+/*!       ┌-----------------------------------------------------------------------------------------------------------┐
+*         │ ···· Builder Template Slideshows ········································································ │
+*         └-----------------------------------------------------------------------------------------------------------┘
+*/
 @media all and (min-width:361px) and (max-width:480px) {
 	.column .builder-section-content.cycle-slideshow {
 		margin-left: -1rem;
@@ -4151,8 +4380,8 @@ div.award-banner {
 
 .column .builder-banner-content {
 	padding: 0 0 10px;
-	font-size: 1rem;
-	line-height: 1.35rem;
+	font-size: 1.5rem;
+	line-height: 1.35em;
 	border: 0;
 	-webkit-transition: font-size .15s linear, line-height .15s linear;
 	-moz-transition: font-size .15s linear, line-height .15s linear;
@@ -4160,8 +4389,7 @@ div.award-banner {
 }
 
 .column .builder-banner-content:hover {
-	font-size: 1.3333rem;
-	line-height: 1.799955rem;
+	font-size: 2rem;
 }
 
 .column .builder-banner-content:hover>div.builder-banner-inner-content {
@@ -4179,8 +4407,8 @@ div.award-banner {
 
 .column .builder-banner-inner-content p {
 	padding: 10px;
-	font-size: inherit;
-	line-height: inherit;
+	font-size: inherit !important;
+	line-height: inherit !important;
 	text-align: center;
 }
 
@@ -4212,13 +4440,13 @@ div.award-banner {
 
 @media all and (max-width:1204px) {
 	.column .builder-banner-content {
-		font-size: 1.3278vw;
-		line-height: 1.79253vw;
+		font-size: 2.1179vw;
+		line-height: 2.8592vw;
 	}
 	
 	.column .builder-banner-content:hover {
-		font-size: 1.7704vw;
-		line-height: 2.39004vw;
+		font-size: 2.8239vw;
+		line-height: 3.8122vw;
 	}
 	
 	.column .builder-banner-inner-content p {
@@ -4232,13 +4460,25 @@ div.award-banner {
 
 @media all and (max-width:989px) {
 	.column .builder-banner-content {
-		font-size: 12px;
-		line-height: 16.2px;
+		font-size: 2.5784vw;
+		line-height: 3.4808vw;
 	}
 	
 	.column .builder-banner-content:hover {
-		font-size: 14px;
-		line-height: 18.9px;
+		font-size: 3.4379vw;
+		line-height: 4.6411vw;
+	}
+}
+
+@media all and (max-width:480px) {
+	.column .builder-banner-content {
+		font-size: 5.1568vw;
+		line-height: 6.9616vw;
+	}
+	
+	.column .builder-banner-content:hover {
+		font-size: 6.8758vw;
+		line-height: 9.2822vw;
 	}
 }
 
@@ -4248,6 +4488,10 @@ div.award-banner {
 	}
 }
 
+/*!       ┌-----------------------------------------------------------------------------------------------------------┐
+*         │ ···· (div).column rulesets ·············································································· │
+*         └-----------------------------------------------------------------------------------------------------------┘
+*/
 section.pad-top div.column.half-pad,section.pad-top.half-pad {
 	padding-top: 1rem;
 }
@@ -4403,12 +4647,24 @@ section.pad-top div.column.half-pad,section.pad-top.half-pad {
 	}
 }
 
-main>.page>.row:last-child>.column:last-child {
+body.home main>.page>.row:last-child>.column:last-child,body.page main>.page>.row:last-child>.column:last-child {
 	padding-bottom: 2rem;
 }
 
 @media all and (min-width:694px) {
-	main>.page>.row:last-child.halves>.column:first-child {
+	body.home main>.page>.row:last-child.halves>.column:first-child,body.home main>.page>.row:last-child.side-left>.column:first-child,body.home main>.page>.row:last-child.side-right>.column:first-child,body.page main>.page>.row:last-child.halves>.column:first-child,body.page main>.page>.row:last-child.side-left>.column:first-child,body.page main>.page>.row:last-child.side-right>.column:first-child {
+		padding-bottom: 2rem;
+	}
+}
+
+@media all and (min-width:694px) {
+	body.home main>.page>.row:last-child.thirds>.column:first-child,body.page main>.page>.row:last-child.thirds>.column:first-child {
+		padding-bottom: 2rem;
+	}
+}
+
+@media all and (min-width:694px) {
+	body.home main>.page>.row:last-child.thirds>.column:nth-child(2),body.page main>.page>.row:last-child.thirds>.column:nth-child(2) {
 		padding-bottom: 2rem;
 	}
 }
@@ -5019,11 +5275,23 @@ div.page-covering-notice-js div.notice-content p+p {
 	margin-top: 1em !important;
 }
 
+.row.single.has-recent-updates {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	background-color: #eff0f1;
+}
+
 div.recent-updates {
 	position: relative;
 	left: 0;
 	top: 0;
-	height: 2em;
+	height: 4em;
+}
+
+@media all and (max-width:693px) {
+	div.recent-updates {
+		height: 7em;
+	}
 }
 
 div.recent-updates p+p {
@@ -5252,6 +5520,12 @@ div.recent-updates p.recent-update-3 {
 	}
 }
 
+/*!   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*     ║ #### TEXT-LEVEL NODES ########################################################################################### ║
+*     ╠===================================================================================================================╣
+*     ║ Rulesets that target nodes with text-level semantics.                                                             ║
+*     ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
 .column a {
 	border-bottom-right-radius: .25em;
 	border-bottom-left-radius: .25em;
@@ -5305,6 +5579,11 @@ div.recent-updates p.recent-update-3 {
 	font-size: 1.05em;
 	line-height: calc(1.05em * 1.05);
 	color: #f6861f;
+}
+
+.column a.learn-more {
+	font-weight: 700;
+	font-size: .925em;
 }
 
 .column a.dark-red-button {
@@ -5465,6 +5744,10 @@ a.vpue-tooltip span b {
 	border-right: 1px solid #925b29;
 }
 
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ STRONG rulesets ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 strong.opening-line {
 	font-size: 1.0625em;
 	color: #72652a;
@@ -5476,12 +5759,20 @@ strong.stands-out {
 	font-size: 1.2em;
 }
 
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ MARK rulesets ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 mark.highlight {
 	background-color: transparent;
 	font-style: normal;
 	color: #AEC7CB;
 }
 
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ SPAN rulesets ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 span.accentuated-text {
 	font-weight: 700;
 	font-size: 1.3em;
@@ -5560,10 +5851,20 @@ span.has-tool-tip:hover,span.has-tooltip:hover {
 	}
 }
 
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ CITE rulesets ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 cite.article-author {
 	display: none;
 }
 
+/*!   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*     ║ #### EMBEDDED CONTENT ########################################################################################### ║
+*     ╠===================================================================================================================╣
+*     ║ Rulesets that target nodes representing embedded content.                                                         ║
+*     ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
 img {
 	height: auto;
 }
@@ -5685,48 +5986,96 @@ img.has-spacing.at-top {
 	margin-top: 1rem;
 }
 
+img.has-spacing.at-top.forces-spacing {
+	margin-top: 1rem !important;
+}
+
 img.has-spacing.at-top.thick {
 	margin-top: 2rem;
+}
+
+img.has-spacing.at-top.thick.forces-spacing {
+	margin-top: 2rem !important;
 }
 
 img.has-spacing.at-top.thin {
 	margin-top: .5rem;
 }
 
+img.has-spacing.at-top.thin.forces-spacing {
+	margin-top: .5rem !important;
+}
+
 img.has-spacing.at-right {
 	margin-right: 1rem;
+}
+
+img.has-spacing.at-right.forces-spacing {
+	margin-right: 1rem !important;
 }
 
 img.has-spacing.at-right.thick {
 	margin-right: 2rem;
 }
 
+img.has-spacing.at-right.thick.forces-spacing {
+	margin-right: 2rem !important;
+}
+
 img.has-spacing.at-right.thin {
 	margin-right: .5rem;
+}
+
+img.has-spacing.at-right.thin.forces-spacing {
+	margin-right: .5rem !important;
 }
 
 img.has-spacing.at-bottom {
 	margin-bottom: 1rem;
 }
 
+img.has-spacing.at-bottom.forces-spacing {
+	margin-bottom: 1rem !important;
+}
+
 img.has-spacing.at-bottom.thick {
 	margin-bottom: 2rem;
+}
+
+img.has-spacing.at-bottom.thick.forces-spacing {
+	margin-bottom: 2rem !important;
 }
 
 img.has-spacing.at-bottom.thin {
 	margin-bottom: .5rem;
 }
 
+img.has-spacing.at-bottom.thin.forces-spacing {
+	margin-bottom: .5rem !important;
+}
+
 img.has-spacing.at-left {
 	margin-left: 1rem;
+}
+
+img.has-spacing.at-left.forces-spacing {
+	margin-left: 1rem !important;
 }
 
 img.has-spacing.at-left.thick {
 	margin-left: 2rem;
 }
 
+img.has-spacing.at-left.thick.forces-spacing {
+	margin-left: 2rem !important;
+}
+
 img.has-spacing.at-left.thin {
 	margin-left: .5rem;
+}
+
+img.has-spacing.at-left.thin.forces-spacing {
+	margin-left: .5rem !important;
 }
 
 img.fancy {
@@ -5830,6 +6179,12 @@ figure figcaption {
 	height: 100%;
 }
 
+/*!   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*     ║ #### TABULAR DATA ############################################################################################### ║
+*     ╠===================================================================================================================╣
+*     ║ Rulesets that nodes for representing tabular data.                                                                ║
+*     ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
 .column table.plain {
 	background: #fff url(/wp-content/uploads/sites/906/2015/08/bg-dark.jpg) repeat fixed left top;
 	border-collapse: separate;
@@ -6037,6 +6392,16 @@ figure figcaption {
 	line-height: normal;
 }
 
+/*!   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*     ║ #### FORMS ###################################################################################################### ║
+*     ╠===================================================================================================================╣
+*     ║ Styling applied to nodes representing a form's user interface.                                                    ║
+*     ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ FORM ELEMENT LAYOUTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 input.read-more-state {
 	display: none;
 }
@@ -6170,7 +6535,6 @@ div.read-more-target {
 @media all {
 	.column .gform_wrapper {
 		line-height: 1.375em;
-		font-size: 16px;
 	}
 }
 
@@ -6340,7 +6704,7 @@ div.read-more-target {
 }
 
 .column li.gfield>div.ginput_complex>span>label {
-	color: #8e7f88;
+	color: #360b12;
 }
 
 .column li.gfield>div.ginput_container_select>div.chosen-container {
@@ -6388,7 +6752,15 @@ div.read-more-target {
 .column ul.gform_fields.top_label>li.gfield>div.gfield_description {
 	padding: 0;
 	margin: 0;
-	color: #8e7f88;
+	color: #360b12;
+}
+
+.column ul.gform_fields.top_label>li.gfield>div.gfield_description ul li {
+	list-style: disc inside none !important;
+}
+
+.column ul.gform_fields.top_label>li.gfield>div.gfield_description p+ul {
+	margin-top: 0;
 }
 
 .column ul.gform_fields.top_label>li.gfield>div.ginput_complex {
@@ -6397,6 +6769,10 @@ div.read-more-target {
 
 .column ul.gform_fields.top_label li.gfield:first-child,.column ul.gform_fields.top_label>li.gfield+li.gfield:not(.gsection) {
 	margin-top: .5rem;
+}
+
+.column ul.gform_fields.top_label li.gfield:first-child.forces-spacing,.column ul.gform_fields.top_label>li.gfield+li.gfield:not(.gsection).forces-spacing {
+	margin-top: .5rem !important;
 }
 
 .column ul.gform_fields>li.gfield.gfield_contains_required input,.column ul.gform_fields>li.gfield.gfield_contains_required select,.column ul.gform_fields>li.gfield.gfield_contains_required textarea {
@@ -6543,6 +6919,20 @@ div.read-more-target {
 	}
 }
 
+/*!   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*     ║ #### SCRIPTING ################################################################################################## ║
+*     ╠===================================================================================================================╣
+*     ║ Rulesets for interactive elements that do not function as intended without the support of JavaScript.             ║
+*     ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ CLASS SPECIFIC rulesets related to script-driven elements ++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
+/*!       ┌-----------------------------------------------------------------------------------------------------------┐
+*         │ ···· Drop-down toggle: upon click, either drops down or pulls up a related element ······················ │
+*         └-----------------------------------------------------------------------------------------------------------┘
+*/
 .drop-down-toggle {
 	position: relative;
 	-webkit-transition: all .3s ease;
@@ -6735,6 +7125,14 @@ div.read-more-target {
 	border-left: 1px solid rgba(0,165,189,.2);
 }
 
+/*!       ┌-----------------------------------------------------------------------------------------------------------┐
+*         │ ···· Subtle Panels: Content panels with highly faded appearence until mousehover ························ │
+*         └-----------------------------------------------------------------------------------------------------------┘
+*/
+/*!       ┌-----------------------------------------------------------------------------------------------------------┐
+*         │ ···· Flipped content panels ············································································· │
+*         └-----------------------------------------------------------------------------------------------------------┘
+*/
 .flipped-content-back {
 	display: none;
 	width: 100%;
@@ -7430,6 +7828,22 @@ div.read-more-target {
 	}
 }
 
+/*!       ┌-----------------------------------------------------------------------------------------------------------┐
+*         │ ···· Tribe Events Calendars ············································································· │
+*         └-----------------------------------------------------------------------------------------------------------┘
+*/
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ARTICLES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ ++++ DIV rulesets +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
+/*!       ┌-----------------------------------------------------------------------------------------------------------┐
+*         │ ···· Auto-scrolling image containers ···································································· │
+*         └-----------------------------------------------------------------------------------------------------------┘
+*/
 div.auto-scroller {
 	position: relative;
 }
