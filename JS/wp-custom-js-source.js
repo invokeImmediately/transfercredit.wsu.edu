@@ -14,7 +14,7 @@
         if($("div.gform_body").length > 0) {
 			initInstitutionSelectors(".oue-gf-instn-locn", ".oue-gf-instn-name");
 		}
-	}
+	});
 
 
     /******************************************************************************************\
