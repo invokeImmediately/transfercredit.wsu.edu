@@ -5,11 +5,17 @@
 	$(document).ready(function () {
         //traverseInputs('.ugrf-general-reqd');        
         if($("div.gform_body").length > 0) {
-        	initInstitutionSelectors(".oue-gf-instn-locn", ".oue-gf-instn-name");
             setupInstitutionSelectors(".oue-gf-instn-locn", ".oue-gf-instn-name");
             setupEnhancedUploadChain(".oue-gf-upload-chain-enhncd", ".oue-gf-upload-chain-extra");
         }
 	});
+
+	$(window).on("load", function () {
+        if($("div.gform_body").length > 0) {
+			initInstitutionSelectors(".oue-gf-instn-locn", ".oue-gf-instn-name");
+		}
+	}
+
 
     /******************************************************************************************\
     | Setup a chain of file uploading inputs, wherein only the left-most input in the tree is  |
@@ -89,15 +95,20 @@
     }
 
     function initInstitutionSelectors (selector, nextSelector) {
-    	var $selectors = $(selector);
-    	$selectors.each(function() {
-    if ($.type(selector) === "string") {
-            var $thisChild = $(this);
-            var slctdLocation = $thisChild.val();
-            var $thisParent = $thisChild.parents(selector).first();
-            var $nextParent = $thisParent.nextAll(nextSelector).first();
-            var $nextParentInput = $nextParent.find("select").first();
-            var newOpts = null;
+    	var $selectors = $( selector );
+        var $thisChild;
+        var slctdLocation;
+        var $thisParent;
+        var $nextParent;
+        var $nextParentInput;
+        var newOpts;
+    	$selectors.each( function() {
+            $thisChild = $(this);
+            slctdLocation = $thisChild.val();
+            $thisParent = $thisChild.parents(selector).first();
+            $nextParent = $thisParent.nextAll(nextSelector).first();
+            $nextParentInput = $nextParent.find("select").first();
+            newOpts = null;
             switch(slctdLocation) {
                 case "Alabama":
                     newOpts = {
@@ -4062,7 +4073,6 @@
                 });
                 $nextParentInput.trigger("chosen:updated");
             }
-        }
     	});
     }
 
