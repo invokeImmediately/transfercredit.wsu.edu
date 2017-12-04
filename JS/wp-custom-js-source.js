@@ -95,7 +95,7 @@
     }
 
     function initInstitutionSelectors (selector, nextSelector) {
-    	var $selectors = $( selector );
+    	var $selectors = $( selector + ' select' );
         var $thisChild;
         var slctdLocation;
         var $thisParent;
