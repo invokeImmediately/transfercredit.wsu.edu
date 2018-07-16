@@ -1,0 +1,39 @@
+{
+  "name": "transfercredit.wsu.edu",
+  "version": "1.0.0",
+  "description": "Website of the WSU Transfer Resource Center",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/invokeImmediately/transfercredit.wsu.edu.git"
+  },
+  "keywords": [
+    "Washington",
+    "State",
+    "University",
+    "WSU"
+  ],
+  "author": "Daniel Rieck <danielcrieck@gmail.com> (https://www.linkedin.com/in/danielcrieck/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/invokeImmediately/transfercredit.wsu.edu/issues"
+  },
+  "homepage": "https://github.com/invokeImmediately/transfercredit.wsu.edu#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-dest": "^0.2.3",
+    "gulp-extname": "^0.2.2",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-insert": "^0.5.0",
+    "gulp-insert-lines": "0.0.4",
+    "gulp-less": "^4.0.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^3.0.0"
+  }
+}
