@@ -46,16 +46,16 @@ function getCssBuildSettings() {
 function getJsBuildSettings() {
 	return {
 		buildDependenciesList: [
-			'./JS/transfer-central-custom.js',
 			'./WSU-UE---JS/jQuery.oue-custom.js',
 			'./WSU-UE---JS/jQuery.forms.js',
 			'../jQuery.AreYouSure/jquery.are-you-sure.js',
 			'./WSU-UE---JS/jQuery.are-you-sure.js',
 			'../qTip2/dist/jquery.qtip.min.js',
-			'./WSU-UE---JS/jQuery.qTip.js'
+			'./WSU-UE---JS/jQuery.qTip.js',
+			'./JS/xfercredit-custom.js'
 		],
 		commentNeedle: /^(\/\*)(?!!)/g,
-		compiledJsFileName: 'xfercredit-custom-build.js',
+		compiledJsFileName: 'xfercredit-build.js',
 		destFolder: './JS/',
 		minJsFileExtension: '.min.js',
 		replaceCallback: fixFileHeaderComments
