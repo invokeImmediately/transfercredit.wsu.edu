@@ -1,4 +1,7 @@
 @grid-behavior: "hybrid";
+@oue-rules-wrapper: ~"";
+
+@import "..\WSU-UE---CSS\variables.less";
 @import "..\WSU-UE---CSS\wp-master-style-sheet.less";
 
 // ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
@@ -10,16 +13,16 @@
 // ║ #### BACKGROUNDS ########################################################################### ║
 // ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
 body {
-	@media all and (max-width: @v-wdscrn-bckgrnd) {
+	@media all and (max-width: @widescreen-background-width) {
 		background: @hex-crimson;
 	}
-	@media all and (min-width: (@v-wdscrn-bckgrnd+1)) and (max-width: @v-wuxga-width) {
+	@media all and (min-width: (@widescreen-background-width+1)) and (max-width: @wuxga-width) {
 		background: @hex-crimson  url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wuxga.jpg) repeat-y fixed right top;
 	}
-	@media all and (min-width: (@v-wuxga-width+1)) and (max-width: @v-wqxga-width) {
+	@media all and (min-width: (@wuxga-width+1)) and (max-width: @wqxga-width) {
 		background: @hex-crimson url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wqxga.jpg) repeat-y fixed right top;
 	}
-	@media all and (min-width: (@v-wqxga-width+1)) {
+	@media all and (min-width: (@wqxga-width+1)) {
 		background: @hex-crimson url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wqxga.jpg) repeat-y fixed 1800px top;
 	}
 }
@@ -29,7 +32,7 @@ main {
 }
 
 #binder {
-    @media screen and (min-width: (@v-wdscrn-bckgrnd)) {
+    @media screen and (min-width: (@widescreen-background-width)) {
         .rgb-black(); border-right: 1px solid rgba(@rval, @rval, @bval,0.7);
         box-shadow: 5px 0px 8px rgba(@rval, @rval, @bval, 0.5);
     }
@@ -88,7 +91,7 @@ div.column ul:not(.checklist-flowchart):not(ul.campus-links) li {
 }
 
 div.column.two.transfer-links {
-    @media screen and (max-width: @v-rghtclmn-thrshld) {
+    @media screen and (max-width: @column-floating-threshold) {
         background-color: @hex-bright-gray;
         h4, h3, p, ul { &:extend(.centered); }
         ul li{
@@ -113,7 +116,7 @@ div.column.two.transfer-links {
         min-height: 150px;
         color: @hex-white;
         //.rgb-black(); text-shadow: 0 1px 0 rgba(@rval, @gval, @bval, 0.2);
-        @media all and (max-width: @v-bckgrnd-thrshld) {
+        @media all and (max-width: @background-width-threshold) {
             overflow-x: visible;
         }
         & > h3:first-child {
@@ -539,14 +542,14 @@ div.column.two.transfer-links {
 div.banner {
     &.campus-contacts {
         margin-bottom: (@v-dflt-spcng / 2);
-        @media all and (min-width: (@v-spn-thrshld + 1)) {
+        @media all and (min-width: (@spine-threshold + 1)) {
             width: 100%;
             height: 0;
              padding-bottom: 57.43%; // Maintain aspect ratio of 278.6 x 160
             background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-narrow.jpg) 0 0 no-repeat;
             background-size: 100% 100%;
         }
-        @media all and (max-width: @v-spn-thrshld) {
+        @media all and (max-width: @spine-threshold) {
             width: 100%;
             height: 0;
              padding-bottom: 26%; // Maintain aspect ratio of 700 x 182
