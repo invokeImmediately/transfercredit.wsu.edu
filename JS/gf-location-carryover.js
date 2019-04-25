@@ -2,12 +2,13 @@
 // §1.1: GfAdvSelectIntf
 
 /**
- * Graviy forms advanced select interface module.
+ * Graviy Forms Advanced Select Interface (GfAdvSelectIntf) module.
  *
  * JQuery-based interface to key UI components of an Gravity Forms select field utilizing the
  * advanced user interface option.
  *
  * @param {jquery} $ - The session's jquery object.
+ * @param {string} modName - Stores the name of this module; useful in error reporting.
  * @param {object} lsSels - A collection of lexically scoped jQuery selectors that come from the
  *     design of Gravity Forms select fields utilizing the advanced user interface.
  * @param {string} lsSels.gfId - JQuery Selector for a single CSS class used to identify gravity
@@ -22,7 +23,7 @@
  * @class
  */
 
-var GfAdvSelectIntf = ( function( $, className, lsSels ) {
+var GfAdvSelectIntf = ( function( $, modName, lsSels ) {
 
 	'use strict';
 
@@ -173,7 +174,7 @@ advanced user interface option.";
 			msg = "I'm not sure what is wrong, but I was unable to build myself; careful debugging \
 will be needed to determine the nature of this unforseen error condition.";
 		}
-		console.log( className + " construction error: " + msg );
+		console.log( modName + " construction error: " + msg );
 	}
 
 	return GfAdvSelectIntf;
@@ -185,19 +186,42 @@ will be needed to determine the nature of this unforseen error condition.";
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// §1.1: GfActivator
+// §1.2: GfAddCourseBinder
 
-var GfAddCourse = ( function( $, className, lsSels ) {
+/**
+ * Add course carry over initiator (AddCrseCoInr) module.
+ *
+ * Module that can bind an event handler to a transfer course evaluation request form that causes
+ * the location and name of the previous course to be carried over to a new course once it is added
+ * to the request.
+ *
+ * @param {jquery} $ - The session's jquery object.
+ * @param {string} modName - Stores the name of this module; useful in error reporting.
+ * @param {object} lsSels - A collection of lexically scoped jQuery selectors that are determined by
+ *     the design of transfer course evaluation request forms.
+ * @param {string} lsSels.gfCont - Selector for the wrapper of a transfer course evaluation request
+ *     form.
+ * @param {string} lsSels.gfFld - Selector for gravity forms fields.
+ * @param {string} lsSels.locFld - Selector for the institution location field in a transfer course
+ *     evaluation request form, which is the first field in the set of fields that identifies the
+ *     institution associated with the course to be entered.
+ *
+ * @todo Finish adding inline documentation to module.
+ *
+ * @class
+ */
+
+var AddCrseCoInr = ( function( $, modName, lsSels ) {
 
 	'use strict';
 
-	function GfAddCourse( selFields ) {
+	function AddCrseCoInr( selFields ) {
 		this.selFields = selFields;
 		this.$fields = $( selFields );
-		this.bindChangeHandlers();
+		this.enactCarryOver();
 	}
 
-	GfAddCourse.prototype.bindChangeHandlers = function() {
+	AddCrseCoInr.prototype.enactCarryOver = function() {
 		var $gfCont = $( lsSels.gfCont );
 		var $this = undefined;
 		var isChecked = undefined;
@@ -208,12 +232,12 @@ var GfAddCourse = ( function( $, className, lsSels ) {
 			isChecked = $this.prop( 'checked' );
 			if ( isChecked ) {
 				console.log( 'Checkbox is checked.' );
-				ls_CarryOverLocation( inst, $this );
+				ls_CarryOverLocationFlds( inst, $this );
 			}
 		} );
 	};
 
-	function ls_CarryOverLocation( inst, $fld ) {
+	function ls_CarryOverLocationFlds( inst, $fld ) {
 		var $nextCountryFld = undefined;
 		var $nextIntlNameFld = undefined;
 		var $nextLocFld = undefined;
@@ -228,7 +252,6 @@ var GfAddCourse = ( function( $, className, lsSels ) {
 
 		// First find the parent gfield.
 		$parentFld = $fld.parents( lsSels.gfFld ).first();
-		console.log('Length of $parentFld = ' + $parentFld.length);
 
 		// Using the parent gfield, find the next set of location fields following the checkbox that
 		// will copy previous set of location fields preceding the check box.
@@ -241,14 +264,13 @@ var GfAddCourse = ( function( $, className, lsSels ) {
 		// Using the parent gfield, find the previous set of location fields preceding the checkbox
 		// that will be copied over to the newly revealed set of fields following the check box.
 		$prevLocFld = $parentFld.prevAll( lsSels.locFld ).first();
-		console.log('Length of $prevLocFld = ' + $prevLocFld.length);
 		$nextNameFld = $nextLocFld.next();
 		$nextNameOtherFld = $nextNameFld.next();
 		$nextCountryFld = $nextNameOtherFld.next();
 		$nextIntlNameFld = $nextCountryFld.next();
 
-		// Copy the values.
-		ls_CopyLocFld( $prevLocFld, $nextLocFld );
+		// Copy the values from the previous field set to the next.
+		ls_CopyOverLocFld( $prevLocFld, $nextLocFld );
 	}
 
 	function ls_CopyLocFld( $prevLocFld, $nextLocFld ) {
@@ -260,8 +282,8 @@ var GfAddCourse = ( function( $, className, lsSels ) {
 		nextLocIntf.$selElem.trigger( 'change' );
 	}
 
-	return GfAddCourse;
-} )( jQuery, 'GfAddCourse', {
+	return AddCrseCoInr;
+} )( jQuery, 'AddCrseCoInr', {
 	gfCont: '.gform_wrapper',
 	gfFld: '.gfield',
 	locFld: '.oue-gf-instn-locn'
