@@ -231,7 +231,6 @@ var AddCrseCoInr = ( function( $, modName, lsSels ) {
 			$this = $( this );
 			isChecked = $this.prop( 'checked' );
 			if ( isChecked ) {
-				console.log( 'Checkbox is checked.' );
 				ls_CarryOverLocationFlds( inst, $this );
 			}
 		} );
@@ -264,22 +263,36 @@ var AddCrseCoInr = ( function( $, modName, lsSels ) {
 		// Using the parent gfield, find the previous set of location fields preceding the checkbox
 		// that will be copied over to the newly revealed set of fields following the check box.
 		$prevLocFld = $parentFld.prevAll( lsSels.locFld ).first();
-		$nextNameFld = $nextLocFld.next();
-		$nextNameOtherFld = $nextNameFld.next();
-		$nextCountryFld = $nextNameOtherFld.next();
-		$nextIntlNameFld = $nextCountryFld.next();
+		$prevNameFld = $prevLocFld.next();
+		$prevNameOtherFld = $prevNameFld.next();
+		$prevCountryFld = $prevNameOtherFld.next();
+		$prevIntlNameFld = $prevCountryFld.next();
 
 		// Copy the values from the previous field set to the next.
-		ls_CopyOverLocFld( $prevLocFld, $nextLocFld );
+		ls_CopyOverSelFld( $prevLocFld, $nextLocFld );
+		ls_CopyOverSelFld( $prevNameFld, $nextNameFld );
+		ls_CopyOverTxtFld( $prevNameOtherFld, $nextNameOtherFld );
+		ls_CopyOverSelFld( $prevCountryFld, $nextCountryFld );
+		ls_CopyOverTxtFld( $prevIntlNameFld, $nextIntlNameFld );
 	}
 
-	function ls_CopyLocFld( $prevLocFld, $nextLocFld ) {
-		var prevLocIntf = new GfAdvSelectIntf( $prevLocFld );
-		var nextLocIntf = new GfAdvSelectIntf( $nextLocFld );
+	function ls_CopyOverSelFld( $prevSelFld, $nextSelFld ) {
+		var prevSelIntf = new GfAdvSelectIntf( $prevSelFld );
+		var nextSelIntf = new GfAdvSelectIntf( $nextSelFld );
 
-		nextLocIntf.$selElem.val( prevLocIntf.$selElem.val() );
-		nextLocIntf.$chosenSpan.html( prevLocIntf.$chosenSpan.html() );
-		nextLocIntf.$selElem.trigger( 'change' );
+		nextSelIntf.$selElem.val( prevSelIntf.$selElem.val() );
+		nextSelIntf.$chosenSpan.html( prevSelIntf.$chosenSpan.html() );
+		nextSelIntf.$selElem.trigger( 'change' );
+		nextSelIntf.$selElem.trigger( 'blur' );
+	}
+
+	function ls_CopyOverTxtFld( $prevInputFld, $nextInputFld ) {
+		var $prevInputElem = $prevInputFld.find( 'input' );
+		var $nextInputElem = $nextInputFld.find( 'input' );
+
+		$nextInputElem.val( $prevInputElem.val() );
+		$nextInputElem.trigger( 'change' );
+		$nextInputElem.trigger( 'blur' );
 	}
 
 	return AddCrseCoInr;
@@ -288,3 +301,21 @@ var AddCrseCoInr = ( function( $, modName, lsSels ) {
 	gfFld: '.gfield',
 	locFld: '.oue-gf-instn-locn'
 } );
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// §2.0: Application of modules to website
+
+
+/**
+ * @todo: Add inline documentation.
+ */
+( function ( $ ) {
+
+	'use strict';
+
+	$( window ).on ( 'load', function() {
+		var initiator = new AddCrseCoInr( '.oue-gf-actvtr-chain input' );
+
+		initiator.enactCarryOver();
+	} );
+} )( jQuery );
