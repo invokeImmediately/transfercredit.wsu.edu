@@ -2,6 +2,8 @@
 // §1.1: GfAdvSelectIntf
 
 /**
+ * Graviy forms advanced select interface module.
+ *
  * JQuery-based interface to key UI components of an Gravity Forms select field utilizing the
  * advanced user interface option.
  *
@@ -21,6 +23,8 @@
  */
 
 var GfAdvSelectIntf = ( function( $, className, lsSels ) {
+
+	'use strict';
 
 	/**
 	 * Constructor for GfAdvSelectIntf.
@@ -85,7 +89,7 @@ var GfAdvSelectIntf = ( function( $, className, lsSels ) {
 	// TODO: Write documentation header.
 	// TODO: Finish writing function (move to public method).
 	GfAdvSelectIntf.prototype.isValid = function () {
-		return evalValidity( this );
+		return ls_EvalValidity( this );
 	};
 
 
@@ -93,23 +97,23 @@ var GfAdvSelectIntf = ( function( $, className, lsSels ) {
 	// §1.1.6: Lexically scoped support functions  
 
 	/**
-	 * Evaluate the validity of an instance of GfAdvSelectInf.
+	 * Evaluate the validity of an instance of GfAdvSelectIntf.
 	 *
-	 * Evaluate the validity of an instance of GfAdvSelectInf based on the parameter it was passed
+	 * Evaluate the validity of an instance of GfAdvSelectIntf based on the parameter it was passed
 	 * during its construction and the condition of lexically scoped settings for the module.
 	 * Several criteria about the nature of the object and whether it can be used to build an
 	 * interface to expected elements within the DOM must be satisfied.
 	 *
-	 * @param {GfAdvSelectInf} obj - The instance of GfAdvSelectInf to be evaluated.
+	 * @param {GfAdvSelectIntf} obj - The instance of GfAdvSelectIntf to be evaluated.
 	 *
 	 * @return {boolean} - True if the interface is valid and can be reliably used, false otherwise.
 	 */
-	function evalValidity( obj ) {
+	function ls_EvalValidity( obj ) {
 		var classIsCorrect = undefined;
 		var hasRightChildren = undefined;
 		var is$ = undefined;
 		var lenOf1 = undefined;
-		var selsMakesSense = undefined;
+		var selsMakeSense = undefined;
 		var valid = false;
 
 		try {
@@ -127,7 +131,7 @@ var GfAdvSelectIntf = ( function( $, className, lsSels ) {
 			console.log( e.name + ': ' + e.message );
 		}
 		if ( !valid ) {
-			reportValidityError( classIsCorrect, hasRightChildren, is$, lenOf1, selsMakesSense );
+			reportValidityError( classIsCorrect, hasRightChildren, is$, lenOf1, selsMakeSense );
 		}
 
 		return valid;
@@ -145,7 +149,7 @@ var GfAdvSelectIntf = ( function( $, className, lsSels ) {
 	 * @param {undefined|boolean} hasRightChildren - Indicates whether $gfield contains child
 	 *     elements that are associated with the advanced user interface option for drop downs.
 	 */
-	function reportValidityError( classIsCorrect, hasRightChildren, is$, lenOf1, selsMakesSense ) {
+	function reportValidityError( classIsCorrect, hasRightChildren, is$, lenOf1, selsMakeSense ) {
 		var msg;
 
 		if ( typeof selsMakeSense === 'undefined' || typeof is$ === undefined ) {
@@ -178,4 +182,87 @@ will be needed to determine the nature of this unforseen error condition.";
 	gfContId: 'ginput_container_select',
 	gfSelSel: '.gfield_select',
 	gfChosenSpanSel: '.chosen-single span'
+} );
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// §1.1: GfActivator
+
+var GfAddCourse = ( function( $, className, lsSels ) {
+
+	'use strict';
+
+	function GfAddCourse( selFields ) {
+		this.selFields = selFields;
+		this.$fields = $( selFields );
+		this.bindChangeHandlers();
+	}
+
+	GfAddCourse.prototype.bindChangeHandlers = function() {
+		var $gfCont = $( lsSels.gfCont );
+		var $this = undefined;
+		var isChecked = undefined;
+		var inst = this;
+
+		$gfCont.on( 'change', inst.selFields, function() {
+			$this = $( this );
+			isChecked = $this.prop( 'checked' );
+			if ( isChecked ) {
+				console.log( 'Checkbox is checked.' );
+				ls_CarryOverLocation( inst, $this );
+			}
+		} );
+	};
+
+	function ls_CarryOverLocation( inst, $fld ) {
+		var $nextCountryFld = undefined;
+		var $nextIntlNameFld = undefined;
+		var $nextLocFld = undefined;
+		var $nextNameFld = undefined;
+		var $nextNameOtherFld = undefined;
+		var $parentFld = undefined;
+		var $prevCountryFld = undefined;
+		var $prevIntlNameFld = undefined;
+		var $prevLocFld = undefined;
+		var $prevNameFld = undefined;
+		var $prevNameOtherFld = undefined;
+
+		// First find the parent gfield.
+		$parentFld = $fld.parents( lsSels.gfFld ).first();
+		console.log('Length of $parentFld = ' + $parentFld.length);
+
+		// Using the parent gfield, find the next set of location fields following the checkbox that
+		// will copy previous set of location fields preceding the check box.
+		$nextLocFld = $parentFld.nextAll( lsSels.locFld ).first();
+		$nextNameFld = $nextLocFld.next();
+		$nextNameOtherFld = $nextNameFld.next();
+		$nextCountryFld = $nextNameOtherFld.next();
+		$nextIntlNameFld = $nextCountryFld.next();
+
+		// Using the parent gfield, find the previous set of location fields preceding the checkbox
+		// that will be copied over to the newly revealed set of fields following the check box.
+		$prevLocFld = $parentFld.prevAll( lsSels.locFld ).first();
+		console.log('Length of $prevLocFld = ' + $prevLocFld.length);
+		$nextNameFld = $nextLocFld.next();
+		$nextNameOtherFld = $nextNameFld.next();
+		$nextCountryFld = $nextNameOtherFld.next();
+		$nextIntlNameFld = $nextCountryFld.next();
+
+		// Copy the values.
+		ls_CopyLocFld( $prevLocFld, $nextLocFld );
+	}
+
+	function ls_CopyLocFld( $prevLocFld, $nextLocFld ) {
+		var prevLocIntf = new GfAdvSelectIntf( $prevLocFld );
+		var nextLocIntf = new GfAdvSelectIntf( $nextLocFld );
+
+		nextLocIntf.$selElem.val( prevLocIntf.$selElem.val() );
+		nextLocIntf.$chosenSpan.html( prevLocIntf.$chosenSpan.html() );
+		nextLocIntf.$selElem.trigger( 'change' );
+	}
+
+	return GfAddCourse;
+} )( jQuery, 'GfAddCourse', {
+	gfCont: '.gform_wrapper',
+	gfFld: '.gfield',
+	locFld: '.oue-gf-instn-locn'
 } );
