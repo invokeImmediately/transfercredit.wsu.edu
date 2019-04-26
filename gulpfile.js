@@ -56,7 +56,8 @@ function getJsBuildSettings() {
 			'./WSU-UE---JS/jQuery.are-you-sure.js',
 			'../qTip2/dist/jquery.qtip.min.js',
 			'./WSU-UE---JS/jQuery.qTip.js',
-			'./JS/xfercredit-custom.js'
+			'./JS/xfercredit-custom.js',
+			'./JS/gf-location-carryover.js'
 		],
 		commentNeedle: /^(\/\*)(?!!)/g,
 		compiledJsFileName: 'xfercredit-build.js',
