@@ -1,806 +1,868 @@
+/** ────────────────────────────────────────────────────────────────────────────────────────────────
+*** ▐▄ ▄▌█▀▀▀ █▀▀▀ █▀▀▄ ▄▀▀▀ █▀▀▄ █▀▀▀ █▀▀▄ ▀█▀▐▀█▀▌   ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌
+***   █  █▀▀▀ █▀▀  █▄▄▀ █    █▄▄▀ █▀▀  █  █  █   █  ▀▀ █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌
+*** ▐▀ ▀▌▀    ▀▀▀▀ ▀  ▀▄ ▀▀▀ ▀  ▀▄▀▀▀▀ ▀▀▀  ▀▀▀  █      ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀
+***
+***      █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+***      █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+***    ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀ 
+***
+*** See persistent section header comment below (§2) for additional information and license.
+*** ────────────────────────────────────────────────────────────────────────────────────────────────
+***  TABLE OF CONTENTS:
+***  ────────────────────────────────────────────────────────────────────────────────────────────
+***  §1: Build entry point from DAESA's CSS development project................................35
+***  §2: Persistent section header comment for unit specific styling...........................47
+***  §3: Transfer Center website backgrounds...................................................87
+***  §4: Sidebars.............................................................................117
+***  §4: Styling for lists....................................................................204
+***    >>> §4.1: Miscellaneous unordered lists................................................208
+***    >>> §4.2: Transfer Links...............................................................216
+***    >>> §4.3: Checklist flowcharts.........................................................230
+***  §5: Banner images........................................................................667
+***  §6: Tables...............................................................................691
+***    >>> §6.1: Military credit..............................................................695
+***    >>> §6.2: Washington 45 equivalencies..................................................787
+***  §7: Gravity forms........................................................................877
+***  §9: Animations...........................................................................926
+***  §9: Accordions...........................................................................945
+***  §10: Print styles.......................................................................1014
+***  §11: Article headers....................................................................1053
+*** ────────────────────────────────────────────────────────────────────────────────────────────────
+**/
+
+/** ================================================================================================
+*** §1: Build entry point from DAESA's CSS development project
+**/
+
 @grid-behavior: "hybrid";
 @oue-rules-wrapper: ~"";
 
-@import "..\WSU-UE---CSS\variables.less";
-@import "..\WSU-UE---CSS\wp-master-style-sheet.less";
+@import "..\WSU-DAESA-CSS\Settings\build-settings.less";
+@use-design__daesa-main-headers: false;
+@use-design__provost-main-headers: true;
+@import "..\WSU-DAESA-CSS\build-entry-point.less";
 
-// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
-// ║ #### TRANSFER CREDIT CUSTOM THEME ########################################################## ║
-// ╠==============================================================================================╣
-// ║ Custom styling, unique to the Transfer Credit website, of elements associated with the       ║
-// ║ WordPress WSU Spine Theme.                                                                   ║
-// ╠══════════════════════════════════════════════════════════════════════════════════════════════╣
-// ║ #### BACKGROUNDS ########################################################################### ║
-// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
-body {
-	@media all and (max-width: @widescreen-background-width) {
-		background: @hex-crimson;
-	}
-	@media all and (min-width: (@widescreen-background-width+1)) and (max-width: @wuxga-width) {
-		background: @hex-crimson  url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wuxga.jpg) repeat-y fixed right top;
-	}
-	@media all and (min-width: (@wuxga-width+1)) and (max-width: @wqxga-width) {
-		background: @hex-crimson url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wqxga.jpg) repeat-y fixed right top;
-	}
-	@media all and (min-width: (@wqxga-width+1)) {
-		background: @hex-crimson url(/wp-content/uploads/sites/917/2016/08/Site-Background_Jigsaw-Puzzle_Small-Faded-Framed_wqxga.jpg) repeat-y fixed 1800px top;
-	}
-}
+/** ================================================================================================
+*** §2: Persistent section header comment for unit specific styling
+**/
 
-main {
-     background: @hex-white;
-}
+/*! ================================================================================================
+*** ▐▀█▀▌█▀▀▄ ▄▀▀▄ ▐▀▀▄ ▄▀▀▀ █▀▀▀ █▀▀▀ █▀▀▄   ▄▀▀▀ █▀▀▀ ▐▀▀▄▐▀█▀▌█▀▀▀ █▀▀▄
+**    █  █▄▄▀ █▄▄█ █  ▐ ▀▀▀█ █▀▀▀ █▀▀  █▄▄▀   █    █▀▀  █  ▐  █  █▀▀  █▄▄▀
+**    █  ▀  ▀▄█  ▀ ▀  ▐ ▀▀▀  ▀    ▀▀▀▀ ▀  ▀▄   ▀▀▀ ▀▀▀▀ ▀  ▐  █  ▀▀▀▀ ▀  ▀▄
+***
+***       ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌   ▄▀▀▀▐▀█▀▌█  █ █    ▀█▀ ▐▀▀▄ █▀▀▀
+***       █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   ▀▀▀█  █  ▀▄▄█ █  ▄  █  █  ▐ █ ▀▄
+***        ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀   ▀▀▀   █  ▄▄▄▀ ▀▀▀  ▀▀▀ ▀  ▐ ▀▀▀▀
+*** ================================================================================================
+*** The following section consists of CSS code designed for use on the website of the WSU Transfer
+***   Center that was built from precompiled CSS written in the Less language extension of CSS.
+***
+*** Fully documented, precompiled source code from which this section of the custom stylesheet was
+***   built is developed and maintained on the linked GitHub repository.
+***
+*** @version 1.0.0-alpha
+***
+*** @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+*** @link https://github.com/invokeImmediately/transfercredit.wsu.edu/
+*** @license MIT Copyright (c) 2021 Washington State University
+***   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+***     and associated documentation files (the "Software"), to deal in the Software without
+***     restriction, including without limitation the rights to use, copy, modify, merge, publish,
+***     distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+***     the Software is furnished to do so, subject to the following conditions:
+***   The above copyright notice and this permission notice shall be included in all copies or
+***     substantial portions of the Software.
+***   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+***     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+***     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+***     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+***     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+***     SOFTWARE.
+*** ================================================================================================
+**/
 
-#binder {
-    @media screen and (min-width: (@widescreen-background-width)) {
-        .rgb-black(); border-right: 1px solid rgba(@rval, @rval, @bval,0.7);
-        box-shadow: 5px 0px 8px rgba(@rval, @rval, @bval, 0.5);
-    }
+/** ================================================================================================
+*** §3: Transfer Center website backgrounds
+**/
+
+.home:not(.has-background-image) #jacket, #jacket {
+  background: #e5e5e5 url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-jacket-4.jpg) no-repeat right top;
+  background-attachment: fixed;
 }
 
 #jacket {
-    background-position: right bottom;
-     background-attachment: fixed;
-     background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-attachment: fixed;
 }
 
+#spine #glue:before {
+  border-right: 1px solid #e5e5e5;
+  background: #fff url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-spine_daesa.png) no-repeat left bottom;
+  background-attachment: fixed;
 
-header.main-header {
-    &:extend(.has-dflt-font);
-    background: @hex-darker-gray url(/wp-content/uploads/sites/917/2015/11/header-background.png) left center no-repeat;
-    color: #fff !important;
-    text-shadow: .5px .5px 1px #000;
+  @media only screen and (max-width: 1544px) {
+    background: #fff;
+  }
 }
 
-.main-header sub:not(.unset), .main-header sup:not(.unset) {
-    color: #fff !important;
+main {
+  background: @hex-white;
+  border-left: 1px solid @hex-bright-gray;
 }
 
-// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
-// ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
-// ╠==============================================================================================╣
-// ║ Containers designed to be used as custom sidebars within a div.column element.               ║
-// ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
-// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+/** ================================================================================================
+*** §4: Sidebars
+**/
+
 div.column {
-	aside.article-sidebar {
-		float: right;
-		width: 33%;
-		padding: .8rem;
-		margin-bottom: 1rem;
-		 margin-left: 1rem;
-		background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
-		border: 1px solid #6d441f;
-		box-shadow: 1px 1px 2px rgba(109,68,31,0.5);
-		font-size: .8rem;
-		color: #464e54;
-		p {
-			font-size: inherit;
-		}
-	}
-}
-
-// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
-// ║ #### LIST STYLES ########################################################################### ║
-// ╠==============================================================================================╣
-// ║ Containers designed to be used as custom sidebars within a div.column element.               ║
-// ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
-// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
-div.column ul:not(.checklist-flowchart):not(ul.campus-links) li {
-    list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png);
-}
-
-div.column.two.transfer-links {
-    @media screen and (max-width: @column-floating-threshold) {
-        background-color: @hex-bright-gray;
-        h4, h3, p, ul { &:extend(.centered); }
-        ul li{
-            list-style: none;
-        }
+  aside.article-sidebar {
+    float: right;
+    width: 33%;
+    padding: .8rem;
+    margin-bottom: 1rem;
+     margin-left: 1rem;
+    background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
+    border: 1px solid #6d441f;
+    box-shadow: 1px 1px 2px rgba(109,68,31,0.5);
+    font-size: .8rem;
+    color: #464e54;
+    p {
+      font-size: inherit;
     }
+  }
 }
 
-.column ul.checklist-flowchart {
-    &:extend(ul.content-boxes all);
-}
-
-@rules-vrtcl-cntrd-pulsate: {
-    0% { transform: scale(1) translateY(-70%); }
-    50% { transform: scale(1.2) translateY(-61.6667%); }
-    100% { transform: scale(1) translateY(-70%); }
-};
-
-.column ul.checklist-flowchart {
-	margin-top: @v-dflt-spcng !important;
-    & > li {
-        min-height: 150px;
-        color: @hex-white;
-        //.rgb-black(); text-shadow: 0 1px 0 rgba(@rval, @gval, @bval, 0.2);
-        @media all and (max-width: @background-width-threshold) {
-            overflow-x: visible;
-        }
-        & > h3:first-child {
-            padding: 0.5rem;
-            margin: 0;
-            .rgb-black(); border-top: 1px solid rgba(@rval, @gval, @bval, 0.0);
-            border-top-left-radius: 4px;
-             border-top-right-radius: 4px;
-            color: @hex-white;
-            .rgb-black(); text-shadow: 0 1px 0 rgba(0,0,0,.5), 1px 0 0 rgba(0,0,0,.5),
-             0 -1px 0 rgba(0,0,0,.5), -1px 0 0 rgba(0,0,0,.5);
-            letter-spacing: 0.5px;
-            line-height: 1.2em;
-            text-transform: none;
-        }
-        & > p {
-            padding: 0.5rem;
-            color: inherit;
-            &:last-child { padding-bottom: 0.5rem; }
-        }
-        & + li {
-            margin-top: 96px;
-        }
-        &:not(:nth-child(8n)):after {
-            content: "";
-            height:32px;
-            width:32px;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            .transform(translate3d(-16px,16px,0));
-        }
-        &:not(:nth-child(8n)):before {
-            content: " ";
-            height:0px;
-            width:0px;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            .transform(translate3d(0,48px,0));
-            border: solid transparent;
-            .rgb-dark-gray(); border-color: rgba(@rval, @gval, @bval, 0);
-            border-width: 32px;
-            margin-left: -32px;
-            pointer-events: none;
-        }
-        &:nth-child(8n + 1) {
-            background-color: @hex-crimson-scale-darkest;
-            & > h3:first-child {
-                background-color: #83192b;
-            }
-            &:before { border-top-color: #3b4347; }
-            &:after { background-color: #3b4347; }
-        }
-        &:nth-child(8n + 2) {
-            background-color: @hex-crimson-scale-darker;
-            & > h3:first-child {
-                background-color: #971f32;
-            }
-            &:before { border-top-color: #475055; }
-            &:after { background-color: #475055; }
-        }
-        &:nth-child(8n + 3) {
-            background-color: @hex-crimson-scale-dark;
-            & > h3:first-child {
-                background-color: #ae2239;
-            }
-            &:before { border-top-color: #525d63; }
-            &:after { background-color: #525d63; }
-        }
-        &:nth-child(8n + 4) {
-            background-color: @hex-crimson;
-            & > h3:first-child {
-                background-color: #c32640;
-            }
-            &:before { border-top-color: @hex-dark-gray; }
-            &:after { background-color: @hex-dark-gray; }
-        }
-        &:nth-child(8n + 5) {
-            background-color: @hex-crimson-scale-light;
-            & > h3:first-child {
-                background-color: #d62c48;
-            }
-            &:before { border-top-color: #6a777f; }
-            &:after { background-color: #6a777f; }
-        }
-        &:nth-child(8n + 6) {
-            background-color: @hex-crimson-scale-lighter;
-            & > h3:first-child {
-                background-color: #da425b;
-            }
-            &:before { border-top-color: #75848d; }
-            &:after { background-color: #75848d; }
-        }
-        &:nth-child(8n + 7) {
-            background-color: @hex-crimson-scale-lightest;
-            & > h3:first-child {
-                background-color: #de586e;
-            }
-            &:before { border-top-color: #647c2e; }
-            &:after { background-color: #647c2e; }
-        }
-        &:nth-child(8n) {
-            position: relative;
-            height: 224px;
-            border-top: none;
-            background: @hex-white url(/wp-content/uploads/sites/917/2016/03/graphic_graduation-cap_green.jpg) no-repeat scroll center;
-            box-shadow: none;
-            & > p {
-                width:100%;
-                position: absolute;
-                left: 0;
-                top: 50%;
-                font-size: 4em !important;
-                text-align: center;
-                .transform(translateY(-70%));
-                color: @hex-accent-green;
-                .textShadow3D(@hex-accent-green, 5px);
-                .animation(pulsating-text, 1s, cubic-bezier(.5, 0, 0.5, 1));
-                .keyframes(pulsating-text, @rules-vrtcl-cntrd-pulsate);
-            }
-             -webkit-box-shadow: none;
-        }
-        & > ul.campus-links, & > ul.admissions-links, & > ul.apply-links, & > ul.online-tools-links,
-         & > ul.next-steps-links, ul.campus-resource-links, ul.complete-requirements-links {
-            margin-top: (@v-dflt-spcng / 2);
-            text-align: center;
-            &:last-child { padding-bottom: 0; }
-            & > li {
-                display: inline-block;
-                position: relative;
-                height: 80px;
-                width: 80px;
-                margin-bottom: (@v-dflt-spcng / 2);
-                margin-left: (@v-dflt-spcng / 4);
-                margin-right: (@v-dflt-spcng / 4);
-                padding-bottom: 0;
-                border-radius: 4px;
-                background-color: @hex-darker-gray;
-                background-size: 100% 100%;
-                font-family: 'Open Sans Condensed';
-                &:hover {
-                    background-color: @hex-bright-gray;
-                    & > a:after {
-                        color: @hex-light-crimson;
-                        .rgb-white(); text-shadow: 1px 0 1px rgba(@rval,@gval,@bval,0.5),
-                         -1px 0 1px rgba(@rval,@gval,@bval,0.5), 0 -1px 1px rgba(@rval,@gval,@bval,0.5),
-                         0 1px 1px rgba(@rval,@gval,@bval,0.5);
-                    }
-                    & > a:before {
-                        opacity: 0;
-                    }
-                }
-                & > a {
-                    display: inline-block;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    background: none;
-                    border: none;
-                    &:hover {
-                        background: none;
-                        border: none;
-                    }
-                    &:after {
-                        content: "Pullman";
-                        width: 87.5%;
-                        width: ~"calc(100% - 10px)";
-                        padding-right: 5px;
-                         padding-left: 5px;
-                        position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        transform: translate(-50%, -50%);
-                        line-height: 1.1em;
-                        color: @hex-white;
-                        .rgb-black(); text-shadow: 1px 0 0 rgba(@rval,@gval,@bval,0.5),
-                         -1px 0 0 rgba(@rval,@gval,@bval,0.5), 0 -1px 0 rgba(@rval,@gval,@bval,0.5),
-                         0 1px 0 rgba(@rval,@gval,@bval,0.5);
-                        .transition("color 0.3s ease, text-shadow 0.3s ease");
-                    }
-                    &:before {
-                        content: "";
-                        position: absolute;
-                        top: 0;
-                         right: 0;
-                         bottom: 0;
-                         left: 0;
-                        border-radius: 4px;
-                        .rgb-darkest-gray(); background-color: rgba(@rval, @gval, @bval, 0.8);
-                        .transition(opacity 0.3s ease);
-                    }
-                }
-            }
-        }
-        & > ul.campus-links > li {
-            &.pullman {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_active.jpg);
-            }
-            &.spokane {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_active.jpg);
-                & > a:after { content: "Spokane"; }
-            }
-            &.tri-cities {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_active.jpg);
-                & > a:after { content: "Tri-Cities"; }
-            }
-            &.vancouver {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_active.jpg);
-                & > a:after { content: "Vancouver"; }
-            }
-            &.global {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_active.jpg);
-                & > a:after { content: "Global Campus"; }
-            }
-            &.everett {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_active.jpg);
-                & > a:after { content: "North Pudget Sound (Everett)"; }
-            }
-            &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.everett) {
-                display: none;
-            }
-        }
-        & > ul.admissions-links > li {
-            height: 100px;
-            width: 100px;
-            &.pullman {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_pullman_active.jpg);
-            }
-            &.spokane {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_spokane_active.jpg);
-                & > a:after { content: "Spokane"; }
-            }
-            &.tri-cities {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_tri-cities_active.jpg);
-                & > a:after { content: "Tri-Cities"; }
-            }
-            &.vancouver {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_vancouver_active.jpg);
-                & > a:after { content: "Vancouver"; }
-            }
-            &.global {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_global_active.jpg);
-                & > a:after { content: "Global Campus"; }
-            }
-            &.international {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_international_active.jpg);
-                & > a:after { content: "International"; }
-            }
-            &.everett {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_everett_active.jpg);
-                & > a:after { content: "North Pudget Sound (Everett)"; }
-            }
-            &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
-                display: none;
-            }
-        }
-        & > ul.apply-links > li {
-            height: 100px;
-            width: 100px;
-            &.pullman {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_pullman_active.jpg);
-            }
-            &.spokane {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_spokane_active.jpg);
-                & > a:after { content: "Spokane"; }
-            }
-            &.tri-cities {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_tri-cities_active.jpg);
-                & > a:after { content: "Tri-Cities"; }
-            }
-            &.vancouver {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_vancouver_active.jpg);
-                & > a:after { content: "Vancouver"; }
-            }
-            &.global {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_global_active.jpg);
-                & > a:after { content: "Global Campus"; }
-            }
-            &.international {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_international_active.jpg);
-                & > a:after { content: "International"; }
-            }
-            &.everett {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_everett_active.jpg);
-                & > a:after { content: "North Pudget Sound (Everett)"; }
-            }
-            &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
-                display: none;
-            }
-        }
-        & > ul.online-tools-links > li {
-            height: 128px;
-            width: 128px;
-            &.transfer-database {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_online-tools_transfer-database_active.jpg);
-                & > a:after { content: "Transfer Credit Equivalency Database"; }
-            }
-            &.transfer-answerline {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_online-tools_transfer-answerline_active.jpg);
-                & > a:after { content: "Transfer Clearinghouse Answerline"; }
-            }
-            &:not(.transfer-database):not(.transfer-answerline) {
-                display: none;
-            }
-        }
-        & > ul.next-steps-links > li {
-            height: 100px;
-            width: 100px;
-            &.pullman {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_pullman_active.jpg);
-            }
-            &.spokane {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_spokane_active.jpg);
-                & > a:after { content: "Spokane"; }
-            }
-            &.tri-cities {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_tri-cities_active.jpg);
-                & > a:after { content: "Tri-Cities"; }
-            }
-            &.vancouver {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_vancouver_active.jpg);
-                & > a:after { content: "Vancouver"; }
-            }
-            &.global {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_global_active.jpg);
-                & > a:after { content: "Global Campus"; }
-            }
-            &.international {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_international_active.jpg);
-                & > a:after { content: "International"; }
-            }
-            &.everett {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_everett_active.jpg);
-                & > a:after { content: "North Pudget Sound (Everett)"; }
-            }
-            &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
-                display: none;
-            }
-        }
-        & > ul.campus-resource-links > li {
-            height: 100px;
-            width: 100px;
-            &.pullman {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_pullman_active.jpg);
-            }
-            &.spokane {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_spokane_active.jpg);
-                & > a:after { content: "Spokane"; }
-            }
-            &.tri-cities {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_tri-cities_active.jpg);
-                & > a:after { content: "Tri-Cities"; }
-            }
-            &.vancouver {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_vancouver_active.jpg);
-                & > a:after { content: "Vancouver"; }
-            }
-            &.global {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_global_active.jpg);
-                & > a:after { content: "Global Campus"; }
-            }
-            &.international {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_international_active.jpg);
-                & > a:after { content: "International"; }
-            }
-            &.everett {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_everett_active.jpg);
-                & > a:after { content: "North Pudget Sound (Everett)"; }
-            }
-            &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
-                display: none;
-            }
-        }
-        & > ul.complete-requirements-links > li {
-            &.graduation-reqs, &.wsu-academics {
-                width: 240px;
-            }
-            &.graduation-reqs {
-                background-image: url(/wp-content/uploads/sites/917/2016/04/button_complete-requirements_grad-reqs_active.jpg);
-                & > a:after { content: "University Common Requirements (UCORE) & WSU Graduation Requirements"; }
-            }
-            &.wsu-academics {
-                background-image: url(/wp-content/uploads/sites/917/2016/04/button_complete-requirements_wsu-academics_active.jpg);
-                & > a:after { content: "academics.wsu.edu"; }
-            }
-            &.pullman {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_pullman_active.jpg);
-            }
-            &.spokane {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_spokane_active.jpg);
-                & > a:after { content: "Spokane"; }
-            }
-            &.tri-cities {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_tri-cities_active.jpg);
-                & > a:after { content: "Tri-Cities"; }
-            }
-            &.vancouver {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_vancouver_active.jpg);
-                & > a:after { content: "Vancouver"; }
-            }
-            &.global {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_global_active.jpg);
-                & > a:after { content: "Global Campus"; }
-            }
-            &.everett {
-                background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_everett_active.jpg);
-                & > a:after { content: "North Pudget Sound (Everett)"; }
-            }
-            &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.everett):not(.graduation-reqs):not(.wsu-academics) {
-                display: none;
-            }
-        }
-    }
-}
-
-// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
-// ║ #### DIV.BANNER IMAGES ##################################################################### ║
-// ╠==============================================================================================╣
-// ║ Style definitions of distinctive banner images that serve to artfully and responsively       ║
-// ║ distinguish each page on the transfer credit website.                                        ║
-// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
-div.banner {
-    &.campus-contacts {
-        margin-bottom: (@v-dflt-spcng / 2);
-        @media all and (min-width: (@spine-threshold + 1)) {
-            width: 100%;
-            height: 0;
-             padding-bottom: 57.43%; // Maintain aspect ratio of 278.6 x 160
-            background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-narrow.jpg) 0 0 no-repeat;
-            background-size: 100% 100%;
-        }
-        @media all and (max-width: @spine-threshold) {
-            width: 100%;
-            height: 0;
-             padding-bottom: 26%; // Maintain aspect ratio of 700 x 182
-            background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-wide.jpg) 0 0 no-repeat;
-            background-size: 100% 100%;
-        }
-    }
-}
-
-// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
-// ║ #### DIV.SIDEBAR ELEMENTS ################################################################## ║
-// ╠==============================================================================================╣
-// ║ Containers designed to be used as custom sidebars within a div.column element.               ║
-// ║  ╘═» Customized here for use on the Transfer Credit website.                                 ║
-// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
-// TODO: Rename these classes to follow the pattern: .sidebar.green-marble ■
-// TODO: Pull these classes into an imported *.LESS file ■
 div.green-marble-sidebar {
-	padding-top: 2rem;
-	 padding-right: 2rem;
-	 padding-bottom: 2em;
-	 padding-left: 1rem;
-	margin-right: 10px;
-	background: #e3dfcd url(/wp-content/uploads/sites/51/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	border: 1px solid #afa370;
-	box-shadow: 3px 3px 3px rgba(57,50,21,0.3333);
-	font-size: .9em;
-	color: #2a3033;
+  padding-top: 2rem;
+   padding-right: 2rem;
+   padding-bottom: 2em;
+   padding-left: 1rem;
+  margin-right: 10px;
+  background: #e3dfcd url(/wp-content/uploads/sites/51/2015/04/seamless-marble-texture_528x528.png) left top repeat;
+  border: 1px solid #afa370;
+  box-shadow: 3px 3px 3px rgba(57,50,21,0.3333);
+  font-size: .9em;
+  color: #2a3033;
 }
 
 div.bluish-gray-acrylic-sidebar {
-	background: #edf3f4 url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
-	background-size: 100% auto;
-	border: 1px solid #464e54;
-	box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
-	color: #2a3033;
-	font-size: .9em;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	padding-left: 1rem;
-	padding-top: 1rem;
-	padding-right: 1rem;
-	padding-bottom: 1rem;
+  background: #edf3f4 url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
+  background-size: 100% auto;
+  border: 1px solid #464e54;
+  box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
+  color: #2a3033;
+  font-size: .9em;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
 }
 
 div.gray-acrylic-sidebar {
-	padding-top: 1rem;
-	 padding-right: 1rem;
-	 padding-bottom: 1em;
-	 padding-left: 1rem;
-	margin-right: 10px;
-	 margin-bottom: 10px;
-	background: #fff url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
-	 background-size: 100% auto;
-	border: 1px solid #464e54;
-	box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
-	font-size: .9em;
-	color: #2a3033;
+  padding-top: 1rem;
+   padding-right: 1rem;
+   padding-bottom: 1em;
+   padding-left: 1rem;
+  margin-right: 10px;
+   margin-bottom: 10px;
+  background: #fff url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
+   background-size: 100% auto;
+  border: 1px solid #464e54;
+  box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
+  font-size: .9em;
+  color: #2a3033;
 }
 
 div.bluish-gray-acrylic-sidebar, div.green-marble-sidebar, div.gray-acrylic-sidebar {
-	p {
-		font-size: .75rem;
-	}
-    h2 {
-        margin-bottom: 0;
-    }
-	h2 + hr {
-		margin-top: 0;
-		background-color: rgba(70,78,84,0.75);
-	}
-	h3 {
-		font-size: 1.275rem;
-	}
-	h4 {
-		font-size: 1.05rem;
-	}
-	/*div.bluish-gray-acrylic-sidebar p~hr {
-		margin-top: 0;
-	}*/
+  p {
+    font-size: .75rem;
+  }
+  h2 {
+    margin-bottom: 0;
+  }
+  h2 + hr {
+    margin-top: 0;
+    background-color: rgba(70,78,84,0.75);
+  }
+  h3 {
+    font-size: 1.275rem;
+  }
+  h4 {
+    font-size: 1.05rem;
+  }
+  /*div.bluish-gray-acrylic-sidebar p~hr {
+    margin-top: 0;
+  }*/
 }
 
-// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
-// ║ #### TABLES ################################################################################ ║
-// ╠==============================================================================================╣
-// ║ Classes for styling tables specific to transfer credit clearinghouse.                        ║
-// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+/** ================================================================================================
+*** §4: Styling for lists
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §4.1: Miscellaneous unordered lists
+**/
+
+div.column ul:not(.checklist-flowchart):not(ul.campus-links) li {
+  list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png);
+}
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §4.2: Transfer Links
+**/
+
+div.column.two.transfer-links {
+  @media screen and (max-width: @column-floating-threshold) {
+    background-color: @hex-bright-gray;
+    h4, h3, p, ul { &:extend(.centered); }
+    ul li{
+      list-style: none;
+    }
+  }
+}
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §4.3: Checklist flowcharts
+**/
+
+.column ul.checklist-flowchart {
+  &:extend(ul.content-boxes all);
+}
+
+@rules-vrtcl-cntrd-pulsate: {
+  0% { transform: scale(1) translateY(-70%); }
+  50% { transform: scale(1.2) translateY(-61.6667%); }
+  100% { transform: scale(1) translateY(-70%); }
+};
+
+.column ul.checklist-flowchart {
+  margin-top: @v-dflt-spcng !important;
+  & > li {
+    min-height: 150px;
+    color: @hex-white;
+    //.rgb-black(); text-shadow: 0 1px 0 rgba(@rval, @gval, @bval, 0.2);
+    @media all and (max-width: @background-width-threshold) {
+      overflow-x: visible;
+    }
+    & > h3:first-child {
+      padding: 0.5rem;
+      margin: 0;
+      .rgb-black(); border-top: 1px solid rgba(@rval, @gval, @bval, 0.0);
+      border-top-left-radius: 4px;
+       border-top-right-radius: 4px;
+      color: @hex-white;
+      .rgb-black(); text-shadow: 0 1px 0 rgba(0,0,0,.5), 1px 0 0 rgba(0,0,0,.5),
+       0 -1px 0 rgba(0,0,0,.5), -1px 0 0 rgba(0,0,0,.5);
+      letter-spacing: 0.5px;
+      line-height: 1.2em;
+      text-transform: none;
+    }
+    & > p {
+      padding: 0.5rem;
+      color: inherit;
+      &:last-child { padding-bottom: 0.5rem; }
+    }
+    & + li {
+      margin-top: 96px;
+    }
+    &:not(:nth-child(8n)):after {
+      content: "";
+      height:32px;
+      width:32px;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      .transform(translate3d(-16px,16px,0));
+    }
+    &:not(:nth-child(8n)):before {
+      content: " ";
+      height:0px;
+      width:0px;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      .transform(translate3d(0,48px,0));
+      border: solid transparent;
+      .rgb-dark-gray(); border-color: rgba(@rval, @gval, @bval, 0);
+      border-width: 32px;
+      margin-left: -32px;
+      pointer-events: none;
+    }
+    &:nth-child(8n + 1) {
+      background-color: @hex-crimson-scale-darkest;
+      & > h3:first-child {
+        background-color: #83192b;
+      }
+      &:before { border-top-color: #3b4347; }
+      &:after { background-color: #3b4347; }
+    }
+    &:nth-child(8n + 2) {
+      background-color: @hex-crimson-scale-darker;
+      & > h3:first-child {
+        background-color: #971f32;
+      }
+      &:before { border-top-color: #475055; }
+      &:after { background-color: #475055; }
+    }
+    &:nth-child(8n + 3) {
+      background-color: @hex-crimson-scale-dark;
+      & > h3:first-child {
+        background-color: #ae2239;
+      }
+      &:before { border-top-color: #525d63; }
+      &:after { background-color: #525d63; }
+    }
+    &:nth-child(8n + 4) {
+      background-color: @hex-crimson;
+      & > h3:first-child {
+        background-color: #c32640;
+      }
+      &:before { border-top-color: @hex-dark-gray; }
+      &:after { background-color: @hex-dark-gray; }
+    }
+    &:nth-child(8n + 5) {
+      background-color: @hex-crimson-scale-light;
+      & > h3:first-child {
+        background-color: #d62c48;
+      }
+      &:before { border-top-color: #6a777f; }
+      &:after { background-color: #6a777f; }
+    }
+    &:nth-child(8n + 6) {
+      background-color: @hex-crimson-scale-lighter;
+      & > h3:first-child {
+        background-color: #da425b;
+      }
+      &:before { border-top-color: #75848d; }
+      &:after { background-color: #75848d; }
+    }
+    &:nth-child(8n + 7) {
+      background-color: @hex-crimson-scale-lightest;
+      & > h3:first-child {
+        background-color: #de586e;
+      }
+      &:before { border-top-color: #647c2e; }
+      &:after { background-color: #647c2e; }
+    }
+    &:nth-child(8n) {
+      position: relative;
+      height: 224px;
+      border-top: none;
+      background: @hex-white url(/wp-content/uploads/sites/917/2016/03/graphic_graduation-cap_green.jpg) no-repeat scroll center;
+      box-shadow: none;
+      & > p {
+        width:100%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        font-size: 4em !important;
+        text-align: center;
+        .transform(translateY(-70%));
+        color: @hex-accent-green;
+        .textShadow3D(@hex-accent-green, 5px);
+        .animation(pulsating-text, 1s, cubic-bezier(.5, 0, 0.5, 1));
+        .keyframes(pulsating-text, @rules-vrtcl-cntrd-pulsate);
+      }
+       -webkit-box-shadow: none;
+    }
+    & > ul.campus-links, & > ul.admissions-links, & > ul.apply-links, & > ul.online-tools-links,
+     & > ul.next-steps-links, ul.campus-resource-links, ul.complete-requirements-links {
+      margin-top: (@v-dflt-spcng / 2);
+      text-align: center;
+      &:last-child { padding-bottom: 0; }
+      & > li {
+        display: inline-block;
+        position: relative;
+        height: 80px;
+        width: 80px;
+        margin-bottom: (@v-dflt-spcng / 2);
+        margin-left: (@v-dflt-spcng / 4);
+        margin-right: (@v-dflt-spcng / 4);
+        padding-bottom: 0;
+        border-radius: 4px;
+        background-color: @hex-darker-gray;
+        background-size: 100% 100%;
+        font-family: 'Open Sans Condensed';
+        &:hover {
+          background-color: @hex-bright-gray;
+          & > a:after {
+            color: @hex-light-crimson;
+            .rgb-white(); text-shadow: 1px 0 1px rgba(@rval,@gval,@bval,0.5),
+             -1px 0 1px rgba(@rval,@gval,@bval,0.5), 0 -1px 1px rgba(@rval,@gval,@bval,0.5),
+             0 1px 1px rgba(@rval,@gval,@bval,0.5);
+          }
+          & > a:before {
+            opacity: 0;
+          }
+        }
+        & > a {
+          display: inline-block;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background: none;
+          border: none;
+          &:hover {
+            background: none;
+            border: none;
+          }
+          &:after {
+            content: "Pullman";
+            width: 87.5%;
+            width: ~"calc(100% - 10px)";
+            padding-right: 5px;
+             padding-left: 5px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 1.1em;
+            color: @hex-white;
+            .rgb-black(); text-shadow: 1px 0 0 rgba(@rval,@gval,@bval,0.5),
+             -1px 0 0 rgba(@rval,@gval,@bval,0.5), 0 -1px 0 rgba(@rval,@gval,@bval,0.5),
+             0 1px 0 rgba(@rval,@gval,@bval,0.5);
+            .transition("color 0.3s ease, text-shadow 0.3s ease");
+          }
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+             right: 0;
+             bottom: 0;
+             left: 0;
+            border-radius: 4px;
+            .rgb-darkest-gray(); background-color: rgba(@rval, @gval, @bval, 0.8);
+            .transition(opacity 0.3s ease);
+          }
+        }
+      }
+    }
+    & > ul.campus-links > li {
+      &.pullman {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-pullman_active.jpg);
+      }
+      &.spokane {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-spokane_active.jpg);
+        & > a:after { content: "Spokane"; }
+      }
+      &.tri-cities {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-tri-cities_active.jpg);
+        & > a:after { content: "Tri-Cities"; }
+      }
+      &.vancouver {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-vancouver_active.jpg);
+        & > a:after { content: "Vancouver"; }
+      }
+      &.global {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_global-campus_active.jpg);
+        & > a:after { content: "Global Campus"; }
+      }
+      &.everett {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_wsu-everett_active.jpg);
+        & > a:after { content: "North Pudget Sound (Everett)"; }
+      }
+      &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.everett) {
+        display: none;
+      }
+    }
+    & > ul.admissions-links > li {
+      height: 100px;
+      width: 100px;
+      &.pullman {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_pullman_active.jpg);
+      }
+      &.spokane {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_spokane_active.jpg);
+        & > a:after { content: "Spokane"; }
+      }
+      &.tri-cities {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_tri-cities_active.jpg);
+        & > a:after { content: "Tri-Cities"; }
+      }
+      &.vancouver {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_vancouver_active.jpg);
+        & > a:after { content: "Vancouver"; }
+      }
+      &.global {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_global_active.jpg);
+        & > a:after { content: "Global Campus"; }
+      }
+      &.international {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_international_active.jpg);
+        & > a:after { content: "International"; }
+      }
+      &.everett {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_admissions-counseling_everett_active.jpg);
+        & > a:after { content: "North Pudget Sound (Everett)"; }
+      }
+      &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
+        display: none;
+      }
+    }
+    & > ul.apply-links > li {
+      height: 100px;
+      width: 100px;
+      &.pullman {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_pullman_active.jpg);
+      }
+      &.spokane {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_spokane_active.jpg);
+        & > a:after { content: "Spokane"; }
+      }
+      &.tri-cities {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_tri-cities_active.jpg);
+        & > a:after { content: "Tri-Cities"; }
+      }
+      &.vancouver {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_vancouver_active.jpg);
+        & > a:after { content: "Vancouver"; }
+      }
+      &.global {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_global_active.jpg);
+        & > a:after { content: "Global Campus"; }
+      }
+      &.international {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_international_active.jpg);
+        & > a:after { content: "International"; }
+      }
+      &.everett {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_apply_everett_active.jpg);
+        & > a:after { content: "North Pudget Sound (Everett)"; }
+      }
+      &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
+        display: none;
+      }
+    }
+    & > ul.online-tools-links > li {
+      height: 128px;
+      width: 128px;
+      &.transfer-database {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_online-tools_transfer-database_active.jpg);
+        & > a:after { content: "Transfer Credit Equivalency Database"; }
+      }
+      &.transfer-answerline {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_online-tools_transfer-answerline_active.jpg);
+        & > a:after { content: "Transfer Clearinghouse Answerline"; }
+      }
+      &:not(.transfer-database):not(.transfer-answerline) {
+        display: none;
+      }
+    }
+    & > ul.next-steps-links > li {
+      height: 100px;
+      width: 100px;
+      &.pullman {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_pullman_active.jpg);
+      }
+      &.spokane {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_spokane_active.jpg);
+        & > a:after { content: "Spokane"; }
+      }
+      &.tri-cities {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_tri-cities_active.jpg);
+        & > a:after { content: "Tri-Cities"; }
+      }
+      &.vancouver {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_vancouver_active.jpg);
+        & > a:after { content: "Vancouver"; }
+      }
+      &.global {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_global_active.jpg);
+        & > a:after { content: "Global Campus"; }
+      }
+      &.international {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_international_active.jpg);
+        & > a:after { content: "International"; }
+      }
+      &.everett {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_next-steps_everett_active.jpg);
+        & > a:after { content: "North Pudget Sound (Everett)"; }
+      }
+      &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
+        display: none;
+      }
+    }
+    & > ul.campus-resource-links > li {
+      height: 100px;
+      width: 100px;
+      &.pullman {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_pullman_active.jpg);
+      }
+      &.spokane {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_spokane_active.jpg);
+        & > a:after { content: "Spokane"; }
+      }
+      &.tri-cities {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_tri-cities_active.jpg);
+        & > a:after { content: "Tri-Cities"; }
+      }
+      &.vancouver {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_vancouver_active.jpg);
+        & > a:after { content: "Vancouver"; }
+      }
+      &.global {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_global_active.jpg);
+        & > a:after { content: "Global Campus"; }
+      }
+      &.international {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_international_active.jpg);
+        & > a:after { content: "International"; }
+      }
+      &.everett {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_campus-resources_everett_active.jpg);
+        & > a:after { content: "North Pudget Sound (Everett)"; }
+      }
+      &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.international):not(.everett) {
+        display: none;
+      }
+    }
+    & > ul.complete-requirements-links > li {
+      &.graduation-reqs, &.wsu-academics {
+        width: 240px;
+      }
+      &.graduation-reqs {
+        background-image: url(/wp-content/uploads/sites/917/2016/04/button_complete-requirements_grad-reqs_active.jpg);
+        & > a:after { content: "University Common Requirements (UCORE) & WSU Graduation Requirements"; }
+      }
+      &.wsu-academics {
+        background-image: url(/wp-content/uploads/sites/917/2016/04/button_complete-requirements_wsu-academics_active.jpg);
+        & > a:after { content: "academics.wsu.edu"; }
+      }
+      &.pullman {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_pullman_active.jpg);
+      }
+      &.spokane {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_spokane_active.jpg);
+        & > a:after { content: "Spokane"; }
+      }
+      &.tri-cities {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_tri-cities_active.jpg);
+        & > a:after { content: "Tri-Cities"; }
+      }
+      &.vancouver {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_vancouver_active.jpg);
+        & > a:after { content: "Vancouver"; }
+      }
+      &.global {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_global_active.jpg);
+        & > a:after { content: "Global Campus"; }
+      }
+      &.everett {
+        background-image: url(/wp-content/uploads/sites/917/2016/03/button_complete-requirements_everett_active.jpg);
+        & > a:after { content: "North Pudget Sound (Everett)"; }
+      }
+      &:not(.pullman):not(.spokane):not(.tri-cities):not(.vancouver):not(.global):not(.everett):not(.graduation-reqs):not(.wsu-academics) {
+        display: none;
+      }
+    }
+  }
+}
+
+/** ================================================================================================
+*** §5: Banner images
+**/
+
+div.banner {
+  &.campus-contacts {
+    margin-bottom: (@v-dflt-spcng / 2);
+    @media all and (min-width: (@spine-threshold + 1)) {
+      width: 100%;
+      height: 0;
+       padding-bottom: 57.43%; // Maintain aspect ratio of 278.6 x 160
+      background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-narrow.jpg) 0 0 no-repeat;
+      background-size: 100% 100%;
+    }
+    @media all and (max-width: @spine-threshold) {
+      width: 100%;
+      height: 0;
+       padding-bottom: 26%; // Maintain aspect ratio of 700 x 182
+      background: url(/wp-content/uploads/sites/917/2016/02/banner_academic-program-contacts_other-campuses-wide.jpg) 0 0 no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}
+
+/** ================================================================================================
+*** §6: Tables
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §6.1: Military credit
+**/
+
 div.wrapper.military-credit {
-    width: 100%;
-    @media all and (max-width: 979px) {
-        overflow-x: scroll;
-    }    
+  width: 100%;
+  @media all and (max-width: 979px) {
+    overflow-x: scroll;
+  }
 }
 
 table.military-credit {
-    width: 100%;
-    min-width: 700px;
-    overflow-x: scroll;
-    border-collapse: separate;
-    border-spacing: 0;
-    & > thead:first-child > tr:first-child > th {
-        &:nth-child(6n + 1) {
-            border-top-left-radius: 10px;
-        }
-        &:nth-child(6n + 6) {
-            border-top-right-radius: 10px;
-        }
+  width: 100%;
+  min-width: 700px;
+  overflow-x: scroll;
+  border-collapse: separate;
+  border-spacing: 0;
+  & > thead:first-child > tr:first-child > th {
+    &:nth-child(6n + 1) {
+      border-top-left-radius: 10px;
     }
-    & > tbody:last-child > tr:last-child > td {
-        &:nth-child(6n + 1) {
-            border-bottom-left-radius: 10px;
-        }
-        &:nth-child(6n + 6) {
-            border-bottom-right-radius: 10px;
-        }
-    }    
-    & > thead > tr > th:extend(.centered) {
-        padding: 5px;
-        background-color: @hex-darkest-green;
-        color: @hex-lighter-green;
-        font-size: 1.1em;
-        font-weight: bold;
-        &:nth-child(6n + 1), &:nth-child(6n + 2), &:nth-child(6n + 3), &:nth-child(6n + 4),
-         &:nth-child(6n + 5) {
-            border-right: 1px solid @hex-lighter-green;
-        }        
-        &:nth-child(6n + 1) {
-            width: 12%;
-        }        
-        &:nth-child(6n + 2) {
-            width: 40%;
-        }        
-        &:nth-child(6n + 3), &:nth-child(6n + 4) {
-            width: 16%;
-            border-right: 1px solid @hex-lighter-green;
-        }        
-        &:nth-child(6n + 5), &:nth-child(6n + 6) {
-            width: 8%;
-        }        
+    &:nth-child(6n + 6) {
+      border-top-right-radius: 10px;
     }
-    & > tbody > tr {
-        &:not(.content-category) > td {
-            padding: 5px;
-            &:nth-child(6n + 1):extend(.centered), &:nth-child(6n + 2), &:nth-child(6n + 3), &:nth-child(6n + 4),
-             &:nth-child(6n + 5):extend(.centered) {
-                border-right: 1px solid @hex-lighter-green;
-            }        
-            &:nth-child(6n + 6) {
-                &:extend(.centered);
-            }        
-        }
-        &.content-category > td {
-            &:extend(.centered);
-            background-color: @hex-green;
-            color: @hex-darkest-gray;
-            font-weight: bold;
-        }
-        &:not(.content-category) + tr:not(.content-category) > td {
-            border-top: 1px solid @hex-lighter-green;
-        }
-        &.musc > td, &.psyc > td, &.chem-no-lab > td, &.phys > td {
-            background-color: @hex-bright-orange;
-            &:nth-child(6n + 4) {
-                background-color: @hex-lightest-orange;
-            }        
-        }
-        &.hist > td, &.pols > td, &.chem-with-lab > td, &.geol > td {
-            background-color: @hex-bright-gray;
-            &:nth-child(6n + 4) {
-                background-color: @hex-lighter-gray;
-            }        
-        }
+  }
+  & > tbody:last-child > tr:last-child > td {
+    &:nth-child(6n + 1) {
+      border-bottom-left-radius: 10px;
     }
+    &:nth-child(6n + 6) {
+      border-bottom-right-radius: 10px;
+    }
+  }
+  & > thead > tr > th:extend(.centered) {
+    padding: 5px;
+    background-color: @hex-darkest-green;
+    color: @hex-lighter-green;
+    font-size: 1.1em;
+    font-weight: bold;
+    &:nth-child(6n + 1), &:nth-child(6n + 2), &:nth-child(6n + 3), &:nth-child(6n + 4),
+     &:nth-child(6n + 5) {
+      border-right: 1px solid @hex-lighter-green;
+    }
+    &:nth-child(6n + 1) {
+      width: 12%;
+    }
+    &:nth-child(6n + 2) {
+      width: 40%;
+    }
+    &:nth-child(6n + 3), &:nth-child(6n + 4) {
+      width: 16%;
+      border-right: 1px solid @hex-lighter-green;
+    }
+    &:nth-child(6n + 5), &:nth-child(6n + 6) {
+      width: 8%;
+    }
+  }
+  & > tbody > tr {
+    &:not(.content-category) > td {
+      padding: 5px;
+      &:nth-child(6n + 1):extend(.centered), &:nth-child(6n + 2), &:nth-child(6n + 3), &:nth-child(6n + 4),
+       &:nth-child(6n + 5):extend(.centered) {
+        border-right: 1px solid @hex-lighter-green;
+      }
+      &:nth-child(6n + 6) {
+        &:extend(.centered);
+      }
+    }
+    &.content-category > td {
+      &:extend(.centered);
+      background-color: @hex-green;
+      color: @hex-darkest-gray;
+      font-weight: bold;
+    }
+    &:not(.content-category) + tr:not(.content-category) > td {
+      border-top: 1px solid @hex-lighter-green;
+    }
+    &.musc > td, &.psyc > td, &.chem-no-lab > td, &.phys > td {
+      background-color: @hex-bright-orange;
+      &:nth-child(6n + 4) {
+        background-color: @hex-lightest-orange;
+      }
+    }
+    &.hist > td, &.pols > td, &.chem-with-lab > td, &.geol > td {
+      background-color: @hex-bright-gray;
+      &:nth-child(6n + 4) {
+        background-color: @hex-lighter-gray;
+      }
+    }
+  }
 }
 
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §6.2: Washington 45 equivalencies
+**/
+
 table.wa45-equivalencies {
-    width: 100%;
-    min-width: 480px;
-    overflow-x: scroll;
-    border-collapse: separate;
-    border-spacing: 0;
-    &:last-child {
-        padding-bottom: @v-dflt-spcng;
+  width: 100%;
+  min-width: 480px;
+  overflow-x: scroll;
+  border-collapse: separate;
+  border-spacing: 0;
+  &:last-child {
+    padding-bottom: @v-dflt-spcng;
+  }
+  & > thead:first-child > tr:first-child > th {
+    &:nth-child(6n + 1) {
+      border-top-left-radius: 10px;
+      &[colspan="4"] {
+        border-top-right-radius: 10px;
+      }
     }
-    & > thead:first-child > tr:first-child > th {
-        &:nth-child(6n + 1) {
-            border-top-left-radius: 10px;
-            &[colspan="4"] {
-                border-top-right-radius: 10px;
-            }
-        }
-        &:nth-child(6n + 4) {
-            border-top-right-radius: 10px;
-        }
+    &:nth-child(6n + 4) {
+      border-top-right-radius: 10px;
     }
-    & > tbody:last-child > tr:last-child > td {
-        &:nth-child(6n + 1) {
-            border-bottom-left-radius: 10px;
-        }
-        &:nth-child(6n + 4) {
-            border-bottom-right-radius: 10px;
-        }
-    }    
-    & > thead > tr {
-        & > th {
-            &:extend(.centered);
-            padding: 5px;
-            background-color: @hex-blue;
-            color: @hex-darkest-blue;
-            font-size: 1.1em;
-            font-weight: bold;
-            &:nth-child(6n + 1), &:nth-child(6n + 2), &:nth-child(6n + 3) {
-                width: 25%;
-                border-right: 1px solid @hex-lighter-blue;
-            }        
-            &:nth-child(6n + 4) {
-                width: 25%;
-            }
-        }
-        &.content-category > th {
-            &:extend(.centered);
-            background-color: @hex-darkest-blue;
-            color: @hex-lighter-blue;
-            font-weight: bold;
-        }
+  }
+  & > tbody:last-child > tr:last-child > td {
+    &:nth-child(6n + 1) {
+      border-bottom-left-radius: 10px;
     }
-    & > tbody > tr {
-        & > td {
-            padding: 5px;
-            &:nth-child(6n + 1), &:nth-child(6n + 2), &:nth-child(6n + 3) {
-                &:extend(.centered);
-                border-right: 1px solid @hex-lighter-blue;
-            }        
-            &:nth-child(6n + 4) {
-                &:extend(.centered);
-            }
-            &[colspan] {
-                border-right: none;
-                background-color: @hex-light-blue;
-                color: @hex-darker-gray;
-            }
-        }
-        &:nth-child(2n + 1) > td:not([colspan]) {
-            background-color: @hex-bright-gray;
-        }
-        &:nth-child(2n + 2) > td:not([colspan]) {
-            background-color: @hex-lightest-blue;
-        }
-        & + tr > td {
-            border-top: 1px solid @hex-lighter-blue;
-        }
+    &:nth-child(6n + 4) {
+      border-bottom-right-radius: 10px;
+    }
+  }
+  & > thead > tr {
+    & > th {
+      &:extend(.centered);
+      padding: 5px;
+      background-color: @hex-blue;
+      color: @hex-darkest-blue;
+      font-size: 1.1em;
+      font-weight: bold;
+      &:nth-child(6n + 1), &:nth-child(6n + 2), &:nth-child(6n + 3) {
+        width: 25%;
+        border-right: 1px solid @hex-lighter-blue;
+      }
+      &:nth-child(6n + 4) {
+        width: 25%;
+      }
+    }
+    &.content-category > th {
+      &:extend(.centered);
+      background-color: @hex-darkest-blue;
+      color: @hex-lighter-blue;
+      font-weight: bold;
+    }
+  }
+  & > tbody > tr {
+    & > td {
+      padding: 5px;
+      &:nth-child(6n + 1), &:nth-child(6n + 2), &:nth-child(6n + 3) {
+        &:extend(.centered);
+        border-right: 1px solid @hex-lighter-blue;
+      }
+      &:nth-child(6n + 4) {
+        &:extend(.centered);
+      }
+      &[colspan] {
+        border-right: none;
+        background-color: @hex-light-blue;
+        color: @hex-darker-gray;
+      }
+    }
+    &:nth-child(2n + 1) > td:not([colspan]) {
+      background-color: @hex-bright-gray;
+    }
+    &:nth-child(2n + 2) > td:not([colspan]) {
+      background-color: @hex-lightest-blue;
+    }
+    & + tr > td {
+      border-top: 1px solid @hex-lighter-blue;
+    }
 //        &.musc > td, &.engl2 > td, &.soc > td, &.astr > td, &.envs > td, &.geol > td {
 //            background-color: @hex-lightest-blue;
 //        }
@@ -808,146 +870,195 @@ table.wa45-equivalencies {
 //         &.psyc > td, &.pols > td, &.biol > td, &.chem > td, &.phys > td {
 //            background-color: @hex-bright-gray;
 //        }
-    }
+  }
 }
 
-// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
-// ║ #### GRAVITY FORM FIELDS ################################################################### ║
-// ╠==============================================================================================╣
-// ║ Classes for styling elements associated with gravity forms.                                  ║
-// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+/** ================================================================================================
+*** §7: Gravity forms
+**/
+
 .ugrf-general-reqd {
-    transition: background 0.5s ease;
-     -webkit-transition: background 0.5s ease;
-     -moz-transition: background 0.5s ease;
-     -o-transition: background 0.5s ease;
-    &.gfield_contains_required {
-        input {
-            transition: background 0.3s ease;
-             -webkit-transition: background 0.3s ease;
-             -moz-transition: background 0.3s ease;
-             -o-transition: background 0.3s ease;
-            &:not(.value-entered) {
-                background-color: rgba(255,0,0,0.1);
-            }
-        }
-        input:focus {
-            background-color: @hex-white;
-        }
+  transition: background 0.5s ease;
+   -webkit-transition: background 0.5s ease;
+   -moz-transition: background 0.5s ease;
+   -o-transition: background 0.5s ease;
+  &.gfield_contains_required {
+    input {
+      transition: background 0.3s ease;
+       -webkit-transition: background 0.3s ease;
+       -moz-transition: background 0.3s ease;
+       -o-transition: background 0.3s ease;
+      &:not(.value-entered) {
+        background-color: rgba(255,0,0,0.1);
+      }
     }
+    input:focus {
+      background-color: @hex-white;
+    }
+  }
 }
 
 .oue-gf-upload-chain-enhncd, .oue-gf-upload-chain-extra {
-    input {
-        .transition(background 0.3s ease);
-        &:focus {
-            background-color: @hex-bright-blue;
-        }
+  input {
+    .transition(background 0.3s ease);
+    &:focus {
+      background-color: @hex-bright-blue;
     }
-    &.gfield_contains_required {
-        input:not(.gf-value-entered):not(:focus) {
-            background-color: rgba(255,0,0,0.1);
-        }
+  }
+  &.gfield_contains_required {
+    input:not(.gf-value-entered):not(:focus) {
+      background-color: rgba(255,0,0,0.1);
     }
-    &.gf-hidden {
-        display: none !important;
-    }
+  }
+  &.gf-hidden {
+    display: none !important;
+  }
 }
 
 .oue-gf-upload-chain-extra.gf_right_half, .oue-gf-upload-chain-enhncd.gf_left_half {
-    display: inline-block !important;
-    &.gf-hidden {
-        display: none !important;
-    }
+  display: inline-block !important;
+  &.gf-hidden {
+    display: none !important;
+  }
 }
 
-// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
-// ║ #### ANIMATIONS ############################################################################ ║
-// ╠==============================================================================================╣
-// ║ Custom animations for the transfer credit website.                                           ║
-// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+/** ================================================================================================
+*** §9: Animations
+**/
+
 div.column .attracts-attention {
-    .rgb-accent-yellow(); background-color: rgba(@rval,@gval,@bval,0.25);
-    padding: .5rem;
-    border: 1px solid @hex-darkest-gray;
-    border-radius: .25rem;
-    .animation(orange-glow; 5s);
-    .keyframes(orange-glow; @rules-orange-glow);
-    &:hover {
-        .rgb-accent-yellow(); background-color: rgba(@rval,@gval,@bval,0.75);
-        box-shadow: 0 0 18px rgba(@rval,@gval,@bval,0.6667);
-        color: @hex-darkest-gray;
-        .animation(none);
-    }
+  .rgb-accent-yellow(); background-color: rgba(@rval,@gval,@bval,0.25);
+  padding: .5rem;
+  border: 1px solid @hex-darkest-gray;
+  border-radius: .25rem;
+  .animation(orange-glow; 5s);
+  .keyframes(orange-glow; @rules-orange-glow);
+  &:hover {
+    .rgb-accent-yellow(); background-color: rgba(@rval,@gval,@bval,0.75);
+    box-shadow: 0 0 18px rgba(@rval,@gval,@bval,0.6667);
+    color: @hex-darkest-gray;
+    .animation(none);
+  }
 }
 
-// ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
-// ║ #### ACCORDION ############################################################################# ║
-// ╠==============================================================================================╣
-// ║ Inherited from the original custom CSS file present before VPUE development began.           ║
-// ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
-// ----------- ACCORDION ------------
+/** ================================================================================================
+*** §9: Accordions
+**/
+
 .ui-accordion-header-icon {
-	display: inline-block;
+  display: inline-block;
 }
 
 .accordion div h4 {
-	display: table-cell;
-	vertical-align: middle;
-	padding: 0;
-	outline-style: none;
-	max-width: 100%;
-	display: block;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0;
+  outline-style: none;
+  max-width: 100%;
+  display: block;
 }
 
 .accordion div h4:nth-of-type(odd) {
-	padding: 1rem 6rem 1rem 1rem;
+  padding: 1rem 6rem 1rem 1rem;
 }
 
 .accordion div h4:nth-of-type(even) {
-	padding-left: 1rem;
-	padding-right: 6rem;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 6rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .accordion div div:nth-of-type(even) {
-	padding-top: 1rem;
-	padding-bottom: -1rem;
+  padding-top: 1rem;
+  padding-bottom: -1rem;
 }
 
 .accordion div h4:nth-of-type(odd), .accordion div div:nth-of-type(odd) {
-	background-color: #EFF0F1;
-	background-color: #e4e4e5;
+  background-color: #EFF0F1;
+  background-color: #e4e4e5;
 }
 
 .accordion div h4:hover {
-	cursor: pointer;
-	color: #981e32;
+  cursor: pointer;
+  color: #981e32;
 }
 
 .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
-	position: absolute;
-	left: auto;
-	right: 10%;
-	margin-top: -.25rem;
+  position: absolute;
+  left: auto;
+  right: 10%;
+  margin-top: -.25rem;
 }
 
 .iconClosed {
-	background-image: url('https://hub.wsu.edu/marsha/wp-content/uploads/sites/452/2015/05/CrossHair.gif') !important;
-	width: 32px;
-	height: 32px;
-	background-repeat: no-repeat;
+  background-image: url('https://hub.wsu.edu/marsha/wp-content/uploads/sites/452/2015/05/CrossHair.gif') !important;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
 }
 
 .iconOpen {
-	background-image: url('https://hws.wsu.edu/wp-content/uploads/sites/454/2015/08/Minus.gif') !important;
-	width: 32px;
-	height: 32px;
-	background-repeat: no-repeat;
+  background-image: url('https://hws.wsu.edu/wp-content/uploads/sites/454/2015/08/Minus.gif') !important;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
 }
 
 .accordion div div {
-	padding: .2rem 6rem 1rem 1rem;
-	margin-top: -.25rem;
+  padding: .2rem 6rem 1rem 1rem;
+  margin-top: -.25rem;
 }
+
+/** ================================================================================================
+*** §10: Print styles
+**/
+
+@media print {
+  #fund-announcement {
+    display: none;
+  }
+
+  .blog .row.side-right .column.one {
+    width: 100% !important;
+  }
+
+  .blog .row.side-right .column.two {
+    width: 100% !important;
+  }
+
+  .blog .row.side-right p {
+    max-width: none;
+  }
+
+  .blog .row.side-right .article-thumbnail {
+    margin-left: 1em;
+  }
+
+  .home #wsuwp-main {
+    width: calc(100% - 198px) !important;
+    margin-left: 198px;
+  }
+
+  .home #spine {
+    display: block !important;
+  }
+
+  .home #spine nav ul ul li {
+    display: block !important;
+  }
+}
+
+/** ================================================================================================
+*** §11: Article headers
+**/
+
+.use-sectional-article-headers();
+
+@addl-sctnl-article-header-rs: {
+  .article-header .one > * {
+    .animation(fade-in; 1s; ease-out; 0s; 1);
+  }
+};
+
+@addl-sctnl-article-header-rs();
