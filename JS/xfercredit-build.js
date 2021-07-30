@@ -1,16 +1,18 @@
 /*!*************************************************************************************************
- *    █ ▄▀▀▄ █  █ █▀▀▀ █▀▀▄ █  █   █▀▀▄ ▄▀▀▄ █▀▀▀ ▄▀▀▀ ▄▀▀▄      
- * ▄  █ █  █ █  █ █▀▀  █▄▄▀ ▀▄▄█   █  █ █▄▄█ █▀▀  ▀▀▀█ █▄▄█      
- * ▀▄▄█  ▀█▄  ▀▀  ▀▀▀▀ ▀  ▀▄▄▄▄▀ ▀ ▀▀▀  █  ▀ ▀▀▀▀ ▀▀▀  █  ▀ ▀ ▀ ▀
+ *    █ ▄▀▀▄ █  █ █▀▀▀ █▀▀▄ █  █   █▀▀▄ ▄▀▀▄ █▀▀▀ ▄▀▀▀ ▄▀▀▄    ▄▀▀▀ █  █ ▄▀▀▀      
+ * ▄  █ █  █ █  █ █▀▀  █▄▄▀ ▀▄▄█   █  █ █▄▄█ █▀▀  ▀▀▀█ █▄▄█ ▀▀ █    █  █ ▀▀▀█      
+ * ▀▄▄█  ▀█▄  ▀▀  ▀▀▀▀ ▀  ▀▄▄▄▄▀ ▀ ▀▀▀  █  ▀ ▀▀▀▀ ▀▀▀  █  ▀     ▀▀▀  ▀▀  ▀▀▀  ▀ ▀ ▀
  *
- *                ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌      █ ▄▀▀▀
- *             ▀▀ █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   ▄  █ ▀▀▀█
- *       ▀ ▀ ▀     ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀ ▀ ▀▄▄█ ▀▀▀ 
- * -------------------------------------------------------------------------------------------------
- * Custom JS code common to all websites of the WSU Division of Academic Engagement and Student
- *   Achievement (DAESA) in the Provost's Office.
+ *             ▐▀█▀▌▄▀▀▄ ▐▀▄▀▌      █ ▄▀▀▀
+ *               █  █  █ █ ▀ ▌   ▄  █ ▀▀▀█
+ *       ▀ ▀ ▀   █   ▀▀  █   ▀ ▀ ▀▄▄█ ▀▀▀ 
  *
- * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ * Custom JS code common to all websites of the Division of Academic Engagement and Student
+ *   Achievement (DAESA) in the Office of the Provost at Washington State University (WSU).
+ *
+ * @version 1.0.1
+ *
+ * @author Daniel C. Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
  * @link https://github.com/invokeImmediately/WSU-DAESA-JS/blob/master/jQuery.daesa-custom.js
  * @license MIT - Copyright (c) 2021 Washington State University
  *   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -30,39 +32,34 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-//   §1: Addition of functions to jQuery........................................................73
-//     §1.1: jQuery.isCssClass..................................................................76
-//     §1.2: jQuery.isJQueryObj.................................................................94
-//     §1.3: jQuery.logError...................................................................106
-//   §2: DAESA website initilization modules...................................................181
-//     §2.1: OueDropDownToggle class...........................................................184
-//     §2.2: OueEventCalendarFixer class.......................................................451
-//       §2.2.1: Constructor...................................................................463
-//       §2.2.2: Public members................................................................481
-//       §2.2.3: Lexically scoped supporting functions.........................................531
-//     §2.3: OuePrintThisPage class............................................................552
-//       §2.3.1: Constructor...................................................................564
-//       §2.3.2: Public members................................................................580
-//       §2.3.3: Lexically scoped supporting functions.........................................626
-//   §3: DOM-Ready execution sequence..........................................................640
-//   §4: Window-loaded event binding...........................................................766
-//   §5: Window-resized event binding..........................................................804
-//   §6: Function declarations.................................................................811
-//     §6.1: addDefinitionListButtons..........................................................814
-//     §6.2: fixDogears........................................................................930
-//     §6.3: fixEventCalendars.................................................................955
-//     §6.4: initContentFlippers...............................................................964
-//     §6.5: initDefinitionLists...............................................................980
-//     §6.6: initDropDownToggles..............................................................1024
-//     §6.7: initFancyHrH2Motif...............................................................1047
-//     §6.8: initFancyHrH3Motif...............................................................1056
-//     §6.9: initPrintThisPageLinks...........................................................1065
-//     §6.10: initQuickTabs...................................................................1074
-//     §6.11: initReadMoreToggles.............................................................1138
-//     §6.12: initTocFloating.................................................................1158
-//     §6.13: initTriggeredByHover............................................................1235
-//     §6.14: initWelcomeMessage..............................................................1254
-//     §6.15: showDefinitionListButtons.......................................................1264
+//   §1: Addition of functions to jQuery........................................................70
+//     §1.1: jQuery.isCssClass..................................................................73
+//     §1.2: jQuery.isJQueryObj.................................................................93
+//     §1.3: jQuery.logError...................................................................107
+//   §2: DAESA website initilization modules...................................................184
+//     §2.1: OueDropDownToggle class...........................................................187
+//     §2.2: OueEventCalendarFixer class.......................................................478
+//       §2.2.1: Constructor...................................................................492
+//       §2.2.2: Public members................................................................512
+//       §2.2.3: Lexically scoped supporting functions.........................................566
+//     §2.3: OuePrintThisPage class............................................................587
+//       §2.3.1: Constructor...................................................................601
+//       §2.3.2: Public members................................................................619
+//   §3: Function declarations.................................................................676
+//     §3.1: addDefinitionListButtons..........................................................679
+//     §3.2: fixDogears........................................................................797
+//     §3.3: fixEventCalendars.................................................................822
+//     §3.4: initContentFlippers...............................................................831
+//     §3.5: initDefinitionLists...............................................................847
+//     §3.6: initDropDownToggles...............................................................891
+//     §3.7: initPrintThisPageLinks............................................................916
+//     §3.8: initQuickTabs.....................................................................924
+//     §3.9: initReadMoreToggles...............................................................988
+//     §3.10: initTriggeredByHover............................................................1008
+//     §3.11: showDefinitionListButtons.......................................................1027
+//   §4: DOM-Ready execution sequence.........................................................1058
+//   §5: Window-loaded event bindings.........................................................1151
+//   §6: Window-resized event bindings........................................................1178
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function ( $, thisFileName ) {
@@ -72,14 +69,16 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §1: ADDITION OF FUNCTIONS to jQuery
 
-////////
-// §1.1: jQuery.isCssClass
+  ////////
+  // §1.1: jQuery.isCssClass
 
 /**
  * Checking function to verify that the passed argument is a valid CSS class.
  *
+ * @since 1.0.0
+ *
  * @param {*} possibleClass - Possible string consisting of a valid CSS class; could, in fact, be
- *     anything.
+ *   anything.
  */
 $.isCssClass = function ( possibleClass ) {
 	var cssClassNeedle = /^-?[_a-zA-Z]+[_a-zA-Z0-9-]*$/;
@@ -90,11 +89,13 @@ $.isCssClass = function ( possibleClass ) {
 	return isClass;
 }
 
-////////
-// §1.2: jQuery.isJQueryObj
+  ////////
+  // §1.2: jQuery.isJQueryObj
 
 /**
  * Checking function to verify that the passed argument is a valid jQuery object.
+ *
+ * @since 1.0.0
  *
  * @param {*} $obj - Possible jQuery object; could, in fact, be anything.
  */
@@ -102,11 +103,13 @@ $.isJQueryObj = function ( $obj ) {
 	return ( $obj && ( $obj instanceof $ || $obj.constructor.prototype.jquery ) );
 }
 
-////////
-// §1.3: jQuery.logError
+  ////////
+  // §1.3: jQuery.logError
 
 /**
  * Log an error using the browser console in JSON notation.
+ *
+ * @since 1.0.0
  *
  * @param {string} fileName - Name of the JS source file wherein the error was encountered.
  * @param {string} fnctnName - Name of the function that called $.logError.
@@ -175,34 +178,38 @@ $.logError = function ( fileName, fnctnName, fnctnDesc, errorMsg ) {
 	console.log(newErrorMsg);
 }
 
-} )( jQuery, 'jQuery.oue-custom.js' );
+} )( jQuery, 'jQuery.daesa-custom.js' );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §2: DAESA WEBSITE INITIALIZATION MODULES
 
-////////
-// §2.1: OueDropDownToggle class
+  ////////
+  // §2.1: OueDropDownToggle class
 
 /**
  * Module for initializing drop down toggles on OUE websites.
  *
+ * @since 1.0.0
  * @todo Refactor to rename class to replace references to OUE with references to DAESA.
+ *
  * @class
  */
-var OueDropDownToggles = ( function( $, thisFileName ) {
+const OueDropDownToggles = ( function( $, thisFileName ) {
 	'use strict';
 
 	/**
 	 * Constructor for OueDropDownToggles.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param {object} sels - Collection of selectors to drop down toggles and their components.
 	 * @param {string} sels.toggles - Selector for isolating drop down toggle elements.
 	 * @param {string} sels.containers - Selector for isolating containers of drop down toggle
-	 *     elements.
+	 *   elements.
 	 * @param {string} sels.targets - Selector for isolating the expandable targets of drop down
-	 *     toggle elements.
+	 *   toggle elements.
 	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
-	 *     causes it to enter an activated state.
+	 *   causes it to enter an activated state.
 	 */
 	function OueDropDownToggles( sels, activatingClass ) {
 		this.sels = sels;
@@ -213,8 +220,10 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	 * Check the state of the OueDropDownToggles object's paremeters to ensure it was appropriately
 	 * constructed.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
-	 *     typed and appropriately set arguments.
+	 *   typed and appropriately set arguments.
 	 */
 	OueDropDownToggles.prototype.isValid = function () {
 		var stillValid;
@@ -244,6 +253,8 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 
 	/**
 	 * Initialize drop down toggles to respond to user interaction.
+	 *
+	 * @since 1.0.0
 	 */
 	OueDropDownToggles.prototype.initialize = function () {
 		var $containers;
@@ -277,12 +288,14 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	 * Bind a handler to ensure that a drop down toggle has been activated if one of its child
 	 * elements receives focus.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param {jquery} $containers - Collection of the containers which may contain drop down
-	 *     toggles.
+	 *   toggles.
 	 * @param {string} selToggles - Selector string for isolating drop down toggle elements within
-	 *     the provided collection of containers.
+	 *   the provided collection of containers.
 	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
-	 *     causes it to enter an activated state.
+	 *   causes it to enter an activated state.
 	 */
 	function bindChildFocusHandlers( $targets, selTargets, selToggles, activatingClass ) {
 		$targets.on( 'focusin', '*', function () {
@@ -305,12 +318,14 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	 * Bind a click handler to drop down toggles that enables the user to interact with them using
 	 * mouse input.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param {jquery} $containers - Collection of the containers which may contain drop down
-	 *     toggles.
+	 *   toggles.
 	 * @param {string} selToggles - Selector string for isolating drop down toggle elements within
-	 *     the provided collection of containers.
+	 *   the provided collection of containers.
 	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
-	 *     causes it to enter an activated state.
+	 *   causes it to enter an activated state.
 	 */
 	function bindClickHandlers( $containers, selToggles, activatingClass, selTargets ) {
 		var $this;
@@ -328,12 +343,14 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	 * Bind a keydown handler to drop down toggles that enables the user to interact with them using
 	 * keyboard input.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param {jquery} $containers - Collection of the containers which may contain drop down
-	 *     toggles.
+	 *   toggles.
 	 * @param {string} selToggles - Selector string for isolating drop down toggle elements within
-	 *     the provided collection of containers.
+	 *   the provided collection of containers.
 	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
-	 *     causes it to enter an activated state.
+	 *   causes it to enter an activated state.
 	 */
 	function bindKeydownHandlers( $containers, selToggles, activatingClass, selTargets ) {
 		$containers.on( 'keydown', selToggles, function ( e ) {
@@ -354,9 +371,11 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	 * During page load, set the expansion state of drop down toggle elements based on previous user
 	 * interactions during the session.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param {jquery} $toggles - Collection of the drop down toggle elements within the page.
 	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
-	 *     causes it to enter an activated state.
+	 *   causes it to enter an activated state.
 	 */
 	function effectToggleStatePermanence( $toggles, activatingClass ) {
 		var $this;
@@ -387,6 +406,8 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	/**
 	 * Handle the process of updating the layout of cascading children of a toggled container.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param {jquery} $container - The container that has been toggled.
 	 */
 	function handleCascadingChildren( $container ) {
@@ -403,6 +424,8 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	 * Apply a CSS class that keeps anchor highlighting styles from being applied to drop down
 	 * toggles.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param {jquery} $toggles - Collection of the drop down toggle elements within the page.
 	 */
 	function preventAnchorHighlighting( $toggles ) {
@@ -411,6 +434,8 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 
 	/**
 	 * Ensure that drop down toggles are properly included in the web page's tab order.
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param {jquery} $toggles - Collection of the drop down toggle elements within the page.
 	 */
@@ -421,9 +446,11 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	/**
 	 * Cause expansion state of drop down toggles to be remembered during the session.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param {jquery} $toggles - Collection of the drop down toggle elements within the page.
 	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
-	 *     causes it to enter an activated state.
+	 *   causes it to enter an activated state.
 	 */
 	function setUpToggleStatePermanence( $toggle, activatingClass ) {
 		var state;
@@ -445,47 +472,53 @@ var OueDropDownToggles = ( function( $, thisFileName ) {
 	}
 
 	return OueDropDownToggles;
-} )( jQuery, 'jQuery.oue-custom.js' );
+} )( jQuery, 'jQuery.daesa-custom.js' );
 
-////////
-// §2.2: OueEventCalendarFixer class
+  ////////
+  // §2.2: OueEventCalendarFixer class
 
 /**
  * Module for fixing event calendar pages on OUE websites.
  *
+ * @since 1.0.0
+ *
  * @todo Refactor to rename class to replace references to OUE with references to DAESA.
  * @class
  */
-var OueEventCalendarFixer = ( function( $, thisFileName ) {
+const OueEventCalendarFixer = ( function( $, thisFileName ) {
 	'use strict';
 
-	////////
-	// §2.2.1: Constructor
+	  ////////
+	  // §2.2.1: Constructor
 
 	/**
 	 * Constructor for OueEventCalendarFixer.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param {object} sels - Collection of selectors to event calendar pages and their elements.
 	 * @param {string} sels.singleEventPage - Selector for isolating a tribe events single event
-	 *     viewing page.
+	 *   viewing page.
 	 * @param {string} sels.sepLocationText - Selector for isolating the text describing the
-	 *     location of an event on a single event page.
+	 *   location of an event on a single event page.
 	 * @param {string} sels.sepEventSchedule - Selector for isolating the schedule for an event on a
-	 *     SEP single event page.
+	 *   SEP single event page.
 	 */
 	function OueEventCalendarFixer( sels ) {
 		this.sels = sels;
 	}
 
-	////////
-	// §2.2.2: Public members
+	  ////////
+	  // §2.2.2: Public members
 
 	/**
 	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
 	 * appropriately constructed.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
-	 *     typed and appropriately set arguments.
+	 *   typed and appropriately set arguments.
 	 */
 	OueEventCalendarFixer.prototype.fixSingleEventPage = function () {
 		var $elemWithLocation;
@@ -504,8 +537,10 @@ var OueEventCalendarFixer = ( function( $, thisFileName ) {
 	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
 	 * appropriately constructed.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
-	 *     typed and appropriately set arguments.
+	 *   typed and appropriately set arguments.
 	 */
 	OueEventCalendarFixer.prototype.isValid = function () {
 		var stillValid;
@@ -546,45 +581,51 @@ var OueEventCalendarFixer = ( function( $, thisFileName ) {
 	}
 
 	return OueEventCalendarFixer;
-} )( jQuery, 'jQuery.oue-custom.js' );
+} )( jQuery, 'jQuery.daesa-custom.js' );
 
-////////
-// §2.3: OuePrintThisPage class
+  ////////
+  // §2.3: OuePrintThisPage class
 
 /**
  * Module for fixing event calendar pages on OUE websites.
  *
+ * @since 1.0.0
  * @todo Refactor to rename class to replace references to OUE with references to DAESA.
+ *
  * @class
  */
-var OuePrintThisPage = ( function( $, thisFileName ) {
+const OuePrintThisPage = ( function( $, thisFileName ) {
 	'use strict';
 
-	////////
-	// §2.3.1: Constructor
+	  ////////
+	  // §2.3.1: Constructor
 
 	/**
-	 * Constructor for OueEventCalendarFixer.
+	 * Construct an instance of OuePrintThisPage.
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param {object} sels - Collection of selectors to event calendar pages and their elements.
 	 * @param {string} sels.container - Selector for isolating a tribe events single event
-	 *     viewing page.
+	 *   viewing page.
 	 * @param {string} sels.identifier - Selector by which 'print this page' shortcuts are
-	 *     identified.
+	 *   identified.
 	 */
 	function OuePrintThisPage( sels ) {
 		this.sels = sels;
 	}
 
-	////////
-	// §2.3.2: Public members
+	  ////////
+	  // §2.3.2: Public members
 
 	/**
 	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
 	 * appropriately constructed.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
-	 *     typed and appropriately set arguments.
+	 *   typed and appropriately set arguments.
 	 */
 	OuePrintThisPage.prototype.initOnThisPageLinks = function () {
 		var $containers;
@@ -601,8 +642,10 @@ var OuePrintThisPage = ( function( $, thisFileName ) {
 	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
 	 * appropriately constructed.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
-	 *     typed and appropriately set arguments.
+	 *   typed and appropriately set arguments.
 	 */
 	OuePrintThisPage.prototype.isValid = function () {
 		var stillValid;
@@ -622,210 +665,34 @@ var OuePrintThisPage = ( function( $, thisFileName ) {
 		return stillValid;
 	}
 
-	////////
-	// §2.3.3: Lexically scoped supporting functions
-
-	function pageHasLinks( selector ) {
-		var $links;
-
-		$links = $( selector );
-
-		return $links.length > 0;
-	}
-
 	return OuePrintThisPage;
-} )( jQuery, 'jQuery.oue-custom.js' );
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// §3: DOM-Ready execution sequence
+} )( jQuery, 'jQuery.daesa-custom.js' );
 
 ( function( $, thisFileName ) {
 
 'use strict';
 
-$( function () {
-	var argsList = new Object(); // List of arguments that will be passed to functions
-	var args; // List of arguments currently being utilized
-
-	argsList.fixDogears = {
-		slctrSiteNav: "#spine-sitenav",
-		slctrDogeared: "li.current.active.dogeared",
-		removedClasses: "current active dogeared"
-	};
-	args = argsList.fixDogears;
-	fixDogears( args.slctrSiteNav, args.slctrDogeared, args.removedClasses );
-
-	fixEventCalendars( {
-		singleEventPage: 'body.single-tribe_events',
-		sepLocationText: '.tribe-events-meta-group-venue .tribe-venue a',
-		sepEventSchedule: '.tribe-events-schedule h2'
-	} );
-
-	argsList.initFancyHrH2Motif = {
-		slctrFancyH2: ".column > h2.fancy, .column > section > h2.fancy",
-		slctrPrevHr: "hr:not(.subSection)",
-		hrClassesAdded: "no-bottom-margin dark-gray thicker encroach-horizontal",
-		animAddDrtn: 250
-	};
-	args = argsList.initFancyHrH2Motif;
-	initFancyHrH2Motif( args.slctrFancyH2, args.slctrPrevHr, args.hrClassesAdded,
-		args.animAddDrtn );
-
-	argsList.initFancyHrH3Motif = {
-		slctrFancyH3: ".column > h3.fancy, .column > section > h3.fancy",
-		slctrPrevHr: "hr:not(.subSection)",
-		hrClassesAdded: "no-bottom-margin crimson encroach-horizontal",
-		animAddDrtn: 250
-	};
-	args = argsList.initFancyHrH3Motif;
-	initFancyHrH3Motif( args.slctrFancyH3, args.slctrPrevHr, args.hrClassesAdded,
-		args.animAddDrtn );
-
-	argsList.initDropDownToggles = {
-		selToggles: ".drop-down-toggle",
-		selContainers: ".column",
-		selTargets: ".toggled-panel",
-		activatingClass: "activated",
-	};
-	args = argsList.initDropDownToggles;
-	initDropDownToggles( args.selToggles, args.selContainers, args.selTargets,
-		args.activatingClass );
-
-	argsList.initReadMoreToggles = {
-		slctrToggleIn: ".read-more-toggle-in-ctrl",
-		slctrToggleOut: ".read-more-toggle-out-ctrl",
-		slctrPanel: ".read-more-panel",
-		animDuration: 500
-	};
-	args = argsList.initReadMoreToggles;
-	initReadMoreToggles( args.slctrToggleIn, args.slctrToggleOut, args.slctrPanel,
-		args.animDuration );
-
-	argsList.initContentFlippers = {
-		slctrCntntFlppr: ".content-flipper",
-		slctrFlppdFront: ".flipped-content-front",
-		slctrFlppdBack: ".flipped-content-back",
-		animDuration: 500
-	};
-	args = argsList.initContentFlippers;
-	initContentFlippers( args.slctrCntntFlppr, args.slctrFlppdFront, args.slctrFlppdBack,
-		args.animDuration );
-
-	argsList.initDefinitionLists = {
-		slctrDefList: "dl.toggled",
-		dtActivatingClass: "activated",
-		ddRevealingClass: "revealed",
-		animSldDrtn: 400,
-		animHghtDrtn: 100
-	};
-	args = argsList.initDefinitionLists;
-	initDefinitionLists( args.slctrDefList, args.dtActivatingClass, args.ddRevealingClass,
-		args.animSldDrtn, args.animHghtDrtn );
-
-	argsList.addDefinitionListButtons = {
-		slctrDefList: argsList.initDefinitionLists.slctrDefList,
-		expandAllClass: "expand-all-button",
-		collapseAllClass: "collapse-all-button",
-		btnDisablingClass: "disabled",
-		dtActivatingClass: argsList.initDefinitionLists.dtActivatingClass,
-		ddRevealingClass: argsList.initDefinitionLists.ddRevealingClass,
-		animSldDrtn: argsList.initDefinitionLists.animSldDrtn
-	};
-	args = argsList.addDefinitionListButtons;
-	addDefinitionListButtons( args.slctrDefList, args.expandAllClass, args.collapseAllClass,
-		args.btnDeactivatingClass, args.dtActivatingClass, args.ddRevealingClass,
-		args.animSldDrtn );
-
-	argsList.initQuickTabs = {
-		slctrQtSctn: "section.row.single.quick-tabs"
-	};
-	args = argsList.initQuickTabs;
-	initQuickTabs( args.slctrQtSctn );
-
-	argsList.initTocFloating = {
-		slctrToc: "p.vpue-jump-bar",
-		slctrBackToToc: "p.vpue-jump-back"
-	};
-	args = argsList.initTocFloating;
-	initTocFloating( args.slctrToc, args.slctrBackToToc );
-
-	argsList.initTriggeredByHover = {
-		slctrTrggrdOnHvr: ".triggered-on-hover",
-		slctrCntntRvld: ".content-revealed",
-		slctrCntntHddn: ".content-hidden",
-		animDuration: 200
-	};
-	args = argsList.initTriggeredByHover;
-	initTriggeredByHover( args.slctrTrggrdOnHvr, args.slctrCntntRvld, args.slctrCntntHddn,
-		args.animDuration );
-
-	// TODO: initScrollingSidebars("...");
-} );
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §4: Window-loaded event binding
+// §3: Function declarations
 
-$( window ).on( "load", function () {
-	var argsList = new Object();
-	var args;
-
-	argsList.showDefinitionListButtons = {
-		slctrDefList: "dl.toggled",
-		expandAllClass: "expand-all-button",
-		collapseAllClass: "collapse-all-button",
-		animFadeInDrtn: 400
-	};
-	args = argsList.showDefinitionListButtons;
-	showDefinitionListButtons( args.slctrDefList, args.expandAllClass, args.collapseAllClass,
-		args.animFadeInDrtn );
-
-	argsList.initPrintThisPageLinks = {
-		sels: {
-			container: '.column',
-			identifier: '.link__print-this-page'
-		}
-	};
-	args = argsList.initPrintThisPageLinks;
-	initPrintThisPageLinks( args.sels );
-
-	argsList.initWelcomeMessage = {
-		slctrWlcmMsg: "#welcome-message",
-		slctrPostWlcmMsg: "#post-welcome-message",
-		msgDelay: 1000,
-		fadeOutDuration: 500,
-		fadeInDuration: 500
-	};
-	args = argsList.initWelcomeMessage;
-	initWelcomeMessage( args.slctrWlcmMsg, args.slctrPostWlcmMsg, args.msgDelay,
-		args.fadeOutDuration, args.fadeInDuration );
-} );
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// §5: Window-resized event binding
-
-$( window ).resize( function () {
-	// TODO: Add code as needed.
-} );
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// §6: Function declarations
-
-////////
-// §6.1: addDefinitionListButtons
+  ////////
+  // §3.1: addDefinitionListButtons
 
 /**
  * Automatically creates and binds events to expand/collapse all buttons designed for improving UX
  * of OUE site definition lists.
  *
+ * @since 1.0.0
+ *
  * @param {string} slctrDefList - Selector string for locating definition list elements within the
- *     DOM that contain collapsible definitions.
+ *   DOM that contain collapsible definitions.
  * @param {string} expandAllClass - CSS class for controlling the layout of expand all buttons.
  * @param {string} collapseAllClass - CSS class for controlling the layout of collapse all buttons.
  * @param {string} btnDisablingClass - CSS class applied to disable expand/collapse all buttons.
  * @param {string} dtActivatingClass - CSS class used to indicate an active/expanded state for
- *     definition terms.
+ *   definition terms.
  * @param {string} ddRevealingClass - CSS class used to realize a revealed, visible state on
- *     definitions.
+ *   definitions.
  */
 function addDefinitionListButtons( slctrDefList, expandAllClass, collapseAllClass,
 		btnDisablingClass, dtActivatingClass, ddRevealingClass, animSldDrtn ) {
@@ -926,23 +793,23 @@ parental definition list within the DOM."
 	} );
 }
 
-////////
-// §6.2: fixDogears
+  ////////
+  // §3.2: fixDogears
 
 function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 	// Fix bug wherein the wrong items in the spine become dogeared
 	var $dogearedItems = $( slctrSiteNav ).find( slctrDogeared );
 	if ( $dogearedItems.length > 1 ) {
 		var currentURL = window.location.href;
-		var currentPage = currentURL.substring( currentURL.substring( 0, currentURL.length -
- 1 ).lastIndexOf( "/" ) + 1, currentURL.length - 1 );
+		var currentPage = currentURL.substring( currentURL.substring( 0, currentURL.length - 1 )
+			.lastIndexOf( "/" ) + 1, currentURL.length - 1 );
 		$dogearedItems.each( function () {
 			var $this = $( this );
 			var $navLink = $this.children( "a" );
 			if ( $navLink.length == 1 ) {
 				var navLinkURL = $navLink.attr( "href" );
-				var navLinkPage = navLinkURL.substring( navLinkURL.substring( 0, navLinkURL.length -
- 1 ).lastIndexOf( "/" ) + 1, navLinkURL.length - 1 );
+				var navLinkPage = navLinkURL.substring( navLinkURL.substring( 0, navLinkURL.length - 1 )
+					.lastIndexOf( "/" ) + 1, navLinkURL.length - 1 );
 				if ( navLinkPage != currentPage ) {
 					$this.removeClass( removedClasses );
 				}
@@ -951,8 +818,8 @@ function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 	}
 }
 
-////////
-// §6.3: fixEventCalendars
+  ////////
+  // §3.3: fixEventCalendars
 
 function fixEventCalendars( sels ) {
 	var fixer = new OueEventCalendarFixer( sels );
@@ -960,8 +827,8 @@ function fixEventCalendars( sels ) {
 	fixer.fixSingleEventPage();
 }
 
-////////
-// §6.4: initContentFlippers
+  ////////
+  // §3.4: initContentFlippers
 
 function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, animDuration ) {
 	$( slctrCntntFlppr ).click( function () {
@@ -976,8 +843,8 @@ function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, 
 	} );
 }
 
-////////
-// §6.5: initDefinitionLists
+  ////////
+  // §3.5: initDefinitionLists
 
 // TODO: Add inline documentation in JSDoc3 format.
 function initDefinitionLists( slctrDefList, dtActivatingClass, ddRevealingClass, animHghtDrtn ) {
@@ -1020,20 +887,22 @@ function initDefinitionLists( slctrDefList, dtActivatingClass, ddRevealingClass,
 	$( slctrDefList + " dd" ).removeClass( ddRevealingClass );
 }
 
-////////
-// §6.6: initDropDownToggles
+  ////////
+  // §3.6: initDropDownToggles
 
 /**
  * Initialize drop down toggle elements to respond to user interaction.
  *
+ * @since 1.0.0
+ *
  * @param {string} selToggles - Selector string for isolating drop down toggle elements.
  * @param {string} selContainers - Selector string for isolating containers that may contain drop
- *     down toggle elements.
+ *   down toggle elements.
  * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
- *     causes it to enter an activated state.
+ *   causes it to enter an activated state.
  */
 function initDropDownToggles( selToggles, selContainers, selTargets, activatingClass ) {
-	var dropDownToggles;
+	let dropDownToggles;
 
 	dropDownToggles =  new OueDropDownToggles( {
 		toggles: selToggles,
@@ -1043,35 +912,16 @@ function initDropDownToggles( selToggles, selContainers, selTargets, activatingC
 	dropDownToggles.initialize();
 }
 
-////////
-// §6.7: initFancyHrH2Motif
-
-function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
-	$( slctrFancyH2 ).each( function () {
-			$( this ).prev( slctrPrevHr ).addClass( hrClassesAdded, animAddDrtn );
-	} );
-}
-
-////////
-// §6.8: initFancyHrH3Motif
-
-function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
-	$( slctrFancyH3 ).each( function () {
-		$( this ).prev( slctrPrevHr ).addClass( hrClassesAdded, animAddDrtn );
-	} );
-}
-
-////////
-// §6.9: initPrintThisPageLinks
+  ////////
+  // §3.7: initPrintThisPageLinks
 
 function initPrintThisPageLinks( sels ) {
 	var printThisPageLinks = new OuePrintThisPage( sels );
-
 	printThisPageLinks.initOnThisPageLinks();
 }
 
-////////
-// §6.10: initQuickTabs
+  ////////
+  // §3.8: initQuickTabs
 
 // TODO: Convert to a class-based initialization module
 function initQuickTabs( slctrQtSctn ) {
@@ -1134,8 +984,8 @@ function initQuickTabs( slctrQtSctn ) {
 	} );
 }
 
-////////
-// §6.11: initReadMoreToggles
+  ////////
+  // §3.9: initReadMoreToggles
 
 function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDuration ) {
 	$( slctrToggleIn ).click( function () {
@@ -1154,85 +1004,8 @@ function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDur
 	} );
 }
 
-////////
-// §6.12: initTocFloating
-
-function initTocFloating( slctrToc, slctrBackToToc ) {
-	var thisFuncName = "initTocFloating";
-	var thisFuncDesc = "Cause the table of contents element to float after scrolling past a" +
-		" certain point";
-	var $toc = $( slctrToc );
-	var $backToToc = $( slctrBackToToc );
-	var $linkToTop = $backToToc.first().children( "a" );
-	var $mainHeader = $( "header.main-header" );
-	if ( $toc.length === 1 && $mainHeader.length === 1 ) {
-		var $window = $( window );
-		var tocTrigger = $toc.offset().top + $toc.height() + 100;
-		var $tocClone = $toc.clone().addClass( "floating" ).removeAttr( "id" ).insertAfter( $toc );
-		$tocClone.find( "span.title + br").remove();
-		$tocClone.find( "span.title").remove();
-		var counter = 1;
-		$tocClone.find( "br").each( function () {
-			if ( counter % 2 != 0 ) {
-				$( this ).before( " //");
-			}
-			$( this ).remove();
-			counter++;
-		} );
-		if ( $linkToTop.length === 1 ) {
-			var linkText = $linkToTop.text();
-			var idxMatched = linkText.search( /\u2014Back to ([^\u2014]+)\u2014/ );
-			if ( idxMatched != -1 ) {
-				var $linkToTopClone = $linkToTop.clone();
-				$linkToTopClone.text( linkText.replace( /\u2014Back to ([^\u2014]+)\u2014/,
-					"$1" ) );
-				$tocClone.prepend( " //&nbsp;" );
-				$linkToTopClone.prependTo( $tocClone );
-				$backToToc.remove();
-			} else {
-				$.logError( thisFileName, thisFuncName, thisFuncDesc, "Did not find the correct " +
-					"textual pattern within the link back to the top of the page." );
-			}
-		} else {
-			console.log( thisFileName, thisFuncName, thisFuncDesc,  "Did not find a single" +
-				" hyperlink within the first link back to the top of the page." );
-		}
-		$window.scroll( function( e ) {
-			var windowScrollPos = $window.scrollTop();
-			if ( windowScrollPos > tocTrigger && !$tocClone.is( ":visible" ) ) {
-				$tocClone.width( $mainHeader.width() * .8 );
-				$tocClone.css( {
-					left: $mainHeader.offset().left + $mainHeader.width() / 2,
-				} );
-				$tocClone.fadeIn( 300 );
-			}
-			else if ( windowScrollPos <= tocTrigger && $tocClone.is( ":visible" ) ) {
-				$tocClone.hide();
-			}
-		} );
-		$window.resize( function () {
-			$tocClone.width( $mainHeader.width() * .8 );
-			$tocClone.css( {
-				left: $mainHeader.offset().left + $mainHeader.width() / 2,
-			} );
-		} );
-	} else {
-		if ( $toc.length > 1 ) {
-			console.log( thisFileName, thisFuncName, thisFuncDesc, "Found more than one table of" +
-				" contents elements; this function only works with one table of contents." );
-		}
-		if ( $mainHeader.length === 0 ) {
-			console.log( thisFileName, thisFuncName, thisFuncDesc, "Could not find the main" +
-				" header element within the DOM." );
-		} else if ( $mainHeader.length > 1 ) {
-			console.log( thisFileName, thisFuncName, thisFuncDesc, "Found more than one table" +
-				" of contents elements; this function only works with one table of contents.' }" );
-		}
-	}
-}
-
-////////
-// §6.13: initTriggeredByHover
+  ////////
+  // §3.10: initTriggeredByHover
 
 function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration ) {
 	$( slctrTrggrdOnHvr ).mouseenter( function () {
@@ -1250,24 +1023,16 @@ function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn,
 	} );
 }
 
-////////
-// §6.14: initWelcomeMessage
-
-function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDuration,
-		fadeInDuration ) {
-	$( slctrWlcmMsg ).delay( msgDelay ).fadeOut( fadeOutDuration, function () {
-		$( slctrPostWlcmMsg ).fadeIn( fadeInDuration );
-	} );
-}
-
-////////
-// §6.15: showDefinitionListButtons
+  ////////
+  // §3.11: showDefinitionListButtons
 
 /**
  * Display expand/collapse all buttons, which were initially hidden
  *
+ * @since 1.0.0
+ *
  * @param {string} slctrDefList - Selector string for locating definition list elements within the
- *     DOM that contain collapsible definitions.
+ *   DOM that contain collapsible definitions.
  * @param {string} expandAllClass - CSS class for controlling the layout of expand all buttons.
  * @param {string} collapseAllClass - CSS class for controlling the layout of collapse all buttons.
  * @param {number} animFadeInDrtn - The animation speed in ms by which definitions fade into view.
@@ -1289,59 +1054,189 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 	} );
 }
 
-} )( jQuery, 'jQuery.oue-custom.js' );
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §4: DOM-Ready execution sequence
+
+$( function () {
+	var argsList = new Object(); // List of arguments that will be passed to functions
+	var args; // List of arguments currently being utilized
+
+	argsList.fixDogears = {
+		slctrSiteNav: "#spine-sitenav",
+		slctrDogeared: "li.current.active.dogeared",
+		removedClasses: "current active dogeared"
+	};
+	args = argsList.fixDogears;
+	fixDogears( args.slctrSiteNav, args.slctrDogeared, args.removedClasses );
+
+	fixEventCalendars( {
+		singleEventPage: 'body.single-tribe_events',
+		sepLocationText: '.tribe-events-meta-group-venue .tribe-venue a',
+		sepEventSchedule: '.tribe-events-schedule h2'
+	} );
+
+	argsList.initDropDownToggles = {
+		selToggles: ".drop-down-toggle",
+		selContainers: ".column",
+		selTargets: ".toggled-panel",
+		activatingClass: "activated",
+	};
+	args = argsList.initDropDownToggles;
+	initDropDownToggles( args.selToggles, args.selContainers, args.selTargets,
+		args.activatingClass );
+
+	argsList.initReadMoreToggles = {
+		slctrToggleIn: ".read-more-toggle-in-ctrl",
+		slctrToggleOut: ".read-more-toggle-out-ctrl",
+		slctrPanel: ".read-more-panel",
+		animDuration: 500
+	};
+	args = argsList.initReadMoreToggles;
+	initReadMoreToggles( args.slctrToggleIn, args.slctrToggleOut, args.slctrPanel,
+		args.animDuration );
+
+	argsList.initContentFlippers = {
+		slctrCntntFlppr: ".content-flipper",
+		slctrFlppdFront: ".flipped-content-front",
+		slctrFlppdBack: ".flipped-content-back",
+		animDuration: 500
+	};
+	args = argsList.initContentFlippers;
+	initContentFlippers( args.slctrCntntFlppr, args.slctrFlppdFront, args.slctrFlppdBack,
+		args.animDuration );
+
+	argsList.initDefinitionLists = {
+		slctrDefList: "dl.toggled",
+		dtActivatingClass: "activated",
+		ddRevealingClass: "revealed",
+		animSldDrtn: 400,
+		animHghtDrtn: 100
+	};
+	args = argsList.initDefinitionLists;
+	initDefinitionLists( args.slctrDefList, args.dtActivatingClass, args.ddRevealingClass,
+		args.animSldDrtn, args.animHghtDrtn );
+
+	argsList.addDefinitionListButtons = {
+		slctrDefList: argsList.initDefinitionLists.slctrDefList,
+		expandAllClass: "expand-all-button",
+		collapseAllClass: "collapse-all-button",
+		btnDisablingClass: "disabled",
+		dtActivatingClass: argsList.initDefinitionLists.dtActivatingClass,
+		ddRevealingClass: argsList.initDefinitionLists.ddRevealingClass,
+		animSldDrtn: argsList.initDefinitionLists.animSldDrtn
+	};
+	args = argsList.addDefinitionListButtons;
+	addDefinitionListButtons( args.slctrDefList, args.expandAllClass, args.collapseAllClass,
+		args.btnDeactivatingClass, args.dtActivatingClass, args.ddRevealingClass,
+		args.animSldDrtn );
+
+	argsList.initQuickTabs = {
+		slctrQtSctn: "section.row.single.quick-tabs"
+	};
+	args = argsList.initQuickTabs;
+	initQuickTabs( args.slctrQtSctn );
+
+	argsList.initTriggeredByHover = {
+		slctrTrggrdOnHvr: ".triggered-on-hover",
+		slctrCntntRvld: ".content-revealed",
+		slctrCntntHddn: ".content-hidden",
+		animDuration: 200
+	};
+	args = argsList.initTriggeredByHover;
+	initTriggeredByHover( args.slctrTrggrdOnHvr, args.slctrCntntRvld, args.slctrCntntHddn,
+		args.animDuration );
+} );
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §5: Window-loaded event binding
+
+$( window ).on( "load", function () {
+	var argsList = new Object();
+	var args;
+
+	argsList.showDefinitionListButtons = {
+		slctrDefList: "dl.toggled",
+		expandAllClass: "expand-all-button",
+		collapseAllClass: "collapse-all-button",
+		animFadeInDrtn: 400
+	};
+	args = argsList.showDefinitionListButtons;
+	showDefinitionListButtons( args.slctrDefList, args.expandAllClass, args.collapseAllClass,
+		args.animFadeInDrtn );
+
+	argsList.initPrintThisPageLinks = {
+		sels: {
+			container: '.column',
+			identifier: '.link__print-this-page'
+		}
+	};
+	args = argsList.initPrintThisPageLinks;
+	initPrintThisPageLinks( args.sels );
+} );
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §6: Window-resized event binding
+
+$( window ).resize( function () {
+	// TODO: Add code as needed.
+} );
+
+} )( jQuery, 'jQuery.daesa-custom.js' );
 
 /*!*************************************************************************************************
- * jQuery.forms.js
- * -------------------------------------------------------------------------------------------------
- * PROJECT SUMMARY: Enhancements mediated by jQuery to dynamic behavior of Gravity Forms and
- *   intended for Washington State University (WSU) websites built in the WSU WordPress platform.
- *   Designed especially for the websites of the WSU Office of Undergraduate Education.
+ *    █ ▄▀▀▄ █  █ █▀▀▀ █▀▀▄ █  █   █▀▀▀ ▄▀▀▄ █▀▀▄ ▐▀▄▀▌▄▀▀▀      █ ▄▀▀▀
+ * ▄  █ █  █ █  █ █▀▀  █▄▄▀ ▀▄▄█   █▀▀▀ █  █ █▄▄▀ █ ▀ ▌▀▀▀█   ▄  █ ▀▀▀█
+ * ▀▄▄█  ▀█▄  ▀▀  ▀▀▀▀ ▀  ▀▄▄▄▄▀ ▀ ▀     ▀▀  ▀  ▀▄█   ▀▀▀▀  ▀ ▀▄▄█ ▀▀▀ 
  *
- * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ * Enhancements mediated by jQuery to dynamic behavior of Gravity Forms and intended for Washington
+ *   State University (WSU) websites built in the WSU WordPress platform. Designed especially for
+ *   the websites of the Division of Academic Engagement and Student Achivement.
  *
- * REPOSITORY: https://github.com/invokeImmediately/WSU-UE---JS
+ * @version 1.0.0
  *
- * LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
- *
- *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
- *   without fee is hereby granted, provided that the above copyright notice and this permission
- *   notice appear in all copies.
- *
- *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
- *   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
- *   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
- *   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
- *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
- *   PERFORMANCE OF THIS SOFTWARE.
+ * @author Daniel C. Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ * @link https://github.com/invokeImmediately/WSU-DAESA-JS/blob/master/jQuery.forms.js
+ * @license MIT - Copyright (c) 2021 Washington State University
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *     and associated documentation files (the “Software”), to deal in the Software without
+ *     restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *     distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following conditions:
+ *   The above copyright notice and this permission notice shall be included in all copies or
+ *     substantial portions of the Software.
+ *   THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ *     DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  **************************************************************************************************/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-// §1: Gravity Forms enhancement modules........................................................48
-//     §1.1: EmailConfirmations class...........................................................51
-//         §1.1.1: Public properties............................................................75
-//         §1.1.2: Public methods...............................................................91
-//     §1.2: OueGFs class......................................................................123
-//         §1.2.1: Public properties...........................................................140
-//         §1.2.2: Public methods..............................................................169
-//         §1.2.3: Lexically scoped supporting functions.......................................196
-//     §1.2: WsuIdInputs class.................................................................223
-//         §1.3.1: Public properties...........................................................243
-//         §1.3.2: Public methods..............................................................258
-//         §1.3.3: Lexically scoped supporting functions.......................................355
-// §2: Application of OUE-wide Gravity Forms enhancements......................................380
-//     §2.1: Application of OueGFs module......................................................386
-//     §2.2: Binding of handlers to Gravity Forms post-render event............................394
-//     §2.3: Function declarations.............................................................413
+// §1: Gravity Forms enhancement modules........................................................51
+//   §1.1: EmailConfirmations class.............................................................54
+//     §1.1.1: Public properties................................................................78
+//     §1.1.2: Public methods...................................................................95
+//   §1.2: OueGFs class........................................................................127
+//     §1.2.1: Public properties...............................................................144
+//     §1.2.2: Public methods..................................................................173
+//     §1.2.3: Lexically scoped supporting functions...........................................200
+//   §1.2: WsuIdInputs class...................................................................227
+//     §1.3.1: Public properties...............................................................247
+//     §1.3.2: Public methods..................................................................262
+//     §1.3.3: Lexically scoped supporting functions...........................................359
+// §2: Application of OUE-wide Gravity Forms enhancements......................................384
+//   §2.1: Application of OueGFs module........................................................390
+//   §2.2: Binding of handlers to Gravity Forms post-render event..............................398
+//   §2.3: Function declarations...............................................................417
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §1: Gravity Forms enhancement modules
 
-/////////////////////////////////
-// §1.1: EmailConfirmations class
+//////////
+//// §1.1: EmailConfirmations class
 
 /**
  * Gravity Forms enhancement module for preventing the user from pasting input into email
@@ -1364,8 +1259,8 @@ var EmailConfirmations = ( function( $ ) {
 	 */
 	function EmailConfirmations( selGfield ) {
 
-		////////////////////////////
-		// §1.1.1: Public properties
+//////////////
+////// §1.1.1: Public properties
 
 		/**
 		 * The collection of selectors used to find inputs accepting emails and email confirmations
@@ -1378,10 +1273,11 @@ var EmailConfirmations = ( function( $ ) {
 			gfield: selGfield,
 			inputs: ".ginput_right input[type='text']"
 		};
+
 	}
 
-	/////////////////////////
-	// §1.1.2: Public methods
+//////////////
+////// §1.1.2: Public methods
 
 	/**
 	 * Initializes the event handling that will prevent misuse of the email confirmation field.
@@ -1412,8 +1308,8 @@ var EmailConfirmations = ( function( $ ) {
 	return EmailConfirmations;
 } )( jQuery );
 
-///////////////
-// §1.2: OueGFs
+//////////
+//// §1.2: OueGFs
 
 /**
  * Module for adding enhancements to Gravity Forms found on OUE websites.
@@ -1429,8 +1325,8 @@ var OueGFs = ( function( $ ) {
 	 */
 	function OueGFs() {
 
-		////////////////////////////
-		// §1.2.1: Public properties
+//////////////
+////// §1.2.1: Public properties
 
 		/**
 		 * Collection of selectors used to find form elements in the DOM.
@@ -1458,8 +1354,8 @@ var OueGFs = ( function( $ ) {
 		this.emailConfirmations = null;
 	}
 
-	/////////////////////////
-	// §1.2.2: Public methods
+//////////////
+////// §1.2.2: Public methods
 
 	/**
 	 * Initialize Gravity Forms found on the page.
@@ -1485,8 +1381,8 @@ var OueGFs = ( function( $ ) {
 		} );
 	};
 
-	////////////////////////////////////////////////
-	// §1.2.3: Lexically scoped supporting functions
+//////////////
+////// §1.2.3: Lexically scoped supporting functions
 
 	/**
 	 * Initialize inputs accepting WSU ID numbers.
@@ -1512,8 +1408,8 @@ var OueGFs = ( function( $ ) {
 
 } )( jQuery );
 
-////////////////////
-// §1.3: WsuIdInputs
+//////////
+//// §1.3: WsuIdInputs
 
 /**
  * Provides RegEx mediated validation of gravity form inputs that accept WSU ID numbers.
@@ -1532,8 +1428,8 @@ var WsuIdInputs = ( function ( $ ) {
 	 */
 	function WsuIdInputs( selGfield ) {
 
-		////////////////////////////
-		// §1.3.1: Public properties
+//////////////
+////// §1.3.1: Public properties
 
 		/**
 		 * The collection of selectors used to find inputs accepting WSU ID numbers in the DOM.
@@ -1547,8 +1443,8 @@ var WsuIdInputs = ( function ( $ ) {
 		};
 	}
 
-	/////////////////////////
-	// §1.3.2: Public methods
+//////////////
+////// §1.3.2: Public methods
 
 	/**
 	 * Initializes RegEx mediated validation of inputs accepting WSU ID numbers.
@@ -1644,8 +1540,8 @@ var WsuIdInputs = ( function ( $ ) {
 		}
 	};
 
-	////////////////////////////////////////////////
-	// §1.3.3: Lexically scoped supporting functions
+//////////////
+////// §1.3.3: Lexically scoped supporting functions
 
 	/**
 	 * Obtains the regular expression pattern representing valid complete or incomple WSU ID input.
@@ -1675,16 +1571,16 @@ var WsuIdInputs = ( function ( $ ) {
 ( function ( $ ) {
 	'use strict';
 
-	/////////////////////////////////////
-	// §2.1: Application of OueGFs module
+//////////
+//// §2.1: Application of OueGFs module
 
 	var oueGfs;
 
 	oueGfs = new OueGFs();
 	oueGfs.init();
 
-	///////////////////////////////////////////////////////////////
-	// §2.2: Binding of handlers to Gravity Forms post-render event
+//////////
+//// §2.2: Binding of handlers to Gravity Forms post-render event
 
 	$( document ).on( 'gform_post_render', function () {
 		setupActvtrChckbxs( '.oue-gf-actvtr-checkbox' );
@@ -1702,8 +1598,8 @@ var WsuIdInputs = ( function ( $ ) {
 	} );
 
 
-	//////////////////////////////
-	// §2.3: Function declarations
+//////////
+//// §2.3: Function declarations
 
 	/**
 	 * Check each input element within a required gravity form field to determine if an entry has
@@ -2130,7 +2026,7 @@ var WsuIdInputs = ( function ( $ ) {
       // Brute force - check each field
       var isDirty = false;
       $fields.each(function() {
-        $field = $(this);
+        var $field = $(this);
         if (isFieldDirty($field)) {
           isDirty = true;
           return false; // break
@@ -2220,26 +2116,29 @@ var WsuIdInputs = ( function ( $ ) {
 })(jQuery);
 
 /*!*************************************************************************************************
- * jQuery.forms.js, v2.1.0
- * -------------------------------------------------------------------------------------------------
- * PROJECT SUMMARY: Application of Are-You-Sure jQuery Plugin to WSU DAESA websites.
+ *    █ ▄▀▀▄ █  █ █▀▀▀ █▀▀▄ █  █   █▀▀▀ ▄▀▀▄ █▀▀▄ ▐▀▄▀▌▄▀▀▀      █ ▄▀▀▀
+ * ▄  █ █  █ █  █ █▀▀  █▄▄▀ ▀▄▄█   █▀▀▀ █  █ █▄▄▀ █ ▀ ▌▀▀▀█   ▄  █ ▀▀▀█
+ * ▀▄▄█  ▀█▄  ▀▀  ▀▀▀▀ ▀  ▀▄▄▄▄▀ ▀ ▀     ▀▀  ▀  ▀▄█   ▀▀▀▀  ▀ ▀▄▄█ ▀▀▀ 
  *
- * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ * Application of Are-You-Sure jQuery Plugin to WSU DAESA websites.
  *
- * REPOSITORY: https://github.com/invokeImmediately/WSU-UE---JS
+ * @version 2.1.1
  *
- * LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
- *
- *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
- *   without fee is hereby granted, provided that the above copyright notice and this permission
- *   notice appear in all copies.
- *
- *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
- *   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
- *   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
- *   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
- *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
- *   PERFORMANCE OF THIS SOFTWARE.
+ * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ * @link https://github.com/invokeImmediately/WSU-DAESA-JS/blob/master/jQuery.are-you-sure.js
+ * @license MIT - Copyright (c) 2021 Washington State University
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *     and associated documentation files (the “Software”), to deal in the Software without
+ *     restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *     distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following conditions:
+ *   The above copyright notice and this permission notice shall be included in all copies or
+ *     substantial portions of the Software.
+ *   THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ *     DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  **************************************************************************************************/
 
 ( function( $ ) {
@@ -7456,6 +7355,305 @@ var AddCrseCoInr = ( function( $, modName, lsSels ) {
 
 	$( window ).on ( 'load', function() {
 		var initiator = new AddCrseCoInr( '.oue-gf-actvtr-chain input' );
+
+		initiator.enactCarryOver();
+	} );
+} )( jQuery );
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// §1.1: GfAdvSelectIntf2
+
+/**
+ * Graviy Forms Advanced Select Interface (GfAdvSelectIntf) module.
+ *
+ * JQuery-based interface to key UI components of an Gravity Forms select field utilizing the
+ * advanced user interface option.
+ *
+ * @param {jquery} $ - The session's jquery object.
+ * @param {string} modName - Stores the name of this module; useful in error reporting.
+ * @param {object} lsSels - A collection of lexically scoped jQuery selectors that come from the
+ *     design of Gravity Forms select fields utilizing the advanced user interface.
+ * @param {string} lsSels.gfId - JQuery Selector for a single CSS class used to identify gravity
+ *     fields.
+ * @param {string} lsSels.gfContId - JQuery Selector for a single CSS class used to identify whether
+ *     the purported selection gravity form field contains an expected child container.
+ * @param {string} lsSels.gfSelSel - Selector string used to isolate the select element child within
+ *     the gravity form field.
+ * @param {string} lsSels.gfChosenSpanSel - Selector string used to isolate the span element that
+ *     displays the currently selected option to the user.
+ *
+ * @class
+ */
+
+var GfAdvSelectIntf2 = ( function( $, modName, lsSels ) {
+
+	'use strict';
+
+	/**
+	 * Constructor for GfAdvSelectIntf.
+	 *
+	 * @param {jquery} $gfield - A jQuery object representing the 
+	 */
+	function GfAdvSelectIntf2( $gfield ) {
+
+		////////////////////////////////////////////////////////////////////////////////////////
+		// §1.1.1: Public properties
+
+		/**
+		 * JQuery object representing the span element that shows the currently selected location
+		 * option to the user.
+		 *
+		 * @public
+		 */
+		this.$chosenSpan = undefined;
+
+		/**
+		 * Retain a copy of the original prospective gravity forms field used to construct this
+		 * interface.
+		 *
+		 * @public
+		 */
+		this.$gfield = $gfield;
+
+		/**
+		 * JQuery object representing the select element containing the location option that the
+		 * user currently has selected.
+		 *
+		 * @public
+		 */
+		this.$selElem = undefined;
+
+		////////////////////////////////////////////////////////////////////////////////////////
+		// §1.1.4: Constructor's main execution section
+
+		this.buildIntfToField();
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////////////
+	// §1.1.5: Public methods
+
+	/**
+	 * Build the interface to the gravity forms field by populating jQuery objects representing key
+	 * components used in carrying over institution location values.
+	 */
+	GfAdvSelectIntf2.prototype.buildIntfToField = function() {
+		if ( this.isValid() ) {
+			this.$selElem = this.$gfield.find( lsSels.gfSelSel );
+			this.$chosenSpan = this.$gfield.find( lsSels.gfChosenSpanSel );
+		}
+	};
+
+	/**
+	 * Build the interface to the gravity forms field by populating jQuery objects representing key
+	 * components used in carrying over institution location values.
+	 *
+	 * @return {boolean} - True if the interface is valid and can be reliably used, false otherwise.
+	 */
+	// TODO: Write documentation header.
+	// TODO: Finish writing function (move to public method).
+	GfAdvSelectIntf2.prototype.isValid = function () {
+		return ls_EvalValidity( this );
+	};
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////
+	// §1.1.6: Lexically scoped support functions  
+
+	/**
+	 * Evaluate the validity of an instance of GfAdvSelectIntf2.
+	 *
+	 * Evaluate the validity of an instance of GfAdvSelectIntf2 based on the parameter it was passed
+	 * during its construction and the condition of lexically scoped settings for the module.
+	 * Several criteria about the nature of the object and whether it can be used to build an
+	 * interface to expected elements within the DOM must be satisfied.
+	 *
+	 * @param {GfAdvSelectIntf2} obj - The instance of GfAdvSelectIntf2 to be evaluated.
+	 *
+	 * @return {boolean} - True if the interface is valid and can be reliably used, false otherwise.
+	 */
+	function ls_EvalValidity( obj ) {
+		var classIsCorrect = undefined;
+		var hasRightChildren = undefined;
+		var is$ = undefined;
+		var lenOf1 = undefined;
+		var selsMakeSense = undefined;
+		var valid = false;
+
+		try {
+			selsMakeSense = $.isCssClass( lsSels.gfId ) && $.isCssClass( lsSels.gfContId );
+			is$ = $.isJQueryObj( obj.$gfield );
+			lenOf1 = is$ ?
+					obj.$gfield.length === 1 :
+					false;
+			classIsCorrect = lenOf1 && selsMakeSense ?
+					obj.$gfield.hasClass( lsSels.gfId ) :
+					false;
+			// TODO: Add check for correct children being present
+			valid = is$ && lenOf1 && classIsCorrect;
+		} catch ( e ) {
+			console.log( e.name + ': ' + e.message );
+		}
+		if ( !valid ) {
+			reportValidityError( classIsCorrect, hasRightChildren, is$, lenOf1, selsMakeSense );
+		}
+
+		return valid;
+	}
+
+	/**
+	 * Tells the user why an instance of GfAdvSelectIntf2 is invalid.
+	 * 
+	 * Debugging function that uses the console's log to tell the user why an instance of
+	 * GfAdvSelectIntf2 is invalid and cannot be used as expected. Validity is based on the condition
+	 * of the $gfield parameter passed to the instance during its construction.
+	 *
+	 * @param {undefined|boolean} classIsCorrect - Indicates whether $gfield has a class applied to
+	 *     it that indicates it is a genuine gravity forms field.
+	 * @param {undefined|boolean} hasRightChildren - Indicates whether $gfield contains child
+	 *     elements that are associated with the advanced user interface option for drop downs.
+	 */
+	function reportValidityError( classIsCorrect, hasRightChildren, is$, lenOf1, selsMakeSense ) {
+		var msg;
+
+		if ( typeof selsMakeSense === 'undefined' || typeof is$ === undefined ) {
+			msg = 'Object validity could not be determined because jQuery extensions from jQuery.ou\
+e.js are missing.';
+		} else if ( selsMakeSense === false ) {
+			msg = 'I was passed inappropriate values for my lexically scoped selectors.';
+		} else if ( is$ === false ) {
+			msg = 'The "gravity forms field" I was passed is not even a jQuery object.';
+		} else if ( lenOf1 === false ) {
+			msg = 'I was given a valid jQuery object to build myself from, but found that it did no\
+t represent a single element.';
+		} else if ( classIsCorrect === false ) {
+			msg = 'I was given a valid jQuery object representing a single element to build myself \
+from, but found that it did not represent a gravity forms field.';
+		} else if ( hasRightChildren === false ) {
+			msg = "The jQuery object representing the gravity forms field I was given to build myse\
+lf from did not contain the expected child elements that are associated with the GF select field's \
+advanced user interface option.";
+		} else {
+			msg = "I'm not sure what is wrong, but I was unable to build myself; careful debugging \
+will be needed to determine the nature of this unforseen error condition.";
+		}
+		console.log( modName + " construction error: " + msg );
+	}
+
+	return GfAdvSelectIntf;
+} )( jQuery, 'GfAdvSelectIntf2', {
+	gfId: 'gfield',
+	gfContId: 'ginput_container_select',
+	gfSelSel: '.gfield_select',
+	gfChosenSpanSel: '.chosen-single span'
+} );
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// §1.2: AddCrseCoInr2
+
+/**
+ * Add course carry over initiator (AddCrseCoInr2) module.
+ *
+ * Module that can bind an event handler to a transfer course evaluation request form that causes
+ * the location and name of the previous course to be carried over to a new course once it is added
+ * to the request.
+ *
+ * @param {jquery} $ - The session's jquery object.
+ * @param {string} modName - Stores the name of this module; useful in error reporting.
+ * @param {object} lsSels - A collection of lexically scoped jQuery selectors that are determined by
+ *     the design of transfer course evaluation request forms.
+ * @param {string} lsSels.gfCont - Selector for the wrapper of a transfer course evaluation request
+ *     form.
+ * @param {string} lsSels.gfFld - Selector for gravity forms fields.
+ * @param {string} lsSels.locFld - Selector for the institution location field in a transfer course
+ *     evaluation request form, which is the first field in the set of fields that identifies the
+ *     institution associated with the course to be entered.
+ *
+ * @todo Finish adding inline documentation to module.
+ *
+ * @class
+ */
+
+var AddCrseCoInr2 = ( function( $, modName, lsSels ) {
+
+	'use strict';
+
+	function AddCrseCoInr2( selFields ) {
+		this.selFields = selFields;
+		this.$fields = $( selFields );
+		this.enactCarryOver();
+	}
+
+	AddCrseCoInr2.prototype.enactCarryOver = function() {
+		var $gfCont = $( lsSels.gfCont );
+		var $this = undefined;
+		var isChecked = undefined;
+		var inst = this;
+
+		$gfCont.on( 'change', inst.selFields, function() {
+			$this = $( this );
+			isChecked = $this.prop( 'checked' );
+			if ( isChecked ) {
+				ls_CarryOverLocationFlds( inst, $this );
+			}
+		} );
+	};
+
+	function ls_CarryOverLocationFlds( inst, $fld ) {
+		var $nextCountryFld = undefined;
+		var $nextIntlNameFld = undefined;
+		var $nextLocFld = undefined;
+		var $nextNameFld = undefined;
+		var $parentFld = undefined;
+		var $prevLocFld = undefined;
+		var $prevNameFld = undefined;
+
+		// First find the parent gfield.
+		$parentFld = $fld.parents( lsSels.gfFld ).first();
+
+		// Using the parent gfield, find the next set of location fields following the checkbox that
+		// will copy previous set of location fields preceding the check box.
+		$nextLocFld = $parentFld.nextAll( lsSels.locFld ).first();
+		$nextNameFld = $nextLocFld.prev();
+
+		// Using the parent gfield, find the previous set of location fields preceding the checkbox
+		// that will be copied over to the newly revealed set of fields following the check box.
+		$prevLocFld = $parentFld.prevAll( lsSels.locFld ).first();
+		$prevNameFld = $prevLocFld.prev();
+
+		// Copy the values from the previous field set to the next.
+		ls_CopyOverTxtFld( $prevNameFld, $nextNameFld );
+		ls_CopyOverTxtFld( $prevLocFld, $nextLocFld );
+	}
+
+	function ls_CopyOverTxtFld( $prevInputFld, $nextInputFld ) {
+		var $prevInputElem = $prevInputFld.find( 'input' );
+		var $nextInputElem = $nextInputFld.find( 'input' );
+
+		$nextInputElem.val( $prevInputElem.val() );
+		$nextInputElem.trigger( 'change' );
+		$nextInputElem.trigger( 'blur' );
+	}
+
+	return AddCrseCoInr2;
+} )( jQuery, 'AddCrseCoInr2', {
+	gfCont: '.gform_wrapper',
+	gfFld: '.gfield',
+	locFld: '.gf-course-locn'
+} );
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// §2.0: Application of modules to website
+
+
+/**
+ * @todo: Add inline documentation.
+ */
+( function ( $ ) {
+
+	'use strict';
+
+	$( window ).on ( 'load', function() {
+		var initiator = new AddCrseCoInr2( '.gf-course-co-chain input' );
 
 		initiator.enactCarryOver();
 	} );
